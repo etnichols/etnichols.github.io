@@ -1,2 +1,1 @@
-# e-nichols.github.io
-blog
+simple blog
