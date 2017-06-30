@@ -5,7 +5,7 @@ path: "/react-quotebook-tutorial/"
 description: "Learn how to build a simple quotebook using React."
 ---
 
-In this tutorial we'll learn how to create an animated quotebook. Check out a live demo of the application here: [randomquotebook.surge.sh](randomquotebook.surge.sh).
+In this tutorial we'll learn how to create an animated quotebook. Check out a live demo of the application here: [randomquotebook.surge.sh](http://www.randomquotebook.surge.sh).
 
 ## Road Map
 
