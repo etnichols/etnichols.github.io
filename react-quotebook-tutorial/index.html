@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+ <html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title data-react-helmet="true">React Tutorial: Create an Animated Quotebook | evan nichols</title><style>/*! MUSUBii v2.3.0 MIT by Qrac */
+/*! Shitaji.CSS v4.1.0 CC0 by Qrac */*,:after,:before{margin:0;box-sizing:inherit;background-repeat:no-repeat;font-size:1em;font-family:inherit;font-weight:inherit}:after,:before{vertical-align:inherit;text-decoration:inherit}html{box-sizing:border-box;font-family:sans-serif;overflow-y:scroll;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}body{text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section{display:block}a{background-color:transparent;color:inherit;text-decoration:none;-webkit-text-decoration-skip:objects}b,strong{font-weight:bolder}small{font-size:80%}ol,ul{padding:0;list-style:none}dfn{font-style:italic}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}mark{background-color:#ff0;color:#000}sub,sup{position:relative;vertical-align:baseline;font-size:75%;line-height:0}sub{bottom:-.25em}sup{top:-.5em}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}audio,canvas,video{display:inline-block}audio,canvas,iframe,img,svg,video{vertical-align:middle}img{border-style:none}svg{fill:currentColor}svg:not(:root){overflow:hidden}audio:not([controls]){display:none;height:0}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}textarea{overflow:auto;resize:vertical}legend{display:table;max-width:100%;padding:0;box-sizing:border-box;color:inherit;white-space:normal}progress{display:inline-block;vertical-align:baseline}summary{display:list-item}table{border-collapse:collapse}hr{height:0;box-sizing:content-box;overflow:visible}template{display:none}[tabindex],a,area,button,input,label,select,textarea{-ms-touch-action:manipulation;touch-action:manipulation}::-moz-selection{background-color:#b3d4fc;color:#000;text-shadow:none}::selection{background-color:#b3d4fc;color:#000;text-shadow:none}[hidden]{display:none}[aria-busy=true]{cursor:progress}[aria-controls]{cursor:pointer}[aria-disabled]{cursor:default}[hidden][aria-hidden=false]{clip:rect(0,0,0,0);display:inherit;position:absolute}[hidden][aria-hidden=false]:focus{clip:auto}body{color:rgba(0,0,0,.7);font-weight:300;font-family:-apple-system,BlinkMacSystemFont,Hiragino Sans,Meiryo,sans-serif;line-height:1.5}img{max-width:100%;height:auto}img[src$=".svg"]{width:100%}.section>.inner{max-width:100%;padding:0 16px;margin:0 auto}@media screen and (min-width:576px){.section>.inner{width:540px}}@media screen and (min-width:768px){.section>.inner{width:720px}}@media screen and (min-width:992px){.section>.inner{width:960px}}@media screen and (min-width:1200px){.section>.inner{width:1140px}}.alert+.groups,.blockquote+.groups,.btns+.groups,.fieldset+.groups,.form+.groups,.group+.groups,.groups+.groups,.list+.groups,.pre+.groups,.table+.groups,.texts+.groups,.wysiwyg+.groups{margin-top:3em}.alert+.heading,.blockquote+.heading,.btns+.heading,.fieldset+.heading,.form+.heading,.group+.heading,.groups+.heading,.list+.heading,.pre+.heading,.table+.heading,.texts+.heading,.wysiwyg+.heading{margin-top:2em}.alert+.alert,.alert+.blockquote,.alert+.btns,.alert+.form,.alert+.group,.alert+.list,.alert+.pre,.alert+.table,.alert+.texts,.alert+.wysiwyg,.blockquote+.alert,.blockquote+.blockquote,.blockquote+.btns,.blockquote+.form,.blockquote+.group,.blockquote+.list,.blockquote+.pre,.blockquote+.table,.blockquote+.texts,.blockquote+.wysiwyg,.btns+.alert,.btns+.blockquote,.btns+.btns,.btns+.form,.btns+.group,.btns+.list,.btns+.pre,.btns+.table,.btns+.texts,.btns+.wysiwyg,.fieldset+.alert,.fieldset+.blockquote,.fieldset+.btns,.fieldset+.form,.fieldset+.group,.fieldset+.list,.fieldset+.pre,.fieldset+.table,.fieldset+.texts,.fieldset+.wysiwyg,.form+.alert,.form+.blockquote,.form+.btns,.form+.form,.form+.group,.form+.list,.form+.pre,.form+.table,.form+.texts,.form+.wysiwyg,.group+.alert,.group+.blockquote,.group+.btns,.group+.form,.group+.group,.group+.list,.group+.pre,.group+.table,.group+.texts,.group+.wysiwyg,.groups+.alert,.groups+.blockquote,.groups+.btns,.groups+.form,.groups+.group,.groups+.list,.groups+.pre,.groups+.table,.groups+.texts,.groups+.wysiwyg,.list+.alert,.list+.blockquote,.list+.btns,.list+.form,.list+.group,.list+.list,.list+.pre,.list+.table,.list+.texts,.list+.wysiwyg,.pre+.alert,.pre+.blockquote,.pre+.btns,.pre+.form,.pre+.group,.pre+.list,.pre+.pre,.pre+.table,.pre+.texts,.pre+.wysiwyg,.table+.alert,.table+.blockquote,.table+.btns,.table+.form,.table+.group,.table+.list,.table+.pre,.table+.table,.table+.texts,.table+.wysiwyg,.texts+.alert,.texts+.blockquote,.texts+.btns,.texts+.form,.texts+.group,.texts+.list,.texts+.pre,.texts+.table,.texts+.texts,.texts+.wysiwyg,.wysiwyg+.alert,.wysiwyg+.blockquote,.wysiwyg+.btns,.wysiwyg+.form,.wysiwyg+.group,.wysiwyg+.list,.wysiwyg+.pre,.wysiwyg+.table,.wysiwyg+.texts,.wysiwyg+.wysiwyg{margin-top:1em}.alert+.fieldset,.blockquote+.fieldset,.btns+.fieldset,.fieldset+.fieldset,.form+.fieldset,.group+.fieldset,.groups+.fieldset,.list+.fieldset,.pre+.fieldset,.table+.fieldset,.texts+.fieldset,.wysiwyg+.fieldset{margin-top:1.5em}.alert+.field,.blockquote+.field,.btns+.field,.fieldset+.field,.form+.field,.group+.field,.groups+.field,.list+.field,.pre+.field,.table+.field,.texts+.field,.wysiwyg+.field{margin-top:.5em}.heading+.groups{margin-top:3em}.heading+.alert,.heading+.blockquote,.heading+.btns,.heading+.form,.heading+.group,.heading+.heading,.heading+.list,.heading+.pre,.heading+.table,.heading+.texts,.heading+.wysiwyg{margin-top:1em}.field+.alert,.field+.blockquote,.field+.btns,.field+.field,.field+.form,.field+.group,.field+.groups,.field+.heading,.field+.list,.field+.pre,.field+.table,.field+.texts,.field+.wysiwyg,.heading+.field,.heading+.fieldset{margin-top:.5em}.wysiwyg h1+blockquote,.wysiwyg h1+h1,.wysiwyg h1+h2,.wysiwyg h1+h3,.wysiwyg h1+h4,.wysiwyg h1+h5,.wysiwyg h1+h6,.wysiwyg h1+hr,.wysiwyg h1+img,.wysiwyg h1+ol,.wysiwyg h1+p,.wysiwyg h1+pre,.wysiwyg h1+table,.wysiwyg h1+ul,.wysiwyg h2+blockquote,.wysiwyg h2+h1,.wysiwyg h2+h2,.wysiwyg h2+h3,.wysiwyg h2+h4,.wysiwyg h2+h5,.wysiwyg h2+h6,.wysiwyg h2+hr,.wysiwyg h2+img,.wysiwyg h2+ol,.wysiwyg h2+p,.wysiwyg h2+pre,.wysiwyg h2+table,.wysiwyg h2+ul,.wysiwyg h3+blockquote,.wysiwyg h3+h1,.wysiwyg h3+h2,.wysiwyg h3+h3,.wysiwyg h3+h4,.wysiwyg h3+h5,.wysiwyg h3+h6,.wysiwyg h3+hr,.wysiwyg h3+img,.wysiwyg h3+ol,.wysiwyg h3+p,.wysiwyg h3+pre,.wysiwyg h3+table,.wysiwyg h3+ul,.wysiwyg h4+blockquote,.wysiwyg h4+h1,.wysiwyg h4+h2,.wysiwyg h4+h3,.wysiwyg h4+h4,.wysiwyg h4+h5,.wysiwyg h4+h6,.wysiwyg h4+hr,.wysiwyg h4+img,.wysiwyg h4+ol,.wysiwyg h4+p,.wysiwyg h4+pre,.wysiwyg h4+table,.wysiwyg h4+ul,.wysiwyg h5+blockquote,.wysiwyg h5+h1,.wysiwyg h5+h2,.wysiwyg h5+h3,.wysiwyg h5+h4,.wysiwyg h5+h5,.wysiwyg h5+h6,.wysiwyg h5+hr,.wysiwyg h5+img,.wysiwyg h5+ol,.wysiwyg h5+p,.wysiwyg h5+pre,.wysiwyg h5+table,.wysiwyg h5+ul,.wysiwyg h6+blockquote,.wysiwyg h6+h1,.wysiwyg h6+h2,.wysiwyg h6+h3,.wysiwyg h6+h4,.wysiwyg h6+h5,.wysiwyg h6+h6,.wysiwyg h6+hr,.wysiwyg h6+img,.wysiwyg h6+ol,.wysiwyg h6+p,.wysiwyg h6+pre,.wysiwyg h6+table,.wysiwyg h6+ul{margin-top:1em}.wysiwyg blockquote+h1,.wysiwyg blockquote+h2,.wysiwyg blockquote+h3,.wysiwyg blockquote+h4,.wysiwyg blockquote+h5,.wysiwyg blockquote+h6,.wysiwyg hr+h1,.wysiwyg hr+h2,.wysiwyg hr+h3,.wysiwyg hr+h4,.wysiwyg hr+h5,.wysiwyg hr+h6,.wysiwyg img+h1,.wysiwyg img+h2,.wysiwyg img+h3,.wysiwyg img+h4,.wysiwyg img+h5,.wysiwyg img+h6,.wysiwyg ol+h1,.wysiwyg ol+h2,.wysiwyg ol+h3,.wysiwyg ol+h4,.wysiwyg ol+h5,.wysiwyg ol+h6,.wysiwyg p+h1,.wysiwyg p+h2,.wysiwyg p+h3,.wysiwyg p+h4,.wysiwyg p+h5,.wysiwyg p+h6,.wysiwyg pre+h1,.wysiwyg pre+h2,.wysiwyg pre+h3,.wysiwyg pre+h4,.wysiwyg pre+h5,.wysiwyg pre+h6,.wysiwyg table+h1,.wysiwyg table+h2,.wysiwyg table+h3,.wysiwyg table+h4,.wysiwyg table+h5,.wysiwyg table+h6,.wysiwyg ul+h1,.wysiwyg ul+h2,.wysiwyg ul+h3,.wysiwyg ul+h4,.wysiwyg ul+h5,.wysiwyg ul+h6{margin-top:2em}.wysiwyg blockquote+blockquote,.wysiwyg blockquote+hr,.wysiwyg blockquote+img,.wysiwyg blockquote+ol,.wysiwyg blockquote+p,.wysiwyg blockquote+pre,.wysiwyg blockquote+table,.wysiwyg blockquote+ul,.wysiwyg hr+blockquote,.wysiwyg hr+hr,.wysiwyg hr+img,.wysiwyg hr+ol,.wysiwyg hr+p,.wysiwyg hr+pre,.wysiwyg hr+table,.wysiwyg hr+ul,.wysiwyg img+blockquote,.wysiwyg img+hr,.wysiwyg img+img,.wysiwyg img+ol,.wysiwyg img+p,.wysiwyg img+pre,.wysiwyg img+table,.wysiwyg img+ul,.wysiwyg ol+blockquote,.wysiwyg ol+hr,.wysiwyg ol+img,.wysiwyg ol+ol,.wysiwyg ol+p,.wysiwyg ol+pre,.wysiwyg ol+table,.wysiwyg ol+ul,.wysiwyg p+blockquote,.wysiwyg p+hr,.wysiwyg p+img,.wysiwyg p+ol,.wysiwyg p+p,.wysiwyg p+pre,.wysiwyg p+table,.wysiwyg p+ul,.wysiwyg pre+blockquote,.wysiwyg pre+hr,.wysiwyg pre+img,.wysiwyg pre+ol,.wysiwyg pre+p,.wysiwyg pre+pre,.wysiwyg pre+table,.wysiwyg pre+ul,.wysiwyg table+blockquote,.wysiwyg table+hr,.wysiwyg table+img,.wysiwyg table+ol,.wysiwyg table+p,.wysiwyg table+pre,.wysiwyg table+table,.wysiwyg table+ul,.wysiwyg ul+blockquote,.wysiwyg ul+hr,.wysiwyg ul+img,.wysiwyg ul+ol,.wysiwyg ul+p,.wysiwyg ul+pre,.wysiwyg ul+table,.wysiwyg ul+ul{margin-top:1em}.grid{display:-ms-flexbox;display:-webkit-box;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}.grid:not(.is-gap-none){margin-left:-.5em;margin-bottom:-.5em}.grid:not(.is-gap-none)>.col{padding-left:.5em;padding-bottom:.5em}.grid:not(.is-gap-none)+.grid:not(.is-gap-none){margin-top:.5em}.grid.is-middle{-ms-flex-align:center;-webkit-box-align:center;align-items:center}.grid.is-bottom{-ms-flex-align:end;-webkit-box-align:end;align-items:flex-end}.grid.is-center{-ms-flex-pack:center;-webkit-box-pack:center;justify-content:center}.grid.is-right{-ms-flex-pack:end;-webkit-box-pack:end;justify-content:flex-end}.grid.is-between{-ms-flex-pack:justify;-webkit-box-pack:justify;justify-content:space-between}.grid.is-around{-ms-flex-pack:distribute;justify-content:space-around}.grid.is-stretch>.col{display:-ms-flexbox;display:-webkit-box;display:flex}.col.is-mobile-0{-ms-flex:1 0 0%;-webkit-box-flex:1;flex:1 0 0%;max-width:100%}.col.is-mobile-1{-ms-flex:0 0 8.33333%;-webkit-box-flex:0;flex:0 0 8.33333%;max-width:8.33333%}.col.is-mobile-2{-ms-flex:0 0 16.66667%;-webkit-box-flex:0;flex:0 0 16.66667%;max-width:16.66667%}.col.is-mobile-3{-ms-flex:0 0 25%;-webkit-box-flex:0;flex:0 0 25%;max-width:25%}.col.is-mobile-4{-ms-flex:0 0 33.33333%;-webkit-box-flex:0;flex:0 0 33.33333%;max-width:33.33333%}.col.is-mobile-5{-ms-flex:0 0 41.66667%;-webkit-box-flex:0;flex:0 0 41.66667%;max-width:41.66667%}.col.is-mobile-6{-ms-flex:0 0 50%;-webkit-box-flex:0;flex:0 0 50%;max-width:50%}.col.is-mobile-7{-ms-flex:0 0 58.33333%;-webkit-box-flex:0;flex:0 0 58.33333%;max-width:58.33333%}.col.is-mobile-8{-ms-flex:0 0 66.66667%;-webkit-box-flex:0;flex:0 0 66.66667%;max-width:66.66667%}.col.is-mobile-9{-ms-flex:0 0 75%;-webkit-box-flex:0;flex:0 0 75%;max-width:75%}.col.is-mobile-10{-ms-flex:0 0 83.33333%;-webkit-box-flex:0;flex:0 0 83.33333%;max-width:83.33333%}.col.is-mobile-11{-ms-flex:0 0 91.66667%;-webkit-box-flex:0;flex:0 0 91.66667%;max-width:91.66667%}.col.is-mobile-12{-ms-flex:0 0 100%;-webkit-box-flex:0;flex:0 0 100%;max-width:100%}.col.is-mobile-auto{-ms-flex:0 1 auto;-webkit-box-flex:0;flex:0 1 auto;max-width:100%}@media screen and (min-width:576px){.col.is-fablet-0{-ms-flex:1 0 0%;-webkit-box-flex:1;flex:1 0 0%;max-width:100%}.col.is-fablet-1{-ms-flex:0 0 8.33333%;-webkit-box-flex:0;flex:0 0 8.33333%;max-width:8.33333%}.col.is-fablet-2{-ms-flex:0 0 16.66667%;-webkit-box-flex:0;flex:0 0 16.66667%;max-width:16.66667%}.col.is-fablet-3{-ms-flex:0 0 25%;-webkit-box-flex:0;flex:0 0 25%;max-width:25%}.col.is-fablet-4{-ms-flex:0 0 33.33333%;-webkit-box-flex:0;flex:0 0 33.33333%;max-width:33.33333%}.col.is-fablet-5{-ms-flex:0 0 41.66667%;-webkit-box-flex:0;flex:0 0 41.66667%;max-width:41.66667%}.col.is-fablet-6{-ms-flex:0 0 50%;-webkit-box-flex:0;flex:0 0 50%;max-width:50%}.col.is-fablet-7{-ms-flex:0 0 58.33333%;-webkit-box-flex:0;flex:0 0 58.33333%;max-width:58.33333%}.col.is-fablet-8{-ms-flex:0 0 66.66667%;-webkit-box-flex:0;flex:0 0 66.66667%;max-width:66.66667%}.col.is-fablet-9{-ms-flex:0 0 75%;-webkit-box-flex:0;flex:0 0 75%;max-width:75%}.col.is-fablet-10{-ms-flex:0 0 83.33333%;-webkit-box-flex:0;flex:0 0 83.33333%;max-width:83.33333%}.col.is-fablet-11{-ms-flex:0 0 91.66667%;-webkit-box-flex:0;flex:0 0 91.66667%;max-width:91.66667%}.col.is-fablet-12{-ms-flex:0 0 100%;-webkit-box-flex:0;flex:0 0 100%;max-width:100%}.col.is-fablet-auto{-ms-flex:0 1 auto;-webkit-box-flex:0;flex:0 1 auto;max-width:100%}}@media screen and (min-width:768px){.col.is-tablet-0{-ms-flex:1 0 0%;-webkit-box-flex:1;flex:1 0 0%;max-width:100%}.col.is-tablet-1{-ms-flex:0 0 8.33333%;-webkit-box-flex:0;flex:0 0 8.33333%;max-width:8.33333%}.col.is-tablet-2{-ms-flex:0 0 16.66667%;-webkit-box-flex:0;flex:0 0 16.66667%;max-width:16.66667%}.col.is-tablet-3{-ms-flex:0 0 25%;-webkit-box-flex:0;flex:0 0 25%;max-width:25%}.col.is-tablet-4{-ms-flex:0 0 33.33333%;-webkit-box-flex:0;flex:0 0 33.33333%;max-width:33.33333%}.col.is-tablet-5{-ms-flex:0 0 41.66667%;-webkit-box-flex:0;flex:0 0 41.66667%;max-width:41.66667%}.col.is-tablet-6{-ms-flex:0 0 50%;-webkit-box-flex:0;flex:0 0 50%;max-width:50%}.col.is-tablet-7{-ms-flex:0 0 58.33333%;-webkit-box-flex:0;flex:0 0 58.33333%;max-width:58.33333%}.col.is-tablet-8{-ms-flex:0 0 66.66667%;-webkit-box-flex:0;flex:0 0 66.66667%;max-width:66.66667%}.col.is-tablet-9{-ms-flex:0 0 75%;-webkit-box-flex:0;flex:0 0 75%;max-width:75%}.col.is-tablet-10{-ms-flex:0 0 83.33333%;-webkit-box-flex:0;flex:0 0 83.33333%;max-width:83.33333%}.col.is-tablet-11{-ms-flex:0 0 91.66667%;-webkit-box-flex:0;flex:0 0 91.66667%;max-width:91.66667%}.col.is-tablet-12{-ms-flex:0 0 100%;-webkit-box-flex:0;flex:0 0 100%;max-width:100%}.col.is-tablet-auto{-ms-flex:0 1 auto;-webkit-box-flex:0;flex:0 1 auto;max-width:100%}}@media screen and (min-width:992px){.col.is-desktop-0{-ms-flex:1 0 0%;-webkit-box-flex:1;flex:1 0 0%;max-width:100%}.col.is-desktop-1{-ms-flex:0 0 8.33333%;-webkit-box-flex:0;flex:0 0 8.33333%;max-width:8.33333%}.col.is-desktop-2{-ms-flex:0 0 16.66667%;-webkit-box-flex:0;flex:0 0 16.66667%;max-width:16.66667%}.col.is-desktop-3{-ms-flex:0 0 25%;-webkit-box-flex:0;flex:0 0 25%;max-width:25%}.col.is-desktop-4{-ms-flex:0 0 33.33333%;-webkit-box-flex:0;flex:0 0 33.33333%;max-width:33.33333%}.col.is-desktop-5{-ms-flex:0 0 41.66667%;-webkit-box-flex:0;flex:0 0 41.66667%;max-width:41.66667%}.col.is-desktop-6{-ms-flex:0 0 50%;-webkit-box-flex:0;flex:0 0 50%;max-width:50%}.col.is-desktop-7{-ms-flex:0 0 58.33333%;-webkit-box-flex:0;flex:0 0 58.33333%;max-width:58.33333%}.col.is-desktop-8{-ms-flex:0 0 66.66667%;-webkit-box-flex:0;flex:0 0 66.66667%;max-width:66.66667%}.col.is-desktop-9{-ms-flex:0 0 75%;-webkit-box-flex:0;flex:0 0 75%;max-width:75%}.col.is-desktop-10{-ms-flex:0 0 83.33333%;-webkit-box-flex:0;flex:0 0 83.33333%;max-width:83.33333%}.col.is-desktop-11{-ms-flex:0 0 91.66667%;-webkit-box-flex:0;flex:0 0 91.66667%;max-width:91.66667%}.col.is-desktop-12{-ms-flex:0 0 100%;-webkit-box-flex:0;flex:0 0 100%;max-width:100%}.col.is-desktop-auto{-ms-flex:0 1 auto;-webkit-box-flex:0;flex:0 1 auto;max-width:100%}}@media screen and (min-width:1200px){.col.is-wide-0{-ms-flex:1 0 0%;-webkit-box-flex:1;flex:1 0 0%;max-width:100%}.col.is-wide-1{-ms-flex:0 0 8.33333%;-webkit-box-flex:0;flex:0 0 8.33333%;max-width:8.33333%}.col.is-wide-2{-ms-flex:0 0 16.66667%;-webkit-box-flex:0;flex:0 0 16.66667%;max-width:16.66667%}.col.is-wide-3{-ms-flex:0 0 25%;-webkit-box-flex:0;flex:0 0 25%;max-width:25%}.col.is-wide-4{-ms-flex:0 0 33.33333%;-webkit-box-flex:0;flex:0 0 33.33333%;max-width:33.33333%}.col.is-wide-5{-ms-flex:0 0 41.66667%;-webkit-box-flex:0;flex:0 0 41.66667%;max-width:41.66667%}.col.is-wide-6{-ms-flex:0 0 50%;-webkit-box-flex:0;flex:0 0 50%;max-width:50%}.col.is-wide-7{-ms-flex:0 0 58.33333%;-webkit-box-flex:0;flex:0 0 58.33333%;max-width:58.33333%}.col.is-wide-8{-ms-flex:0 0 66.66667%;-webkit-box-flex:0;flex:0 0 66.66667%;max-width:66.66667%}.col.is-wide-9{-ms-flex:0 0 75%;-webkit-box-flex:0;flex:0 0 75%;max-width:75%}.col.is-wide-10{-ms-flex:0 0 83.33333%;-webkit-box-flex:0;flex:0 0 83.33333%;max-width:83.33333%}.col.is-wide-11{-ms-flex:0 0 91.66667%;-webkit-box-flex:0;flex:0 0 91.66667%;max-width:91.66667%}.col.is-wide-12{-ms-flex:0 0 100%;-webkit-box-flex:0;flex:0 0 100%;max-width:100%}.col.is-wide-auto{-ms-flex:0 1 auto;-webkit-box-flex:0;flex:0 1 auto;max-width:100%}}.heading{position:relative;line-height:1.25}.texts{line-height:1.8}.text.is-link{cursor:pointer;border-bottom:1px solid currentColor}.text.is-link:hover{border-bottom-color:transparent}.text.is-link-reverse{cursor:pointer;border-bottom:1px solid transparent}.text.is-link-reverse:hover{border-color:currentColor}.blockquote{background-color:#f5f5f5;border-left:8px solid rgba(0,0,0,.05);border-radius:2px;padding:20px}.code,.pre{color:#646d9f;font-family:Menlo,Monaco,Consolas,Liberation Mono,Courier New,Meiryo,monospace,serif}:not(.pre) .code{padding:.2em .5em;font-size:.875em;word-break:break-all}.pre,:not(.pre) .code{background-color:#f5f5f5;border-radius:2px}.pre{white-space:pre;word-wrap:normal;overflow:hidden;overflow-x:auto;-webkit-overflow-scrolling:touch}.pre>.code{padding:20px 25px}.btns{display:-ms-flexbox;display:-webkit-box;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}.btns:not(.is-bar){margin-left:-.5em;margin-bottom:-.5em}.btns:not(.is-bar)>*{margin-left:.5em;margin-bottom:.5em}.btns>.btns{display:-ms-inline-flexbox;display:-webkit-inline-box;display:inline-flex}.btns>.btns+.btns{margin-top:0}.btns.is-middle{-ms-flex-align:center;-webkit-box-align:center;align-items:center}.btns.is-bottom{-ms-flex-align:end;-webkit-box-align:end;align-items:flex-end}.btns.is-center{-ms-flex-pack:center;-webkit-box-pack:center;justify-content:center}.btns.is-right{-ms-flex-pack:end;-webkit-box-pack:end;justify-content:flex-end}.btns.is-between{-ms-flex-pack:justify;-webkit-box-pack:justify;justify-content:space-between}.btns.is-around{-ms-flex-pack:distribute;justify-content:space-around}.btn{cursor:pointer;display:inline-block;-webkit-align-self:flex-start;-ms-flex-item-align:start;align-self:flex-start;white-space:nowrap;padding:.75em 1em;border-radius:2px;line-height:1;text-align:center;transition:.15s ease-out}.btn[type=button],.btn[type=reset],.btn[type=submit]{color:rgba(0,0,0,.7)}.btn.is-disable,.btn[disabled]{cursor:default}.btn.is-round{border-radius:999em}.btn.is-circle{position:relative;width:2.5em;height:2.5em;padding:0;border-radius:1.25em}.btn.is-circle>*{position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.btn.is-full{-ms-flex:0 0 100%;-webkit-box-flex:0;flex:0 0 100%;max-width:100%}.btn.is-floating:not(.is-disable){box-shadow:0 1px 3px 0 rgba(0,0,0,.24)}.btn.is-floating:not(.is-disable):hover{box-shadow:0 4px 12px 0 rgba(0,0,0,.24)}.btn.is-plain{background-color:#eee;border:1px solid transparent}.btn.is-plain:hover{background-color:#e1e1e1}.btn.is-plain.is-danger,.btn.is-plain.is-primary,.btn.is-plain.is-success{color:#fff}.btn.is-plain.is-primary{background-color:#1cb4c7}.btn.is-plain.is-primary:hover{background-color:#199fb1}.btn.is-plain.is-success{background-color:#1bbc5e}.btn.is-plain.is-success:hover{background-color:#18a653}.btn.is-plain.is-danger{background-color:#e65d53}.btn.is-plain.is-danger:hover{background-color:#e3483d}.btn.is-plain.is-disable,.btn.is-plain.is-disable:hover,.btn.is-plain[disabled],.btn.is-plain[disabled]:hover{color:rgba(0,0,0,.26);background-color:#bdbdbd}.btn.is-melt{background-color:transparent;border:1px solid transparent}.btn.is-melt:hover{background-color:rgba(0,0,0,.05)}.btn.is-melt.is-primary{color:#1cb4c7}.btn.is-melt.is-success{color:#1bbc5e}.btn.is-melt.is-danger{color:#e65d53}.btn.is-melt.is-disable,.btn.is-melt.is-disable:hover,.btn.is-melt[disabled],.btn.is-melt[disabled]:hover{color:rgba(0,0,0,.26);background-color:transparent}.btn.is-outline{background-color:#fff;border:1px solid rgba(0,0,0,.15)}.btn.is-outline:hover{background-color:#f2f2f2}.btn.is-outline.is-primary{color:#1cb4c7;border-color:#1cb4c7}.btn.is-outline.is-primary:hover{background-color:#1cb4c7}.btn.is-outline.is-success{color:#1bbc5e;border-color:#1bbc5e}.btn.is-outline.is-success:hover{background-color:#1bbc5e}.btn.is-outline.is-danger{color:#e65d53;border-color:#e65d53}.btn.is-outline.is-danger:hover{background-color:#e65d53}.btn.is-outline.is-danger:hover,.btn.is-outline.is-primary:hover,.btn.is-outline.is-success:hover{color:#fff;border-color:transparent}.btn.is-outline.is-disable,.btn.is-outline.is-disable:hover,.btn.is-outline[disabled],.btn.is-outline[disabled]:hover{color:rgba(0,0,0,.26);background-color:rgba(0,0,0,.26)}.btn.is-ghost{color:#fff;background-color:transparent;border:1px solid #fff}.btn.is-ghost:hover{color:rgba(0,0,0,.87);background-color:#fff}.btn.is-ghost.is-primary{color:#8ee4ef;border-color:#8ee4ef}.btn.is-ghost.is-primary:hover{background-color:#1cb4c7}.btn.is-ghost.is-success{color:#83edaf;border-color:#83edaf}.btn.is-ghost.is-success:hover{background-color:#1bbc5e}.btn.is-ghost.is-danger{color:#f9dbd9;border-color:#f9dbd9}.btn.is-ghost.is-danger:hover{background-color:#e65d53}.btn.is-ghost.is-danger:hover,.btn.is-ghost.is-primary:hover,.btn.is-ghost.is-success:hover{color:#fff;border-color:transparent}.btn.is-ghost.is-disable,.btn.is-ghost.is-disable:hover,.btn.is-ghost[disabled],.btn.is-ghost[disabled]:hover{color:hsla(0,0%,100%,.5);background-color:hsla(0,0%,100%,.12);border-color:hsla(0,0%,100%,.5)}.btns.is-bar{-ms-flex-wrap:nowrap;flex-wrap:nowrap}.btns.is-bar>.btn{border-radius:0;overflow:hidden}.btns.is-bar>.btn:not(.is-round):first-child{border-top-left-radius:2px;border-bottom-left-radius:2px}.btns.is-bar>.btn:not(.is-round):last-child{border-top-right-radius:2px;border-bottom-right-radius:2px}.btns.is-bar>.btn.is-round:first-child{border-top-left-radius:999em;border-bottom-left-radius:999em}.btns.is-bar>.btn.is-round:last-child{border-top-right-radius:999em;border-bottom-right-radius:999em}.btns.is-bar>.btn:nth-child(2),.btns.is-bar>.btn:nth-child(2)~.btn{border-left:none}.btns>.btn.is-mobile-0{-ms-flex:1 0 0%;-webkit-box-flex:1;flex:1 0 0%;max-width:100%}.btns>.btn.is-full,.btns>.btn.is-mobile-full{-ms-flex:0 1 100%;-webkit-box-flex:0;flex:0 1 100%;max-width:100%}.btns>.btn.is-mobile-auto{-ms-flex:0 1 auto;-webkit-box-flex:0;flex:0 1 auto;max-width:100%}@media screen and (min-width:576px){.btns>.btn.is-fablet-0{-ms-flex:1 0 0%;-webkit-box-flex:1;flex:1 0 0%;max-width:100%}.btns>.btn.is-fablet-full{-ms-flex:0 1 100%;-webkit-box-flex:0;flex:0 1 100%;max-width:100%}.btns>.btn.is-fablet-auto{-ms-flex:0 1 auto;-webkit-box-flex:0;flex:0 1 auto;max-width:100%}}@media screen and (min-width:768px){.btns>.btn.is-touch-0{-ms-flex:1 0 0%;-webkit-box-flex:1;flex:1 0 0%;max-width:100%}.btns>.btn.is-touch-full{-ms-flex:0 1 100%;-webkit-box-flex:0;flex:0 1 100%;max-width:100%}.btns>.btn.is-touch-auto{-ms-flex:0 1 auto;-webkit-box-flex:0;flex:0 1 auto;max-width:100%}}@media screen and (min-width:992px){.btns>.btn.is-desktop-0{-ms-flex:1 0 0%;-webkit-box-flex:1;flex:1 0 0%;max-width:100%}.btns>.btn.is-desktop-full{-ms-flex:0 1 100%;-webkit-box-flex:0;flex:0 1 100%;max-width:100%}.btns>.btn.is-desktop-auto{-ms-flex:0 1 auto;-webkit-box-flex:0;flex:0 1 auto;max-width:100%}}@media screen and (min-width:1200px){.btns>.btn.is-wide-0{-ms-flex:1 0 0%;-webkit-box-flex:1;flex:1 0 0%;max-width:100%}.btns>.btn.is-wide-full{-ms-flex:0 1 100%;-webkit-box-flex:0;flex:0 1 100%;max-width:100%}.btns>.btn.is-wide-auto{-ms-flex:0 1 auto;-webkit-box-flex:0;flex:0 1 auto;max-width:100%}}.list.is-circle,.list.is-decimal,.list.is-disc{line-height:1.8;margin-left:1.5em}.list.is-circle>.item,.list.is-decimal>.item,.list.is-disc>.item{display:list-item}.list.is-disc>.item{list-style:disc outside}.list.is-circle>.item{list-style:circle outside}.list.is-decimal>.item{list-style:decimal outside}.table{width:100%;background-color:#fff;border-collapse:collapse;border-spacing:0}.table td,.table th{padding:.75em 1em;vertical-align:top}.table.is-middle td,.table.is-middle th{vertical-align:middle}.table>thead>tr:last-child>th{border-bottom:2px solid #d1d7da}.table.is-line{border-bottom:1px solid #d1d7da}.table.is-line,.table.is-line>tbody>tr:not(:first-child)>*{border-top:1px solid #d1d7da}.table.is-border,.table.is-border td,.table.is-border th,.table.is-outline{border:1px solid #d1d7da}.table.is-stripe tbody tr:nth-child(2n),.table.is-stripe thead{background-color:#f5f5f5}.table .is-paint{background-color:#1cb4c7;color:#fff}.table .is-stripe{background-color:#f5f5f5}.table .is-spot{background-color:#f5eeb7}.table .is-danger{background-color:#fdd9dd}.fieldset{padding:0;border:none}.field{display:-ms-flexbox;display:-webkit-box;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-left:-.5em;margin-bottom:-.5em}.field>*{margin-left:.5em;margin-bottom:.5em}.field>.field{display:-ms-inline-flexbox;display:-webkit-inline-box;display:inline-flex}.field>.field+.field{margin-top:0}.field.is-middle{-ms-flex-align:center;-webkit-box-align:center;align-items:center}.field.is-bottom{-ms-flex-align:end;-webkit-box-align:end;align-items:flex-end}.field.is-center{-ms-flex-pack:center;-webkit-box-pack:center;justify-content:center}.field.is-right{-ms-flex-pack:end;-webkit-box-pack:end;justify-content:flex-end}.field.is-between{-ms-flex-pack:justify;-webkit-box-pack:justify;justify-content:space-between}.field.is-around{-ms-flex-pack:distribute;justify-content:space-around}.input[type=date],.input[type=datetime-local],.input[type=email],.input[type=month],.input[type=number],.input[type=password],.input[type=search],.input[type=tel],.input[type=text],.input[type=time],.input[type=url],.input[type=week]{max-width:100%;height:2.5em;padding:calc(.5em - 1.5px) .75em;background-color:#fff;border:1px solid rgba(0,0,0,.26);border-radius:2px;color:rgba(0,0,0,.7)}.input[type=date][disabled],.input[type=datetime-local][disabled],.input[type=email][disabled],.input[type=month][disabled],.input[type=number][disabled],.input[type=password][disabled],.input[type=search][disabled],.input[type=tel][disabled],.input[type=text][disabled],.input[type=time][disabled],.input[type=url][disabled],.input[type=week][disabled]{background-color:#e0e0e0;color:rgba(0,0,0,.26)}.input[type=date][readonly],.input[type=datetime-local][readonly],.input[type=email][readonly],.input[type=month][readonly],.input[type=number][readonly],.input[type=password][readonly],.input[type=search][readonly],.input[type=tel][readonly],.input[type=text][readonly],.input[type=time][readonly],.input[type=url][readonly],.input[type=week][readonly]{background-color:#eee;color:rgba(0,0,0,.5)}.input[type=email]:placeholder-shown,.input[type=number]:placeholder-shown,.input[type=password]:placeholder-shown,.input[type=search]:placeholder-shown,.input[type=tel]:placeholder-shown,.input[type=text]:placeholder-shown,.input[type=url]:placeholder-shown{color:rgba(0,0,0,.26)}.input[type=email]::-webkit-input-placeholder,.input[type=number]::-webkit-input-placeholder,.input[type=password]::-webkit-input-placeholder,.input[type=search]::-webkit-input-placeholder,.input[type=tel]::-webkit-input-placeholder,.input[type=text]::-webkit-input-placeholder,.input[type=url]::-webkit-input-placeholder{color:rgba(0,0,0,.26)}.input[type=email]:-moz-placeholder,.input[type=email]::-moz-placeholder,.input[type=number]:-moz-placeholder,.input[type=number]::-moz-placeholder,.input[type=password]:-moz-placeholder,.input[type=password]::-moz-placeholder,.input[type=search]:-moz-placeholder,.input[type=search]::-moz-placeholder,.input[type=tel]:-moz-placeholder,.input[type=tel]::-moz-placeholder,.input[type=text]:-moz-placeholder,.input[type=text]::-moz-placeholder,.input[type=url]:-moz-placeholder,.input[type=url]::-moz-placeholder{opacity:1;color:rgba(0,0,0,.26)}.input[type=email]:-ms-input-placeholder,.input[type=number]:-ms-input-placeholder,.input[type=password]:-ms-input-placeholder,.input[type=search]:-ms-input-placeholder,.input[type=tel]:-ms-input-placeholder,.input[type=text]:-ms-input-placeholder,.input[type=url]:-ms-input-placeholder{color:rgba(0,0,0,.26)}.input[type=date],.input[type=datetime-local],.input[type=email],.input[type=month],.input[type=number],.input[type=password],.input[type=search],.input[type=tel],.input[type=text],.input[type=time],.input[type=url],.input[type=week]{box-shadow:inset 0 1px 1px rgba(0,0,0,.075)}.input[type=date][disabled],.input[type=datetime-local][disabled],.input[type=email][disabled],.input[type=month][disabled],.input[type=number][disabled],.input[type=password][disabled],.input[type=search][disabled],.input[type=tel][disabled],.input[type=text][disabled],.input[type=time][disabled],.input[type=url][disabled],.input[type=week][disabled]{box-shadow:none}.input[type=date],.input[type=datetime-local],.input[type=email],.input[type=month],.input[type=number],.input[type=password],.input[type=search],.input[type=tel],.input[type=text],.input[type=time],.input[type=url],.input[type=week],.textarea{-webkit-appearance:none;-moz-appearance:none;appearance:none}.input[type=file]{display:block;max-width:70vw;overflow:hidden}.textarea{min-height:150px;background-color:#fff;border:1px solid rgba(0,0,0,.26);border-radius:2px;box-shadow:inset 0 1px 1px rgba(0,0,0,.075);padding:calc(.5em - 1.5px) .5em}.textarea[disabled]{background-color:#e0e0e0;color:rgba(0,0,0,.26);box-shadow:none}.input[type=checkbox],.input[type=radio]{margin-right:.25em}.input[type=checkbox]~:last-child,.input[type=radio]~:last-child{margin-right:1em}.input[type=checkbox][disabled]~*,.input[type=radio][disabled]~*{color:rgba(0,0,0,.4)}.select{max-width:100%;height:2.5em;padding:calc(.5em - 1.5px) .75em;background-color:#fff;border:1px solid rgba(0,0,0,.26);border-radius:2px;color:rgba(0,0,0,.7)}.select[multiple]{height:auto;padding:.5em .75em}.select[multiple]>option{min-height:1.5em}.select[disabled]{background-color:#e0e0e0;color:rgba(0,0,0,.26)}.select[readonly]{background-color:#eee}.field>.is-mobile-0{-ms-flex:1 0 0%;-webkit-box-flex:1;flex:1 0 0%;max-width:100%}.field>.is-mobile-full{-ms-flex:0 1 100%;-webkit-box-flex:0;flex:0 1 100%;max-width:100%}.field>.is-mobile-auto{-ms-flex:0 1 auto;-webkit-box-flex:0;flex:0 1 auto;max-width:100%}@media screen and (min-width:576px){.field>.is-fablet-0{-ms-flex:1 0 0%;-webkit-box-flex:1;flex:1 0 0%;max-width:100%}.field>.is-fablet-full{-ms-flex:0 1 100%;-webkit-box-flex:0;flex:0 1 100%;max-width:100%}.field>.is-fablet-auto{-ms-flex:0 1 auto;-webkit-box-flex:0;flex:0 1 auto;max-width:100%}}@media screen and (min-width:768px){.field>.is-touch-0{-ms-flex:1 0 0%;-webkit-box-flex:1;flex:1 0 0%;max-width:100%}.field>.is-touch-full{-ms-flex:0 1 100%;-webkit-box-flex:0;flex:0 1 100%;max-width:100%}.field>.is-touch-auto{-ms-flex:0 1 auto;-webkit-box-flex:0;flex:0 1 auto;max-width:100%}}@media screen and (min-width:992px){.field>.is-desktop-0{-ms-flex:1 0 0%;-webkit-box-flex:1;flex:1 0 0%;max-width:100%}.field>.is-desktop-full{-ms-flex:0 1 100%;-webkit-box-flex:0;flex:0 1 100%;max-width:100%}.field>.is-desktop-auto{-ms-flex:0 1 auto;-webkit-box-flex:0;flex:0 1 auto;max-width:100%}}@media screen and (min-width:1200px){.field>.is-wide-0{-ms-flex:1 0 0%;-webkit-box-flex:1;flex:1 0 0%;max-width:100%}.field>.is-wide-full{-ms-flex:0 1 100%;-webkit-box-flex:0;flex:0 1 100%;max-width:100%}.field>.is-wide-auto{-ms-flex:0 1 auto;-webkit-box-flex:0;flex:0 1 auto;max-width:100%}}.fa,.icon,.im,.material-icons{font-size:inherit;line-height:inherit}.material-icons{vertical-align:bottom}.fa+.fa:not(.is-fit),.fa+.icon:not(.is-fit),.fa+.im:not(.is-fit),.fa+.material-icons:not(.is-fit),.fa+.text,.icon+.fa:not(.is-fit),.icon+.icon:not(.is-fit),.icon+.im:not(.is-fit),.icon+.material-icons:not(.is-fit),.icon+.text,.im+.fa:not(.is-fit),.im+.icon:not(.is-fit),.im+.im:not(.is-fit),.im+.material-icons:not(.is-fit),.im+.text,.material-icons+.fa:not(.is-fit),.material-icons+.icon:not(.is-fit),.material-icons+.im:not(.is-fit),.material-icons+.material-icons:not(.is-fit),.material-icons+.text,.text+.fa,.text+.icon,.text+.im,.text+.material-icons{margin-left:.25em}.fa.is-fit,.icon.is-fit,.im.is-fit,.material-icons.is-fit{width:1em;text-align:center}.alert{background:#f5f5f5;border:1px solid #e0e0e0;border-radius:2px;padding:.675em .875em}.alert.is-primary{background:#e1f4f6;border-color:#9fdde4}.alert.is-primary *{color:#0ea1b3}.alert.is-info{background:#e5f0f9;border-color:#abd0ed}.alert.is-info *{color:#498dc9}.alert.is-success{background:#e7f0e7;border-color:#b8d2b9}.alert.is-success *{color:#5a995c}.alert.is-warning{background:#f5eeb7;border-color:#e8db61}.alert.is-warning *{color:rgba(0,0,0,.5)}.alert.is-danger{background:#fdd9dd;border-color:#eba8a8}.alert.is-danger *{color:#d75653}.wysiwyg h1,.wysiwyg h2,.wysiwyg h3,.wysiwyg h4,.wysiwyg h5,.wysiwyg h6{font-weight:700;line-height:1.25}.wysiwyg h1{font-size:2em}.wysiwyg h2{font-size:1.5em}.wysiwyg h3{font-size:1.25em}.wysiwyg h4{font-size:1em}.wysiwyg h5{font-size:.875em}.wysiwyg h6{font-size:.75em}.wysiwyg p{font-size:.875em;line-height:1.8}.wysiwyg small{font-size:80%}.wysiwyg strong{font-weight:700}.wysiwyg em{font-style:italic}.wysiwyg del,.wysiwyg s{text-decoration:line-through}.wysiwyg a{cursor:pointer;color:#1cb4c7;border-bottom:1px solid currentColor}.wysiwyg a:active,.wysiwyg a:hover{border-bottom-color:transparent}.wysiwyg blockquote{background-color:#f5f5f5;border-left:8px solid rgba(0,0,0,.05);border-radius:2px;padding:20px}.wysiwyg code,.wysiwyg pre{color:#646d9f;font-family:Menlo,Monaco,Consolas,Liberation Mono,Courier New,Meiryo,monospace,serif}.wysiwyg :not(pre) code{padding:.2em .5em;word-break:break-all}.wysiwyg :not(pre) code,.wysiwyg pre{background-color:#f5f5f5;border-radius:2px;font-size:.875em}.wysiwyg pre{padding:20px 25px;white-space:pre;word-wrap:normal;overflow:hidden;overflow-x:auto;-webkit-overflow-scrolling:touch}.wysiwyg ol,.wysiwyg ul{line-height:1.8;margin-left:1.5em}.wysiwyg ol>li,.wysiwyg ul>li{display:list-item;font-size:.875em}.wysiwyg ol>li li,.wysiwyg ul>li li{font-size:100%}.wysiwyg ul>li{list-style:circle outside}.wysiwyg ol>li{list-style:decimal outside}.wysiwyg table{font-size:.875em;background-color:#fff;border-radius:2px}.wysiwyg table thead{background-color:#f5f5f5}.wysiwyg table th{color:rgba(0,0,0,.5);font-weight:700}.wysiwyg table td,.wysiwyg table th{padding:6px 12px;border:1px solid #e0e0e0}.is-xxl{font-size:200%}.is-xl{font-size:150%}.is-lg{font-size:125%}.is-md{font-size:100%}.is-sm{font-size:87.5%}.is-xs{font-size:75%}.is-xxs{font-size:62.5%}.is-dark{color:#000}.is-dark-1{color:rgba(0,0,0,.87)}.is-dark-2{color:rgba(0,0,0,.7)}.is-dark-3{color:rgba(0,0,0,.6)}.is-dark-4{color:rgba(0,0,0,.5)}.is-dark-5{color:rgba(0,0,0,.4)}.is-dark-6{color:rgba(0,0,0,.26)}.is-dark-7{color:rgba(0,0,0,.15)}.is-dark-8{color:rgba(0,0,0,.12)}.is-dark-9{color:rgba(0,0,0,.05)}.is-light{color:#fff}.is-light-1{color:hsla(0,0%,100%,.87)}.is-light-2{color:hsla(0,0%,100%,.7)}.is-light-3{color:hsla(0,0%,100%,.6)}.is-light-4{color:hsla(0,0%,100%,.5)}.is-light-5{color:hsla(0,0%,100%,.4)}.is-light-6{color:hsla(0,0%,100%,.26)}.is-light-7{color:hsla(0,0%,100%,.15)}.is-light-8{color:hsla(0,0%,100%,.12)}.is-light-9{color:hsla(0,0%,100%,.05)}.is-primary:not(.btn){color:#1cb4c7}.is-info:not(.btn){color:#4b9ad8}.is-success:not(.btn){color:#1bbc5e}.is-warning:not(.btn){color:#e8db61}.is-danger:not(.btn){color:#e65d53}.is-yakuhanjp{font-family:-apple-system,BlinkMacSystemFont,YakuHanJP,Hiragino Sans,Meiryo,sans-serif}.is-yakuhanjps{font-family:-apple-system,BlinkMacSystemFont,YakuHanJPs,Hiragino Sans,Meiryo,sans-serif}.is-normal{font-weight:300}.is-strong{font-weight:700}.is-weight-100{font-weight:100}.is-weight-200{font-weight:200}.is-weight-300{font-weight:300}.is-weight-400{font-weight:400}.is-weight-500{font-weight:500}.is-weight-700{font-weight:700}.is-weight-900{font-weight:900}.is-italic{font-style:italic}.is-delete{text-decoration:line-through}.is-capitalize{text-transform:capitalize}.is-lowercase{text-transform:lowercase}.is-uppercase{text-transform:uppercase}:not(.grid):not(.btns):not(.field).is-left{text-align:left}:not(.grid):not(.btns):not(.field).is-center{text-align:center}:not(.grid):not(.btns):not(.field).is-right{text-align:right}:not(.grid):not(.btns):not(.field).is-baseline{vertical-align:baseline}:not(.grid):not(.btns):not(.field).is-top{vertical-align:top}:not(.grid):not(.btns):not(.field).is-middle{vertical-align:middle}:not(.grid):not(.btns):not(.field).is-bottom{vertical-align:bottom}.is-nowrap{white-space:nowrap}.is-break{word-break:break-all}.is-centering{margin:0 auto}.is-scroll-x{overflow:hidden;overflow-x:auto;-webkit-overflow-scrolling:touch}.is-ellipsis{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.is-block{display:block}.is-inline{display:inline}.is-inline-block{display:inline-block}.is-none,.is-none-mobile{display:none}@media screen and (min-width:576px){.is-none-fablet{display:none}}@media screen and (min-width:768px){.is-none-tablet{display:none}}@media screen and (min-width:992px){.is-none-desktop{display:none}}@media screen and (min-width:1200px){.is-none-wide{display:none}}@media screen and (max-width:575px){.is-none-mobile-only{display:none}}@media screen and (min-width:576px) and (max-width:767px){.is-none-fablet-only{display:none}}@media screen and (min-width:768px) and (max-width:991px){.is-none-tablet-only{display:none}}@media screen and (min-width:992px) and (max-width:1199px){.is-none-desktop-only{display:none}}.is-clearfix:after{display:block;content:"";clear:both}@font-face{font-family:social-icon;src:url(/f082bf74bc6ed8e1dc40512d502473b0.eot);src:url(/f082bf74bc6ed8e1dc40512d502473b0.eot#iefix) format("embedded-opentype"),url(/b64e8d2dfefb1ce50c9c473fde9de033.ttf) format("truetype"),url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4=#social-icon) format("svg");font-weight:400;font-style:normal}i{font-family:social-icon!important;speak:none;font-style:normal;font-weight:400;-webkit-font-feature-settings:normal;font-feature-settings:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.icon-github:before{content:"\E907"}.icon-facebook-f:before,.icon-facebook:before{content:"\E902"}.icon-twitter:before{content:"\E904"}header{font-family:Tauri;font-size:22px;background:#2f343b}footer,header{color:#fff;padding:20px}footer{background:#c77966}.container{padding:40px 0;min-height:calc(100vh - 137px)}.index ul{font-size:120%}.index li{margin-bottom:35px}.article-list hr{border:0;border-top:1px solid #ccc;width:35px;margin:30px 45%}.wysiwyg{font-size:110%}.wysiwyg a{color:#2f343b}.wysiwyg p{font-weight:400}.wysiwyg pre{background:transparent;padding:0}.wysiwyg code{padding:20px 25px}.wysiwyg :not(pre) code{font-size:.9em;color:rgba(0,0,0,.7);background:#f8f8f8}.bio{margin:0 auto;margin-top:50px}.bio img{width:80px;height:auto;margin-right:15px}.bio hr{border:0;border-top:1px solid #ccc;width:35px;margin:30px 45%}.bio-img{display:table-cell;padding:30px 10px}.bio-detail{display:table-cell;vertical-align:top;padding:20px 0;font-size:90%}.social-buttons{display:table;margin-top:10px;border-collapse:separate;border-spacing:15px 0;margin-left:-15px}.social-buttons li{display:table-cell;font-size:20px}.section>.inner{font-size:95%}@media screen and (min-width:576px){.bio{width:400px}}@media screen and (min-width:768px){.bio{width:400px}}@media screen and (min-width:992px){.section>.inner{width:800px!important;max-width:100%;font-size:100%}.bio{width:500px}.bio img{width:100px}.bio-img{padding:30px 20px}.social-buttons li{font-size:22px}}</style></head><body><div id="react-mount"><div data-reactroot="" data-reactid="1" data-react-checksum="598796080"><header data-reactid="2"><div class="section" data-reactid="3"><div class="inner" data-reactid="4"><h3 data-reactid="5"><a style="box-shadow:none;text-decoration:none;color:inherit;" href="/" data-reactid="6">evan nichols</a></h3></div></div></header><div class="container section" data-reactid="7"><div class="inner" data-reactid="8"><article data-reactid="9"><!-- react-empty: 10 --><h1 class="heading is-xxl is-strong" data-reactid="11">React Tutorial: Create an Animated Quotebook</h1><div style="display:block;margin:15px 0;" data-reactid="12">2017.06.30</div><div class="wysiwyg" data-reactid="13"><p>In this tutorial we’ll learn how to create an animated quotebook. Check out a live demo of the application here: <a href="randomquotebook.surge.sh">randomquotebook.surge.sh</a>.</p>
+<h2>Road Map</h2>
+<ol>
+<li>Understand and use <a href="https://github.com/facebookincubator/create-react-app">create-react-app</a> as a boilerplate.</li>
+<li>Create a function to shuffle the array of available quotes each time the application refreshes.</li>
+<li>Create “Next” and “Back” buttons to allow users to navigate through the quotes.</li>
+<li>Add transition animations using <a href="http://marnusw.github.io/react-css-transition-replace/">react-css-transition-replace</a>.</li>
+<li>Build and deploy the app using <a href="http://surge.sh/">surge.sh</a>.</li>
+</ol>
+<h3>Getting Started with create-react-app</h3>
+<p>This tutorial assumes a working knowledge of <a href="https://nodejs.org/en/">Node.js</a> and <a href="https://www.npmjs.com/">npm</a>. Check out Alexandru Vladutu’s <a href="https://www.airpair.com/javascript/node-js-tutorial">Step-by-Step Node.js tutorial</a> if you are unfamiliar.</p>
+<p>Once you have Node and npm installed, we’re ready to get started.</p>
+<p>Facebook’s <a href="https://github.com/facebookincubator/create-react-app">create-react-app</a> boilerplate project is the de facto standard for starting new React SPA projects. It takes care of a lot of the grunt work that comes with setting up a React app. Read more about it <a href="https://facebook.github.io/react/blog/2016/07/22/create-apps-with-no-configuration.html">here</a> if you are interested.</p>
+<p>Now from the command line, install the create-react-app npm package globally:</p>
+<pre><code><span class="hljs-string">npm </span><span class="hljs-string">install </span>-g <span class="hljs-built_in">create-react-app</span>
+</code></pre>
+<p>Now, in a directory of your choosing, create a new app:</p>
+<pre><code><span class="hljs-built_in">create-react-app</span> <span class="hljs-string">quotebook
+</span></code></pre>
+<p>This might take a minute or two to complete. After it completes, cd into the new project and save <a href="https://www.npmjs.com/package/immutable">immutable</a> and <a href="https://www.npmjs.com/package/react-css-transition-replace">react-css-transition-replace</a>, two npm packages we’ll use later:</p>
+<pre><code><span class="hljs-keyword">cd</span> quotebook-<span class="hljs-keyword">tutorial</span>
+npm i --<span class="hljs-keyword">save</span> immutable react-css-transition-<span class="hljs-keyword">replace</span>
+</code></pre>
+<p>After those finish installing, you can start up the app by running:</p>
+<pre><code><span class="hljs-built_in">npm</span> start
+</code></pre>
+<p>This will start a development server at localhost:3000. Open up your browser and check it out. It should look like this.</p>
+<p><img src="create-react-app-start-screen.png" alt="React boilerplate"></p>
+<br>
+<p>Explore the create-react-app project structure a little bit. The most important files to note are:</p>
+<ul>
+<li><strong>src/App.js</strong>: what you actually make edits to.</li>
+<li><strong>src/index.js</strong>: handles the call to ReactDOM to render the entire <App /> in the “root” div.</li>
+<li><strong>public/index.html</strong>: the html page onto which the app is rendered.</li>
+</ul>
+<h3>Add Bootstrap and Google Fonts</h3>
+<p>In the head of <code>public/index.html</code> add the following lines:</p>
+<pre><code>&lt;link <span class="hljs-attribute">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attribute">href</span>=<span class="hljs-string">"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"</span> <span class="hljs-attribute">integrity</span>=<span class="hljs-string">"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"</span> <span class="hljs-attribute">crossorigin</span>=<span class="hljs-string">"anonymous"</span>&gt;
+&lt;link <span class="hljs-attribute">href</span>=<span class="hljs-string">"https://fonts.googleapis.com/css?family=Arvo:400,700|Open+Sans"</span> <span class="hljs-attribute">rel</span>=<span class="hljs-string">"stylesheet"</span>&gt;
+</code></pre>
+<p>These additions allow use of Bootstrap CSS styles and Google Font’s <a href="https://fonts.google.com/specimen/Arvo">Arvo</a> and <a href="https://fonts.google.com/specimen/Open+Sans">Open Sans</a>.</p>
+<h3>Component Level Design</h3>
+<p>No matter how simple the project, it’s always helpful to look at a component-level design of the application.</p>
+<p><img src="component-level-design.png" alt="Component Level Block Diagram"></p>
+<p>Nothing too surprising here. Aside from the App-level component, we’ll only need two additional components: QuoteModal and Control.</p>
+<h3>Create the QuoteModal Component</h3>
+<p>The QuoteModal component will handle display each quote and author with proper styling.</p>
+<p>Within the <code>src</code> folder of the project, create a new directory called <code>components</code>, and within that directory, create two new files, <code>QuoteModal.js</code> and <code>styles.css</code>. Now within the <code>QuoteModal.js</code> file add the following code:</p>
+<pre><code><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>
+<span class="hljs-keyword">import</span> <span class="hljs-string">'./styles.css'</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">QuoteModal</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+
+  render(){
+    <span class="hljs-keyword">return</span>(
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"text-center quote-modal"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"quote-text"</span>&gt;</span>"{this.props.quote}"<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">hr</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>- {this.props.author}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+    )
+  }
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> QuoteModal
+</code></pre>
+<p>And within the <code>styles.css</code> file add the following code:</p>
+<pre><code><span class="hljs-selector-class">.quote-modal</span> {
+  <span class="hljs-attribute">font-family</span>: <span class="hljs-string">'Open Sans'</span>, sans-serif;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">3px</span>;
+  <span class="hljs-attribute">margin</span>: auto;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">95%</span>;
+  <span class="hljs-attribute">height</span>: auto;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#fff</span>;
+  <span class="hljs-attribute">box-shadow</span>:<span class="hljs-number">2px</span> <span class="hljs-number">2px</span> <span class="hljs-number">5px</span> <span class="hljs-number">#9E9E9E</span>;
+}
+
+<span class="hljs-selector-class">.quote-text</span> {
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">1.5</span>;
+}
+
+@<span class="hljs-keyword">media</span> only screen and (min-width: <span class="hljs-number">768px</span>){
+  <span class="hljs-selector-class">.quote-modal</span> {
+      <span class="hljs-attribute">width</span>: <span class="hljs-number">500px</span>;
+      <span class="hljs-attribute">font-size</span>: <span class="hljs-number">18px</span>;
+  }
+}
+</code></pre>
+<p>Let’s understand what’s going on in the code above. First, in the <code>QuoteModal.js</code> file:</p>
+<ul>
+<li>
+<p>Importing the default export from <code>'react'</code> under the name <code>React</code>, and we’re importing the <strong>named</strong> export <code>Component</code> under the same name. See <a href="https://stackoverflow.com/questions/31096597/using-brackets-with-javascript-import-syntax">this StackOverflow post</a> for more on import syntax.</p>
+</li>
+<li>
+<p>Importing our newly created stylesheet <code>styles.css</code>.</p>
+</li>
+<li>
+<p>Declare the QuoteModal component using an <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes">ES6 class</a>, and define it’s <code>render()</code> method, the only method required to implement a valid React component. Within the render method, the <code>quote</code> and <code>author</code> props are styled appropriately in paragraph tags, and the entire thing is wrapped in a div.</p>
+</li>
+<li>
+<p>Export the QuoteModal class so it can be used within the <code>App.js</code> file later.</p>
+</li>
+</ul>
+<p>Now within the <code>styles.css</code> file:</p>
+<ul>
+<li>Define the QuoteModal CSS class, which is mobile-optimized. The media query handles checking if the user is on a desktop or tablet, in which case we provide a static width of 500px for the modal and increase the font size.</li>
+</ul>
+<h3>Create the Control Component</h3>
+<p>The Control component will allow us to create our “Back” and “Next” controls. <a href="https://dmfrancisco.github.io/react-icons/">This article</a> provides a simple, straightforward way to implement icons using inline SVGs; the code below is a simplified version of their example Icon component. Bonus: the article also provides a ton of icons for free use! We’ll be using the “arrow-back” and “arrow-forward” SVGs.</p>
+<p>Within the <code>components</code> folder, create a file called <code>Control.js</code> and add the following code:</p>
+<pre><code><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Control</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+
+  renderGraphic(){
+    <span class="hljs-keyword">switch</span>(<span class="hljs-keyword">this</span>.props.icon){
+      <span class="hljs-keyword">case</span> <span class="hljs-string">'arrow-back'</span>:
+        <span class="hljs-keyword">return</span> (
+          <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">g</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M20 11h-12.17l5.59-5.59-1.42-1.41-8 8 8 8 1.41-1.41-5.58-5.59h12.17v-2z"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">path</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">g</span>&gt;</span></span>
+        )
+      <span class="hljs-keyword">case</span> <span class="hljs-string">'arrow-forward'</span>:
+        <span class="hljs-keyword">return</span> (
+          <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">g</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M12 4l-1.41 1.41 5.58 5.59h-12.17v2h12.17l-5.58 5.59 1.41 1.41 8-8z"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">path</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">g</span>&gt;</span></span>
+        )
+    }
+  }
+
+  render(){
+
+    <span class="hljs-keyword">const</span> sx = {
+      <span class="hljs-attr">fill</span>: <span class="hljs-string">'#FFF'</span>,
+    }
+
+    <span class="hljs-keyword">return</span>(
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">svg</span>
+      <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.props.onClickFunction}</span>
+      <span class="hljs-attr">style</span>=<span class="hljs-string">{sx}</span>
+      <span class="hljs-attr">width</span>=<span class="hljs-string">{this.props.width}</span>
+      <span class="hljs-attr">height</span>=<span class="hljs-string">{this.props.height}</span>
+      <span class="hljs-attr">viewBox</span>=<span class="hljs-string">"0 0 24 24"</span>&gt;</span>
+      {this.renderGraphic()}
+    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span></span>
+    )
+  }
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> Control
+</code></pre>
+<p>Again, let’s make sure we understand what’s going on above:</p>
+<p>The<code>renderGraphic()</code>method decides which SVG to dispay, based on the “icon” prop passed in to the component. Since our application only has two potential icons, “arrow-back” and “arrow-forward”, we only define cases for those.</p>
+<p>The <code>render()</code> method returns an styled svg element. The width, height and onClick function are passed to the component as props and are used here. Note: you could add additional styles to the <code>sx</code> object if you so choose.</p>
+<h3>Use the Components within App.js</h3>
+<p>Time to strip the boilerplate code out of <code>App.js</code> and add in the newly created QuoteModal and Control components.</p>
+<p>Within <code>App.js</code> add the following code:</p>
+<pre><code>import React, { Component } from <span class="hljs-string">'react'</span>
+
+import QuoteModal from <span class="hljs-string">'./components/QuoteModal'</span>
+import Control from <span class="hljs-string">'./components/Control'</span>
+
+import <span class="hljs-string">'./App.css'</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+
+  constructor(props){
+    <span class="hljs-keyword">super</span>(props)
+    <span class="hljs-keyword">this</span>.state = {
+    }
+  }
+
+  render() {
+    <span class="hljs-keyword">return</span> (
+      &lt;<span class="hljs-keyword">div</span> className=<span class="hljs-string">"App"</span>&gt;
+        &lt;<span class="hljs-keyword">div</span> className=<span class="hljs-string">"App-header"</span>&gt;
+          &lt;h2&gt;Quotebook&lt;/h2&gt;
+        &lt;/<span class="hljs-keyword">div</span>&gt;
+
+        &lt;QuoteModal
+          key={<span class="hljs-number">1</span>}
+          quote={<span class="hljs-string">"Test Quote"</span>}
+          author={<span class="hljs-string">"Test Author"</span>}
+        /&gt;
+
+        &lt;<span class="hljs-keyword">div</span> className=<span class="hljs-string">"control-section"</span>&gt;
+          &lt;<span class="hljs-keyword">div</span> className=<span class="hljs-string">"control-container"</span>&gt;
+            &lt;Control
+              className=<span class="hljs-string">"inline-control"</span>
+              width={<span class="hljs-string">"40"</span>}
+              height={<span class="hljs-string">"40"</span>}
+              icon={<span class="hljs-string">"arrow-back"</span>}
+              onClickFunction={() =&gt; {
+                console.log(<span class="hljs-string">"back button clicked"</span>)}}
+              /&gt;
+          &lt;/<span class="hljs-keyword">div</span>&gt;
+          &lt;<span class="hljs-keyword">div</span> className=<span class="hljs-string">"control-container"</span>&gt;
+            &lt;Control
+              className=<span class="hljs-string">"inline-control"</span>
+              width={<span class="hljs-string">"40"</span>}
+              height={<span class="hljs-string">"40"</span>}
+              icon={<span class="hljs-string">"arrow-forward"</span>}
+              onClickFunction={() =&gt; {
+                console.log(<span class="hljs-string">"next button clicked"</span>)}}
+              /&gt;
+          &lt;/<span class="hljs-keyword">div</span>&gt;
+        &lt;/<span class="hljs-keyword">div</span>&gt;
+      &lt;/<span class="hljs-keyword">div</span>&gt;
+    );
+  }
+}
+
+export <span class="hljs-keyword">default</span> App;
+
+</code></pre>
+<p>And within <code>App.css</code> add the following classes:</p>
+<pre><code><span class="hljs-selector-tag">body</span> {
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#124563</span>;
+}
+
+<span class="hljs-selector-class">.App</span> {
+  <span class="hljs-attribute">text-align</span>: center;
+  <span class="hljs-attribute">display</span>: block;
+  <span class="hljs-attribute">overflow</span>: auto;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100vh</span>;
+}
+
+<span class="hljs-selector-class">.App-header</span> {
+  <span class="hljs-attribute">font-family</span>: <span class="hljs-string">'Arvo'</span>, serif;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;
+}
+
+<span class="hljs-selector-class">.control-section</span> {
+  <span class="hljs-attribute">text-align</span>: center;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">margin</span>: auto;
+  <span class="hljs-attribute">display</span>: block;
+}
+
+<span class="hljs-selector-class">.control-container</span> {
+  <span class="hljs-attribute">display</span>: inline-block;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">58%</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">5px</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0px</span> <span class="hljs-number">30px</span> <span class="hljs-number">0px</span> <span class="hljs-number">30px</span>;
+  <span class="hljs-attribute">transition</span>: background-color <span class="hljs-number">0.5s</span> ease-in;
+}
+
+<span class="hljs-selector-class">.control-container</span><span class="hljs-selector-pseudo">:active</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#fff</span>;
+}
+</code></pre>
+<p>Save both files, and check out the app on localhost. It should look similar to this:</p>
+<p><img src="milestone1.gif" alt=""></p>
+<br>
+<p>Understanding the additions to <code>App.js</code>:</p>
+<p>Import our QuoteModal and Control components. Definition of the <code>constructor()</code> function, which we’ll use later. Definition of the <code>render()</code> method. The QuoteModal component takes two example strings in as props. Below that, the controls section. Two Control components are defined here, the first for the Back button and the second for the Next button (as specified by their <code>icon</code> props). Each Control has a dummy function passed in for the <code>onClickFunction</code> prop, which just logs the click to the console.</p>
+<h3>Add Real Quotes</h3>
+<p>With the components working correctly, it’s time to introduce real quotes. Two options here.</p>
+<ol>
+<li>Use the quotes file I’ve created, available on the <a href="https://github.com/e-nichols/quotebook/blob/master/src/quotes.js">Github repo for this project</a>.</li>
+<li>Create your own quotes.js file, making sure to match the format shown in the linked file above.</li>
+</ol>
+<p>Whichever you choose, save the resulting <code>quotes.js</code> file in the <code>src</code> directory. And add the following lines to the top of <code>App.js</code>:</p>
+<pre><code><span class="hljs-keyword">import</span> { List } <span class="hljs-keyword">from</span> <span class="hljs-string">'immutable'</span>
+<span class="hljs-keyword">import</span> quotes <span class="hljs-keyword">from</span> <span class="hljs-string">'./quotes'</span>
+</code></pre>
+<p>And now we’ll update the <code>constructor</code> function with the following code:</p>
+<pre><code>  <span class="hljs-function"><span class="hljs-keyword">constructor</span><span class="hljs-params">(props)</span><span class="hljs-comment">{
+
+    super(props)
+
+    const the_quotes = List(quotes)
+    const init = the_quotes.get(0)
+
+    this.state = {
+      quote: init.quote,
+      author: init.author,
+      available_quotes: the_quotes,
+      index: 0
+    }</span>
+  }
+
+</span></code></pre>
+<p>I’ve opted to use <a href="https://facebook.github.io/immutable-js/">Immutable.js</a> here to create a <a href="https://facebook.github.io/immutable-js/docs/#/List">List</a> from the array of quotes. Is it <em>really</em> necessary to use immutable data structures here? Not really. But the List structure is easy and convenient to use and I’ve wanted to check out this project for a while. Check out <a href="https://www.youtube.com/watch?v=I7IdS-PbEgI">this talk</a> if you want to learn more about immutable data.</p>
+<p>Beyond that, we are defining state variables for the App-level component. The first quote from the List is used to populate the <code>quote</code> and <code>author</code> variables. The <code>the_quotes</code> variable is assigned to <code>available_quotes</code> and we initialize the <code>index</code> variable to 0, which will be used within the onClickFunctions for the controls.</p>
+<p>Update the code for the QuoteModal within the <code>render()</code> function to make use of the newly defined <code>quote</code> and <code>author</code> variables:</p>
+<pre><code>...
+    &lt;QuoteModal key={<span class="hljs-number">1</span>} quote={this<span class="hljs-selector-class">.state</span><span class="hljs-selector-class">.quote</span>} author={this<span class="hljs-selector-class">.state</span><span class="hljs-selector-class">.author</span>} /&gt;
+...
+</code></pre>
+<p>Save the changes to <code>App.js</code> and check out the browser, it should be displaying this quote:</p>
+<p><img src="firstq.png" alt=""></p>
+<br>
+<h3>Create onClick functions for Back and Next Controls</h3>
+<p>Users should be able to use the Back and Next controls to navigate through the collection of quotes. To accomplish this, the <code>index</code> variable defined earlier comes into play.</p>
+<p>Let’s think about how we would use <code>index</code> to implement the next and back buttons. A naive implementation to start, which includes a helper function <code>performUpdate()</code>:</p>
+<pre><code class="language-javascript">  performUpdate(){
+    <span class="hljs-keyword">const</span> nq = <span class="hljs-keyword">this</span>.state.available_quotes.get(<span class="hljs-keyword">this</span>.state.index)
+    <span class="hljs-keyword">this</span>.setState({
+      <span class="hljs-attr">quote</span>: nq.quote,
+      <span class="hljs-attr">author</span>: nq.author,
+    })
+  }
+
+  handleBackButton(){
+      <span class="hljs-keyword">this</span>.setState({
+        <span class="hljs-attr">index</span>: <span class="hljs-keyword">this</span>.state.index - <span class="hljs-number">1</span>
+      }, <span class="hljs-keyword">this</span>.performUpdate)
+  }
+
+  handleNextButton(){
+      <span class="hljs-keyword">this</span>.setState({
+        <span class="hljs-attr">index</span>: <span class="hljs-keyword">this</span>.state.index + <span class="hljs-number">1</span>
+      }, <span class="hljs-keyword">this</span>.performUpdate)
+  }
+</code></pre>
+<p>What’s going on here? We’ve defined two handler functions, <code>handleBackButton</code> and <code>handleNextButton</code> which makes a call to React component method <code>setState</code>, decrementing and incrementing the index variable, respectively. And then we provide the <code>performUpdate</code> method as a callback to be executed <em>after</em> this update to the <code>index</code> variable goes through.</p>
+<p>The reasoning for this is laid out in the <a href="https://facebook.github.io/react/docs/react-component.html#setstate">React Docs</a>:</p>
+<blockquote>
+<p>&quot;Think of <code>setState()</code> as a request rather than an immediate command to update the component. For better perceived performance, React may delay it, and then update several components in a single pass. React does not guarantee that the state changes are applied immediately.</p>
+</blockquote>
+<blockquote>
+<p><code>setState()</code> does not always immediately update the component. It may batch or defer the update until later. This makes reading <code>this.state</code> right after calling <code>setState()</code> a potential pitfall. Instead, use <code>componentDidUpdate</code> or a <code>setState</code> callback (<code>setState(updater, callback)</code>), either of which are guaranteed to fire after the update has been applied. If you need to set the state based on the previous state, read about the updater argument below.&quot;</p>
+</blockquote>
+<p>Using the callback parameter works well here because <code>performUpdate</code> is dependent on the index either incrementing or decrementing in order to load a new quote and author.</p>
+<p>What if a user immediately hits the back button after launching the page? Won’t that decrement the counter to -1? *Yes it will. That’s OK though, because <a href="https://facebook.github.io/immutable-js/docs/#/List/get">Immutable.js List indices may be negative</a>. Therefore we can support this interaction by default.</p>
+<p>That makes sense… but there’s still a problem. Say you only had 5 quotes total. And a user immediately starts hitting the back button, -1, -2, -3, -4, -5… -6? Shit! Trying to <code>get(-6)</code> on a list of size 5 will break the app. We need to guard against this, and reset the counter upon reaching the absolute value of the size of the quotes array being used. Make a few small additions to the <code>increment</code> and <code>decrement</code> functions:</p>
+<pre><code class="language-javascript">  handleBackButton(){
+    <span class="hljs-keyword">if</span>(<span class="hljs-keyword">this</span>.state.index === -(<span class="hljs-keyword">this</span>.state.available_quotes.size - <span class="hljs-number">1</span>)){
+        <span class="hljs-keyword">this</span>.setState({
+          <span class="hljs-attr">index</span>: <span class="hljs-number">0</span>
+        }, <span class="hljs-keyword">this</span>.performUpdate)
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">this</span>.setState({
+          <span class="hljs-attr">index</span>: <span class="hljs-keyword">this</span>.state.index - <span class="hljs-number">1</span>
+        }, <span class="hljs-keyword">this</span>.performUpdate)
+    }
+  }
+
+  handleNextButton(){
+    <span class="hljs-keyword">if</span>(<span class="hljs-keyword">this</span>.state.index === (<span class="hljs-keyword">this</span>.state.available_quotes.size - <span class="hljs-number">1</span>)){
+        <span class="hljs-keyword">this</span>.setState({
+          <span class="hljs-attr">index</span>: <span class="hljs-number">0</span>
+        }, <span class="hljs-keyword">this</span>.performUpdate)
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">this</span>.setState({
+          <span class="hljs-attr">index</span>: <span class="hljs-keyword">this</span>.state.index + <span class="hljs-number">1</span>
+        }, <span class="hljs-keyword">this</span>.performUpdate)
+    }
+  }
+
+</code></pre>
+<p>Nice. The if statements turn our List into a circular list, and we’ll never have to worry about an invalid indice being generated by the user.</p>
+<h3>The Shuffle Function</h3>
+<p>It’s boring to see the same order of quotes each time. Let’s fix this by adding an in-place shuffle function to the constructor. A <a href="https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array">quick search on StackOverflow</a> tells us that the Fisher-Yates shuffle is a good candidate for this. Check out this <a href="https://bost.ocks.org/mike/shuffle/">awesome post and visualization of the algorithm</a> if you want to learn more. Within <code>App.js</code>, add the following function:</p>
+<pre><code>  shuffleQuotes(arr){
+    <span class="hljs-keyword">let</span> curIndex = arr.length, tempVal, randIndex
+
+    <span class="hljs-keyword">while</span>(<span class="hljs-number">0</span> !== curIndex){
+      <span class="hljs-comment">//pick remaining element</span>
+      randIndex = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * curIndex)
+      curIndex -= <span class="hljs-number">1</span>
+
+      <span class="hljs-comment">//swap with current</span>
+      tempVal = arr[curIndex]
+      arr[curIndex] = arr[randIndex]
+      arr[randIndex] = tempVal
+    }
+
+    <span class="hljs-keyword">return</span> arr
+  }
+</code></pre>
+<p>And now, modify the <code>constructor</code> to make use of the new shuffle function:</p>
+<pre><code class="language-javascript">  <span class="hljs-keyword">constructor</span>(props){
+    <span class="hljs-keyword">super</span>(props)
+
+    <span class="hljs-comment">//randomize order of quotes at start of session</span>
+    <span class="hljs-keyword">const</span> shuffled = List(<span class="hljs-keyword">this</span>.shuffleQuotes(quotes))
+    <span class="hljs-keyword">const</span> init = shuffled.get(<span class="hljs-number">0</span>)
+
+    <span class="hljs-keyword">this</span>.state = {
+      <span class="hljs-attr">quote</span>: init.quote,
+      <span class="hljs-attr">author</span>: init.author,
+      <span class="hljs-attr">available_quotes</span>: shuffled,
+      <span class="hljs-attr">index</span>: <span class="hljs-number">0</span>
+    }
+  }
+</code></pre>
+<p>Great! Refresh the app and click around to test it out. The quotes will shuffle each time the user refreshes the app.</p>
+<h3>Selecting Random Background Color</h3>
+<p>Let’s make things a little more visually appealing by having the background color change each time a new quote loads.</p>
+<p>Within the <code>src</code> folder create a new file <code>colors.js</code> and within it add the following code:</p>
+<pre><code class="language-javascript"><span class="hljs-built_in">module</span>.exports = [ <span class="hljs-string">'#703030'</span>, <span class="hljs-string">'#2F343B'</span>, <span class="hljs-string">'#7E827A'</span>, <span class="hljs-string">'#E3CDA4'</span>, <span class="hljs-string">'#C77966'</span> ]
+</code></pre>
+<p>The colors above are from the <a href="https://color.adobe.com/Vintage-Ralph-Lauren-color-theme-2216979/?showPublished=true">Vintage Ralph Lauren Color Theme</a> on Adobe Kuler. You can find another theme there if you want, or just choose random colors. Add as many as you like. Alternative method: create a function that generates a random hex color string and use that within the render method of the App. Note that you’ll probably have to guard against generating white/off-white colors because the Back and Next buttons won’t be visible.</p>
+<p>Within <code>App.js</code>, import the new <code>colors.js</code> file:</p>
+<pre><code><span class="hljs-keyword">import</span> colors <span class="hljs-keyword">from</span> <span class="hljs-string">'./colors'</span>
+</code></pre>
+<p>Modify the constructor function one more time:</p>
+<pre><code class="language-javascript">  <span class="hljs-keyword">constructor</span>(props){
+    <span class="hljs-keyword">super</span>(props)
+
+    <span class="hljs-keyword">const</span> shuffled = List(<span class="hljs-keyword">this</span>.shuffleQuotes(quotes))
+    <span class="hljs-keyword">const</span> init = shuffled.get(<span class="hljs-number">0</span>)
+
+    <span class="hljs-keyword">const</span> bgcolors = List(colors)
+
+    <span class="hljs-keyword">this</span>.state = {
+      <span class="hljs-attr">quote</span>: init.quote,
+      <span class="hljs-attr">author</span>: init.author,
+      <span class="hljs-attr">available_quotes</span>: shuffled,
+      <span class="hljs-attr">colors</span>: bgcolors,
+      <span class="hljs-attr">index</span>: <span class="hljs-number">0</span>
+    }
+  }
+</code></pre>
+<p>Add a helper function to select a random color from the array:</p>
+<pre><code class="language-javascript">  getRandomColor(){
+    <span class="hljs-keyword">let</span> ind = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-keyword">this</span>.state.colors.size)
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.state.colors.get(ind)
+  }
+</code></pre>
+<p>And last, make use of this new function in the <code>render</code> method:</p>
+<pre><code class="language-javascript">render() {
+
+    <span class="hljs-keyword">const</span> bgcolor = <span class="hljs-keyword">this</span>.getRandomColor()
+    <span class="hljs-keyword">const</span> container_style  = {
+      <span class="hljs-attr">backgroundColor</span>: bgcolor,
+      <span class="hljs-attr">transition</span>: <span class="hljs-string">'background-color 1s ease'</span>
+    }
+
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"App"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{container_style}</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"App-header"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"animated fadeIn"</span>&gt;</span>Quotebook<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        ...
+</span></code></pre>
+<p>Refresh the app and click around to see the new background colors in action. The transition CSS attribute comes in handy here, allowing for smoother transitions between background colors.</p>
+<h3>Adding Animations</h3>
+<p>Let’s animate the transition between quotes in a similar way to how the background color transitions. If only there was an open source component that animates replacing one element with another… like <a href="https://github.com/marnusw/react-css-transition-replace">react-css-transition-replace</a>!. As its README notes, there are some nice advantages to using this component:</p>
+<ul>
+<li>It automatically handles the positioning of the animated components, and</li>
+<li>allows changes in the height of container to be handled and animated with ease when various content heights differ, even when absolute positioning is used.</li>
+</ul>
+<p>That really comes in handy here because of the variable length of each quote. Let’s add it in. We already took care of installing the react-css-transition-replace npm package at the start of the project; import into <code>App.js</code> now:</p>
+<p>We’ll use the cross-fade transition as shown in the first example on the README. Add the following styles to <code>App.css</code>:</p>
+<pre><code><span class="hljs-selector-class">.cross-fade-leave</span> {
+  <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;
+}
+
+<span class="hljs-selector-class">.cross-fade-leave</span><span class="hljs-selector-class">.cross-fade-leave-active</span> {
+  <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">transition</span>: opacity <span class="hljs-number">1s</span> ease-in;
+}
+
+<span class="hljs-selector-class">.cross-fade-enter</span> {
+  <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-selector-class">.cross-fade-enter</span><span class="hljs-selector-class">.cross-fade-enter-active</span> {
+  <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;
+  <span class="hljs-attribute">transition</span>: opacity <span class="hljs-number">1s</span> ease-in;
+}
+
+<span class="hljs-selector-class">.cross-fade-height</span> {
+  <span class="hljs-attribute">transition</span>: height <span class="hljs-number">1s</span> ease-in-out;
+}
+</code></pre>
+<p>And now let’s use the component within App.js. Import it:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">import</span> ReactCSSTransitionReplace <span class="hljs-keyword">from</span> <span class="hljs-string">'react-css-transition-replace'</span>
+</code></pre>
+<p>And modify the <code>render</code> method to use it:</p>
+<pre><code class="language-javascript">  render() {
+
+    <span class="hljs-keyword">const</span> bgcolor = <span class="hljs-keyword">this</span>.getRandomColor()
+    <span class="hljs-keyword">const</span> container_style  = {
+      <span class="hljs-attr">backgroundColor</span>: bgcolor,
+      <span class="hljs-attr">transition</span>: <span class="hljs-string">'background-color 1s ease'</span>
+    }
+
+    <span class="hljs-keyword">return</span> (
+      &lt;div className="App" style={container_style}&gt;
+        &lt;div className="App-header"&gt;
+          &lt;h2 className="animated fadeIn"&gt;Quotebook&lt;/h2&gt;
+        &lt;/div&gt;
+
+        &lt;ReactCSSTransitionReplace transitionName="cross-fade" transitionEnterTimeout={1500} transitionLeaveTimeout={1500} &gt;
+          &lt;QuoteModal key={this.state.quote} quote={this.state.quote} author={this.state.author} /&gt;
+        &lt;/ReactCSSTransitionReplace&gt;
+
+        &lt;div className="control-section"&gt;
+          &lt;div className="control-container"&gt;
+            &lt;Control width={"40"} height={"40"} icon={"arrow-back"} onClickFunction={this.handleBackButton.bind(this)} className="inline-control" /&gt;
+          &lt;/div&gt;
+          &lt;div className="control-container"&gt;
+            &lt;Control width={"40"} height={"40"} icon={"arrow-forward"} onClickFunction={this.handleNextButton.bind(this)} className="inline-control" /&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    );
+  }
+</code></pre>
+<p>Refresh the app and try out the new animation.</p>
+<h3>Reviewing App.js</h3>
+<p>Boom! You’re done. Here is the <code>App.js</code> file in its final form:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>
+<span class="hljs-keyword">import</span> ReactCSSTransitionReplace <span class="hljs-keyword">from</span> <span class="hljs-string">'react-css-transition-replace'</span>
+<span class="hljs-keyword">import</span> { List } <span class="hljs-keyword">from</span> <span class="hljs-string">'immutable'</span>
+
+<span class="hljs-keyword">import</span> QuoteModal <span class="hljs-keyword">from</span> <span class="hljs-string">'./components/QuoteModal'</span>
+<span class="hljs-keyword">import</span> Control <span class="hljs-keyword">from</span> <span class="hljs-string">'./components/Control'</span>
+
+<span class="hljs-keyword">import</span> <span class="hljs-string">'./App.css'</span>
+
+<span class="hljs-keyword">import</span> quotes <span class="hljs-keyword">from</span> <span class="hljs-string">'./quotes'</span>
+<span class="hljs-keyword">import</span> colors <span class="hljs-keyword">from</span> <span class="hljs-string">'./colors'</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+
+  <span class="hljs-keyword">constructor</span>(props){
+    <span class="hljs-keyword">super</span>(props)
+
+    <span class="hljs-keyword">const</span> shuffled = List(<span class="hljs-keyword">this</span>.shuffleQuotes(quotes))
+    <span class="hljs-keyword">const</span> init = shuffled.get(<span class="hljs-number">0</span>)
+
+    <span class="hljs-keyword">const</span> bgcolors = List(colors)
+
+    <span class="hljs-keyword">this</span>.state = {
+      <span class="hljs-attr">quote</span>: init.quote,
+      <span class="hljs-attr">author</span>: init.author,
+      <span class="hljs-attr">available_quotes</span>: shuffled,
+      <span class="hljs-attr">colors</span>: bgcolors,
+      <span class="hljs-attr">index</span>: <span class="hljs-number">0</span>
+    }
+  }
+
+  <span class="hljs-comment">// https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array</span>
+  shuffleQuotes(arr){
+    <span class="hljs-keyword">let</span> curIndex = arr.length, tempVal, randIndex
+
+    <span class="hljs-keyword">while</span>(<span class="hljs-number">0</span> !== curIndex){
+      <span class="hljs-comment">//pick remaining element</span>
+      randIndex = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * curIndex)
+      curIndex -= <span class="hljs-number">1</span>
+
+      <span class="hljs-comment">//swap with current</span>
+      tempVal = arr[curIndex]
+      arr[curIndex] = arr[randIndex]
+      arr[randIndex] = tempVal
+    }
+
+    <span class="hljs-keyword">return</span> arr
+  }
+
+  getRandomColor(){
+    <span class="hljs-keyword">let</span> ind = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-keyword">this</span>.state.colors.size)
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.state.colors.get(ind)
+  }
+
+  performUpdate(){
+    <span class="hljs-keyword">const</span> nq = <span class="hljs-keyword">this</span>.state.available_quotes.get(<span class="hljs-keyword">this</span>.state.index)
+    <span class="hljs-keyword">this</span>.setState({
+      <span class="hljs-attr">quote</span>: nq.quote,
+      <span class="hljs-attr">author</span>: nq.author,
+    })
+  }
+
+  handleBackButton(){
+    <span class="hljs-comment">// guard against users who start scrolling backwards immediately</span>
+    <span class="hljs-comment">// and miraculously make it all the way through to the end of the array</span>
+    <span class="hljs-keyword">if</span>(<span class="hljs-keyword">this</span>.state.index === -(<span class="hljs-keyword">this</span>.state.available_quotes.size - <span class="hljs-number">1</span>)){
+        <span class="hljs-keyword">this</span>.setState({
+          <span class="hljs-attr">index</span>: <span class="hljs-number">0</span>
+        }, <span class="hljs-keyword">this</span>.performUpdate)
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">this</span>.setState({
+          <span class="hljs-attr">index</span>: <span class="hljs-keyword">this</span>.state.index - <span class="hljs-number">1</span>
+        }, <span class="hljs-keyword">this</span>.performUpdate)
+    }
+  }
+
+  handleNextButton(){
+    <span class="hljs-comment">// guard against reaching end of quotes array and having to "wrap back around"</span>
+    <span class="hljs-keyword">if</span>(<span class="hljs-keyword">this</span>.state.index === (<span class="hljs-keyword">this</span>.state.available_quotes.size - <span class="hljs-number">1</span>)){
+        <span class="hljs-keyword">this</span>.setState({
+          <span class="hljs-attr">index</span>: <span class="hljs-number">0</span>
+        }, <span class="hljs-keyword">this</span>.performUpdate)
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">this</span>.setState({
+          <span class="hljs-attr">index</span>: <span class="hljs-keyword">this</span>.state.index + <span class="hljs-number">1</span>
+        }, <span class="hljs-keyword">this</span>.performUpdate)
+    }
+  }
+
+  render() {
+
+    <span class="hljs-keyword">const</span> bgcolor = <span class="hljs-keyword">this</span>.getRandomColor()
+    <span class="hljs-keyword">const</span> container_style  = {
+      <span class="hljs-attr">backgroundColor</span>: bgcolor,
+      <span class="hljs-attr">transition</span>: <span class="hljs-string">'background-color 1s ease'</span>
+    }
+
+    <span class="hljs-keyword">return</span> (
+      &lt;div className="App" style={container_style}&gt;
+        &lt;div className="App-header"&gt;
+          &lt;h2 className="animated fadeIn"&gt;Quotebook&lt;/h2&gt;
+        &lt;/div&gt;
+
+        &lt;ReactCSSTransitionReplace transitionName="cross-fade" transitionEnterTimeout={1500} transitionLeaveTimeout={1500} &gt;
+          &lt;QuoteModal key={this.state.quote} quote={this.state.quote} author={this.state.author} /&gt;
+        &lt;/ReactCSSTransitionReplace&gt;
+
+        &lt;div className="control-section"&gt;
+          &lt;div className="control-container"&gt;
+            &lt;Control width={"40"} height={"40"} icon={"arrow-back"} onClickFunction={this.handleBackButton.bind(this)} className="inline-control" /&gt;
+          &lt;/div&gt;
+          &lt;div className="control-container"&gt;
+            &lt;Control width={"40"} height={"40"} icon={"arrow-forward"} onClickFunction={this.handleNextButton.bind(this)} className="inline-control" /&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+export default App;
+</code></pre>
+<h3>Prepare to Deploy</h3>
+<p>Let’s build the app for production. This is super easy. From the command line, in the base directory of the project, run:</p>
+<pre><code>npm <span class="hljs-keyword">run</span><span class="bash"> build
+</span></code></pre>
+<p>Simple as that. After the build completes you should see a message like this in your terminal:</p>
+<pre><code>evannichols:_Dev/quotebook ‹master*›$ npm run build
+
+&gt; quotebook@<span class="hljs-number">0.1</span>.<span class="hljs-number">0</span> build /Users/evannichols/_Dev/quotebook
+&gt; react-scripts build
+
+Creating an optimized production build...
+Compiled <span class="hljs-keyword">with</span> warnings.
+
+./src/components/Control.js
+  <span class="hljs-literal">Line</span> <span class="hljs-number">6</span>:  Expected a <span class="hljs-keyword">default</span> <span class="hljs-keyword">case</span>  <span class="hljs-keyword">default</span>-<span class="hljs-keyword">case</span>
+
+Search <span class="hljs-keyword">for</span> the keywords <span class="hljs-keyword">to</span> learn more about each <span class="hljs-literal">warning</span>.
+<span class="hljs-keyword">To</span> ignore, add // eslint-disable-<span class="hljs-keyword">next</span>-<span class="hljs-literal">line</span> <span class="hljs-keyword">to</span> the <span class="hljs-literal">line</span> before.
+
+<span class="hljs-keyword">File</span> sizes <span class="hljs-keyword">after</span> gzip:
+
+  <span class="hljs-number">75.73</span> KB  build/static/js/main.e46c105f.js
+  <span class="hljs-number">524</span> B     build/static/css/main.<span class="hljs-number">37e0</span>d7c2.css
+
+The project was built assuming it <span class="hljs-keyword">is</span> hosted at ./.
+You can control this <span class="hljs-keyword">with</span> the homepage field <span class="hljs-keyword">in</span> your <span class="hljs-keyword">package</span>.json.
+
+The build folder <span class="hljs-keyword">is</span> ready <span class="hljs-keyword">to</span> be deployed.
+</code></pre>
+<h3>Deploy using Surge</h3>
+<p>It’s time to share your quotebook with the world! If you want. <a href="http://surge.sh/">Surge</a> is a ruthlessly simple way to deploy static apps/websites. First, install the surge npm package globally:</p>
+<pre><code>npm <span class="hljs-keyword">install</span> -g surge
+</code></pre>
+<p>If you would like to use a custom domain name (like <a href="http://mycoolquotebook.surge.sh">mycoolquotebook.surge.sh</a> or <a href="http://supercoolquotes.surge.sh">supercoolquotes.surge.sh</a>) you’ll need to add a CNAME into your <code>build</code> folder. Note that the domain must end in <code>.surge.sh</code>. If you don’t care about the domain name you can skip this step; surge will automatically generate a random name for you. From the command line, cd into the <code>build</code> folder and run:</p>
+<pre><code>echo &lt;YourCustomDomainName&gt;<span class="hljs-selector-class">.surge</span><span class="hljs-selector-class">.sh</span> &gt; CNAME
+</code></pre>
+<p>Now, in the base directory of your project run:</p>
+<pre><code><span class="hljs-attribute">surge</span>
+</code></pre>
+<p>This will then prompt you to specify your project path. Since we want to deploy the <code>build</code> folder, make sure to add that to the project path. Finally, hit enter, and let surge do the rest! It should look something like this:</p>
+<pre><code>evannichol<span class="hljs-variable">s:_Dev</span>/quotebook ‹master*›$ surge
+
+    Surge - surge.<span class="hljs-keyword">sh</span>
+
+              emai<span class="hljs-variable">l:</span> evantnichols@gmail.<span class="hljs-keyword">com</span>
+              token: *****************
+       project path: /Users/evannichols/_Dev/quotebook/build
+               size: <span class="hljs-number">10</span> <span class="hljs-keyword">files</span>, <span class="hljs-number">2.4</span> MB
+             domain: randomquotebook.surge.<span class="hljs-keyword">sh</span>
+             upload: [====================] <span class="hljs-number">100</span>%, et<span class="hljs-variable">a:</span> <span class="hljs-number">0.0</span>s
+   propagate <span class="hljs-keyword">on</span> CDN: [====================] <span class="hljs-number">100</span>%
+               plan: Free
+              user<span class="hljs-variable">s:</span> evantnichols@gmail.<span class="hljs-keyword">com</span>
+         IP Addres<span class="hljs-variable">s:</span> <span class="hljs-number">45.55</span>.<span class="hljs-number">110.124</span>
+
+    Success! Project <span class="hljs-keyword">is</span> published <span class="hljs-built_in">and</span> running at <span class="hljs-symbol">&lt;YourCustomDomainName&gt;</span>.surge.<span class="hljs-keyword">sh</span>
+</code></pre>
+<p>Go check out your quotebook live!</p>
+<hr>
+<p>I hope you enjoyed this tutorial. If you have any questions or comments, shoot me an email at <a href="mailto:evantnichols@gmail.com">evantnichols@gmail.com</a>.</p>
+</div><div class="bio" data-reactid="14"><hr data-reactid="15"/><div class="bio-img" data-reactid="16"><img src="https://avatars2.githubusercontent.com/u/7448569?v=3&amp;s=460" alt="author evan nichols" data-reactid="17"/></div><div class="bio-detail" data-reactid="18"><p class="texts" data-reactid="19"><span class="is-xl" data-reactid="20">evan nichols</span></p><p data-reactid="21">I like software and the outdoors. EngRes @ Google NYC.</p><ul class="social-buttons" data-reactid="22"><!-- react-text: 23 --><!-- /react-text --><!-- react-text: 24 --><!-- /react-text --><li data-reactid="25"><a href="https://github.com/e-nichols" data-reactid="26"><i class="icon-github" data-reactid="27"></i></a></li></ul></div></div></article></div></div><footer data-reactid="28"><div class="section" data-reactid="29"><div class="inner" data-reactid="30">© Undefined</div></div></footer></div></div><script src="/bundle.js?t=1498843600206"></script></body></html>
