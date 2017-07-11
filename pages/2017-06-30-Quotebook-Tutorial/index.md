@@ -21,7 +21,7 @@ This tutorial assumes a working knowledge of [Node.js](https://nodejs.org/en/) a
 
 Once you have Node and npm installed, we're ready to get started.
 
-Facebook's [create-react-app](https://github.com/facebookincubator/create-react-app) boilerplate project is the de facto standard for starting new React SPA projects. It takes care of a lot of the grunt work that comes with setting up a React app. Read more about it [here](https://facebook.github.io/react/blog/2016/07/22/create-apps-with-no-configuration.html) if you are interested.
+Facebook's [create-react-app](https://github.com/facebookincubator/create-react-app) boilerplate project is a convenient way to start new React SPA projects. It takes care of a lot of the grunt work that comes with setting up a React app. Read more about it [here](https://facebook.github.io/react/blog/2016/07/22/create-apps-with-no-configuration.html) if you are interested.
 
 Now from the command line, install the create-react-app npm package globally:
 
@@ -829,6 +829,12 @@ evannichols:_Dev/quotebook ‹master*›$ surge
 ```
 
 Go check out your quotebook live!
+
+**Update (7/11/17)**: It is possible to automate the deployment process by editing the ```deploy``` script in the project's ```package.json``` file:
+
+```
+    "deploy": "echo <YourCustomDomainName>.surge.sh > build/CNAME && surge build"
+```
 
 ---
 
