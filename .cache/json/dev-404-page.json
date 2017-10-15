@@ -5,7 +5,7 @@
             "edges": [
                 {
                     "node": {
-                        "path": "/birth-of-a-word/"
+                        "path": "/led-soundsystem/"
                     }
                 },
                 {
@@ -15,12 +15,12 @@
                 },
                 {
                     "node": {
-                        "path": "/greedy-algorithm-practice/"
+                        "path": "/confluency/"
                     }
                 },
                 {
                     "node": {
-                        "path": "/led-soundsystem/"
+                        "path": "/birth-of-a-word/"
                     }
                 },
                 {
@@ -30,7 +30,7 @@
                 },
                 {
                     "node": {
-                        "path": "/confluency/"
+                        "path": "/greedy-algorithm-practice/"
                     }
                 },
                 {
@@ -45,7 +45,7 @@
                 },
                 {
                     "node": {
-                        "path": "/ku-acm-react-workshop/"
+                        "path": "/illustrator-to-react/"
                     }
                 },
                 {
@@ -55,17 +55,17 @@
                 },
                 {
                     "node": {
-                        "path": "/illustrator-to-react/"
-                    }
-                },
-                {
-                    "node": {
-                        "path": "/industry-best-practice/"
+                        "path": "/ku-acm-react-workshop/"
                     }
                 },
                 {
                     "node": {
                         "path": "/react-quotebook-tutorial/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/industry-best-practice/"
                     }
                 },
                 {
@@ -76,41 +76,6 @@
                 {
                     "node": {
                         "path": "/thoughts-on-monuments/"
-                    }
-                },
-                {
-                    "node": {
-                        "path": "/tags/ted-talk/"
-                    }
-                },
-                {
-                    "node": {
-                        "path": "/tags/speech/"
-                    }
-                },
-                {
-                    "node": {
-                        "path": "/tags/data/"
-                    }
-                },
-                {
-                    "node": {
-                        "path": "/tags/computer-architecture/"
-                    }
-                },
-                {
-                    "node": {
-                        "path": "/tags/mips/"
-                    }
-                },
-                {
-                    "node": {
-                        "path": "/tags/algorithms/"
-                    }
-                },
-                {
-                    "node": {
-                        "path": "/tags/javascript/"
                     }
                 },
                 {
@@ -130,6 +95,36 @@
                 },
                 {
                     "node": {
+                        "path": "/tags/computer-architecture/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/mips/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/speech/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/mobile-application/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/ted-talk/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/data/"
+                    }
+                },
+                {
+                    "node": {
                         "path": "/tags/html-css/"
                     }
                 },
@@ -140,7 +135,12 @@
                 },
                 {
                     "node": {
-                        "path": "/tags/mobile-application/"
+                        "path": "/tags/algorithms/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/javascript/"
                     }
                 },
                 {
@@ -170,27 +170,7 @@
                 },
                 {
                     "node": {
-                        "path": "/tags/ku-acm/"
-                    }
-                },
-                {
-                    "node": {
                         "path": "/tags/react/"
-                    }
-                },
-                {
-                    "node": {
-                        "path": "/tags/workshop/"
-                    }
-                },
-                {
-                    "node": {
-                        "path": "/tags/c/"
-                    }
-                },
-                {
-                    "node": {
-                        "path": "/tags/nfa-to-dfa/"
                     }
                 },
                 {
@@ -205,12 +185,22 @@
                 },
                 {
                     "node": {
-                        "path": "/tags/paul-graham/"
+                        "path": "/tags/c/"
                     }
                 },
                 {
                     "node": {
-                        "path": "/tags/best-practices/"
+                        "path": "/tags/nfa-to-dfa/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/ku-acm/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/workshop/"
                     }
                 },
                 {
@@ -221,6 +211,16 @@
                 {
                     "node": {
                         "path": "/tags/tutorial/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/paul-graham/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/best-practices/"
                     }
                 },
                 {

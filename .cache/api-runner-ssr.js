@@ -1,4 +1,7 @@
 var plugins = [{
+      plugin: require('/Users/evannichols/_Dev/node_modules/gatsby-plugin-typography/gatsby-ssr.js'),
+      options: {"plugins":[],"pathToConfigModule":"src/utils/typography.js"},
+    },{
       plugin: require('/Users/evannichols/_Dev/e-nichols.github.io/node_modules/gatsby-plugin-google-analytics/gatsby-ssr.js'),
       options: {"plugins":[],"trackingId":"UA-69960811-1"},
     },{

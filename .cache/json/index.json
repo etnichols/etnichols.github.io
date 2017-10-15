@@ -60,10 +60,10 @@
                 {
                     "node": {
                         "fields": {
-                            "slug": "/nfa-to-dfa/"
+                            "slug": "/illustrator-to-react/"
                         },
                         "frontmatter": {
-                            "title": "NFA to DFA Conversion: C++ Implementation",
+                            "title": "Using Python to Convert Illustrator SVGs to React components",
                             "date": "September 26, 2016"
                         }
                     }
@@ -71,10 +71,10 @@
                 {
                     "node": {
                         "fields": {
-                            "slug": "/illustrator-to-react/"
+                            "slug": "/nfa-to-dfa/"
                         },
                         "frontmatter": {
-                            "title": "Using Python to Convert Illustrator SVGs to React components",
+                            "title": "NFA to DFA Conversion: C++ Implementation",
                             "date": "September 26, 2016"
                         }
                     }
