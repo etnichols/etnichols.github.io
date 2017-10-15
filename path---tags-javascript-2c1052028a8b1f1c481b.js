@@ -1,0 +1,2 @@
+webpackJsonp([67335324583948],{485:function(t,a){t.exports={data:{allMarkdownRemark:{totalCount:1,edges:[{node:{fields:{slug:"/greedy-algorithm-practice/"},frontmatter:{title:"Greedy Algorithm Practice in Javascript"}}}]}},pathContext:{tag:"javascript"}}}});
+//# sourceMappingURL=path---tags-javascript-2c1052028a8b1f1c481b.js.map

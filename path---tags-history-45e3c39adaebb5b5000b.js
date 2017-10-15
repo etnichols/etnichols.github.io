@@ -1,0 +1,2 @@
+webpackJsonp([0xa535ea119525],{481:function(t,o){t.exports={data:{allMarkdownRemark:{totalCount:1,edges:[{node:{fields:{slug:"/thoughts-on-monuments/"},frontmatter:{title:"Thoughts on Monuments"}}}]}},pathContext:{tag:"history"}}}});
+//# sourceMappingURL=path---tags-history-45e3c39adaebb5b5000b.js.map
