@@ -1,0 +1,22 @@
+{
+    "data": {
+        "allMarkdownRemark": {
+            "totalCount": 1,
+            "edges": [
+                {
+                    "node": {
+                        "fields": {
+                            "slug": "/thoughts-on-monuments/"
+                        },
+                        "frontmatter": {
+                            "title": "Thoughts on Monuments"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "pathContext": {
+        "tag": "opinion"
+    }
+}

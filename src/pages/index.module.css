@@ -1,0 +1,87 @@
+img {
+  border: 1px solid #000;
+}
+
+.articleContainer {
+  padding: 1em;
+  border-top: 1px solid #f1f1f1;
+  width: 100%;
+  margin: 4.5em auto;
+}
+
+.autoComplete {
+  margin-top: 1em;
+}
+
+.postTitleContainer {
+  display: inline-block;
+}
+
+.postTitle {
+  display: inline-block;
+  padding-right: 2em;
+}
+
+.postDate {
+  display: inline-block;
+  margin-top: -1em;
+}
+
+.tagSection {
+  margin-top: 1em;
+  padding-bottom: 0.5em;
+}
+
+.clearTagsButton {
+  margin-left: 1em;
+  color: #939393;
+  border: 1px solid #939393;
+  background-color: #fff;
+}
+
+.tagContainer {
+  border: 1px solid #939393;
+  display: inline-block;
+  margin-right: 1em;
+}
+
+.tagContainer > .tag {
+  font-size: 0.85em;
+  color: #939393;
+  display: inline-block;
+  margin-right: 1em;
+  align-self: flex-end;
+  text-transform: lowercase;
+  padding: .2em 1em;
+  margin: 0px auto 0px auto;
+}
+
+.tagContainer :hover {
+  border: none;
+  background-color: #939393;
+  color: #fff;
+}
+
+.totalPosts {
+  color: #999f;
+}
+
+.searchBox {
+  padding: 0.25em;
+  margin: 2em 1em 0em 1em;
+  color: #999f;
+  border: 1px solid #939393;
+}
+
+.linkStyle {
+  text-decoration: none;
+  color: inherit;
+}
+
+.contactSection {
+  margin: 3em 1em;
+}
+
+.contactLink {
+  color: #fb251b;
+}

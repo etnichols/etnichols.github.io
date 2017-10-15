@@ -1,0 +1,22 @@
+{
+    "data": {
+        "allMarkdownRemark": {
+            "totalCount": 1,
+            "edges": [
+                {
+                    "node": {
+                        "fields": {
+                            "slug": "/redtire-forms/"
+                        },
+                        "frontmatter": {
+                            "title": "RedTire Application Forms"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "pathContext": {
+        "tag": "HTML/CSS"
+    }
+}

@@ -1,0 +1,275 @@
+{
+    "data": {
+        "allSitePage": {
+            "totalCount": 53,
+            "edges": [
+                {
+                    "node": {
+                        "path": "/birth-of-a-word/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/mips-single-cycle-cpu/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/greedy-algorithm-practice/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/led-soundsystem/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/redtire-forms/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/confluency/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/san-fran-adventures/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/scripts-and-aliases/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/ku-acm-react-workshop/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/nfa-to-dfa/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/illustrator-to-react/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/industry-best-practice/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/react-quotebook-tutorial/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/two-subway-haikus/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/thoughts-on-monuments/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/ted-talk/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/speech/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/data/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/computer-architecture/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/mips/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/algorithms/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/javascript/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/i-os/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/spotify-api/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/project/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/html-css/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/bootstrap/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/mobile-application/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/travel/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/vacation/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/zsh/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/scripting/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/aliases/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/ku-acm/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/react/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/workshop/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/c/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/nfa-to-dfa/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/illustrator/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/python/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/paul-graham/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/best-practices/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/create-react-app/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/tutorial/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/haiku/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/poetry/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/monuments/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/history/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/opinion/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/about/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/contact/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/tags/"
+                    }
+                }
+            ]
+        }
+    },
+    "pathContext": {}
+}

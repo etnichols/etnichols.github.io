@@ -1,0 +1,22 @@
+{
+    "data": {
+        "allMarkdownRemark": {
+            "totalCount": 1,
+            "edges": [
+                {
+                    "node": {
+                        "fields": {
+                            "slug": "/mips-single-cycle-cpu/"
+                        },
+                        "frontmatter": {
+                            "title": "MIPS Single Cycle CPU"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "pathContext": {
+        "tag": "MIPS"
+    }
+}

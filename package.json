@@ -1,51 +1,46 @@
 {
-  "name": "gatsby-blog-undefined",
-  "description": "Starter Gatsby Blog",
+  "name": "etnichols-blog",
+  "private": true,
+  "description": "etnichols blog",
   "version": "1.0.0",
-  "author": "Kentaro Matsushita",
+  "author": "Evan Nichols <evantnichols@gmail.com>",
   "dependencies": {
-    "gatsby": "^0.12.46",
-    "lodash": "^4.17.2",
-    "moment": "^2.17.1",
-    "musubii": "^2.0.0",
-    "prop-types": "^15.5.8",
-    "react": "^15.5.4",
-    "react-addons-shallow-compare": "^15.5.2",
-    "react-dates": "^12.0.0",
-    "react-dom": "^15.5.4",
-    "react-ga": "^2.1.2",
-    "react-helmet": "^5.0.3",
-    "react-highlight": "^0.10.0",
-    "react-responsive-grid": "^0.3.3",
-    "underscore.string": "^3.2.3"
+    "babel-plugin-lodash": "^3.2.11",
+    "bluebird": "^3.4.7",
+    "es6-object-assign": "^1.1.0",
+    "gatsby": "^1.9.66",
+    "gatsby-link": "^1.6.21",
+    "gatsby-plugin-catch-links": "^1.0.9",
+    "gatsby-plugin-glamor": "^1.6.8",
+    "gatsby-plugin-google-analytics": "^1.0.8",
+    "gatsby-plugin-sharp": "^1.6.9",
+    "gatsby-remark-autolink-headers": "^1.4.7",
+    "gatsby-remark-copy-linked-files": "^1.5.8",
+    "gatsby-remark-images": "^1.5.16",
+    "gatsby-remark-katex": "^1.0.6",
+    "gatsby-remark-prismjs": "^1.2.8",
+    "gatsby-remark-responsive-iframe": "^1.4.8",
+    "gatsby-remark-smartypants": "^1.4.8",
+    "gatsby-source-filesystem": "^1.5.5",
+    "gatsby-transformer-remark": "^1.7.15",
+    "gatsby-transformer-sharp": "^1.6.10",
+    "gatsby-transformer-yaml": "^1.5.11",
+    "lodash": "^4.17.4",
+    "lodash-id": "^0.14.0",
+    "lodash-webpack-plugin": "^0.11.2",
+    "react-typography": "^0.15.10",
+    "slash": "^1.0.0",
+    "typeface-space-mono": "^0.0.22",
+    "typeface-spectral": "^0.0.29",
+    "typography": "^0.15.10",
+    "typography-theme-st-annes": "^0.15.10"
   },
-  "devDependencies": {
-    "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-plugin-transform-object-assign": "^6.22.0",
-    "babel-preset-es2015": "^6.24.0",
-    "babel-preset-react": "^6.23.0",
-    "babel-preset-stage-0": "^6.22.0",
-    "gh-pages": "^1.0.0"
-  },
-  "keywords": [
-    "gatsby"
-  ],
   "license": "MIT",
-  "babel": {
-    "presets": [
-      "es2015",
-      "stage-0",
-      "react"
-    ],
-    "plugins": [
-      "add-module-exports"
-    ]
-  },
+  "main": "index.js",
   "scripts": {
-    "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "develop": "gatsby develop",
     "build": "gatsby build",
-    "deploy": "gatsby build --prefix-links && node ./utils/deploy.js"
+    "serve": "gatsby serve",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public --branch master"
   }
 }

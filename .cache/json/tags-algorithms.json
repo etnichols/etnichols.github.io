@@ -1,0 +1,22 @@
+{
+    "data": {
+        "allMarkdownRemark": {
+            "totalCount": 1,
+            "edges": [
+                {
+                    "node": {
+                        "fields": {
+                            "slug": "/greedy-algorithm-practice/"
+                        },
+                        "frontmatter": {
+                            "title": "Greedy Algorithm Practice in Javascript"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "pathContext": {
+        "tag": "algorithms"
+    }
+}

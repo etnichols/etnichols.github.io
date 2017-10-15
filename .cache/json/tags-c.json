@@ -1,0 +1,22 @@
+{
+    "data": {
+        "allMarkdownRemark": {
+            "totalCount": 1,
+            "edges": [
+                {
+                    "node": {
+                        "fields": {
+                            "slug": "/nfa-to-dfa/"
+                        },
+                        "frontmatter": {
+                            "title": "NFA to DFA Conversion: C++ Implementation"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "pathContext": {
+        "tag": "C++"
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "data": {
+        "allMarkdownRemark": {
+            "totalCount": 1,
+            "edges": [
+                {
+                    "node": {
+                        "fields": {
+                            "slug": "/ku-acm-react-workshop/"
+                        },
+                        "frontmatter": {
+                            "title": "KU ACM React Workshop"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "pathContext": {
+        "tag": "workshop"
+    }
+}

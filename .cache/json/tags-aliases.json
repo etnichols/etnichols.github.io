@@ -1,0 +1,22 @@
+{
+    "data": {
+        "allMarkdownRemark": {
+            "totalCount": 1,
+            "edges": [
+                {
+                    "node": {
+                        "fields": {
+                            "slug": "/scripts-and-aliases/"
+                        },
+                        "frontmatter": {
+                            "title": "Timesavers with Scripting and Aliases"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "pathContext": {
+        "tag": "aliases"
+    }
+}

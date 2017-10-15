@@ -1,0 +1,22 @@
+{
+    "data": {
+        "allMarkdownRemark": {
+            "totalCount": 1,
+            "edges": [
+                {
+                    "node": {
+                        "fields": {
+                            "slug": "/react-quotebook-tutorial/"
+                        },
+                        "frontmatter": {
+                            "title": "Tutorial - React Animated Quotebook"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "pathContext": {
+        "tag": "create-react-app"
+    }
+}

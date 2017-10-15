@@ -1,0 +1,30 @@
+.container {
+  margin: auto;
+  max-width: 600px;
+}
+
+.postDate{
+  margin-top: -5px;
+}
+
+.linkStyle {
+
+}
+
+.footer {
+  background-color: #D3D3D3;
+  margin: 4em auto 0em auto;
+  height: 50px;
+  text-align: center;
+}
+
+.footerText {
+  padding: 1em 0em 0em 0em;
+  margin-bottom: 0em;
+}
+
+@media only screen and (max-width: 500px) {
+    body {
+        margin: 1em;
+    }
+}
