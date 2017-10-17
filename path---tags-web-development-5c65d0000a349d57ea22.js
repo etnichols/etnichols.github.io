@@ -1,0 +1,2 @@
+webpackJsonp([0xe04e745676b4],{509:function(t,e){t.exports={data:{allMarkdownRemark:{totalCount:1,edges:[{node:{fields:{slug:"/blog-redesign-with-gatsby/"},frontmatter:{title:"Gatsby 1.0 in action"}}}]}},pathContext:{tag:"web development"}}}});
+//# sourceMappingURL=path---tags-web-development-5c65d0000a349d57ea22.js.map
