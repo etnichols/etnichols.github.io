@@ -10,7 +10,7 @@ class Index extends React.Component {
 
     return (
       <div>
-        <h1>Read Something.</h1>
+        <h1>Read a post</h1>
         <ul
           css={{
             marginBottom: rhythm(2),

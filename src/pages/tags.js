@@ -32,11 +32,6 @@ export default TagsPageRoute
 
 export const pageQuery = graphql`
   query TagsQuery {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allMarkdownRemark(
       limit: 2000
       filter: { frontmatter: { draft: { ne: true } } }
