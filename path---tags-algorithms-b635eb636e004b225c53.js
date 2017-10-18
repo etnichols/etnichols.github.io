@@ -1,2 +1,2 @@
-webpackJsonp([0xb64662298a71],{472:function(t,a){t.exports={data:{allMarkdownRemark:{totalCount:1,edges:[{node:{fields:{slug:"/greedy-algorithm-practice/"},frontmatter:{title:"Greedy Algorithm Practice in Javascript"}}}]}},pathContext:{tag:"algorithms"}}}});
+webpackJsonp([0xb64662298a71],{473:function(t,a){t.exports={data:{allMarkdownRemark:{totalCount:1,edges:[{node:{fields:{slug:"/greedy-algorithm-practice/"},frontmatter:{title:"Greedy Algorithm Practice in Javascript"}}}]}},pathContext:{tag:"algorithms"}}}});
 //# sourceMappingURL=path---tags-algorithms-b635eb636e004b225c53.js.map
