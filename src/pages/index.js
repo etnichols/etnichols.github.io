@@ -10,11 +10,11 @@ class Index extends React.Component {
 
     return (
       <div>
-        <h1>Read a post</h1>
+        <h1 css={{marginTop: rhythm(1)}}>read a post</h1>
         <ul
           css={{
             marginBottom: rhythm(2),
-            marginTop: rhythm(2),
+            marginTop: rhythm(1),
             marginLeft: 0,
             listStyle: `none`,
           }}

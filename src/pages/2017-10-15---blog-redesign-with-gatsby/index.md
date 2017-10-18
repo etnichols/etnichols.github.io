@@ -6,19 +6,19 @@ tags:
 - gatsby
 - web development
 - React
-draft: false
+draft: true
 ---
 
-I've spent the last few weekends migrating this site to use the Gatsby v1.0, released this past July. It's gained a lot of popularity over the past few months, and for good reason. It offers a lot of cool features right out of the box, a rich plugin ecosystem, and great documentation to boot. In this post I'll highlight some of my favorite Gatsby features.
+I've spent the last few weekends migrating this site to use the Gatsby v1.0, released this past July. The static site generator [has quickly gained popularity][1] over the past few months, and for good reason. It offers a lot of cool features right out of the box, a rich plugin ecosystem, and great documentation to boot. In this post I'll highlight some of my favorite Gatsby features.
 
 ## Plugins
 
 ## Posts in Markdown
-All of the posts for this site are written in [Markdown][1]. It's a lightweight markup language developed for easy conversion to HTML. It looks like this:
+All of the posts for this site are written in [Markdown][2]. It's a lightweight markup language developed for easy conversion to HTML. It looks like this:
 
 ```markdown
 ## Posts in Markdown
-All of the posts for this site are written in [Markdown][1].
+All of the posts for this site are written in [Markdown][2].
 
 It's a lightweight markup language developed for easy conversion to HTML.
 
@@ -26,13 +26,13 @@ It looks like this:
 
 ...
 
-[1]: https://daringfireball.net/projects/markdown/syntax
+[2]: https://daringfireball.net/projects/markdown/syntax
 ```
 
 Check out the source code for the posts on this site if you want to see more Markdown examples. This isn't a new concept, but it's executed well here and the frontmatter on these posts can be queried against within GraphQL, meaning you can set up tag pages and have unpublished drafts.
 
 ## Code Highlighting
-For any bloggers who frequently have posts containing code snippets, [gatsby-remark-prismjs][2] is a simple way to enable syntax highlighting, by simply requiring a prism theme on the layout files used within your site, like this:
+For any bloggers who frequently have posts containing code snippets, [gatsby-remark-prismjs][3] is a simple way to enable syntax highlighting, by simply requiring a prism theme on the layout files used within your site, like this:
 
 ```js
 require(`prismjs/themes/prism-solarizedlight.css`)
@@ -56,5 +56,6 @@ Although I've added my own fonts and content, this site is nothing more than a f
 Implemented tag searching, but then got rid of it.
 Using typography plugins.
 
-[1]: https://daringfireball.net/projects/markdown/syntax
-[2]: https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/
+[1]: https://www.gatsbyjs.org/blog/2017-09-21-community-roundup-1/
+[2]: https://daringfireball.net/projects/markdown/syntax
+[3]: https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/
