@@ -3,7 +3,7 @@ import Link from "gatsby-link"
 import { rhythm, scale } from "../utils/typography"
 import styles from "../styles"
 import presets from "../utils/presets"
-import cssStyle from "./index.module.css"
+import "./styles.css"
 
 require(`prismjs/themes/prism-solarizedlight.css`)
 
@@ -27,11 +27,11 @@ class DefaultLayout extends React.Component {
           </Link>
           <hr/>
           <div>
-            <Link className={cssStyle.linkStyle} to={`/`}>home</Link>
+            <Link className="linkStyle"  to={`/`}>home</Link>
             <br/>
-            <Link className={cssStyle.linkStyle} to={`/about/`}>about</Link>
+            <Link className="linkStyle"  to={`/about/`}>about</Link>
             <br/>
-            <Link className={cssStyle.linkStyle}to={`/contact/`}>contact</Link>
+            <Link className="linkStyle" to={`/contact/`}>contact</Link>
           </div>
         </div>
         <div {...styles.container} {...styles.verticalPadding}>
