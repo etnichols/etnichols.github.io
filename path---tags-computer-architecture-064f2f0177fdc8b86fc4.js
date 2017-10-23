@@ -1,2 +1,2 @@
-webpackJsonp([43227196953317],{478:function(t,e){t.exports={data:{allMarkdownRemark:{totalCount:1,edges:[{node:{fields:{slug:"/mips-single-cycle-cpu/"},frontmatter:{title:"MIPS Single Cycle CPU"}}}]}},pathContext:{tag:"Computer Architecture"}}}});
+webpackJsonp([43227196953317],{484:function(t,e){t.exports={data:{allMarkdownRemark:{totalCount:1,edges:[{node:{fields:{slug:"/mips-single-cycle-cpu/"},frontmatter:{title:"MIPS Single Cycle CPU"}}}]}},pathContext:{tag:"Computer Architecture"}}}});
 //# sourceMappingURL=path---tags-computer-architecture-064f2f0177fdc8b86fc4.js.map

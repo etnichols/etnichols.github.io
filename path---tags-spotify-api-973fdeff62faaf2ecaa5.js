@@ -1,2 +1,2 @@
-webpackJsonp([0xd0ec8a3dad7],{500:function(t,e){t.exports={data:{allMarkdownRemark:{totalCount:1,edges:[{node:{fields:{slug:"/led-soundsystem/"},frontmatter:{title:"LED Soundsystem"}}}]}},pathContext:{tag:"Spotify API"}}}});
+webpackJsonp([0xd0ec8a3dad7],{507:function(t,e){t.exports={data:{allMarkdownRemark:{totalCount:1,edges:[{node:{fields:{slug:"/led-soundsystem/"},frontmatter:{title:"LED Soundsystem"}}}]}},pathContext:{tag:"Spotify API"}}}});
 //# sourceMappingURL=path---tags-spotify-api-973fdeff62faaf2ecaa5.js.map
