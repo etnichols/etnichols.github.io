@@ -1,6 +1,6 @@
 ---
 author: Evan Nichols
-title: "Static site generation with plugin-rich Gatsby 1.0"
+title: "Static site generation with the plugin-rich Gatsby 1.0"
 date: 2017-10-15
 tags:
 - gatsby
