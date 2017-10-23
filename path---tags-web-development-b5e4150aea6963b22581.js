@@ -1,0 +1,2 @@
+webpackJsonp([0xe04e745676b4],{512:function(t,e){t.exports={data:{allMarkdownRemark:{totalCount:1,edges:[{node:{fields:{slug:"/blog-redesign-with-gatsby/"},frontmatter:{title:"Static site generation with the plugin-rich Gatsby 1.0"}}}]}},pathContext:{tag:"web development"}}}});
+//# sourceMappingURL=path---tags-web-development-b5e4150aea6963b22581.js.map
