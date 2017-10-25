@@ -125,7 +125,7 @@ The first command is the Gatsby production build command using a [path prefix][2
 This site is a fork of the [Gatsby Remark example website][21], with some small tweaks to the layouts and fonts used. It's simple and I like it. The source code is available [here][24].
 
 ## Wrap Up
-In an otherwise crowded arena of static site generators, Gatsby stands out as a great resource for React-fans. It's easy to learn, offers a plethora of plugins for customizing your posts and pages, and is well-documented (Thank you Kyle and Gatsby contributors!). I'm excited to see how the framework and community around it grow.
+In an otherwise crowded arena of static site generators, Gatsby stands out as a great resource for React-fans. It's easy to learn, offers a plethora of plugins for customizing posts and pages, and is well-documented (Thank you Kyle and Gatsby contributors!). I'm excited to see how the framework and community around it grow.
 
 [1]: https://www.gatsbyjs.org/blog/2017-09-21-community-roundup-1/
 [2]: https://daringfireball.net/projects/markdown/syntax
