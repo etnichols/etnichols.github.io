@@ -57,8 +57,8 @@
       "path---tags-bootstrap-3889a10322a7da612a1a.js.map"
     ],
     "path---tags": [
-      "path---tags-a1b27b9eac32d67617b7.js",
-      "path---tags-a1b27b9eac32d67617b7.js.map"
+      "path---tags-a4b51d6166a6408fd436.js",
+      "path---tags-a4b51d6166a6408fd436.js.map"
     ],
     "path---": [
       "path----a80f16c79db0f600fc8e.js",
@@ -125,8 +125,12 @@
       "path---tags-html-css-25d40ff936162294cbad.js.map"
     ],
     "path---index": [
-      "path---index-8ff08281e958caa2435a.js",
-      "path---index-8ff08281e958caa2435a.js.map"
+      "path---index-f54901f558ae4e28e9ab.js",
+      "path---index-f54901f558ae4e28e9ab.js.map"
+    ],
+    "path---tags-trump": [
+      "path---tags-trump-7999100529984afdb2c8.js",
+      "path---tags-trump-7999100529984afdb2c8.js.map"
     ],
     "path---tags-best-practices": [
       "path---tags-best-practices-537e826aa8ca874893dc.js",
@@ -161,6 +165,10 @@
     "path---tags-history": [
       "path---tags-history-45e3c39adaebb5b5000b.js",
       "path---tags-history-45e3c39adaebb5b5000b.js.map"
+    ],
+    "path---tags-reddit": [
+      "path---tags-reddit-f3a41d730995b116caf7.js",
+      "path---tags-reddit-f3a41d730995b116caf7.js.map"
     ],
     "path---contact": [
       "path---contact-be8774894923d1b89f02.js",
@@ -214,10 +222,14 @@
       "path---led-soundsystem-4fb5e5d5e249188113c0.js",
       "path---led-soundsystem-4fb5e5d5e249188113c0.js.map"
     ],
+    "path---tags-linguistic-analysis": [
+      "path---tags-linguistic-analysis-019ac7e75a8f36e2f24f.js",
+      "path---tags-linguistic-analysis-019ac7e75a8f36e2f24f.js.map"
+    ],
     "app": [
-      "app-d68d25918056d6de44d6.js",
+      "app-27a1b7275a888dcfac66.js",
       "build-js-styles.css",
-      "app-d68d25918056d6de44d6.js.map",
+      "app-27a1b7275a888dcfac66.js.map",
       "build-js-styles.css.map"
     ],
     "path---tags-haiku": [
@@ -259,6 +271,10 @@
     "path---tags-speech": [
       "path---tags-speech-1fbddf752d64802cc052.js",
       "path---tags-speech-1fbddf752d64802cc052.js.map"
+    ],
+    "path---undefined": [
+      "path---undefined-3fc8bd87eef12b0c3f77.js",
+      "path---undefined-3fc8bd87eef12b0c3f77.js.map"
     ],
     "path---tags-poetry": [
       "path---tags-poetry-df1b840477ab4b31d257.js",

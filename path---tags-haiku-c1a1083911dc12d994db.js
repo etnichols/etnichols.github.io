@@ -1,2 +1,2 @@
-webpackJsonp([0xd497def8b41e],{488:function(t,a){t.exports={data:{allMarkdownRemark:{totalCount:1,edges:[{node:{fields:{slug:"/two-subway-haikus/"},frontmatter:{title:"Two Subway Haikus"}}}]}},pathContext:{tag:"haiku"}}}});
+webpackJsonp([0xd497def8b41e],{492:function(t,a){t.exports={data:{allMarkdownRemark:{totalCount:1,edges:[{node:{fields:{slug:"/two-subway-haikus/"},frontmatter:{title:"Two Subway Haikus"}}}]}},pathContext:{tag:"haiku"}}}});
 //# sourceMappingURL=path---tags-haiku-c1a1083911dc12d994db.js.map
