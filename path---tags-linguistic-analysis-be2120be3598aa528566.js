@@ -1,0 +1,2 @@
+webpackJsonp([0xd04afbe694f2],{499:function(t,a){t.exports={data:{allMarkdownRemark:{totalCount:1,edges:[{node:{fields:{slug:"/trump-linguistic-analysis/"},frontmatter:{title:"Linguistic analysis of Donald Trump's speech patterns"}}}]}},pathContext:{tag:"linguistic analysis"}}}});
+//# sourceMappingURL=path---tags-linguistic-analysis-be2120be3598aa528566.js.map

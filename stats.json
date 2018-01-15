@@ -120,17 +120,21 @@
       "path---tags-gatsby-bab6d031436d56152db1.js",
       "path---tags-gatsby-bab6d031436d56152db1.js.map"
     ],
+    "path---trump-linguistic-analysis": [
+      "path---trump-linguistic-analysis-16028b45f7f7e25e43d9.js",
+      "path---trump-linguistic-analysis-16028b45f7f7e25e43d9.js.map"
+    ],
     "path---tags-html-css": [
       "path---tags-html-css-25d40ff936162294cbad.js",
       "path---tags-html-css-25d40ff936162294cbad.js.map"
     ],
     "path---index": [
-      "path---index-f54901f558ae4e28e9ab.js",
-      "path---index-f54901f558ae4e28e9ab.js.map"
+      "path---index-4a9f721905aee2a1e5a2.js",
+      "path---index-4a9f721905aee2a1e5a2.js.map"
     ],
     "path---tags-trump": [
-      "path---tags-trump-7999100529984afdb2c8.js",
-      "path---tags-trump-7999100529984afdb2c8.js.map"
+      "path---tags-trump-3d7a1354af6a4e3cd0b6.js",
+      "path---tags-trump-3d7a1354af6a4e3cd0b6.js.map"
     ],
     "path---tags-best-practices": [
       "path---tags-best-practices-537e826aa8ca874893dc.js",
@@ -167,8 +171,8 @@
       "path---tags-history-45e3c39adaebb5b5000b.js.map"
     ],
     "path---tags-reddit": [
-      "path---tags-reddit-f3a41d730995b116caf7.js",
-      "path---tags-reddit-f3a41d730995b116caf7.js.map"
+      "path---tags-reddit-681c9bbe79f852cee93c.js",
+      "path---tags-reddit-681c9bbe79f852cee93c.js.map"
     ],
     "path---contact": [
       "path---contact-be8774894923d1b89f02.js",
@@ -223,13 +227,13 @@
       "path---led-soundsystem-4fb5e5d5e249188113c0.js.map"
     ],
     "path---tags-linguistic-analysis": [
-      "path---tags-linguistic-analysis-019ac7e75a8f36e2f24f.js",
-      "path---tags-linguistic-analysis-019ac7e75a8f36e2f24f.js.map"
+      "path---tags-linguistic-analysis-be2120be3598aa528566.js",
+      "path---tags-linguistic-analysis-be2120be3598aa528566.js.map"
     ],
     "app": [
-      "app-27a1b7275a888dcfac66.js",
+      "app-41c1444ad611c5b8be15.js",
       "build-js-styles.css",
-      "app-27a1b7275a888dcfac66.js.map",
+      "app-41c1444ad611c5b8be15.js.map",
       "build-js-styles.css.map"
     ],
     "path---tags-haiku": [
@@ -271,10 +275,6 @@
     "path---tags-speech": [
       "path---tags-speech-1fbddf752d64802cc052.js",
       "path---tags-speech-1fbddf752d64802cc052.js.map"
-    ],
-    "path---undefined": [
-      "path---undefined-3fc8bd87eef12b0c3f77.js",
-      "path---undefined-3fc8bd87eef12b0c3f77.js.map"
     ],
     "path---tags-poetry": [
       "path---tags-poetry-df1b840477ab4b31d257.js",
