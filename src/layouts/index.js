@@ -27,7 +27,9 @@ class DefaultLayout extends React.Component {
           </Link>
           <hr/>
           <div>
-            <Link className="linkStyle"  to={`/`}>home</Link>
+            <Link className="linkStyle"  to={`/`}>posts</Link>
+            <br/>
+            <Link className="linkStyle" to={`/projects/`}>projects</Link>
             <br/>
             <Link className="linkStyle"  to={`/about/`}>about</Link>
             <br/>

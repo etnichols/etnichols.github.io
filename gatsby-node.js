@@ -2,16 +2,24 @@ const _ = require(`lodash`)
 const Promise = require(`bluebird`)
 const path = require(`path`)
 const slash = require(`slash`)
-const { createFilePath } = require(`gatsby-source-filesystem`)
+const {
+  createFilePath
+} = require(`gatsby-source-filesystem`)
 
 const webpackLodashPlugin = require(`lodash-webpack-plugin`)
 
-exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators
+exports.createPages = ({
+  graphql,
+  boundActionCreators
+}) => {
+  const {
+    createPage
+  } = boundActionCreators
 
   return new Promise((resolve, reject) => {
     const blogPostTemplate = path.resolve(`src/templates/template-blog-post.js`)
     const tagPagesTemplate = path.resolve(`src/templates/template-tag-page.js`)
+    const projectPostTemplate = path.resolve(`src/templates/template-project-page.js`)
     graphql(
       `
         {
@@ -26,6 +34,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                 }
                 frontmatter {
                   tags
+                  type
                 }
               }
             }
@@ -39,15 +48,15 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
       // Create blog posts pages.
       result.data.allMarkdownRemark.edges.forEach(edge => {
-        createPage({
-          path: edge.node.fields.slug, // required
-          component: slash(blogPostTemplate),
-          context: {
-            slug: edge.node.fields.slug,
-            highlight: edge.node.frontmatter.highlight,
-            shadow: edge.node.frontmatter.shadow,
-          },
-        })
+          createPage({
+            path: edge.node.fields.slug, // required
+            component: slash(blogPostTemplate),
+            context: {
+              slug: edge.node.fields.slug,
+              highlight: edge.node.frontmatter.highlight,
+              shadow: edge.node.frontmatter.shadow,
+            },
+          })
       })
 
       // Create tag pages.
@@ -75,13 +84,32 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 }
 
 // Add custom url pathname for blog posts.
-exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
-  const { createNodeField } = boundActionCreators
+exports.onCreateNode = ({
+  node,
+  boundActionCreators,
+  getNode
+}) => {
+  const {
+    createNodeField
+  } = boundActionCreators
 
   if (node.internal.type === `File`) {
     const parsedFilePath = path.parse(node.absolutePath)
-    const slug = `/${parsedFilePath.dir.split(`---`)[1]}/`
-    createNodeField({ node, name: `slug`, value: slug })
+    if (parsedFilePath.dir.includes(`project`)) {
+      const slug = `/projects/${parsedFilePath.dir.split(`---`)[1]}/`
+      createNodeField({
+        node,
+        name: `slug`,
+        value: slug
+      })
+    } else {
+      const slug = `/posts/${parsedFilePath.dir.split(`---`)[1]}/`
+      createNodeField({
+        node,
+        name: `slug`,
+        value: slug
+      })
+    }
   } else if (
     node.internal.type === `MarkdownRemark` &&
     typeof node.slug === `undefined`
@@ -97,13 +125,20 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
       const tagSlugs = node.frontmatter.tags.map(
         tag => `/tags/${_.kebabCase(tag)}/`
       )
-      createNodeField({ node, name: `tagSlugs`, value: tagSlugs })
+      createNodeField({
+        node,
+        name: `tagSlugs`,
+        value: tagSlugs
+      })
     }
   }
 }
 
 // Sass and Lodash.
-exports.modifyWebpackConfig = ({ config, stage }) => {
+exports.modifyWebpackConfig = ({
+  config,
+  stage
+}) => {
   switch (stage) {
     case `build-javascript`:
       config.plugin(`Lodash`, webpackLodashPlugin, null)

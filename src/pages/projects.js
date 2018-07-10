@@ -4,13 +4,13 @@ import styles from "../styles"
 import presets from "../utils/presets"
 import { rhythm, scale } from "../utils/typography"
 
-class Index extends React.Component {
+class Projects extends React.Component {
   render() {
     const posts = this.props.data.allMarkdownRemark.edges
 
     return (
       <div>
-        <h1 css={{marginTop: rhythm(1)}}>read a post.</h1>
+        <h1 css={{marginTop: rhythm(1)}}>peruse a project.</h1>
         <ul
           css={{
             marginBottom: rhythm(2),
@@ -44,19 +44,19 @@ class Index extends React.Component {
   }
 }
 
-export default Index
+export default Projects
 
 export const pageQuery = graphql`
-  query IndexQuery {
+  query ProjectsQuery {
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
       filter: {
         frontmatter: {
           draft: { ne: true }
-          type: { eq: "post" }
-       }
-     }
+          type: { eq: "project" }
+        }
+      }
     ) {
       edges {
         node {
