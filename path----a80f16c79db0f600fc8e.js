@@ -1,2 +1,2 @@
-webpackJsonp([60335399758886],{170:function(t,e){t.exports={data:{site:{siteMetadata:{author:"@etnichols",homepage:"https://etnichols.com"}}},layoutContext:{}}}});
+webpackJsonp([60335399758886],{115:function(t,e){t.exports={data:{site:{siteMetadata:{author:"@etnichols",homepage:"https://etnichols.com"}}},layoutContext:{}}}});
 //# sourceMappingURL=path----a80f16c79db0f600fc8e.js.map

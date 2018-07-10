@@ -1,0 +1,2 @@
+webpackJsonp([0xba052d3879e8],{506:function(t,a){t.exports={data:{allMarkdownRemark:{totalCount:1,edges:[{node:{fields:{slug:"/posts/scripts-and-aliases/"},frontmatter:{title:"Timesavers with Scripting and Aliases"}}}]}},pathContext:{tag:"Zsh"}}}});
+//# sourceMappingURL=path---tags-zsh-a21c645003a7bfa2feda.js.map

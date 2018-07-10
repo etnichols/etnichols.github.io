@@ -1,0 +1,2 @@
+webpackJsonp([0xad58b7b64db],{475:function(t,a){t.exports={data:{allMarkdownRemark:{totalCount:1,edges:[{node:{fields:{slug:"/posts/birth-of-a-word/"},frontmatter:{title:'"The Birth of a Word" TED Talk Summary'}}}]}},pathContext:{tag:"data"}}}});
+//# sourceMappingURL=path---tags-data-5e5f5f92073d738ebbf0.js.map

@@ -1,0 +1,2 @@
+webpackJsonp([0xbdb42d548dd2],{489:function(t,o){t.exports={data:{allMarkdownRemark:{totalCount:1,edges:[{node:{fields:{slug:"/posts/thoughts-on-monuments/"},frontmatter:{title:"Thoughts on Monuments"}}}]}},pathContext:{tag:"opinion"}}}});
+//# sourceMappingURL=path---tags-opinion-2ee91599488fd15e866a.js.map
