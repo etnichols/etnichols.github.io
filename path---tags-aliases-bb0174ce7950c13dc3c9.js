@@ -1,2 +1,2 @@
-webpackJsonp([0xfea5b59a10b1],{469:function(a,t){a.exports={data:{allMarkdownRemark:{totalCount:1,edges:[{node:{fields:{slug:"/posts/scripts-and-aliases/"},frontmatter:{title:"Timesavers with Scripting and Aliases"}}}]}},pathContext:{tag:"aliases"}}}});
+webpackJsonp([0xfea5b59a10b1],{472:function(a,t){a.exports={data:{allMarkdownRemark:{totalCount:1,edges:[{node:{fields:{slug:"/posts/scripts-and-aliases/"},frontmatter:{title:"Timesavers with Scripting and Aliases"}}}]}},pathContext:{tag:"aliases"}}}});
 //# sourceMappingURL=path---tags-aliases-bb0174ce7950c13dc3c9.js.map
