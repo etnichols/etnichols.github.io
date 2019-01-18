@@ -1,0 +1,2 @@
+webpackJsonp([0xfbad90462037],{503:function(t,e){t.exports={data:{allMarkdownRemark:{totalCount:2,edges:[{node:{fields:{slug:"/projects/confluency/"},frontmatter:{title:"Confluency - Cerner Hackfest 2016"}}},{node:{fields:{slug:"/posts/birth-of-a-word/"},frontmatter:{title:'"The Birth of a Word" TED Talk Summary'}}}]}},pathContext:{tag:"speech"}}}});
+//# sourceMappingURL=path---tags-speech-957993d5bfb2c24e476e.js.map

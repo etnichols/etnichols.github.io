@@ -1,0 +1,2 @@
+webpackJsonp([96128458045283],{491:function(t,e){t.exports={data:{allMarkdownRemark:{totalCount:1,edges:[{node:{fields:{slug:"/projects/confluency/"},frontmatter:{title:"Confluency - Cerner Hackfest 2016"}}}]}},pathContext:{tag:"mobile application"}}}});
+//# sourceMappingURL=path---tags-mobile-application-fd1a7c6afe9b47c84cd4.js.map

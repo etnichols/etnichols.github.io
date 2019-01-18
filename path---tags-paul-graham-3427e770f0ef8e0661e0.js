@@ -1,2 +1,2 @@
-webpackJsonp([0xa9aa365d2031],{493:function(t,a){t.exports={data:{allMarkdownRemark:{totalCount:1,edges:[{node:{fields:{slug:"/posts/industry-best-practice/"},frontmatter:{title:"Industry Best Practice"}}}]}},pathContext:{tag:"Paul Graham"}}}});
+webpackJsonp([0xa9aa365d2031],{495:function(t,a){t.exports={data:{allMarkdownRemark:{totalCount:1,edges:[{node:{fields:{slug:"/posts/industry-best-practice/"},frontmatter:{title:"Industry Best Practice"}}}]}},pathContext:{tag:"Paul Graham"}}}});
 //# sourceMappingURL=path---tags-paul-graham-3427e770f0ef8e0661e0.js.map

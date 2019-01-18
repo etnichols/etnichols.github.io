@@ -9,8 +9,8 @@
       "path---tags-i-os-440dc91872e52654d692.js.map"
     ],
     "path---tags-python": [
-      "path---tags-python-2682b4fd12f82cd6888e.js",
-      "path---tags-python-2682b4fd12f82cd6888e.js.map"
+      "path---tags-python-7b4083e3d6eb68c31a2d.js",
+      "path---tags-python-7b4083e3d6eb68c31a2d.js.map"
     ],
     "path---posts-two-subway-haikus": [
       "path---posts-two-subway-haikus-b8db278417e7633eb925.js",
@@ -21,8 +21,8 @@
       "path---tags-data-5e5f5f92073d738ebbf0.js.map"
     ],
     "path---tags-illustrator": [
-      "path---tags-illustrator-9df15f8180b6e666b5d8.js",
-      "path---tags-illustrator-9df15f8180b6e666b5d8.js.map"
+      "path---tags-illustrator-01c1dbc6c3817c9d372f.js",
+      "path---tags-illustrator-01c1dbc6c3817c9d372f.js.map"
     ],
     "path---posts-blog-redesign-with-gatsby": [
       "path---posts-blog-redesign-with-gatsby-cec7ac6403e6b3423fa9.js",
@@ -31,6 +31,10 @@
     "path---tags-spotify-api": [
       "path---tags-spotify-api-38d055452473e295b7b7.js",
       "path---tags-spotify-api-38d055452473e295b7b7.js.map"
+    ],
+    "path---posts-sick-day": [
+      "path---posts-sick-day-53771b8473dc71e3efea.js",
+      "path---posts-sick-day-53771b8473dc71e3efea.js.map"
     ],
     "path---tags-programming": [
       "path---tags-programming-edb53ff2b788ccd63f3d.js",
@@ -65,16 +69,16 @@
       "path---posts-thoughts-on-monuments-bfb2ef8b9dbaea026efc.js.map"
     ],
     "path---tags": [
-      "path---tags-4f62c7d9fc3f6d0f632d.js",
-      "path---tags-4f62c7d9fc3f6d0f632d.js.map"
+      "path---tags-ff5414b40ccb8bf3e61b.js",
+      "path---tags-ff5414b40ccb8bf3e61b.js.map"
+    ],
+    "path---projects-confluency": [
+      "path---projects-confluency-0c1fa28fc57077bd35e0.js",
+      "path---projects-confluency-0c1fa28fc57077bd35e0.js.map"
     ],
     "path---": [
       "path----a80f16c79db0f600fc8e.js",
       "path----a80f16c79db0f600fc8e.js.map"
-    ],
-    "path---posts-confluency": [
-      "path---posts-confluency-87c98b6ac30ad70452bf.js",
-      "path---posts-confluency-87c98b6ac30ad70452bf.js.map"
     ],
     "path---tags-scripting": [
       "path---tags-scripting-d9cfddfff421c0bfd5a8.js",
@@ -97,16 +101,16 @@
       "path---tags-monuments-bf91476e46c88d567e36.js.map"
     ],
     "path---tags-react": [
-      "path---tags-react-00169f52eb314728cd51.js",
-      "path---tags-react-00169f52eb314728cd51.js.map"
+      "path---tags-react-39d582414c9afff573b5.js",
+      "path---tags-react-39d582414c9afff573b5.js.map"
     ],
     "path---tags-mobile-application": [
-      "path---tags-mobile-application-d2c757372a2d10cafe6f.js",
-      "path---tags-mobile-application-d2c757372a2d10cafe6f.js.map"
+      "path---tags-mobile-application-fd1a7c6afe9b47c84cd4.js",
+      "path---tags-mobile-application-fd1a7c6afe9b47c84cd4.js.map"
     ],
     "path---projects": [
-      "path---projects-bacb8429bad7b19c6aa8.js",
-      "path---projects-bacb8429bad7b19c6aa8.js.map"
+      "path---projects-1ea3271f08679782a2bb.js",
+      "path---projects-1ea3271f08679782a2bb.js.map"
     ],
     "path---tags-c": [
       "path---tags-c-75e02e00c9faf799b409.js",
@@ -141,8 +145,8 @@
       "path---tags-html-css-8399625b3b6ed1692384.js.map"
     ],
     "path---index": [
-      "path---index-f2348e36342903a910e3.js",
-      "path---index-f2348e36342903a910e3.js.map"
+      "path---index-82942105615350c3d322.js",
+      "path---index-82942105615350c3d322.js.map"
     ],
     "path---tags-trump": [
       "path---tags-trump-f7601ab810cf39bd5b30.js",
@@ -159,10 +163,6 @@
     "path---tags-best-practices": [
       "path---tags-best-practices-a0d71c0da69754e1cfe1.js",
       "path---tags-best-practices-a0d71c0da69754e1cfe1.js.map"
-    ],
-    "path---posts-illustrator-to-react": [
-      "path---posts-illustrator-to-react-42b077d2374aeb50b62f.js",
-      "path---posts-illustrator-to-react-42b077d2374aeb50b62f.js.map"
     ],
     "path---tags-vacation": [
       "path---tags-vacation-4551aa2caa05cf16cfd0.js",
@@ -238,6 +238,10 @@
       "path---tags-opinion-2ee91599488fd15e866a.js",
       "path---tags-opinion-2ee91599488fd15e866a.js.map"
     ],
+    "path---projects-illustrator-to-react": [
+      "path---projects-illustrator-to-react-8b329736ddcbe41b38a4.js",
+      "path---projects-illustrator-to-react-8b329736ddcbe41b38a4.js.map"
+    ],
     "component---src-pages-projects-js": [
       "component---src-pages-projects-js-adfbd0d49c2c45ecb2ab.js",
       "component---src-pages-projects-js-adfbd0d49c2c45ecb2ab.js.map"
@@ -251,9 +255,9 @@
       "path---tags-linguistic-analysis-6c19a656890e649ab24a.js.map"
     ],
     "app": [
-      "app-3c2037bff944f705f5ca.js",
+      "app-bdbc20c65d48b95d9267.js",
       "build-js-styles.css",
-      "app-3c2037bff944f705f5ca.js.map",
+      "app-bdbc20c65d48b95d9267.js.map",
       "build-js-styles.css.map"
     ],
     "path---projects-redtire-forms": [
@@ -289,12 +293,12 @@
       "path---about-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---tags-speech": [
-      "path---tags-speech-eb2fe10d764769498721.js",
-      "path---tags-speech-eb2fe10d764769498721.js.map"
+      "path---tags-speech-957993d5bfb2c24e476e.js",
+      "path---tags-speech-957993d5bfb2c24e476e.js.map"
     ],
     "path---tags-poetry": [
-      "path---tags-poetry-5fbe1a7af7528938394e.js",
-      "path---tags-poetry-5fbe1a7af7528938394e.js.map"
+      "path---tags-poetry-eb1d434c3061dcb27c2a.js",
+      "path---tags-poetry-eb1d434c3061dcb27c2a.js.map"
     ],
     "path---tags-aliases": [
       "path---tags-aliases-bb0174ce7950c13dc3c9.js",
