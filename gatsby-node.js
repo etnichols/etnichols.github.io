@@ -43,6 +43,7 @@ exports.createPages = ({
       `
     ).then(result => {
       if (result.errors) {
+        console.log('blerg!!!')
         console.log(result.errors)
       }
 
@@ -135,16 +136,12 @@ exports.onCreateNode = ({
 }
 
 // Sass and Lodash.
-exports.modifyWebpackConfig = ({
-  config,
-  stage
-}) => {
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
   switch (stage) {
     case `build-javascript`:
-      config.plugin(`Lodash`, webpackLodashPlugin, null)
-
+      actions.setWebpackConfig({
+        plugins: [webpackLodastPlugin],
+      })
       break
   }
-
-  return config
 }

@@ -1,53 +1,58 @@
 import React from "react"
+import { StaticQuery, graphql } from 'gatsby'
 import Link from "gatsby-link"
 import styles from "../styles"
 import presets from "../utils/presets"
 import { rhythm, scale } from "../utils/typography"
 
-class Projects extends React.Component {
-  render() {
-    const posts = this.props.data.allMarkdownRemark.edges
+import Layout from "../components/layout"
 
-    return (
-      <div>
-        <h1 css={{marginTop: rhythm(1)}}>peruse a project.</h1>
-        <ul
-          css={{
-            marginBottom: rhythm(2),
-            marginTop: rhythm(1),
-            marginLeft: 0,
-            listStyle: `none`,
-          }}
+const RenderPage =({}) => {
+  const posts = data.allMarkdownRemark.edges
+  return (
+    <div>
+      <h1 css={{marginTop: rhythm(1)}}>peruse a project.</h1>
+      <ul
+      css={{
+        marginBottom: rhythm(2),
+        marginTop: rhythm(1),
+        marginLeft: 0,
+        listStyle: `none`,
+      }}
+      >
+      {posts.map(post => (
+        <li key={post.node.fields.slug}>
+        <span
+        css={{
+          color: styles.colors.light,
+          display: `block`,
+          [presets.Tablet]: {
+            float: `right`,
+            marginLeft: `1rem`,
+          },
+        }}
         >
-          {posts.map(post => (
-            <li key={post.node.fields.slug}>
-              <span
-                css={{
-                  color: styles.colors.light,
-                  display: `block`,
-                  [presets.Tablet]: {
-                    float: `right`,
-                    marginLeft: `1rem`,
-                  },
-                }}
-              >
-                {post.node.frontmatter.date}
-              </span>
-              <Link to={post.node.fields.slug} className="link-underline">
-                {post.node.frontmatter.title}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    )
-  }
+        {post.node.frontmatter.date}
+        </span>
+        <Link to={post.node.fields.slug} className="link-underline">
+        {post.node.frontmatter.title}
+        </Link>
+        </li>
+      ))}
+      </ul>
+    </div>
+  )
 }
 
-export default Projects
+const Projects = () => (
+  <StaticQuery
+    query={PageQuery}
+    render={data => (<Layout><RenderPage data={data}/></Layout>)}
+  />
+)
 
-export const pageQuery = graphql`
-  query ProjectsQuery {
+const PageQuery = graphql`
+  query {
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
@@ -72,3 +77,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export default Projects
