@@ -6,7 +6,7 @@ tags:
 - mobile application
 draft: false
 author: Evan Nichols
-type: 'post'
+type: 'project'
 ---
 
 Created as part of Cerner's 2016 Hackfest, Confluency is an Ionic application that tracks children's vocabulary development over time. I had the idea for this application after watching Deb Roy's TED Talk, which I reviewed in an earlier post. The original idea was to use a speech-to-text API to record conversations with children, create a wordbank, and provide insights into language development. Our target audience would be parents and caretakers working with patients suffering recovering from strokes or head trauma.
