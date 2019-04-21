@@ -1,2 +1,0 @@
-webpackJsonp([66329347860518],{502:function(t,a){t.exports={data:{allMarkdownRemark:{totalCount:1,edges:[{node:{fields:{slug:"/posts/scripts-and-aliases/"},frontmatter:{title:"Timesavers with Scripting and Aliases"}}}]}},pathContext:{tag:"scripting"}}}});
-//# sourceMappingURL=path---tags-scripting-d9cfddfff421c0bfd5a8.js.map

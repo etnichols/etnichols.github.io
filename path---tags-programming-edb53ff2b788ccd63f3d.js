@@ -1,2 +1,0 @@
-webpackJsonp([20956934260092],{497:function(t,e){t.exports={data:{allMarkdownRemark:{totalCount:1,edges:[{node:{fields:{slug:"/posts/programming-interview-advice/"},frontmatter:{title:"Preparing for the programming interview"}}}]}},pathContext:{tag:"programming"}}}});
-//# sourceMappingURL=path---tags-programming-edb53ff2b788ccd63f3d.js.map

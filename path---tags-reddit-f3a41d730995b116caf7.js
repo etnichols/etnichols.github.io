@@ -1,2 +1,0 @@
-webpackJsonp([0xa5edb36e9ea9],{510:function(e,t){e.exports={data:{allMarkdownRemark:{totalCount:1,edges:[{node:{fields:{slug:"/undefined/"},frontmatter:{title:"Linguistic analysis of Donald Trump's speech patterns"}}}]}},pathContext:{tag:"Reddit"}}}});
-//# sourceMappingURL=path---tags-reddit-f3a41d730995b116caf7.js.map

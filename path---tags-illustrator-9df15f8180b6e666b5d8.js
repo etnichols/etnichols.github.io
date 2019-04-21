@@ -1,2 +1,0 @@
-webpackJsonp([0xbe1dd082f71],{484:function(t,o){t.exports={data:{allMarkdownRemark:{totalCount:1,edges:[{node:{fields:{slug:"/posts/illustrator-to-react/"},frontmatter:{title:"Using Python to Convert Illustrator SVGs to React components"}}}]}},pathContext:{tag:"Illustrator"}}}});
-//# sourceMappingURL=path---tags-illustrator-9df15f8180b6e666b5d8.js.map

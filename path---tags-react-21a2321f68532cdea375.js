@@ -1,2 +1,0 @@
-webpackJsonp([84586273293571],{497:function(t,o){t.exports={data:{allMarkdownRemark:{totalCount:3,edges:[{node:{fields:{slug:"/react-quotebook-tutorial/"},frontmatter:{title:"Tutorial - React Animated Quotebook"}}},{node:{fields:{slug:"/ku-acm-react-workshop/"},frontmatter:{title:"KU ACM React Workshop"}}},{node:{fields:{slug:"/illustrator-to-react/"},frontmatter:{title:"Using Python to Convert Illustrator SVGs to React components"}}}]}},pathContext:{tag:"React"}}}});
-//# sourceMappingURL=path---tags-react-21a2321f68532cdea375.js.map

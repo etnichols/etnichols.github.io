@@ -1,2 +1,0 @@
-webpackJsonp([0xfe6713f5a09d],{506:function(t,a){t.exports={data:{allMarkdownRemark:{totalCount:1,edges:[{node:{fields:{slug:"/two-subway-haikus/"},frontmatter:{title:"Two Subway Haikus"}}}]}},pathContext:{tag:"poetry"}}}});
-//# sourceMappingURL=path---tags-poetry-df1b840477ab4b31d257.js.map

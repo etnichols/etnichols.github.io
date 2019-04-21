@@ -1,2 +1,0 @@
-webpackJsonp([5001461376396],{485:function(t,e){t.exports={data:{allMarkdownRemark:{totalCount:1,edges:[{node:{fields:{slug:"/projects/led-soundsystem/"},frontmatter:{title:"LED Soundsystem"}}}]}},pathContext:{tag:"iOS"}}}});
-//# sourceMappingURL=path---tags-i-os-440dc91872e52654d692.js.map

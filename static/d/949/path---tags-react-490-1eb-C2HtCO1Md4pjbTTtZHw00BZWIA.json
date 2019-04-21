@@ -1,0 +1,1 @@
+{"data":{"allMarkdownRemark":{"totalCount":2,"edges":[{"node":{"fields":{"slug":"/posts/blog-redesign-with-gatsby"},"frontmatter":{"title":"Static site generation with the plugin-rich Gatsby 1.0"}}},{"node":{"fields":{"slug":"/posts/ku-acm-react-workshop"},"frontmatter":{"title":"KU ACM React Workshop"}}}]}},"pageContext":{"isCreatedByStatefulCreatePages":false,"tag":"React"}}

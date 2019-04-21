@@ -1,2 +1,0 @@
-webpackJsonp([0x97b0c33bb63c],{506:function(t,a){t.exports={data:{allMarkdownRemark:{totalCount:1,edges:[{node:{fields:{slug:"/posts/san-fran-adventures/"},frontmatter:{title:"Adventures in San Francisco"}}}]}},pathContext:{tag:"travel"}}}});
-//# sourceMappingURL=path---tags-travel-f422ba2e31081dc882c3.js.map

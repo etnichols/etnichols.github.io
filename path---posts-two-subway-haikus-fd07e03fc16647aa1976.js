@@ -1,2 +1,0 @@
-webpackJsonp([8890767960914],{"./node_modules/json-loader/index.js!./.cache/json/posts-two-subway-haikus.json":function(n,o){n.exports={data:{markdownRemark:{html:"<h1></h1>\n<p>Thousands of people</p>\n<p>I don't know, and never will</p>\n<p>Riding together</p>\n<p>--</p>\n<p>Moving underground</p>\n<p>Eyes on phones and phones in ears</p>\n<p>Shared isolation</p>",frontmatter:{title:"Two Subway Haikus"}}},pathContext:{slug:"/posts/two-subway-haikus/"}}}});
-//# sourceMappingURL=path---posts-two-subway-haikus-fd07e03fc16647aa1976.js.map
