@@ -1,7 +1,7 @@
 ---
 author: Evan Nichols
 title: "Create an interactive map using React, d3 and Python"
-date: 2018-01-15
+date: "2018-01-15T00:12:03.000Z"
 tags:
 - tutorial
 - React
@@ -101,4 +101,4 @@ A note on this script: it's meant for SVGs exported from Adobe Illustrator CC 20
 # Wrap Up
 A discussion of limitations and a simpler way. The simplest way, how do we reconcile "this" between React functions and d3 functions! I.e. I want to use d3 to attach an event listener to an object which sets the application state, how do I do that? There must be a simpler way... perhaps that follows the pattern laid out in this example I found while creating the project. But for now, we stick with a working but perhaps the not most efficient implementation.
 
-The reality: this isn't a perfect system. You make compromises when you choose librarie that have drastically seemingly incompatiable different approaches to DOM manipulation. But if we use them carefully and utilize each tool where it excels, we end up with a nice application.
+The reality: this isn't a perfect system. You make compromises when you choose libraries that have drastically seemingly incompatiable different approaches to DOM manipulation. But if we use them carefully and utilize each tool where it excels, we end up with a nice application.

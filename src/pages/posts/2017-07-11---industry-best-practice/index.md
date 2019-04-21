@@ -1,6 +1,6 @@
 ---
 title: "Industry Best Practice"
-date: 2017-07-11
+date: "2017-07-11T00:12:03.000Z"
 tags:
 - Paul Graham
 - best practices

@@ -1,7 +1,7 @@
 ---
 author: Evan Nichols
 title: "Player Piano and the Circle"
-date: 2017-10-30
+date: "2017-10-30T00:12:03.000Z"
 tags:
 - books
 draft: true
@@ -16,13 +16,13 @@ First, a quick overview of each.
 
 Published in 1952, Player Piano is Vonnegut's debut novel. The story follows Paul Proteus, a factory manager for the Illium Works, and his gradual disillusionment with the the highly automated society he helps lead. In typical Vonnegut fashion, the work is highly satirical and darkly comedic, and examines the impact of technological innovation on society. It's dystopian, but not to the level of "Brave New World" or "Fahrenheit 451" ("Believably dystopian?").
 
-The Circle is a 2013 novel by Dave Eggers that follows Mae Holland, a recent college graduate who gets a job at "The Circle," a massive tech company that is a thinly veiled ____ to Facebook/Google/Twitter/Insert any large tech company here. In an almost complementary way, it follows Mae as she rises through the ranks of the Circle and finds herself deeper and more inextricably involved in the aggressively transparent and "always-connected" mission of the Circle.
+The Circle is a 2013 novel by Dave Eggers that follows Mae Holland, a recent college graduate who gets a job at "The Circle," a massive, Google/Facebook-esque tech company. Similar to Player Piano, the story follows Mae as she rises through the ranks of the Circle and finds herself deeper and more inextricably involved in the aggressively transparent and "always-connected" mission of the Circle.
 
 Here are some similarities I saw between the two.
 
-In Player Piano, all citizens' employment is determined by how they score on aptitude tests. Think of a nationwide, mandatory ACT test. The scores for all citizens are public record -- "irrecovably immutable." Paul was able to become an engineer because of his scores, and others who don't score so well are mandated to work for the ____, the organizations involved with public works and ____. Now let's turn to a section in the Circle, where Mae is touring The Circle's facilities and talks to a team of Engineers working on a new product, ____. The product enables teachers and parents to view a live-ranking of all their students in a school. Every test, quiz and attendance check is immutably recorded and made public, and contributes to a students' overall ranking at the class. <INSERT QUOTE HERE>.
+In Player Piano, all citizens' employment is determined by how they score on aptitude tests. Think of a nationwide, mandatory ACT test. The scores for all citizens are public record -- "irrecovably immutable," as Vonnegut says. Paul was able to become an engineer because of his scores, and others who don't score so well are mandated to work blue collar jobs like waste management and construction. Now let's turn to a section in the Circle, where Mae is touring The Circle's facilities and talks to a team of engineers working on a new product for the nation's education system. The product enables teachers and parents to view a live-ranking of all their students in a school. Every test, quiz and attendance check is immutably recorded and made public, and contributes to a students' overall ranking at the class.
 
-I thought these were interesting parallels -- two distinct takes on a totally public approach to aptitude testing. They both sound good in theory, right? What better way to remove subjectivity from choosing who should work where, and who should get into certain schools? Eh. I don't know. It scares the shit out of me, really. The total transparency seems to go against the very foundation of our constitution -- our rights to life libery and the pursuit of happiness. This seems to say, you have the right to life liberty and the pursuit of happiness only on the path we deem appropriate for you. And fuck, can you imagine being a kid in high school dealing with everything you've ever done on the public record? Going into a college interview and the recruiter says, "Now Evan, your junior year you were caught smoking your Juul in the bathroom multiple times during Art History, do you not value that subject? Why would you skip?" The idea of total accountability for students who are supposed to just be learning about the concepts of accountability seems utterly insane to me.
+I thought these were interesting parallels -- two distinct takes on a totally public approach to aptitude testing. They both sound good in theory, right? What better way to remove subjectivity from choosing who should work where, and who should get into certain schools? Eh. I don't know. It scares the shit out of me, really. The total transparency seems to go against the very foundation of our constitution -- our rights to life liberty and the pursuit of happiness. This seems to say, you have the right to life liberty and the pursuit of happiness only on the path we deem appropriate for you. Can you imagine being a kid in high school dealing with everything you've ever done on the public record? Going into a college interview and the recruiter says, "Evan, your junior year you were caught smoking your Juul in the bathroom multiple times during Art History, do you not value that subject? Why would you skip that class?" The idea of total accountability for students who are supposed to just be learning about the concepts of accountability seems utterly insane to me.
 
 Here's the big thing I took away from both "Player Piano" and "The Circle:" we have a relationship with technology, both on a personal level and a societal level. We get to choose when, and how much, we want to share, or participate in this social media circus. Both works seem to examine what happens when that relationship gets slanted out of our control. In Player Piano, Vonnegut looks at
 
@@ -88,7 +88,7 @@ a way to control politics. It's funny how technology has a penchant for
 attracting those two types of personalities.
 
 Cliche time: technology is a double-edged sword. We forfeit personal data
-to companies for services we see as a necessity. Facebook/Instagram and  Google have a
+to companies for services we see as a necessity. Facebook/Instagram and Google have a
 fucking treasure trove of data on every single one of its users.
 
 "If the service is free, it means you're the product."
@@ -160,28 +160,12 @@ I hate the fact that it would be forced upon her.
 
 ------------------------------
 
-The issues we face about automation and the role of technology aren't new, but are amplified by the social-media drenched society we live in today. As with everything in life, it takes a balance. And it takes self-awareness, and mindfulness, and patience. To steal Vonnegut's metaphor. It's so easy to walk follow the engineers and managers blindly through the doors they open for us, just because it's into a room we've never seen before. But I think we need to be mindful in the way we do this, and remember the price we all pay for each door we choose to open. We pay in the form of our time, our happiness, our attention -- ultimately, our perception of the world. If we choose to view the world through the hyper-catered lense, I think we start to lose our touch with the rest of humanity. We're drawn to echo chambers like the sirens of titan.
+The issues we face about automation and the role of technology aren't new, but are amplified by the social-media drenched society we live in today. As with everything in life, it takes a balance. And it takes self-awareness, and mindfulness, and patience. To steal Vonnegut's metaphor. It's so easy to follow the engineers and managers blindly through the doors they open for us, just because it's into a room we've never seen before. But I think we need to be mindful in the way we do this, and remember the price we all pay for each door we choose to open. We pay in the form of our time, our happiness, our attention -- ultimately, our perception of the world. If we choose to view the world through the hyper-catered lense, I think we start to lose our touch with the rest of humanity. We're drawn to echo chambers like the sirens of titan.
 
-"If the service is free, it means your the product."
-
-And -- I just had to stop myself from going on too big of a anti-tech rant. Because I work in tech. I like software a lot. I like making software that genuinely benefits people.
-
-I'll put it this way. I want to make software that improves people's quality of life, in any way.
-
-Don't give too much of your humanity away.
-
-And I'm going to expand on a scene of Vonnegut's that really resonated. At the end of the novel, after the uprising, when the city is in Ashes. People are rebuilding the Orange-O machine. Which was this hated fucking orange juice drink. Wood pulp, water and orange food dye, Vonnegut called it. And yet, people are obsessed with it. They want it to be fixed. And Bud Fucking Calhoun, representative of the brilliant but daft engineer, is at the helm, fixing the thing. The same guy who was, just last week, building designs for a vehicle that could breach the walls of the Ilium Works. He's representative of the raw desire to just fucking fix, fucking build, fucking create, seemingly without care for the surrounding situation.
+And I'm going to expand on a scene of Vonnegut's that really resonated with me. At the end of the novel, after the uprising, when the city is in Ashes. People are rebuilding the Orange-O machine. Which was this shitty orange juice drink. "Wood pulp, water and orange food dye," Vonnegut called it. And yet, people are obsessed with fixing the machine. _They want it to be fixed._ And Bud Calhoun, a symbol of the brilliant but daft engineer, is at the helm, leading the charge to get the the thing working again. The same guy who was, just last week, building designs for a vehicle that could breach the walls of the Ilium Works. He's representative of the raw desire to just fucking fix, fucking build, fucking create, seemingly without care for outstaning circumstances of the situation.
 
 But back to the Orange-O. People like machines that provide things for them. Not take stuff away. Stuff that maintains humanity, their sense of self. So the question in the next years will be. Can we maintain our humanity in the midst of endless, seemingly free offerings, to augment our experience of it? And will people be able to adopt to new technologies when displaced by new shit? Hopefully so.
 
-Hard knocks: turnover is a
+Be cognizant of the price of admission when you choose to follow someone through a new door.
 
-Let's put shit simply.
-
-"If the service is free, it means you are the product."
-
-Know the price you pay when you choose to follow someone through a new door.
-
-p. 315 The main business of humanity is to do a good job of being humans beings," said Paul, "Not to serve as appendages to machines, institutions, and systems."
-
-RELATIONSHIP WITH TECHNOLOGY. THINK OF IT AS A RELATIONSHIP.
+"The main business of humanity is to do a good job of being humans beings," said Paul, "Not to serve as appendages to machines, institutions, and systems."

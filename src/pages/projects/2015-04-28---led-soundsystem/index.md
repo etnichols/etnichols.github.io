@@ -1,6 +1,6 @@
 ---
 title: "LED Soundsystem"
-date: 2015-04-28
+date: "2015-04-28T00:12:03.000Z"
 tags:
 - iOS
 - Spotify API

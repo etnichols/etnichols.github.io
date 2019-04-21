@@ -1,6 +1,6 @@
 ---
 title: "\"The Birth of a Word\" TED Talk Summary"
-date: 2016-03-11
+date: "2016-03-11T00:12:03.000Z"
 tags:
 - TED Talk
 - speech

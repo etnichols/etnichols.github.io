@@ -1,6 +1,6 @@
 ---
 title: "Greedy Algorithm Practice in Javascript"
-date: 2016-08-03
+date: "2016-08-03T00:12:03.000Z"
 tags:
 - algorithms
 - javascript

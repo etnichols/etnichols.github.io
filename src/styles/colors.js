@@ -1,6 +1,6 @@
-const baseHsl = `291, 0%, 18%`
+export const baseHsl = `291, 0%, 18%`
 
-const colors = {
+export const colors = {
   black: `hsla(${baseHsl},1)`,
   text: `hsla(${baseHsl},0.95)`,
   light: `hsla(${baseHsl},0.4)`,
@@ -11,5 +11,3 @@ const colors = {
   link: `#03a9f4`,
   linkHover: `#ff5252`,
 }
-
-export default { colors, baseHsl }

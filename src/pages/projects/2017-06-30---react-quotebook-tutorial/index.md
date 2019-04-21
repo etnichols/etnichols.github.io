@@ -1,6 +1,6 @@
 ---
 title: "React Animated Quotebook Tutorial"
-date: 2017-06-30
+date: "2017-06-30T00:12:03.000Z"
 tags:
 - React
 - create-react-app
@@ -337,7 +337,7 @@ import quotes from './quotes'
 
 And now we'll update the ```constructor``` function with the following code:
 
-```
+```js
   constructor(props){
 
     super(props)

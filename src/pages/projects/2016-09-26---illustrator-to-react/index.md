@@ -1,13 +1,13 @@
 ---
 title: "Using Python to Convert Illustrator SVGs to React components"
-date: 2016-09-26
+date: "2016-09-26T00:12:03.000Z"
 tags:
 - React
 - Illustrator
 - Python
 draft: false
 author: Evan Nichols
-type: 'post'
+type: 'project'
 ---
 
 I've been working on a project the past few months for a team of doctors at the KU Medical Center -- Dr. Garth Fraga, Dr. Arlette-Habashi and Matt DaCunha, a third-year medical student. We're making RightSite, an iOS application aimed at reducing biopsy-labeling errors in the clinical setting.

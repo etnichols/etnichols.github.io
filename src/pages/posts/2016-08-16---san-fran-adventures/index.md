@@ -1,6 +1,6 @@
 ---
 title: "Adventures in San Francisco"
-date: 2016-08-16
+date: "2016-08-16T00:12:03.000Z"
 tags:
 - travel
 - vacation

@@ -1,6 +1,6 @@
 ---
 title: Thoughts on Monuments
-date: 2017-08-27
+date: "2017-08-27T00:12:03.000Z"
 tags:
 - monuments
 - history

@@ -1,6 +1,6 @@
 ---
 title: "NFA to DFA Conversion: C++ Implementation"
-date: 2016-09-26
+date: "2016-09-26T00:12:03.000Z"
 tags:
 - C++
 - NFA to DFA

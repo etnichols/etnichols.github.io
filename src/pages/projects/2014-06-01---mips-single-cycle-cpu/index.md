@@ -1,6 +1,6 @@
 ---
 title: MIPS Single Cycle CPU
-date: 2014-06-01
+date: "2014-06-01T00:12:03.000Z"
 tags:
 - Computer Architecture
 - MIPS

@@ -1,12 +1,12 @@
-img {
-  border: 1px solid #000;
+
+.post-date {
+  display: block;
 }
 
-.articleContainer {
-  padding: 1em;
-  border-top: 1px solid #f1f1f1;
-  width: 100%;
-  margin: 4.5em auto;
+@media (min-width: 750px) {
+  .post-date {
+    float: right;
+  }
 }
 
 .autoComplete {
@@ -73,15 +73,6 @@ img {
   border: 1px solid #939393;
 }
 
-.linkStyle {
-  text-decoration: none;
-  color: inherit;
-}
-
-.contactSection {
-  margin: 3em 1em;
-}
-
-.contactLink {
+.contact-link {
   color: #fb251b;
 }

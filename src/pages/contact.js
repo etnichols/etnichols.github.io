@@ -1,20 +1,42 @@
-import React from "react"
-import styles from "./index.module.css"
+import React from 'react'
+import { StaticQuery, graphql } from 'gatsby'
+import './index.css'
 
-export default ({data}) => {
-  return (
-    <div className={styles.contactSection}>
-      <h1>say hello.</h1>
-      <p>+ <a className={styles.contactLink} href="mailto:evantnichols@gmail.com">{data.site.siteMetadata.email}</a></p>
-      <p>+ <a className={styles.contactLink} href={data.site.siteMetadata.github}> Github</a></p>
-      <p>+ <a className={styles.contactLink} href={data.site.siteMetadata.linkedin}> LinkedIn</a></p>
-      <p>+ <a className={styles.contactLink} href={__PATH_PREFIX__ + '/nichols_evan_resume.pdf'}> Resume</a></p>
-    </div>
-  )
-}
+import Layout from '../components/layout'
 
-export const query = graphql`
-  query ContactQuery {
+
+
+const Contact = () => (
+  <StaticQuery
+    query={PageQuery}
+    render={data => (
+      <Layout>
+        <div>
+          <h1>say hello.</h1>
+          <ul>
+            <li>
+              <a className="contact-link" href={`mailto:${data.site.siteMetadata.email}`}>Email</a>
+            </li>
+            <li>
+              <a className="contact-link" href={data.site.siteMetadata.github}>Github</a>
+            </li>
+            <li>
+              <a className="contact-link" href={data.site.siteMetadata.linkedin}>LinkedIn</a>
+            </li>
+            <li>
+              <a className="contact-link" href={__PATH_PREFIX__ + '/nichols_evan_resume.pdf'}>Resume</a>
+            </li>
+          </ul>
+        </div>
+      </Layout>
+    )}
+  />
+)
+
+export default Contact
+
+const PageQuery = graphql`
+  query {
     site {
       siteMetadata {
         email

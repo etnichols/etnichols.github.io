@@ -1,6 +1,6 @@
 ---
 title: Timesavers with Scripting and Aliases
-date: 2016-09-07
+date: "2016-09-07T00:12:03.000Z"
 tags:
 - Zsh
 - scripting

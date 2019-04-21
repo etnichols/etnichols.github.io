@@ -2,7 +2,7 @@ module.exports = {
   pathPrefix: `/`,
   siteMetadata: {
     site: `etnichols.com`,
-    title: `etnichols blog`,
+    title: `etnichols`,
     author: `@etnichols`,
     description: `a blog`,
     homepage: `https://etnichols.com`,
@@ -14,58 +14,91 @@ module.exports = {
     "MarkdownRemark.frontmatter.author": `AuthorYaml`,
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-plugin-typography`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        pathToConfigModule: `src/utils/typography.js`
+        name: `images`,
+        path: `${__dirname}/src/images`,
       },
     },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        trackingId: 'UA-69960811-1',
+        name: `etnichols personal website`,
+        short_name: `etnichols`,
+        start_url: `/`,
+        background_color: `#fff`,
+        theme_color: `##fb251b`,
+        display: `standalone`,
+        icon: `${__dirname}/src/images/icon.png`, // This path is relative to the root of the site.
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/pages`,
-        name: `pages`,
-      },
+        path: `${__dirname}/src/pages/posts`,
+        name: `markdown-posts`,
+      }
     },
-    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/pages/projects`,
+        name: `markdown-projects`,
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/pages/author.yaml`,
+        name: `author`,
+      }
+    },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `${__dirname}/src/utils/typography.js`,
+      }
+    },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
           {
-            resolve: `gatsby-remark-images`,
+            resolve: `gatsby-remark-autolink-headers`,
             options: {
-              maxWidth: 740,
-            },
-          },
-          {
-            resolve: `gatsby-remark-responsive-iframe`,
-            options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
+              removeAccents: true,
+            }
           },
           `gatsby-remark-copy-linked-files`,
+          `gatsby-remark-katex`,
           {
             resolve: `gatsby-remark-smartypants`,
             options: {
               dashes: `oldschool`,
             },
           },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+            }
+          },
           `gatsby-remark-prismjs`,
-          `gatsby-remark-autolink-headers`,
-          `gatsby-remark-katex`,
-        ],
-      },
+        ]
+      }
+    },
+    {
+      resolve: `gatsby-remark-prismjs`,
+      showLineNumbers: false,
     },
     `gatsby-transformer-yaml`,
-    `gatsby-plugin-sharp`,
     `gatsby-plugin-catch-links`,
-    `gatsby-plugin-glamor`,
+    // this (optional) plugin enables Progressive Web App + Offline functionality
+    // To learn more, visit: https://gatsby.dev/offline
+    `gatsby-plugin-offline`,
   ],
 }

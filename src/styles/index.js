@@ -1,5 +1,4 @@
 import { style } from "glamor"
-import { rhythm } from "../utils/typography"
 import { colors } from "./colors"
 import presets from "../utils/presets"
 
@@ -16,9 +15,6 @@ const animations = {
 export default {
   animations: animations,
   colors: colors,
-  verticalPadding: style({
-    padding: rhythm(3 / 4),
-  }),
   container: style({
     maxWidth: `37rem`,
     margin: `0 auto`,

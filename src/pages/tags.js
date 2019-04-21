@@ -1,36 +1,36 @@
 import React from "react"
-import Link from "gatsby-link"
+import { StaticQuery, Link, graphql } from 'gatsby'
 import kebabCase from "lodash/kebabCase"
+import Layout from "../components/layout"
 
-class TagsPageRoute extends React.Component {
-  render() {
-    const allTags = this.props.data.allMarkdownRemark.group
-
-    return (
-      <div>
-        <h1>Tags</h1>
-        <ul>
-          {allTags.map(tag => (
-            <li key={tag.fieldValue}>
-              <Link
-                style={{
-                  textDecoration: `none`,
-                }}
-                to={`/tags/${kebabCase(tag.fieldValue)}/`}
-              >
-                {tag.fieldValue} ({tag.totalCount})
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    )
-  }
+const RenderPage = ({data}) => {
+  const allTags = data.allMarkdownRemark.group
+  return (
+    <div>
+      <h1>Tags</h1>
+      <ul>
+        {allTags.map(tag => (
+          <li key={tag.fieldValue}>
+            <Link
+              style={{textDecoration: `none`,}}
+              to={`/tags/${kebabCase(tag.fieldValue)}/`}
+            >
+              {tag.fieldValue} ({tag.totalCount})
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
 }
 
-export default TagsPageRoute
+const TagsPageRoute = () => (
+  <StaticQuery
+    query={PageQuery}
+    render={data => (<Layout><RenderPage data={data}/></Layout>)}
+  />)
 
-export const pageQuery = graphql`
+const PageQuery = graphql`
   query TagsQuery {
     allMarkdownRemark(
       limit: 2000
@@ -43,3 +43,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export default TagsPageRoute
