@@ -1,0 +1,21 @@
+
+.resume {
+  background-color: yellow;
+  padding: 0.25em;
+  display: flex;
+}
+.section {
+  background-color: pink;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.entry {
+  flex-grow: 1;
+  display: flex;
+  height: 200px;
+  background-color: aqua;
+  padding: 2em;
+  margin: 1em;
+}
