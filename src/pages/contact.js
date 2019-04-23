@@ -1,5 +1,5 @@
 import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, Link, graphql } from 'gatsby'
 import './index.css'
 
 import Layout from '../components/layout'
@@ -24,7 +24,7 @@ const Contact = () => (
               <a className="contact-link" href={data.site.siteMetadata.linkedin}>LinkedIn</a>
             </li>
             <li>
-              <a className="contact-link" href={__PATH_PREFIX__ + '/nichols_evan_resume.pdf'}>Resume</a>
+              <Link className="contact-link" to="/resume">Resume</Link>
             </li>
           </ul>
         </div>

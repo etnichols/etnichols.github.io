@@ -10,9 +10,6 @@ module.exports = {
     linkedin: `https://www.linkedin.com/in/etnichols/`,
     github: `https://www.github.com/e-nichols`,
   },
-  mapping: {
-    "MarkdownRemark.frontmatter.author": `AuthorYaml`,
-  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
@@ -59,8 +56,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/pages/author.yaml`,
-        name: `author`,
+        path: `${__dirname}/src/resume`,
+        name: `resume`,
       }
     },
     {

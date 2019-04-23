@@ -1,21 +1,39 @@
 
 .resume {
-  background-color: yellow;
   padding: 0.25em;
   display: flex;
 }
-.section {
-  background-color: pink;
+
+.section-title {
+  margin: 0.25em;
+}
+
+.column {
+  margin: 0;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  margin: 0.25em;
 }
 
-.entry {
-  flex-grow: 1;
+.job {
   display: flex;
-  height: 200px;
-  background-color: aqua;
-  padding: 2em;
-  margin: 1em;
+  flex-direction: column;
+  padding: 0.5em;
+  margin: 0.25em;
+}
+
+.job-title {
+  margin: 0.25em 0;
+  line-height: 1.25;
+}
+
+.section-bar {
+  height: 0.25em;
+  background-color: #fb251b;
+  margin: 0.25em;
+}
+
+.duration {
+  margin-bottom: 1em;
 }

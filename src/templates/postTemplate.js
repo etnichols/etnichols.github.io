@@ -44,50 +44,6 @@ export default function PostTemplate({ data }) {
     )
 }
 
-// <p
-//         css={{
-//           marginBottom: rhythm(4 / 4),
-//           display: `flex`,
-//           alignItems: `center`,
-//         }}
-//       >
-//         <img
-//           alt={`Avatar of ${post.frontmatter.author.id}`}
-//           src={
-//             post.frontmatter.author.avatar.children[0].responsiveResolution
-//               .src
-//           }
-//           srcSet={
-//             post.frontmatter.author.avatar.children[0].responsiveResolution
-//               .srcSet
-//           }
-//           css={{
-//             borderRadius: `100%`,
-//             float: `left`,
-//             marginRight: rhythm(3 / 4),
-//             marginBottom: 0,
-//           }}
-//         />
-//         <span
-//           css={{
-//             color: styles.colors.light,
-//             ...scale(-1 / 5),
-//           }}
-//         >
-//           <small
-//             css={{
-//               fontWeight: `bold`,
-//               color: styles.colors.text,
-//               textTransform: `uppercase`,
-//             }}
-//           >
-//             {post.frontmatter.author.id}
-//           </small>
-//           {` `}
-//           {post.frontmatter.author.bio}
-//         </span>
-//       </p>
-
 const TagsSection = ({post}) => {
   let tags
   let tagsSection
@@ -124,10 +80,6 @@ export const pageQuery = graphql`
         title
         tags
         date
-        author {
-          id
-          bio
-        }
       }
     }
   }
