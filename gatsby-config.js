@@ -12,6 +12,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-json`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -56,8 +57,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/resume`,
-        name: `resume`,
+        path: `${__dirname}/src/data`,
       }
     },
     {
@@ -98,7 +98,6 @@ module.exports = {
       resolve: `gatsby-remark-prismjs`,
       showLineNumbers: false,
     },
-    `gatsby-transformer-yaml`,
     `gatsby-plugin-catch-links`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
