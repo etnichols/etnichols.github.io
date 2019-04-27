@@ -44,18 +44,18 @@ const data = [
     }
   ]
 },
-{
-  'section': 'languages/software',
-  'entries': [
-    'Javascript',
-    'Java',
-    'Python',
-    'C++',
-    'InDesign',
-    'Illustrator',
-    'Sketch'
-  ]
-}
 ]
 
+// {
+//   'section': 'languages/software',
+//   'entries': [
+//     'Javascript',
+//     'Java',
+//     'Python',
+//     'C++',
+//     'InDesign',
+//     'Illustrator',
+//     'Sketch'
+//   ]
+// }
 export default data
