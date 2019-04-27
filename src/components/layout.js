@@ -60,7 +60,7 @@ const Layout = ({ children }) => (
           {children}
           </main>
           <footer>
-            <div style={{ color: styles.colors.light, textAlign: `center`}}>
+            <div style={{ color: styles.colors.text, textAlign: `center`}}>
               {`© ${new Date().getFullYear()} ${title}`}
             </div>
           </footer>

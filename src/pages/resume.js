@@ -40,26 +40,44 @@ const Column = ({sections}) => {
 
 const Section = ({title, entries}) => {
   return (
-    <div className="column">
+    <>
     <h2 className="section-title">{title}</h2>
     <div className="section-bar"></div>
       {entries.map(entry => <Entry {...entry} />)}
-    </div>
+    </>
   )
 }
 
-const Entry = ({title, company, duration, description}) => {
-  title = title ? title : ''
-  company = company ? company : ''
-  duration = duration ? duration : {start: 'Placeholder', end: 'Placeholder'}
-  description = description ? description : ''
+// A factory of sorts
+const Entry = ({title, linkify, company, duration, description}) => {
+  let header
+
+  if(title && duration) {
+    let maybeLinkedTitle = linkify ? (<a href={linkify}>{title}</a>) : title
+    header = (
+      <>
+        <h4 className="job-title">{maybeLinkedTitle}</h4>
+        { company &&
+          <h4 className="job-title" style={{color: styles.colors.light}}>
+            {company}
+          </h4>
+        }
+        <div className="duration" style={{color: styles.colors.text}}>
+          <i>{`${duration.start} - ${duration.end}`}</i>
+        </div>
+      </>)
+  }
+
+  let body = Array.isArray(description) ? (
+    <ul className="languages">
+      {description.map(item => <li>{item}</li>)}
+    </ul>
+  ) : description
+
   return (
   <div className="job">
-    <h4 className="job-title">{title}  {company ? `| ${company}` : ``}</h4>
-    <div className="duration" style={{color: styles.colors.light}}>
-      {`${duration.start} - ${duration.end}`}
-    </div>
-    <div>{description}</div>
+    {header}
+    <div className="description">{body}</div>
   </div>
 )
 }

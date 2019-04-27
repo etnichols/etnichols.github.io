@@ -21,9 +21,6 @@ const Contact = () => (
             <li>
               <a className="contact-link" href={data.site.siteMetadata.linkedin}>LinkedIn</a>
             </li>
-            <li>
-              <Link className="contact-link" to="/resume">Resume</Link>
-            </li>
           </ul>
         </div>
       </Layout>

@@ -1,6 +1,5 @@
 
 .resume {
-  padding: 0.25em;
   display: flex;
 }
 
@@ -9,10 +8,10 @@
 }
 
 .column {
-  margin: 0;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  flex-basis: 0;
   margin: 0.25em;
 }
 
@@ -34,6 +33,22 @@
   margin: 0.25em;
 }
 
+.entity {
+  margin-bottom: 0.25em;
+}
+
+ul {
+  list-style: circle;
+  margin-left: 1em;
+  margin-bottom: 0;
+}
+
 .duration {
   margin-bottom: 1em;
+}
+
+.description {
+  font-size: 14px;
+  line-height: 1.7em;
+  margin-bottom: 0.25em;
 }

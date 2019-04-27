@@ -8,7 +8,8 @@ const ROUTES = {
   posts: '/',
   projects: '/projects',
   about: '/about',
-  contact: '/contact'
+  resume: '/resume',
+  contact: '/contact',
 }
 
 const isActiveRoute = (route, active) =>
