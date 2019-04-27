@@ -3,6 +3,12 @@
   display: flex;
 }
 
+@media (max-width: 500px){
+  .resume {
+    flex-direction: column;
+  }
+}
+
 .section-title {
   margin: 0.25em;
 }
