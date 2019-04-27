@@ -4,8 +4,6 @@ import './index.css'
 
 import Layout from '../components/layout'
 
-
-
 const Contact = () => (
   <StaticQuery
     query={PageQuery}
