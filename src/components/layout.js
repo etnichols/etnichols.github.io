@@ -1,10 +1,3 @@
-/**
- * Layout component that queries for data
- * with Gatsby's StaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/static-query/
- */
-
 import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
@@ -14,14 +7,7 @@ import Nav from '../components/nav'
 
 import './layout.css'
 import styles from '../styles'
-import { rhythm, scale } from '../utils/typography'
-
-const NAV_LINKS = {
-  posts: '/',
-  projects: '/projects',
-  about: '/about',
-  contact: '/contact'
-}
+import { rhythm } from '../utils/typography'
 
 const Layout = ({ children }) => (
   <StaticQuery

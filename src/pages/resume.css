@@ -1,12 +1,12 @@
+@media (max-width: 500px){
+  .resume {
+    display: flex;
+    flex-direction: column;
+  }
+}
 
 .resume {
   display: flex;
-}
-
-@media (max-width: 500px){
-  .resume {
-    flex-direction: column;
-  }
 }
 
 .section-title {
@@ -14,8 +14,7 @@
 }
 
 .column {
-  display: flex;
-  flex-direction: column;
+  display: block;
   flex-grow: 1;
   flex-basis: 0;
   margin: 0.25em;
@@ -37,10 +36,6 @@
   height: 0.25em;
   background-color: #fb251b;
   margin: 0.25em;
-}
-
-.entity {
-  margin-bottom: 0.25em;
 }
 
 ul {

@@ -1,6 +1,4 @@
-import React from "react"
-import { StaticQuery, Link, graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import React from 'react'
 import Layout from "../components/layout"
 
 import data from '../data/resume'
@@ -17,8 +15,8 @@ const RenderPage = ({data}) => {
   <>
     <h1>resume.</h1>
     <div className="resume">
-    <Column sections={col1} />
-    <Column sections={col2} />
+      <Column sections={col1} />
+      <Column sections={col2} />
     </div>
   </>)
 }
@@ -40,15 +38,15 @@ const Column = ({sections}) => {
 
 const Section = ({title, entries}) => {
   return (
-    <>
-    <h2 className="section-title">{title}</h2>
-    <div className="section-bar"></div>
-      {entries.map(entry => <Entry {...entry} />)}
-    </>
+    <section>
+      <h2 className="section-title">{title}</h2>
+      <div className="section-bar"></div>
+        {entries.map(entry => <Entry {...entry} />)}
+    </section>
   )
 }
 
-// A factory of sorts
+/** A factory for creating a section entry. */
 const Entry = ({title, linkify, company, duration, description}) => {
   let header
 
@@ -70,16 +68,14 @@ const Entry = ({title, linkify, company, duration, description}) => {
 
   let body = Array.isArray(description) ? (
     <ul className="languages">
-      {description.map(item => <li>{item}</li>)}
-    </ul>
-  ) : description
+    { description.map(item => <li>{item}</li>) }
+    </ul> ) : description
 
   return (
   <div className="job">
     {header}
     <div className="description">{body}</div>
-  </div>
-)
+  </div> )
 }
 
 export default Resume

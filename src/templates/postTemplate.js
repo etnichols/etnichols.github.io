@@ -4,9 +4,6 @@ import Link from 'gatsby-link'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
-
-import presets from '../utils/presets'
-import formatDate from '../utils/format'
 import styles from '../styles'
 import { rhythm } from '../utils/typography'
 
@@ -46,7 +43,6 @@ export default function PostTemplate({ data }) {
 
 const TagsSection = ({post}) => {
   let tags
-  let tagsSection
   if (post.fields.tagSlugs) {
     const tagsArray = post.fields.tagSlugs
     tags = tagsArray.map((tag, i) => {

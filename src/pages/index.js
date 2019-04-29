@@ -1,12 +1,10 @@
 import React from 'react'
-import { StaticQuery, Link, graphql } from 'gatsby'
-import styles from '../styles'
-import presets from '../utils/presets'
-import {formatDate} from '../utils/format'
+import { StaticQuery, graphql } from 'gatsby'
 
-import './index.css'
 import Layout from '../components/layout'
 import PostList from '../components/postlist'
+
+import './index.css'
 
 /** Renders list of all posts. */
 const Index = () => (
