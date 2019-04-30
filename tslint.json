@@ -7,7 +7,7 @@
     "jsx-no-lambda": false,
     "import-name": false,
     "no-boolean-literal-compare": false,
-    "singleQuote": true,
+    "single-quote": true,
     "object-literal-sort-keys": false,
     "no-shadowed-variable": false
   }
