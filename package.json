@@ -5,6 +5,8 @@
   "version": "1.0.0",
   "author": "Evan Nichols <evantnichols@gmail.com>",
   "dependencies": {
+    "@types/react": "^16.8.15",
+    "@types/react-dom": "^16.8.4",
     "gatsby": "^2.3.16",
     "gatsby-image": "^2.0.37",
     "gatsby-plugin-catch-links": "^2.0.13",
@@ -13,6 +15,8 @@
     "gatsby-plugin-offline": "^2.0.25",
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-sharp": "^2.0.35",
+    "gatsby-plugin-tslint": "0.0.2",
+    "gatsby-plugin-typescript": "^2.0.13",
     "gatsby-plugin-typography": "^2.2.13",
     "gatsby-remark-autolink-headers": "^2.0.16",
     "gatsby-remark-copy-linked-files": "^2.0.11",
@@ -35,6 +39,12 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
     "react-typography": "^0.16.19",
+    "tslint": "^5.16.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-loader": "^3.5.4",
+    "tslint-plugin-prettier": "^2.0.1",
+    "tslint-react": "^4.0.0",
+    "typescript": "^3.4.5",
     "typography": "^0.16.19",
     "typography-theme-st-annes": "^0.16.19"
   },
@@ -61,5 +71,7 @@
   },
   "bugs": {
     "url": "https://github.com/e-nichols/e-nichols.github.io/issues"
-  }
+  },
+  "type-check": "tsc --noEmit",
+  "lint": "tslint --project ."
 }
