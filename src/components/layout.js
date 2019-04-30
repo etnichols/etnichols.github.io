@@ -26,7 +26,7 @@ const Layout = ({ children }) => (
       <>
         <div style={{
           padding: rhythm(3 / 4),
-          maxWidth: `37rem`,
+          maxWidth: `40rem`,
           margin: `0 auto`,
         }}>
           <main>
