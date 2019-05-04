@@ -1,11 +1,11 @@
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 import Layout from '../components/layout'
 
 import { data, IDuration, IEntry, ISection } from '../data/resume'
 import styles from '../styles'
 import './resume.css'
 
-const Resume: FunctionComponent<> = props => {
+const Resume: FC<> = props => {
   return (
     <Layout>
       <RenderPage data={data} />
@@ -13,7 +13,7 @@ const Resume: FunctionComponent<> = props => {
   )
 }
 
-const RenderPage: FunctionComponent<{ data: [ISection] }> = ({ data }) => {
+const RenderPage: FC<{ data: [ISection] }> = ({ data }) => {
   const col1 = data.slice(0, 1)
   const col2 = data.slice(1)
   return (
@@ -28,7 +28,7 @@ const RenderPage: FunctionComponent<{ data: [ISection] }> = ({ data }) => {
 }
 
 /** Renders a column which can be multiple sections. */
-const Column: FunctionComponent<{ sections: [ISections] }> = ({ sections }) => {
+const Column: FC<{ sections: [ISections] }> = ({ sections }) => {
   return (
     <div className="column">
       {sections.map(section => (
@@ -42,7 +42,7 @@ const Column: FunctionComponent<{ sections: [ISections] }> = ({ sections }) => {
   )
 }
 
-const Section: FunctionComponent<{ title: string; entries: [IEntry] }> = ({
+const Section: FC<{ title: string; entries: [IEntry] }> = ({
   title,
   entries,
 }) => {
@@ -61,7 +61,7 @@ const Section: FunctionComponent<{ title: string; entries: [IEntry] }> = ({
  * A single entry, either a job entry or a list of skills. If the latter all
  * fields exception description are null.
  */
-const Entry: FunctionComponent<{
+const Entry: FC<{
   title?: string
   linkify?: string
   company?: string

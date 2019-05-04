@@ -37,6 +37,10 @@ main {
   padding-bottom: 3em;
 }
 
+img {
+  border: 1px solid #000;
+}
+
 /* html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
