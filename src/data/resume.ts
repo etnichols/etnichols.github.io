@@ -1,4 +1,7 @@
 /** Resume Data and Type Defs. */
+export interface IResume {
+  sections: [ISection]
+}
 
 export interface ISection {
   title: string

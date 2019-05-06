@@ -1,11 +1,11 @@
 import React, { FC } from 'react'
 import Layout from '../components/layout'
 
-import { data, IDuration, IEntry, ISection } from '../data/resume'
+import { data, IDuration, IEntry, IResume, ISection } from '../data/resume'
 import styles from '../styles'
 import './resume.css'
 
-const Resume: FC<> = props => {
+const Resume: FC = props => {
   return (
     <Layout>
       <RenderPage data={data} />
@@ -13,7 +13,7 @@ const Resume: FC<> = props => {
   )
 }
 
-const RenderPage: FC<{ data: [ISection] }> = ({ data }) => {
+const RenderPage: FC<{ data: Resume }> = ({ data }) => {
   const col1 = data.slice(0, 1)
   const col2 = data.slice(1)
   return (
@@ -32,11 +32,7 @@ const Column: FC<{ sections: [ISections] }> = ({ sections }) => {
   return (
     <div className="column">
       {sections.map(section => (
-        <Section
-          key={`section-${section.title}`}
-          title={section.title}
-          entries={section.entries}
-        />
+        <Section key={`section-${section.title}`} {...section} />
       ))}
     </div>
   )
@@ -70,7 +66,7 @@ const Entry: FC<{
 }> = ({ title, linkify, company, duration, description }) => {
   let header
 
-  if (title && duration) {
+  if (title) {
     const maybeLinkedTitle = linkify ? <a href={linkify}>{title}</a> : title
     header = (
       <>
@@ -80,9 +76,11 @@ const Entry: FC<{
             {company}
           </h4>
         )}
-        <div className="duration" style={{ color: styles.colors.text }}>
-          <i>{`${duration.start} - ${duration.end}`}</i>
-        </div>
+        {duration && (
+          <div className="duration" style={{ color: styles.colors.text }}>
+            <i>{`${duration.start} - ${duration.end}`}</i>
+          </div>
+        )}
       </>
     )
   }

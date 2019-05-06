@@ -1,6 +1,5 @@
 @media (max-width: 500px){
   .resume {
-    display: flex;
     flex-direction: column;
   }
 }
