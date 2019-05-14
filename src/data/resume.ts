@@ -1,26 +1,6 @@
-/** Resume Data and Type Defs. */
-export interface IResume {
-  sections: [ISection]
-}
+import { Section } from '../@types/resume.d.ts'
 
-export interface ISection {
-  title: string
-  entries: [IEntry]
-}
-
-export interface IEntry {
-  title?: string
-  company?: string
-  duration?: IDuration
-  description: string | [string]
-}
-
-export interface IDuration {
-  start: string
-  end: string
-}
-
-export const data: [ISection] = [
+export const data: [Section] = [
   {
     title: 'work',
     entries: [

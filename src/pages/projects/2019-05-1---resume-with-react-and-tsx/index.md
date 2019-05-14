@@ -47,7 +47,7 @@ module.exports = {
 
 That's it! Now you can use files with a .tsx extension in your project.
 
-## Add resume.tsx to `pages` folder
+## Create /resume page for your site
 
 As the Gatsby docs state, "Any React component defined in `src/pages/*.js` will automatically become a page." With Typescript enabled on the project, that statement can be updated to say, "Any React component defined in `src/pages/*.[js|tsx` will automatically become a page." Note the `.tsx` extension as opposed to just `.ts`. This is because the resume page we create will use JSX, thus we want the `.tsx` extension.
 
@@ -66,14 +66,13 @@ Let's see it in action. Run `gatsby develop` again from project directory and na
 
 ![Hello, Resume!](hello-resume.png)
 
-
 ## Actually use Typescript
 
 You probably noticed the code above isn' actually Typescript 🤔  why did it still compile? It's because *Typescript is a typed superset of Javascript.* Which is a fancy way of saying, "All Javascript is valid Typescript, but not all Typescript is valid Javascript." Typescript simply adds optional static typing to the language.
 
-This is a cool thing because it makes integrating Typescript into an existing project quite easy. You could change all existing .js files in your project to .ts|.tsx and incrementally add typings to them, or you could leave all your legacy .js files as is and using .ts|.tsx for any new files. Yay for unncessary re-writing!
+This is a cool thing because it makes integrating Typescript into an existing project quite easy. You could change all existing .js files in your project to .ts|.tsx and incrementally add typings to them, or you could leave all your legacy .js files as is and using .ts|.tsx for any new files.
 
-Let's add some typings to Resume function component. The syntax for adding typings is simple: `identifier : type`. Two quick examples.
+But I digress. Back to the matter at hand: let's add some typings to Resume function component. The syntax for adding typings is simple: `identifier : type`. Two quick examples.
 
 Let's say we have three variables: `x`, `y` and `z`.
 
@@ -107,7 +106,7 @@ If you wrote the code above in plain JS, it would compile with no problem and it
 '2Howdy'
 ```
 
- To the console. Javascript is fun like that.
+Javascript is fun like that.
 
 With that ultra-brief primer on types, let's go ahead and add some types to the simple `Resume` function component in `resume.tsx`.
 
@@ -124,24 +123,79 @@ And now update the `Resume` function to use this type definition.
 const Resume: FunctionComponent = () => (<h1>Hello, Resume!</h1>)
 ```
 
-## Define types and create data.
+## Define types
 
 This resume is boring AF right now. Let's think high-level on the "shape" of a resume. It might look something like this:
 
-TODO: insert picture here.
+![Resume illustration!](resume-sketch.png)
 
-It consists of multiple **sections** like "Work experience", "education", "projects", "volunteering", etc. Each of those sections consists of one or more **entries** related to that section. And each entry consists of details like name of the position, company/organization, duration, description of responsibilities, etc.
+It consists of multiple **sections** like "work", "leadership", "education", etc. Each of those sections consists of one or more **entries** related to that section. And each entry consists of details like name of the position, company/organization, duration, description of responsibilities, etc.
 
-There's also the case of a **section** just being a single entry, that is a list of skills not associated with a specific position/company/duration. Like a "Programming languages" section. We should account for that in our types, too.
+But, if you look at the "leadership" section above, there's also the case of a  **section** just having a single entry which is itself a list of items. Another example of a section like this might be a "Programming languages" section, in which you simply want to list the languages/frameworks you know, and perhaps your level of familiarity ('proficient', 'familiar with', etc.) a single **entry**, with a single list that is a list of skills not associated with a specific position/company/duration.
 
-With that in mind, let's take a stab at defining some types.
+Generalizing the example above into a generic `section`, we get something like:
+
+![Resume illustration!](section.png)
+
+With that in mind, let's define some types.
+### Enter: Interfaces
+
+In Typescript, you define types using the interface keyword. The Typescript [docs](https://www.typescriptlang.org/docs/handbook/interfaces.html) explain what interfaces are nicely:
+
+> "One of TypeScript’s core principles is that type checking focuses on the shape that values have. This is sometimes called “duck typing” or “structural subtyping”. In TypeScript, interfaces fill the role of naming these types, and are a powerful way of defining contracts within your code as well as contracts with code outside of your project."
+
+Let's do our types top-down, starting with saying what a `Resume` is and breaking it down until we get to all primitive types.
+
+Within the `src` directory of your Gatsby project, create a new file `resume.d.ts`. The `.d.ts` denotes a file that contains type declarations.
+
+```ts
+export interface Resume {
+  sections: [ISection]
+}
+
+export interface Section {
+  title: string
+  entries: [Entry]
+}
+
+export interface Entry {
+  title?: string
+  company?: string
+  duration?: Duration
+  description: string | [string]
+}
+
+export interface Duration {
+  start: string
+  end: string
+}
+```
+
+In english:
+
+- A `Resume` is an array of `Sections`.
+- A `Section` is a `title` string and an array of `Entry` objects.
+- An `entry` can have a `title`, `company`, `Duration`, -- but all these fields are **optional**, hence the usage of the `?`. The `description` field is required, and it can be either a string OR an array of strings (hence the `|`).
+- A duration is `start` and an `end`, both strings.
+
+### Define a typed data object
+
+Let's actually make a `Resume` data object that implements the types defined above.
+
+**Audience participation**: this is where you come in, dear reader. Try defining your own `Resume` data object in `data/src/resume.ts`. Or you can steal mine for example (but please don't steal my identity).
 
 ## Create function components.
 
+- Write function components
+
+- Conditional rendering
+
 ## Compose
+
+- Put all the functions together to make a resume
 
 ## Style
 
 ## Wrap up
 
-## Next steps
+## Conclusion
