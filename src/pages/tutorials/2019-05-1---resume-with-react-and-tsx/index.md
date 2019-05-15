@@ -6,7 +6,7 @@ tags:
 - tutorial
 - React
 - Typescript
-draft: true
+draft: false
 type: 'tutorial'
 ---
 
@@ -185,6 +185,10 @@ Let's actually make a `Resume` data object that implements the types defined abo
 **Audience participation**: this is where you come in, dear reader. Try defining your own `Resume` data object in `data/src/resume.ts`. Or you can steal mine for example (but please don't steal my identity).
 
 ## Create function components.
+
+- While it's helpful to think "top down" when breaking down types, I tend to do the opposite when it comes to actually creating the individual components. It's easy to go "bottom up" here, starting by defining the simplest functions and then composing them together until we reach out final "Resume" component.
+
+So our order of function defintions will be: `Entry`, `Section`, `Column`, `Resume`.
 
 - Write function components
 

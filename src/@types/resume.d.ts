@@ -1,6 +1,10 @@
 /** Resume Data and Type Defs. */
 export interface Resume {
-  sections: [ISection]
+  sections: [Section]
+}
+
+export interface Column {
+  sections: [Sections]
 }
 
 export interface Section {
@@ -10,6 +14,7 @@ export interface Section {
 
 export interface Entry {
   title?: string
+  linkify?: string
   company?: string
   duration?: Duration
   description: string | [string]

@@ -1,53 +1,51 @@
 import React, { FC } from 'react'
 import Layout from '../components/layout'
 
-import { data, IDuration, IEntry, IResume, ISection } from '../data/resume'
+import { Column, Duration, Entry, Resume, Section } from '../@types/resume.d.ts'
+import data from '../data/resume'
 import styles from '../styles'
 import './resume.css'
 
-const Resume: FC = props => {
+const Page: FC<> = () => {
   return (
     <Layout>
-      <RenderPage data={data} />
+      <RenderPage {...data} />
     </Layout>
   )
 }
 
-const RenderPage: FC<{ data: Resume }> = ({ data }) => {
-  const col1 = data.slice(0, 1)
-  const col2 = data.slice(1)
+const RenderPage: FC<Resume> = ({ sections }) => {
+  const col1 = sections.slice(0, 1)
+  const col2 = sections.slice(1)
   return (
     <>
       <h1>resume.</h1>
       <div className="resume">
-        <Column sections={col1} />
-        <Column sections={col2} />
+        <RenderColumn sections={col1} />
+        <RenderColumn sections={col2} />
       </div>
     </>
   )
 }
 
 /** Renders a column which can be multiple sections. */
-const Column: FC<{ sections: [ISections] }> = ({ sections }) => {
+const RenderColumn: FC<Column> = ({ sections }) => {
   return (
     <div className="column">
       {sections.map(section => (
-        <Section key={`section-${section.title}`} {...section} />
+        <RenderSection key={`section-${section.title}`} {...section} />
       ))}
     </div>
   )
 }
 
-const Section: FC<{ title: string; entries: [IEntry] }> = ({
-  title,
-  entries,
-}) => {
+const RenderSection: FC<Section> = ({ title, entries }) => {
   return (
     <section>
       <h2 className="section-title">{title}</h2>
       <div className="section-bar" />
       {entries.map((entry, i) => (
-        <Entry key={`${title}-entry-${i}`} {...entry} />
+        <RenderEntry key={`${title}-entry-${i}`} {...entry} />
       ))}
     </section>
   )
@@ -57,13 +55,13 @@ const Section: FC<{ title: string; entries: [IEntry] }> = ({
  * A single entry, either a job entry or a list of skills. If the latter all
  * fields exception description are null.
  */
-const Entry: FC<{
-  title?: string
-  linkify?: string
-  company?: string
-  duration?: IDuration
-  description: string | [string]
-}> = ({ title, linkify, company, duration, description }) => {
+const RenderEntry: FC<Entry> = ({
+  title,
+  linkify,
+  company,
+  duration,
+  description,
+}) => {
   let header
 
   if (title) {
@@ -103,4 +101,4 @@ const Entry: FC<{
   )
 }
 
-export default Resume
+export default Page
