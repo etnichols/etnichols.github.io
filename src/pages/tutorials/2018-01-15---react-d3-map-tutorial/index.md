@@ -8,7 +8,7 @@ tags:
 - d3
 - Python
 draft: true
-type: 'project'
+type: 'tutorial'
 ---
 
 # Live Demo

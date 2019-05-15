@@ -7,7 +7,7 @@ tags:
 - Python
 draft: false
 author: Evan Nichols
-type: 'project'
+type: 'tutorial'
 ---
 
 I've been working on a project the past few months for a team of doctors at the KU Medical Center -- Dr. Garth Fraga, Dr. Arlette-Habashi and Matt DaCunha, a third-year medical student. We're making RightSite, an iOS application aimed at reducing biopsy-labeling errors in the clinical setting.

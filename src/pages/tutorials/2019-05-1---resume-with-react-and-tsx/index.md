@@ -6,12 +6,12 @@ tags:
 - tutorial
 - React
 - Typescript
-draft: false
-type: 'project'
+draft: true
+type: 'tutorial'
 ---
 
 ## Overview
-This is a mini-tutorial illustrating how to create a simple, responsive resume page for your personal website using Gatsby, React function components and Typescript. It assumes a basic knowledge of these three technologies. If that's not the case, check out these references before getting started:
+This tutorial illustrates how to create a simple, responsive resume page for your personal website using Gatsby, React function components and Typescript. It assumes a basic knowledge of these three technologies. If that's not the case, check out these references before getting started:
 
 - [Set up Gatsby development environment](https://www.gatsbyjs.org/tutorial/part-zero/).
 - [Typescript in 5 minutes](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)

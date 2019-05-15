@@ -7,7 +7,7 @@ tags:
 - tutorial
 draft: false
 author: Evan Nichols
-type: 'project'
+type: 'tutorial'
 ---
 
 In this tutorial we'll learn how to create an animated quotebook. Check out a live demo of the application here: [randomquotebook.surge.sh](http://www.randomquotebook.surge.sh).

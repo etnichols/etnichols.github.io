@@ -1,26 +1,32 @@
 const _ = require(`lodash`)
-const path = require("path")
+const path = require('path')
 
-exports.onCreateNode = ({ node, getNode, actions}) => {
+exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
 
-  if(node.internal.type === 'File'){
+  if (node.internal.type === 'File') {
     // It's a directory, create a custom URL based on the name.
     const filePath = path.parse(node.absolutePath)
     const postSlug = filePath.dir.split('---')[1]
-    let slug
-    if(filePath.dir.includes('project')){
-      slug = `/projects/${postSlug}/`
+    let category
+
+    if (filePath.dir.includes('project')) {
+      category = `projects`
+    } else if (filePath.dir.includes('tutorials')) {
+      category = `tutorials`
     } else {
-      slug = `/posts/${postSlug}`
+      category = `posts`
     }
+
     createNodeField({
       node,
       name: 'slug',
-      value: slug,
+      value: `/${category}/${postSlug}`,
     })
-  } else if(node.internal.type === 'MarkdownRemark' &&
-            typeof node.slug === 'undefined') {
+  } else if (
+    node.internal.type === 'MarkdownRemark' &&
+    typeof node.slug === 'undefined'
+  ) {
     const fileNode = getNode(node.parent)
     // It's a Markdown node, apply slug from the parent.
     createNodeField({
@@ -32,14 +38,14 @@ exports.onCreateNode = ({ node, getNode, actions}) => {
     // And add tagSlugs if they exist.
     if (node.frontmatter.tags) {
       const tagSlugs = node.frontmatter.tags.map(
-        tag => `/tags/${_.kebabCase(tag)}/`)
+        tag => `/tags/${_.kebabCase(tag)}/`
+      )
       createNodeField({
         node,
         name: `tagSlugs`,
         value: tagSlugs,
       })
     }
-    
   }
 }
 
@@ -88,7 +94,7 @@ exports.createPages = ({ actions, graphql }) => {
     let tags = []
 
     allMarkdownRemark.edges.forEach(({ node }) => {
-      if(_.get(node, `frontmatter.tags`)){
+      if (_.get(node, `frontmatter.tags`)) {
         tags = tags.concat(node.frontmatter.tags)
       }
     })
@@ -99,7 +105,7 @@ exports.createPages = ({ actions, graphql }) => {
       createPage({
         path: path,
         component: tagsTemplate,
-        context: { tag }
+        context: { tag },
       })
     })
   })

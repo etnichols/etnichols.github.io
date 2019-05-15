@@ -55,6 +55,13 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/pages/tutorials`,
+        name: `markdown-tutorials`,
+      }
+    },
+    {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `${__dirname}/src/utils/typography.js`,
@@ -97,6 +104,6 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-offline`,
     `gatsby-plugin-typescript`,
-    `gatsby-plugin-tslint`, 
+    `gatsby-plugin-tslint`,
   ],
 }

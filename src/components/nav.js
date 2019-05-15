@@ -3,11 +3,12 @@ import Link from "gatsby-link"
 import { Location } from '@reach/router'
 
 const ROUTES = {
-  posts: '/',
-  projects: '/projects',
-  about: '/about',
-  resume: '/resume',
-  contact: '/contact',
+  'posts': '/',
+  'projects': '/projects',
+  'tutorials': '/tutorials',
+  'about': '/about',
+  'contact': '/contact',
+  'resume': '/resume',
 }
 
 const isActiveRoute = (route, active) =>
