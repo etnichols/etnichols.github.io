@@ -37,6 +37,7 @@ const PageQuery = graphql`
     ) {
       edges {
         node {
+          excerpt
           fields {
             slug
           }

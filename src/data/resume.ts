@@ -27,7 +27,7 @@ const data: Resume = {
         },
         {
           title: 'RightSite',
-          linkify: 'https://apple.co/2Uu5tUT',
+          link: 'https://apple.co/2Uu5tUT',
           company: 'University of Kansas Medical Center',
           duration: {
             start: 'October 2016',
@@ -83,7 +83,7 @@ const data: Resume = {
       entries: [
         {
           title: 'overturemusical.com',
-          linkify: 'http://overturemusical.com',
+          link: 'http://overturemusical.com',
           duration: {
             start: 'March 2019',
             end: 'Present',
@@ -93,7 +93,7 @@ const data: Resume = {
         },
         {
           title: 'nycmaps.surge.sh',
-          linkify: 'https://nyc-maps.surge.sh',
+          link: 'https://nyc-maps.surge.sh',
           duration: {
             start: 'November 2017',
             end: 'January 2018',
@@ -103,7 +103,7 @@ const data: Resume = {
         },
         {
           title: 'Digital Bookshelf',
-          linkify: 'https://github.com/e-nichols/digital-bookshelf',
+          link: 'https://github.com/e-nichols/digital-bookshelf',
           duration: {
             start: 'August 2018',
             end: 'February 2019',

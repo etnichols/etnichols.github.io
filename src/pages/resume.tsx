@@ -3,18 +3,17 @@ import Layout from '../components/layout'
 
 import { Column, Duration, Entry, Resume, Section } from '../@types/resume.d.ts'
 import data from '../data/resume'
-import styles from '../styles'
-import './resume.css'
+import './resume.scss'
 
 const Page: FC<> = () => {
   return (
     <Layout>
-      <RenderPage {...data} />
+      <RenderResume {...data} />
     </Layout>
   )
 }
 
-const RenderPage: FC<Resume> = ({ sections }) => {
+const RenderResume: FC<Resume> = ({ sections }) => {
   const col1 = sections.slice(0, 1)
   const col2 = sections.slice(1)
   return (
@@ -28,7 +27,7 @@ const RenderPage: FC<Resume> = ({ sections }) => {
   )
 }
 
-/** Renders a column which can be multiple sections. */
+/** Renders a column which can be one or more sections. */
 const RenderColumn: FC<Column> = ({ sections }) => {
   return (
     <div className="column">
@@ -51,37 +50,25 @@ const RenderSection: FC<Section> = ({ title, entries }) => {
   )
 }
 
-/**
- * A single entry, either a job entry or a list of skills. If the latter all
- * fields exception description are null.
- */
+/** A single entry, either a job entry or a list of skills. */
 const RenderEntry: FC<Entry> = ({
   title,
-  linkify,
+  link,
   company,
   duration,
   description,
 }) => {
-  let header
-
-  if (title) {
-    const maybeLinkedTitle = linkify ? <a href={linkify}>{title}</a> : title
-    header = (
-      <>
-        <h4 className="job-title">{maybeLinkedTitle}</h4>
-        {company && (
-          <h4 className="job-title" style={{ color: styles.colors.light }}>
-            {company}
-          </h4>
-        )}
-        {duration && (
-          <div className="duration" style={{ color: styles.colors.text }}>
-            <i>{`${duration.start} - ${duration.end}`}</i>
-          </div>
-        )}
-      </>
-    )
-  }
+  const header = (
+    <>
+      <h4 className="job-title">{link ? <a href={link}>{title}</a> : title}</h4>
+      {company && <h4 className="job-title">{company}</h4>}
+      {duration && (
+        <div className="duration">
+          <i>{`${duration.start} - ${duration.end}`}</i>
+        </div>
+      )}
+    </>
+  )
 
   const body = Array.isArray(description) ? (
     <ul className="languages">

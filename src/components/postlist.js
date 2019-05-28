@@ -8,7 +8,7 @@ const PostList = ({ posts }) => (
   <ul style={{ marginLeft: 0, listStyle: `none`,}}>
     {posts.map(post => {
       const { node } = post
-      const { fields, frontmatter } = node
+      const { excerpt, fields, frontmatter } = node
       return (
         <li key={fields.slug}>
           <span
@@ -16,7 +16,7 @@ const PostList = ({ posts }) => (
             className="post-date">
             {formatDate(frontmatter.date)}
           </span>
-          <Link to={fields.slug} className="link-underline">
+          <Link to={fields.slug} className="link-style">
             {frontmatter.title}
           </Link>
         </li>

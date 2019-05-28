@@ -14,7 +14,7 @@ export interface Section {
 
 export interface Entry {
   title?: string
-  linkify?: string
+  link?: string
   company?: string
   duration?: Duration
   description: string | [string]

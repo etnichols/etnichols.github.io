@@ -1,0 +1,59 @@
+@import '../styles/colors';
+@import '../styles/space';
+
+@media (max-width: 500px){
+  .resume {
+    flex-direction: column;
+  }
+}
+
+.resume {
+  display: flex;
+}
+
+.column {
+  flex-basis: 0;
+  flex-grow: 1;
+  margin: $PADDING_SMALL;
+}
+
+.section-title {
+  margin: $PADDING_MEDIUM;
+}
+
+.section-bar {
+  background-color: #fb251b;
+  height: $PADDING_SMALL;
+  margin: $PADDING_SMALL;
+}
+
+.job {
+  color: $LIGHT;
+  display: flex;
+  flex-direction: column;
+  margin: $PADDING_SMALL;
+  padding: $PADDING_MEDIUM;
+}
+
+.job-title {
+  margin: $PADDING_SMALL 0;
+  line-height: 1.25;
+}
+
+.duration {
+  color: $TEXT;
+  margin-bottom: 1em;
+}
+
+.description {
+  color: $TEXT;
+  font-size: 14px;
+  line-height: 1.7em;
+  margin-bottom: $PADDING_SMALL;
+}
+
+ul {
+  list-style: circle;
+  margin-left: 1em;
+  margin-bottom: 0;
+}

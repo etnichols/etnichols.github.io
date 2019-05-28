@@ -186,20 +186,74 @@ Let's actually make a `Resume` data object that implements the types defined abo
 
 ## Create function components.
 
-- While it's helpful to think "top down" when breaking down types, I tend to do the opposite when it comes to actually creating the individual components. It's easy to go "bottom up" here, starting by defining the simplest functions and then composing them together until we reach out final "Resume" component.
+- While it's helpful to think "top down" when breaking down types, I tend to do the opposite when it comes to actually creating the individual components. It's easy to go "bottom up" here, starting by defining the simplest functions and then composing them together until we reach out final `Resume` component.
 
-So our order of function defintions will be: `Entry`, `Section`, `Column`, `Resume`.
+So the order of function definitions will be: `Entry`, `Section`, `Column`, `Resume`.
 
-- Write function components
+### Entry
 
-- Conditional rendering
+Take a look at the following code for the `Entry` component, marked up with some inline comments.
 
-## Compose
+```jsx{numberLines: true}
+/** A single entry, either a job entry or a list of skills. */
+const RenderEntry: FC<Entry> = ({
+  title,
+  link,
+  company,
+  duration,
+  description,
+}) => {
+  const header = (
+    <>
+      <h4 className="job-title">{link ? <a href={link}>{title}</a> : title}</h4>
+      {company && <h4 className="job-title">{company}</h4>}
+      {duration && (
+        <div className="duration">
+          <i>{`${duration.start} - ${duration.end}`}</i>
+        </div>
+      )}
+    </>
+  )
 
-- Put all the functions together to make a resume
+  const body = Array.isArray(description) ? (
+    <ul className="languages">
+      {description.map((item, i) => (
+        <li key={`languages-${item}-${i}`}>{item}</li>
+      ))}
+    </ul>
+  ) : (
+    description
+  )
 
-## Style
+  return (
+    <div className="job">
+      {header}
+      <div className="description">{body}</div>
+    </div>
+  )
+}
+```
+
+The first section creates a React [fragment](https://reactjs.org/docs/fragments.html) representing for our entry header. It includes an "maybe linked" title by using the ternary operator, and two [conditionally rendered](https://reactjs.org/docs/conditional-rendering.html#inline-if-with-logical--operator) sections -- company and duration -- using the logical && operator.
+
+The second section creates the entry body. It similarly using the ternary operator to decide whether to render the description as a list, or just a regular paragraph.
+
+The following sections are put together in a div and returned.
+
+### Section
+
+Section is quite a bit simpler
+
+### Column
+
+One or more sections
+
+### Resume
+
+One or more columns (we really use the column idea for responsive styling).
 
 ## Wrap up
 
-## Conclusion
+This tutorial was meant as an ultra quick dive into Typescript and react function components in the context of Gatsby. It also is meant to illustrate how thinking in individual components, with corresponding types as their contracts, can bring simplicity and sanity to the design process.
+
+TODO: Link to Demo Github.
