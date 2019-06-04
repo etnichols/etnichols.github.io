@@ -14,14 +14,12 @@ const Page: FC<> = () => {
 }
 
 const RenderResume: FC<Resume> = ({ sections }) => {
-  const col1 = sections.slice(0, 1)
-  const col2 = sections.slice(1)
   return (
     <>
       <h1>resume.</h1>
       <div className="resume">
-        <RenderColumn sections={col1} />
-        <RenderColumn sections={col2} />
+        <RenderColumn sections={sections.slice(0, 1)} />
+        <RenderColumn sections={sections.slice(1)} />
       </div>
     </>
   )

@@ -1,7 +1,7 @@
 @import '../styles/colors';
 @import '../styles/space';
 
-@media (max-width: 500px){
+@media (max-width: 512px){
   .resume {
     flex-direction: column;
   }
@@ -22,7 +22,7 @@
 }
 
 .section-bar {
-  background-color: #fb251b;
+  background-color: $RED;
   height: $PADDING_SMALL;
   margin: $PADDING_SMALL;
 }

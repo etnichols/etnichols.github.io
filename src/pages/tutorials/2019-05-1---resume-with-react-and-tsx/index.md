@@ -236,24 +236,93 @@ const RenderEntry: FC<Entry> = ({
 
 The first section creates a React [fragment](https://reactjs.org/docs/fragments.html) representing for our entry header. It includes an "maybe linked" title by using the ternary operator, and two [conditionally rendered](https://reactjs.org/docs/conditional-rendering.html#inline-if-with-logical--operator) sections -- company and duration -- using the logical && operator.
 
-The second section creates the entry body. It similarly using the ternary operator to decide whether to render the description as a list, or just a regular paragraph.
-
-The following sections are put together in a div and returned.
+The second section creates the entry body. It similarly using type of the `description` prop to decide whether to render the description as a list, or just a regular paragraph.
 
 ### Section
 
-Section is quite a bit simpler
+Section is quite a bit simpler to render, since it's just a titled list of entries.
+
+```tsx
+
+const RenderSection: FC<Section> = ({ title, entries }) => {
+  return (
+    <section>
+      <h2 className="section-title">{title}</h2>
+      <div className="section-bar" />
+      {entries.map((entry, i) => (
+        <RenderEntry key={`${title}-entry-${i}`} {...entry} />
+      ))}
+    </section>
+  )
+}
+
+```
+
+It maps over the supplied `entries`, rendering a keyed `RenderEntry` component for each one. Note the usage of the `section` html element to give our DOM some semantic meaning. Mozilla's rule of thumb for using section: "a section should logically appear in the outline of the document." This seems to apply here.
 
 ### Column
 
-One or more sections
+The column. If you're a skeptical reader, you may be questioning the need for such a type. *"Why do we need the idea of a column for a web-based resume? Why not just render all the sections without the extra "wrapper type"?**
+
+The answer is that you're right. This type isn't doing much. But what it lacks in semantic purpose... it makes up for in **style**.
+
+That's a corny way of saying we use this type to achieve a responsive layout.
+
+Let's think of two cases for laying out our sections.
+
+<PIC 1> Large screen, two columns,
+
+<PIC 2> Small screen, one column
+
+In other words, we can choose a width boundary value -- for screens above that width, render 2 columns. for screens below, render a single column.
+
+The following CSS rules will account implement this responsive layout.
+
+```css
+@media (max-width: 512px){
+  .resume {
+    flex-direction: column;
+  }
+}
+
+.resume {
+  display: flex;
+}
+
+.column {
+  flex-basis: 0;
+  flex-grow: 1;
+  margin: $PADDING_SMALL;
+}
+```
+
+When max-width is below 500px, we give our resume a `flex-direction` of `column` (i.e. establishing the main axis as up-down as opposed to left-right) so the sections stack on top of one another instead of using the default value of `row`.
 
 ### Resume
 
-One or more columns (we really use the column idea for responsive styling).
+Now let's put things together in a final form. Here's the `RenderResume` function:
+
+```
+const RenderResume: FC<Resume> = ({ sections }) => {
+  return (
+    <>
+      <h1>resume.</h1>
+      <div className="resume">
+        <RenderColumn sections={sections.slice(0, 1)} />
+        <RenderColumn sections={sections.slice(1)} />
+      </div>
+    </>
+  )
+}
+```
+
+This component feels a little "manual" in nature since it is "data aware"... it's choosing where to slice the data into sections.
+
+YMMV on this component, especially if you add more sections to the resume/don't use the starter data. I choose to split into two columns -- one column being 'work' and the other being 'languages/software, education, project.' Play around with this -- add more columns, less columns, change the flex-basis of the columns -- do whatever you want, the world is your flexbox. I am now officially done with making stupid jokes.
 
 ## Wrap up
 
-This tutorial was meant as an ultra quick dive into Typescript and react function components in the context of Gatsby. It also is meant to illustrate how thinking in individual components, with corresponding types as their contracts, can bring simplicity and sanity to the design process.
+This tutorial is an exploration of Typescript and React function components in the context of a Gatsby-powered website. Some closing thoughts:
 
-TODO: Link to Demo Github.
+- Typescript makes it easier to break down the "shape" of the data in your projects. It informs decisions on how to best break down a view into individual components.
+- React function components provide are more succinct than class based components and are easy to compose together to build more complex layouts. There are also some performance reasons to prefer these.
