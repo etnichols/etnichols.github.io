@@ -11,32 +11,32 @@ type: 'tutorial'
 ---
 
 ## Overview
-This tutorial illustrates how to create a simple, responsive resume page for your personal website using Gatsby, React function components and Typescript. It assumes a basic knowledge of these three technologies. If that's not the case, check out these references before getting started:
+This tutorial illustrates how to create a simple, responsive resume page for your personal website using Gatsby, Typescript and React function components. It assumes a basic knowledge of these three technologies. If that's not the case, check out these references before getting started:
 
-- [Set up Gatsby development environment](https://www.gatsbyjs.org/tutorial/part-zero/).
+- [Set up your Gatsby development environment](https://www.gatsbyjs.org/tutorial/part-zero/).
 - [Typescript in 5 minutes](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
-- [Components and Props - React Docs](https://reactjs.org/docs/components-and-props.html)
+- [React Docs - Function and Class Components](https://reactjs.org/docs/components-and-props.html#function-and-class-components)
 
 ## Demo
 [etnichols.com/resume](http://etnichols.com/resume)
 
 ## Set up boilerplate Gatsby site and enable Typescript.
 
-Kick things off by creating a new Gatsby site using the gatsby-cli tool.
+Kick things off by creating a new Gatsby site using the `gatsby-cli` tool.
 
 ```bash
 $ gatsby new typescript-resume
 ```
 
-After the install script finishes, cd into the project directory and run `gatsby-develop` to run the site locally - navigate to `localhost:8000` to check out the site (just boilerplate for now, but not for long!).
+After the install script finishes, cd into the project directory and run `gatsby-develop` to run the site locally. After it finishes building, navigate to `localhost:8000` in your browser to see the boilerplate starter site.
 
-Next, install [gatsby-plugin-typescript](https://www.gatsbyjs.org/packages/gatsby-plugin-typescript/). From the project directory, run:
+Gatsby provides drop-in support for Typescript via [gatsby-plugin-typescript](https://www.gatsbyjs.org/packages/gatsby-plugin-typescript/). Let's add this to the site. From the project directory, run:
 
 ```bash
 $ npm i gatsby-plugin-typescript
 ```
 
-And then, modify your `gatsby-config.js` to include the plugin:
+And modify your `gatsby-config.js` to include the plugin:
 
 ```
 module.exports = {
@@ -45,13 +45,20 @@ module.exports = {
 }
 ```
 
-That's it! Now you can use files with a .tsx extension in your project.
+That's it! Now you can use files with a `.tsx` extension in your project.
 
 ## Create /resume page for your site
 
-As the Gatsby docs state, "Any React component defined in `src/pages/*.js` will automatically become a page." With Typescript enabled on the project, that statement can be updated to say, "Any React component defined in `src/pages/*.[js|tsx` will automatically become a page." Note the `.tsx` extension as opposed to just `.ts`. This is because the resume page we create will use JSX, thus we want the `.tsx` extension.
+As the Gatsby docs state:
+> Any React component defined in `src/pages/*.js` will automatically become a page.
 
-Create a new page at `src/pages/resume.tsx` and copy in this starter code:
+With Typescript enabled on the project, that statement can be updated to say:
+
+> Any React component defined in `src/pages/*.[js|tsx]` will automatically become a page."
+
+*Note the `.tsx` extension as opposed to just `.ts`. This is because the resume page we create will use JSX, thus we want the `.tsx` extension.*
+
+Create a new page at `src/pages/resume.tsx` and add the following code to it:
 
 ```js
 import React from 'react'
@@ -68,15 +75,17 @@ Let's see it in action. Run `gatsby develop` again from project directory and na
 
 ## Actually use Typescript
 
-You probably noticed the code above isn' actually Typescript 🤔  why did it still compile? It's because *Typescript is a typed superset of Javascript.* Which is a fancy way of saying, "All Javascript is valid Typescript, but not all Typescript is valid Javascript." Typescript simply adds optional static typing to the language.
+You probably noticed the code above isn' actually Typescript 🤔 Why did it still compile? It's because *Typescript is a typed superset of Javascript.* Which is a fancy way of saying, "All Javascript is valid Typescript, but not all Typescript is valid Javascript." Typescript simply optional static typing to the language.
 
-This is a cool thing because it makes integrating Typescript into an existing project quite easy. You could change all existing .js files in your project to .ts|.tsx and incrementally add typings to them, or you could leave all your legacy .js files as is and using .ts|.tsx for any new files.
+This is a cool thing because it enables incremental integration of Typescript into an existing project. One could change all existing `.js` files to `.ts|.tsx` and incrementally add typings to them, or, leave all legacy `.js` files unchanged and use `.ts|.tsx` for any new files.
 
-But I digress. Back to the matter at hand: let's add some typings to Resume function component. The syntax for adding typings is simple: `identifier : type`. Two quick examples.
+I digress. Back to the matter at hand: let's add some typings to Resume function component.
 
-Let's say we have three variables: `x`, `y` and `z`.
+The syntax for adding Typescript typings is simple: `identifier : type`. A quick concrete example:
 
-`x` and `y` are numbers, `z` is a string. We could declare them like this:
+Consider three variables: `x`, `y` and `z`.
+
+`x` and `y` are numbers, `z` is a string. Using the syntax above, the variables can be declared like this:
 
 ```tsx
 const x: number = 2;
@@ -84,22 +93,30 @@ const y: number = 3;
 const z: string = 'Howdy!';
 ```
 
-Now, let's say we have a function, `add`, that takes accepts two arguments that are both numbers. It would look like:
+Now, let's say we have a function, `add`, that accepts two arguments which are both numbers. The typed function definition would look like this:
 
 ```tsx
 const add = (left: number, right: number) => left + right;
 ```
 
-And now consider if we tried to use the `add` function with the variables we declared above:
+Finally, consider if we tried to use the `add` function with the following two combinations of the variables declared above:
 
 ```js
-console.log(add(x,y)); // OK
-console.log(add(x,z)); // Compile time error!
+console.log(add(x,y));
+console.log(add(x,z));
 ```
 
-With the type declarations, the Typescript compiler is smart enough to catch an invalid function call.
+If you put all the statements in the example above into a file and tried to compiled it with `tsc` (The Typescript compiler), you'd see the following error:
 
-If you wrote the code above in plain JS, it would compile with no problem and it would output:
+```
+$ tsc test.ts
+$ test.ts:8:7 - error TS2345: Argument of type 'string' is not assignable to parameter of type 'number'.
+
+8 add(x,z)
+```
+Using the type declarations, `tsc` is smart enough to catch the invalid function call.
+
+Side note: If you wrote the code above in plain JS, it would compile with no problem and it would output:
 
 ```js
 5
@@ -108,7 +125,7 @@ If you wrote the code above in plain JS, it would compile with no problem and it
 
 Javascript is fun like that.
 
-With that ultra-brief primer on types, let's go ahead and add some types to the simple `Resume` function component in `resume.tsx`.
+With that ultra-brief primer on types, let's add types to the simple `Resume` function component in `resume.tsx`.
 
 To do this, we'll need to import the `FunctionComponent` type declaration from the React library. Update the import section of `resume.tsx` to be:
 
@@ -123,34 +140,37 @@ And now update the `Resume` function to use this type definition.
 const Resume: FunctionComponent = () => (<h1>Hello, Resume!</h1>)
 ```
 
-## Define types
+Save and refresh the page on your browser. Ta-da! You've successfully used Typescript.
 
-This resume is boring AF right now. Let's think high-level on the "shape" of a resume. It might look something like this:
+## Define types for Resume data
+
+Consider the "shape" or a resume. It might look something like this:
 
 ![Resume illustration!](resume-sketch.png)
 
-It consists of multiple **sections** like "work", "leadership", "education", etc. Each of those sections consists of one or more **entries** related to that section. And each entry consists of details like name of the position, company/organization, duration, description of responsibilities, etc.
+It consists of multiple **sections** like "work", "leadership", "education", etc. Each of those sections consists of one or more **entries** related to that section. Finally, entry consists of details like name of the position, company/organization, duration, description of responsibilities, etc.
 
-But, if you look at the "leadership" section above, there's also the case of a  **section** just having a single entry which is itself a list of items. Another example of a section like this might be a "Programming languages" section, in which you simply want to list the languages/frameworks you know, and perhaps your level of familiarity ('proficient', 'familiar with', etc.) a single **entry**, with a single list that is a list of skills not associated with a specific position/company/duration.
+Pretty simple, but one special case to note. Look at the "leadership" section above. It illustrate a case of a **section** with a single **entry** which is itself a list of items. Another use case for a section like this: adding a "Programming languages" to the resume, where one simply lists the langauges/frameworks with which they have experience.
 
 Generalizing the example above into a generic `section`, we get something like:
 
 ![Resume illustration!](section.png)
 
-With that in mind, let's define some types.
+Let's translate those statements above into define some Typescript types.
+
 ### Enter: Interfaces
 
 In Typescript, you define types using the interface keyword. The Typescript [docs](https://www.typescriptlang.org/docs/handbook/interfaces.html) explain what interfaces are nicely:
 
 > "One of TypeScript’s core principles is that type checking focuses on the shape that values have. This is sometimes called “duck typing” or “structural subtyping”. In TypeScript, interfaces fill the role of naming these types, and are a powerful way of defining contracts within your code as well as contracts with code outside of your project."
 
-Let's do our types top-down, starting with saying what a `Resume` is and breaking it down until we get to all primitive types.
+Let's define the types "top-down." We start with saying what a `Resume` is and breaking it down into sub types until we get to types that consist of all primitives.
 
-Within the `src` directory of your Gatsby project, create a new file `resume.d.ts`. The `.d.ts` denotes a file that contains type declarations.
+Within the `src` directory of your Gatsby project, create a new file `resume.d.ts`. The `.d.ts` denotes a file that contains type declarations. Add the following type declarations:
 
 ```ts
 export interface Resume {
-  sections: [ISection]
+  sections: [Section]
 }
 
 export interface Section {
@@ -170,8 +190,7 @@ export interface Duration {
   end: string
 }
 ```
-
-In english:
+ What does this say? Exactly what we said above:
 
 - A `Resume` is an array of `Sections`.
 - A `Section` is a `title` string and an array of `Entry` objects.
@@ -180,9 +199,11 @@ In english:
 
 ### Define a typed data object
 
-Let's actually make a `Resume` data object that implements the types defined above.
+It's time to make a `Resume` data object that implements the types defined above.
 
-**Audience participation**: this is where you come in, dear reader. Try defining your own `Resume` data object in `data/src/resume.ts`. Or you can steal mine for example (but please don't steal my identity).
+*Note: when I say "data object" I really just mean a plain ole' javascript object.*
+
+**Optional audience participation**: you can either use the <INSERT EXAMPLE LINK HERE> from the demo site, or... make your own! Either way, define this `Resume` data object in new file located at `data/src/resume.ts` in your project.
 
 ## Create function components.
 
@@ -240,7 +261,7 @@ The second section creates the entry body. It similarly using type of the `descr
 
 ### Section
 
-Section is quite a bit simpler to render, since it's just a titled list of entries.
+The `Section` function much simpler to render. It is simply a list of entries with a title.
 
 ```tsx
 
@@ -264,9 +285,11 @@ It maps over the supplied `entries`, rendering a keyed `RenderEntry` component f
 
 The column. If you're a skeptical reader, you may be questioning the need for such a type. *"Why do we need the idea of a column for a web-based resume? Why not just render all the sections without the extra "wrapper type"?**
 
-The answer is that you're right. This type isn't doing much. But what it lacks in semantic purpose... it makes up for in **style**.
+The answer: you're right. The type doesn't add much meaning. But what it lacks in semantic purpose... it makes up for in **style**.
 
-That's a corny way of saying we use this type to achieve a responsive layout.
+That is a corny way of saying this type is used to achieve a responsive layout.
+
+TODO(etnichols): Rework this section
 
 Let's think of two cases for laying out our sections.
 
@@ -275,6 +298,8 @@ Let's think of two cases for laying out our sections.
 <PIC 2> Small screen, one column
 
 In other words, we can choose a width boundary value -- for screens above that width, render 2 columns. for screens below, render a single column.
+
+TODO(etnichols): Rework this section
 
 The following CSS rules will account implement this responsive layout.
 
@@ -318,7 +343,13 @@ const RenderResume: FC<Resume> = ({ sections }) => {
 
 This component feels a little "manual" in nature since it is "data aware"... it's choosing where to slice the data into sections.
 
-YMMV on this component, especially if you add more sections to the resume/don't use the starter data. I choose to split into two columns -- one column being 'work' and the other being 'languages/software, education, project.' Play around with this -- add more columns, less columns, change the flex-basis of the columns -- do whatever you want, the world is your flexbox. I am now officially done with making stupid jokes.
+*Note: you may want to experiment with where to cut the sections into columns, especially if you defined your own Resume data object that doesn't follow the same pattern as the starter data. Play around with this -- add more columns, less columns, change the flex-basis of the columns -- do whatever you want, the world is your flexbox.*
+
+That was the last terrible joke of the tutorial, I promise.
+
+## See the final product
+
+TODO(etnichols): Add a section and picture here with the final product.
 
 ## Wrap up
 
@@ -326,3 +357,5 @@ This tutorial is an exploration of Typescript and React function components in t
 
 - Typescript makes it easier to break down the "shape" of the data in your projects. It informs decisions on how to best break down a view into individual components.
 - React function components provide are more succinct than class based components and are easy to compose together to build more complex layouts. There are also some performance reasons to prefer these.
+
+- TODO(etnichols): Maybe a little more final discussion here.

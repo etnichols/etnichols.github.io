@@ -41,18 +41,18 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
     "react-typography": "^0.16.19",
-    "tslint": "^5.16.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-loader": "^3.5.4",
     "tslint-plugin-prettier": "^2.0.1",
     "tslint-react": "^4.0.0",
-    "typescript": "^3.4.5",
     "typography": "^0.16.19",
     "typography-theme-st-annes": "^0.16.19"
   },
   "devDependencies": {
     "ghpages": "0.0.10",
-    "prettier": "^1.17.0"
+    "prettier": "^1.17.0",
+    "tslint": "^5.17.0",
+    "typescript": "^3.5.1"
   },
   "keywords": [
     "gatsby"
