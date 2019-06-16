@@ -36,6 +36,7 @@ const RenderColumn: FC<Column> = ({ sections }) => {
   )
 }
 
+/** Renders a section, a titled list of entries. */
 const RenderSection: FC<Section> = ({ title, entries }) => {
   return (
     <section>
@@ -58,12 +59,12 @@ const RenderEntry: FC<Entry> = ({
 }) => {
   const header = (
     <>
-      <h4 className="job-title">{link ? <a href={link}>{title}</a> : title}</h4>
-      {company && <h4 className="job-title">{company}</h4>}
+      <h4 className="entry-title">
+        {link ? <a href={link}>{title}</a> : title}
+      </h4>
+      {company && <h5 className="entry-company">{company}</h5>}
       {duration && (
-        <div className="duration">
-          <i>{`${duration.start} - ${duration.end}`}</i>
-        </div>
+        <div className="duration">{`${duration.start} - ${duration.end}`}</div>
       )}
     </>
   )
@@ -79,7 +80,7 @@ const RenderEntry: FC<Entry> = ({
   )
 
   return (
-    <div className="job">
+    <div className="entry">
       {header}
       <div className="description">{body}</div>
     </div>

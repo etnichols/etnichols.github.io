@@ -1,3 +1,19 @@
+@import '../styles/colors';
+@import '../styles/space';
+
+.container {
+  padding: $PADDING_LARGE;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.site-title {
+  color: $LIGHT;
+  line-height: 1;
+  margin: 0;
+  padding: $PADDING_SMALL 0;
+}
+
 ul {
   list-style: none;
 }

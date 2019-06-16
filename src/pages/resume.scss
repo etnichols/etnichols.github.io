@@ -27,7 +27,7 @@
   margin: $PADDING_SMALL;
 }
 
-.job {
+.entry {
   color: $LIGHT;
   display: flex;
   flex-direction: column;
@@ -35,14 +35,22 @@
   padding: $PADDING_MEDIUM;
 }
 
-.job-title {
+.entry-title {
+  margin: $PADDING_SMALL 0;
+  line-height: 1.25;
+}
+
+.entry-company {
+  color: $TEXT;
   margin: $PADDING_SMALL 0;
   line-height: 1.25;
 }
 
 .duration {
-  color: $TEXT;
+  color: $BLACK;
   margin-bottom: 1em;
+  font-size: 14px;
+  font-style: italic;
 }
 
 .description {

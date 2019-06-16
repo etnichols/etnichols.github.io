@@ -16,7 +16,7 @@ const PostList = ({ posts }) => (
             className="post-date">
             {formatDate(frontmatter.date)}
           </span>
-          <Link to={fields.slug} className="link-style">
+          <Link to={fields.slug}>
             {frontmatter.title}
           </Link>
         </li>

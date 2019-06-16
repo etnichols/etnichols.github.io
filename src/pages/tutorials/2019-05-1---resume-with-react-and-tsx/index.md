@@ -160,7 +160,7 @@ Let's translate those statements above into define some Typescript types.
 
 ### Enter: Interfaces
 
-In Typescript, you define types using the interface keyword. The Typescript [docs](https://www.typescriptlang.org/docs/handbook/interfaces.html) explain what interfaces are nicely:
+In Typescript, the `interface` keyword is used to declare types. The Typescript [docs](https://www.typescriptlang.org/docs/handbook/interfaces.html) provide a nice explanation of the motivation for using interfaces:
 
 > "One of TypeScript’s core principles is that type checking focuses on the shape that values have. This is sometimes called “duck typing” or “structural subtyping”. In TypeScript, interfaces fill the role of naming these types, and are a powerful way of defining contracts within your code as well as contracts with code outside of your project."
 
@@ -190,6 +190,7 @@ export interface Duration {
   end: string
 }
 ```
+
  What does this say? Exactly what we said above:
 
 - A `Resume` is an array of `Sections`.
@@ -201,7 +202,7 @@ export interface Duration {
 
 It's time to make a `Resume` data object that implements the types defined above.
 
-*Note: when I say "data object" I really just mean a plain ole' javascript object.*
+*Note: when I say "data object," I really just mean a plain ole' javascript object.*
 
 **Optional audience participation**: you can either use the <INSERT EXAMPLE LINK HERE> from the demo site, or... make your own! Either way, define this `Resume` data object in new file located at `data/src/resume.ts` in your project.
 
@@ -255,7 +256,7 @@ const RenderEntry: FC<Entry> = ({
 }
 ```
 
-The first section creates a React [fragment](https://reactjs.org/docs/fragments.html) representing for our entry header. It includes an "maybe linked" title by using the ternary operator, and two [conditionally rendered](https://reactjs.org/docs/conditional-rendering.html#inline-if-with-logical--operator) sections -- company and duration -- using the logical && operator.
+The first section creates a React [fragment](https://reactjs.org/docs/fragments.html) for the entry header. It includes an "maybe linked" title by using the ternary operator, and two [conditionally rendered](https://reactjs.org/docs/conditional-rendering.html#inline-if-with-logical--operator) sections -- company and duration -- using the logical && operator.
 
 The second section creates the entry body. It similarly using type of the `description` prop to decide whether to render the description as a list, or just a regular paragraph.
 
@@ -283,25 +284,19 @@ It maps over the supplied `entries`, rendering a keyed `RenderEntry` component f
 
 ### Column
 
-The column. If you're a skeptical reader, you may be questioning the need for such a type. *"Why do we need the idea of a column for a web-based resume? Why not just render all the sections without the extra "wrapper type"?**
+The column. If you're a skeptical reader, you may be questioning the need for such a type. *Why do we need the idea of a column for a web-based resume? Why not just render all the sections without the extra "wrapper type"?*
 
-The answer: you're right. The type doesn't add much meaning. But what it lacks in semantic purpose... it makes up for in **style**.
+These are valid questions. The type doesn't add much meaning. But what it lacks in semantic purpose... it makes up for in **style**.
 
-That is a corny way of saying this type is used to achieve a responsive layout.
+That is a corny way of saying this type is used to achieve a [responsive layout](https://developers.google.com/web/fundamentals/design-and-ux/responsive/).
 
-TODO(etnichols): Rework this section
+Consider the two main cases for laying out the sections of our resume: desktop view (large screen) and mobile view (small screen). It makes sense to use all available real estate on each screen:
 
-Let's think of two cases for laying out our sections.
+![Responsive layout illustration](responsive.png)
 
-<PIC 1> Large screen, two columns,
+To achieve this, we can write a CSS media query based on a device width value: in other words, we choose a "breakpoint" width, for screens wider than that value, we render to columns, and for screens below that value, render a single column
 
-<PIC 2> Small screen, one column
-
-In other words, we can choose a width boundary value -- for screens above that width, render 2 columns. for screens below, render a single column.
-
-TODO(etnichols): Rework this section
-
-The following CSS rules will account implement this responsive layout.
+The following CSS rules implement this responsive layout.
 
 ```css
 @media (max-width: 512px){
@@ -321,7 +316,9 @@ The following CSS rules will account implement this responsive layout.
 }
 ```
 
-When max-width is below 500px, we give our resume a `flex-direction` of `column` (i.e. establishing the main axis as up-down as opposed to left-right) so the sections stack on top of one another instead of using the default value of `row`.
+When max-width is below 512px, we give our resume a `flex-direction` of `column` (i.e. establishing the main axis of our layout as up-down as opposed to left-right) so the sections stack on top of one another instead of using the default value of `row`.
+
+*Note: discussing the ins and outs of responsive layouts and CSS flex box is outside the scope of this tutorial, if you want to learn more check the links at the end of the post.*
 
 ### Resume
 
@@ -343,9 +340,13 @@ const RenderResume: FC<Resume> = ({ sections }) => {
 
 This component feels a little "manual" in nature since it is "data aware"... it's choosing where to slice the data into sections.
 
-*Note: you may want to experiment with where to cut the sections into columns, especially if you defined your own Resume data object that doesn't follow the same pattern as the starter data. Play around with this -- add more columns, less columns, change the flex-basis of the columns -- do whatever you want, the world is your flexbox.*
+You may want to experiment with where to cut the sections into columns, especially if you defined your own `Resume` data object that doesn't use the starter data. Add more columns, less columns, change the flex-basis of the columns -- do whatever you want, the world is your flexbox.
 
-That was the last terrible joke of the tutorial, I promise.
+### Optional: Some styling steps
+
+TODO(etnichols): Finish.
+
+Optional scss, using Typography.js.
 
 ## See the final product
 
