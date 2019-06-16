@@ -344,9 +344,10 @@ You may want to experiment with where to cut the sections into columns, especial
 
 ### Optional: Some styling steps
 
-TODO(etnichols): Finish.
+TODO(etnichols): Add a section and picture here with the final product.
 
-Optional scss, using Typography.js.
+- Using Typography.js
+- Using SCSS
 
 ## See the final product
 
