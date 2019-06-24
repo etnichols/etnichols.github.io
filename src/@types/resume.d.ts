@@ -3,10 +3,6 @@ export interface Resume {
   sections: [Section]
 }
 
-export interface Column {
-  sections: [Sections]
-}
-
 export interface Section {
   title: string
   entries: [Entry]

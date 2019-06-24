@@ -3,7 +3,7 @@ import React, { FC } from 'react'
 import Icon from '../components/icon'
 import Layout from '../components/layout'
 
-import { Column, Duration, Entry, Resume, Section } from '../@types/resume.d.ts'
+import { Duration, Entry, Resume, Section } from '../@types/resume.d.ts'
 import data from '../data/resume'
 import './about.scss'
 
@@ -18,7 +18,7 @@ const Page: FC<> = () => {
 const RenderResume: FC<Resume> = ({ sections }) => {
   return (
     <>
-      <TitleSection />
+      <ResumeTitle />
       <div className="resume">
         {sections.map(section => (
           <RenderSection key={`section-${section.title}`} {...section} />
@@ -28,7 +28,7 @@ const RenderResume: FC<Resume> = ({ sections }) => {
   )
 }
 
-const TitleSection: FC<> = () => {
+const ResumeTitle: FC<> = () => {
   return (
     <StaticQuery
       query={graphql`
@@ -47,6 +47,14 @@ const TitleSection: FC<> = () => {
       `}
       render={data => {
         const { siteMetadata } = data.site
+        const { email, github, linkedin, medium } = siteMetadata
+        const iconsWithLinks = [
+          ['email', `mailto:${siteMetadata.email}`],
+          ['github', github],
+          ['linkedin', linkedin],
+          ['medium', medium],
+        ]
+
         return (
           <div>
             <h1>about me</h1>
@@ -54,18 +62,11 @@ const TitleSection: FC<> = () => {
               {siteMetadata.description}
             </p>
             <div className="icon-section">
-              <a className="link-icon" href={`mailto:${siteMetadata.email}`}>
-                <Icon name="email" />
-              </a>
-              <a className="link-icon" href={siteMetadata.github}>
-                <Icon name="github" />
-              </a>
-              <a className="link-icon" href={siteMetadata.linkedin}>
-                <Icon name="linkedin" />
-              </a>
-              <a className="link-icon" href={siteMetadata.medium}>
-                <Icon name="medium" />
-              </a>
+              {iconsWithLinks.map(([icon, href], i) => (
+                <a key={`link-${i}`} className="link-icon" href={href}>
+                  <Icon key={`link-${i}`} name={icon} />
+                </a>
+              ))}
             </div>
           </div>
         )
@@ -106,7 +107,9 @@ const RenderEntry: FC<Entry> = ({
       )}
       {company && <h5 className="entry-company">{company}</h5>}
       {duration && (
-        <div className="duration">{`${duration.start} - ${duration.end}`}</div>
+        <div className="entry-duration">{`${duration.start} - ${
+          duration.end
+        }`}</div>
       )}
     </>
   )
@@ -124,7 +127,7 @@ const RenderEntry: FC<Entry> = ({
   return (
     <div className="entry">
       {header}
-      <div className="description">{body}</div>
+      <div className="entry-description">{body}</div>
     </div>
   )
 }
