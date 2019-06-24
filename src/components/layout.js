@@ -27,7 +27,7 @@ const Layout = ({ children }) => (
           <div className="container">
             <main>
               <Link to="/" css={{ display: `inline-block` }}>
-                <h1 className="siteTitle">{title}</h1>
+                <h1 className="site-title">{title}</h1>
               </Link>
               <hr />
               <Nav />

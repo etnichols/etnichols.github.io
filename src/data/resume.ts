@@ -1,4 +1,4 @@
-import { Section } from '../@types/resume.d.ts'
+import { Resume } from '../@types/resume.d.ts'
 
 const data: Resume = {
   sections: [
@@ -49,6 +49,20 @@ const data: Resume = {
       ],
     },
     {
+      title: 'education',
+      entries: [
+        {
+          company: 'B.S., Computer Science',
+          title: 'University of Kansas',
+          duration: {
+            start: 'Aug 2012',
+            end: 'May 2017',
+          },
+          description: 'GPA: 3.67 / 4.00',
+        },
+      ],
+    },
+    {
       title: 'languages/software',
       entries: [
         {
@@ -61,20 +75,6 @@ const data: Resume = {
             'HTML/CSS',
             'InDesign, Photoshop, Sketch',
           ],
-        },
-      ],
-    },
-    {
-      title: 'education',
-      entries: [
-        {
-          company: 'B.S., Computer Science',
-          title: 'University of Kansas',
-          duration: {
-            start: 'Aug 2012',
-            end: 'May 2017',
-          },
-          description: 'GPA: 3.67 / 4.00',
         },
       ],
     },

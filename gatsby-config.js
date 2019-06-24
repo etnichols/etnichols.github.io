@@ -3,12 +3,14 @@ module.exports = {
   siteMetadata: {
     site: `etnichols.com`,
     title: `etnichols`,
-    author: `@etnichols`,
-    description: `a blog`,
+    author: `Evan Nichols`,
+    description: `Software Engineer in NYC by way of Kansas City. Reader, runner, writer, amateur slackliner and web development enthusiast.`,
     homepage: `https://etnichols.com`,
     email: `evantnichols@gmail.com`,
     linkedin: `https://www.linkedin.com/in/etnichols/`,
     github: `https://www.github.com/e-nichols`,
+    medium: `https://medium.com/@etnichols`,
+    location: `New York, NY`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

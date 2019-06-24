@@ -2,7 +2,8 @@
 @import '../styles/space';
 
 .container {
-  padding: $PADDING_LARGE;
+  margin-top: $SPACING_LARGE;
+  padding: $SPACING_LARGE;
   max-width: 40rem;
   margin: 0 auto;
 }
@@ -55,6 +56,10 @@ main {
 
 img {
   border: 1px solid #000;
+}
+
+h1 h2 h3 h4 h5 h6 {
+  margin-top: 0;
 }
 
 /**

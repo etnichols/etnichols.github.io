@@ -1,0 +1,17 @@
+@import '../styles/colors';
+@import '../styles/space';
+
+svg {
+  cursor: pointer;
+}
+
+.icon {
+  margin: $PADDING_SMALL;
+  cursor: pointer;
+  fill: $TEXT;
+}
+
+.icon:hover {
+  cursor: pointer;
+  fill: $LIGHT;
+}
