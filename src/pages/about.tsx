@@ -19,7 +19,7 @@ const RenderResume: FC<Resume> = ({ sections }) => {
   return (
     <>
       <ResumeTitle />
-      <div className="resume">
+      <div className="resume-body">
         {sections.map(section => (
           <RenderSection key={`section-${section.title}`} {...section} />
         ))}
@@ -35,7 +35,6 @@ const ResumeTitle: FC<> = () => {
         query {
           site {
             siteMetadata {
-              author
               description
               email
               linkedin
@@ -46,10 +45,16 @@ const ResumeTitle: FC<> = () => {
         }
       `}
       render={data => {
-        const { siteMetadata } = data.site
-        const { email, github, linkedin, medium } = siteMetadata
+        const {
+          email,
+          github,
+          linkedin,
+          medium,
+          description,
+        } = data.site.siteMetadata
+        
         const iconsWithLinks = [
-          ['email', `mailto:${siteMetadata.email}`],
+          ['email', `mailto:${email}`],
           ['github', github],
           ['linkedin', linkedin],
           ['medium', medium],
@@ -59,7 +64,7 @@ const ResumeTitle: FC<> = () => {
           <div>
             <h1>about me</h1>
             <p className="title-section-description">
-              {siteMetadata.description}
+              {description}
             </p>
             <div className="icon-section">
               {iconsWithLinks.map(([icon, href], i) => (
