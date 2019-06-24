@@ -40,6 +40,7 @@ const TitleSection: FC<> = () => {
               email
               linkedin
               github
+              medium
             }
           }
         }
@@ -98,9 +99,11 @@ const RenderEntry: FC<Entry> = ({
 }) => {
   const header = (
     <>
-      <h4 className="entry-title">
-        {link ? <a href={link}>{title}</a> : title}
-      </h4>
+      {title && (
+        <h4 className="entry-title">
+          {link ? <a href={link}>{title}</a> : title}
+        </h4>
+      )}
       {company && <h5 className="entry-company">{company}</h5>}
       {duration && (
         <div className="duration">{`${duration.start} - ${duration.end}`}</div>
