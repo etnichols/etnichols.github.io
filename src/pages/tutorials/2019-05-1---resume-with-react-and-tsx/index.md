@@ -18,9 +18,11 @@ This tutorial illustrates how to create a simple, responsive resume page for you
 - [React Docs - Function and Class Components](https://reactjs.org/docs/components-and-props.html#function-and-class-components)
 
 ## Demo
-[etnichols.com/resume](http://etnichols.com/resume)
+[http://gatsby-typescript-resume.surge.sh/](http://gatsby-typescript-resume.surge.sh/)
 
-## Set up boilerplate Gatsby site and enable Typescript.
+[Github repo](https://github.com/e-nichols/gatsby-typescript-resume)
+
+## Set up boilerplate Gatsby site and enable Typescript
 
 Kick things off by creating a new Gatsby site using the `gatsby-cli` tool.
 
@@ -125,15 +127,15 @@ Side note: If you wrote the code above in plain JS, it would compile with no pro
 
 Javascript is fun like that.
 
-With that ultra-brief primer on types, let's add types to the simple `Resume` function component in `resume.tsx`.
+With that ultra-brief primer on types, let's add types to the `Resume` function component in `resume.tsx`.
 
-To do this, we'll need to import the `FunctionComponent` type declaration from the React library. Update the import section of `resume.tsx` to be:
+Import the `FunctionComponent` type declaration from the React library. Update the import section of `resume.tsx` to be:
 
 ```tsx
 import React, { FunctionComponent } from 'react'
 ```
 
-And now update the `Resume` function to use this type definition.
+And update the `Resume` function to use this type definition:
 
 ```js
 /** Responsive resume page. */
@@ -150,13 +152,13 @@ Consider the "shape" or a resume. It might look something like this:
 
 It consists of multiple **sections** like "work", "leadership", "education", etc. Each of those sections consists of one or more **entries** related to that section. Finally, entry consists of details like name of the position, company/organization, duration, description of responsibilities, etc.
 
-Pretty simple, but one special case to note. Look at the "leadership" section above. It illustrate a case of a **section** with a single **entry** which is itself a list of items. Another use case for a section like this: adding a "Programming languages" to the resume, where one simply lists the langauges/frameworks with which they have experience.
+Pretty simple, but one special case to note. Look at the "leadership" section above. It illustrate a case of a **section** with a single **entry** which is itself a list of items. Another use case for a section like this: adding a "Programming languages" to the resume, where one simply lists the languages/frameworks with which they have experience.
 
 Generalizing the example above into a generic `section`, we get something like:
 
 ![Resume illustration!](section.png)
 
-Let's translate those statements above into define some Typescript types.
+Let's translate the statements above into Typescript types.
 
 ### Enter: Interfaces
 
@@ -191,8 +193,6 @@ export interface Duration {
 }
 ```
 
- What does this say? Exactly what we said above:
-
 - A `Resume` is an array of `Sections`.
 - A `Section` is a `title` string and an array of `Entry` objects.
 - An `entry` can have a `title`, `company`, `Duration`, -- but all these fields are **optional**, hence the usage of the `?`. The `description` field is required, and it can be either a string OR an array of strings (hence the `|`).
@@ -200,7 +200,7 @@ export interface Duration {
 
 ### Define a typed data object
 
-It's time to make a `Resume` data object that implements the types defined above.
+It's time to make a `Resume` data object (read: plain ole' javascript object).
 
 *Note: when I say "data object," I really just mean a plain ole' javascript object.*
 
@@ -214,10 +214,9 @@ So the order of function definitions will be: `Entry`, `Section`, `Column`, `Res
 
 ### Entry
 
-Take a look at the following code for the `Entry` component, marked up with some inline comments.
+Take a look at the following code for the `Entry` component:
 
 ```jsx{numberLines: true}
-/** A single entry, either a job entry or a list of skills. */
 const RenderEntry: FC<Entry> = ({
   title,
   link,
@@ -227,12 +226,16 @@ const RenderEntry: FC<Entry> = ({
 }) => {
   const header = (
     <>
-      <h4 className="job-title">{link ? <a href={link}>{title}</a> : title}</h4>
-      {company && <h4 className="job-title">{company}</h4>}
+      {title && (
+        <h4 className="entry-title">
+          {link ? <a href={link}>{title}</a> : title}
+        </h4>
+      )}
+      {company && <h5 className="entry-company">{company}</h5>}
       {duration && (
-        <div className="duration">
-          <i>{`${duration.start} - ${duration.end}`}</i>
-        </div>
+        <div className="entry-duration">{`${duration.start} - ${
+          duration.end
+        }`}</div>
       )}
     </>
   )
@@ -248,9 +251,9 @@ const RenderEntry: FC<Entry> = ({
   )
 
   return (
-    <div className="job">
+    <div className="entry">
       {header}
-      <div className="description">{body}</div>
+      <div className="entry-description">{body}</div>
     </div>
   )
 }
@@ -262,15 +265,17 @@ The second section creates the entry body. It similarly using type of the `descr
 
 ### Section
 
-The `Section` function much simpler to render. It is simply a list of entries with a title.
+The `Section` function much simpler to render. It is simply a list of entries with a title:
 
 ```tsx
 
 const RenderSection: FC<Section> = ({ title, entries }) => {
   return (
-    <section>
-      <h2 className="section-title">{title}</h2>
-      <div className="section-bar" />
+    <section className="section">
+      <div className="section-title-container">
+        <h2 className="section-title">{title}</h2>
+        <div className="section-bar" />
+      </div>
       {entries.map((entry, i) => (
         <RenderEntry key={`${title}-entry-${i}`} {...entry} />
       ))}
@@ -280,67 +285,133 @@ const RenderSection: FC<Section> = ({ title, entries }) => {
 
 ```
 
-It maps over the supplied `entries`, rendering a keyed `RenderEntry` component for each one. Note the usage of the `section` html element to give our DOM some semantic meaning. Mozilla's rule of thumb for using section: "a section should logically appear in the outline of the document." This seems to apply here.
+It maps over the supplied `entries`, rendering a keyed `RenderEntry` component for each one. Note the usage of the `section` html element to give our DOM some semantic meaning. Mozilla's rule of thumb for using `section`: "a section should logically appear in the outline of the document." This seems to apply here.
 
-### Column
-
-The column. If you're a skeptical reader, you may be questioning the need for such a type. *Why do we need the idea of a column for a web-based resume? Why not just render all the sections without the extra "wrapper type"?*
-
-These are valid questions. The type doesn't add much meaning. But what it lacks in semantic purpose... it makes up for in **style**.
-
-That is a corny way of saying this type is used to achieve a [responsive layout](https://developers.google.com/web/fundamentals/design-and-ux/responsive/).
+### Responsive CSS columns
 
 Consider the two main cases for laying out the sections of our resume: desktop view (large screen) and mobile view (small screen). It makes sense to use all available real estate on each screen:
 
 ![Responsive layout illustration](responsive.png)
 
-To achieve this, we can write a CSS media query based on a device width value: in other words, we choose a "breakpoint" width, for screens wider than that value, we render to columns, and for screens below that value, render a single column
+How can we do this? `column-count` and `column-width` to the stage.
 
-The following CSS rules implement this responsive layout.
+Column count breaks an element's content into the specified number of columns, and column-width sets "the ideal column width in a multi-column layout." When used together, we can achieve a responsive layout: 2 columns on large screens, one column on narrow screens.
 
 ```css
-@media (max-width: 512px){
-  .resume {
-    flex-direction: column;
-  }
-}
-
-.resume {
-  display: flex;
-}
-
-.column {
-  flex-basis: 0;
-  flex-grow: 1;
-  margin: $PADDING_SMALL;
+.resume-body {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  -webkit-column-width: 256px;
+  -moz-column-width: 256px;
+  column-width: 256px;
+  -webkit-column-rule: 1px dotted $SMOKE;
+  -moz-column-rule: 1px dotted $SMOKE;
+  column-rule: 1px dotted $SMOKE;
 }
 ```
 
-When max-width is below 512px, we give our resume a `flex-direction` of `column` (i.e. establishing the main axis of our layout as up-down as opposed to left-right) so the sections stack on top of one another instead of using the default value of `row`.
+Check these rules out in action:
 
-*Note: discussing the ins and outs of responsive layouts and CSS flex box is outside the scope of this tutorial, if you want to learn more check the links at the end of the post.*
+![Responsive columns gif](responsive_resume.gif)
+
+
+### Title
+
+```tsx
+const ResumeTitle: FC<> = () => {
+  return (
+    <StaticQuery
+      query={graphql`
+        query {
+          site {
+            siteMetadata {
+              author
+              location
+              description
+              email
+              linkedin
+              github
+              medium
+            }
+          }
+        }
+      `}
+      render={data => {
+        const {
+          author,
+          location,
+          email,
+          github,
+          linkedin,
+          medium,
+          description,
+        } = data.site.siteMetadata
+
+        const iconsWithLinks = [
+          ['email', `mailto:${email}`],
+          ['github', github],
+          ['linkedin', linkedin],
+          ['medium', medium],
+        ]
+
+        return (
+          <div className="resume-title">
+          <h1 className="resume-name">{author}</h1>
+          <h5 className="title-section-description">
+            {location}
+          </h5>
+            <div className="icon-section">
+              {iconsWithLinks.map(([icon, href], i) => (
+                <a key={`link-${i}`} className="link-icon" href={href}>
+                  <Icon key={`link-${i}`} name={icon} />
+                </a>
+              ))}
+            </div>
+          </div>
+        )
+      }}
+    />
+  )
+}
+```
 
 ### Resume
 
 Now let's put things together in a final form. Here's the `RenderResume` function:
 
-```
+```tsx
 const RenderResume: FC<Resume> = ({ sections }) => {
   return (
     <>
-      <h1>resume.</h1>
-      <div className="resume">
-        <RenderColumn sections={sections.slice(0, 1)} />
-        <RenderColumn sections={sections.slice(1)} />
+      <ResumeTitle />
+      <div className="resume-body">
+        {sections.map(section => (
+          <RenderSection key={`section-${section.title}`} {...section} />
+        ))}
       </div>
     </>
   )
 }
 ```
 
-This component feels a little "manual" in nature since it is "data aware"... it's choosing where to slice the data into sections.
+### Page
 
-You may want to experiment with where to cut the sections into columns, especially if you defined your own `Resume` data object that doesn't use the starter data. Add more columns, less columns, change the flex-basis of the columns -- do whatever you want, the world is your flexbox.
+- The components folder is for common components - things that should be shared across pages, like the site header and nav bar. The boilerplate site generated by `gatsby new site` command includes a few: layout, header and seo.
+
+- Update the layout
+
+
+
+```tsx
+const Page: FC<> = () => {
+  return (
+    <Layout>
+      <RenderResume {...data} />
+    </Layout>
+  )
+}
+```
 
 ### Optional: Some styling steps
 
@@ -359,5 +430,4 @@ This tutorial is an exploration of Typescript and React function components in t
 
 - Typescript makes it easier to break down the "shape" of the data in your projects. It informs decisions on how to best break down a view into individual components.
 - React function components provide are more succinct than class based components and are easy to compose together to build more complex layouts. There are also some performance reasons to prefer these.
-
 - TODO(etnichols): Maybe a little more final discussion here.

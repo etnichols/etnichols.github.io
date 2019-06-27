@@ -30,36 +30,36 @@ ul {
 }
 
 .section-title {
-  margin: $PADDING_SMALL $PADDING_XSMALL;
+  margin: $SPACING_SMALL $SPACING_XSMALL;
 }
 
 .section-bar {
   background-color: $RED;
-  height: $PADDING_XSMALL;
-  margin: $PADDING_XSMALL;
+  height: $SPACING_XSMALL;
+  margin: $SPACING_XSMALL;
 }
 
 .entry {
   color: $LIGHT;
   display: flex;
   flex-direction: column;
-  margin: $PADDING_SMALL;
+  margin: $SPACING_SMALL;
 }
 
 .entry-title {
-  margin: $PADDING_SMALL 0;
+  margin: $SPACING_SMALL 0;
   line-height: 1.25;
 }
 
 .entry-company {
   color: $TEXT;
-  margin: $PADDING_XSMALL 0;
+  margin: $SPACING_XSMALL 0;
   line-height: 1.25;
 }
 
 .entry-duration {
   color: $BLACK;
-  margin-bottom: $PADDING_MEDIUM;
+  margin-bottom: $SPACING_MEDIUM;
   font-size: 14px;
   font-style: italic;
 }
@@ -68,11 +68,11 @@ ul {
   color: $TEXT;
   font-size: 14px;
   line-height: 1.7em;
-  margin-bottom: $PADDING_SMALL;
+  margin-bottom: $SPACING_SMALL;
 }
 
 .title-section-description {
-  margin-bottom: $PADDING_MEDIUM;
+  margin-bottom: $SPACING_MEDIUM;
 }
 
 .icon-section {
@@ -82,5 +82,5 @@ ul {
 }
 
 .link-icon {
-  margin-right: $PADDING_MEDIUM;
+  margin-right: $SPACING_MEDIUM;
 }
