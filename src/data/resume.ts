@@ -58,7 +58,6 @@ const data: Resume = {
             start: 'Aug 2012',
             end: 'May 2017',
           },
-          description: 'GPA: 3.67 / 4.00',
         },
       ],
     },

@@ -6,7 +6,7 @@ module.exports = {
     author: `Evan Nichols`,
     description: `Software Engineer in NYC by way of Kansas City. Reader, runner, writer, amateur slackliner and web development enthusiast.`,
     homepage: `https://etnichols.com`,
-    email: `evantnichols@gmail.com`,
+    email: `e3t5n6@gmail.com`,
     linkedin: `https://www.linkedin.com/in/etnichols/`,
     github: `https://www.github.com/e-nichols`,
     medium: `https://medium.com/@etnichols`,
