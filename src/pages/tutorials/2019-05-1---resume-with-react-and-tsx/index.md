@@ -6,7 +6,7 @@ tags:
 - tutorial
 - React
 - Typescript
-draft: true
+draft: false
 type: 'tutorial'
 ---
 
@@ -18,17 +18,19 @@ This tutorial illustrates how to create a simple, responsive resume page for you
 - [React Docs - Function and Class Components](https://reactjs.org/docs/components-and-props.html#function-and-class-components)
 
 ## Demo
-[http://gatsby-typescript-resume.surge.sh/resume/](http://gatsby-typescript-resume.surge.sh/resume/)
+[gatsby-typescript-resume.surge.sh](http://gatsby-typescript-resume.surge.sh/resume/)
 
-[github repo]()
+Source code available [here](https://github.com/e-nichols/gatsby-typescript-resume).
 
-## Set up boilerplate Gatsby site and enable Typescript.
+## Set up boilerplate Gatsby site
 
 Kick things off by creating a new Gatsby site using the `gatsby-cli` tool.
 
 ```bash
 $ gatsby new typescript-resume
 ```
+
+## Enable Typescript
 
 After the install script finishes, cd into the project directory and run `gatsby-develop` to run the site locally. After it finishes building, navigate to `localhost:8000` in your browser to see the boilerplate starter site.
 
@@ -49,16 +51,16 @@ module.exports = {
 
 That's it! Now you can use files with a `.tsx` extension in your project.
 
-## Create /resume page for your site
+## Create /resume route for your site
 
 As the Gatsby docs state:
 > Any React component defined in `src/pages/*.js` will automatically become a page.
 
-With Typescript enabled on the project, that statement can be updated to say:
+With Typescript enabled on the project, this statement can be updated to:
 
 > Any React component defined in `src/pages/*.[js|tsx]` will automatically become a page."
 
-*Note the `.tsx` extension as opposed to just `.ts`. This is because the resume page we create will use JSX, thus we want the `.tsx` extension.*
+*(Note: the `.tsx` extension as opposed to just `.ts`. This is because the resume page we create will use JSX, thus we want the `.tsx` extension.)*
 
 Create a new page at `src/pages/resume.tsx` and add the following code to it:
 
@@ -152,13 +154,13 @@ Consider the "shape" or a resume. It might look something like this:
 
 It consists of multiple **sections** like "work", "leadership", "education", etc. Each of those sections consists of one or more **entries** related to that section. Finally, entry consists of details like name of the position, company/organization, duration, description of responsibilities, etc.
 
-Pretty simple, but one special case to note. Look at the "leadership" section above. It illustrate a case of a **section** with a single **entry** which is itself a list of items. Another use case for a section like this: adding a "Programming languages" to the resume, where one simply lists the langauges/frameworks with which they have experience.
+Pretty simple, but one special case to note. Look at the "leadership" section above. It illustrates a case of a **section** with a single **entry** which is itself a list of items. Another use case for a section like this: adding a "Programming languages" to the resume, where one simply lists the langauges/frameworks with which they have experience.
 
 Generalizing the example above into a generic `section`, we get something like:
 
 ![Resume illustration!](section.png)
 
-Let's translate those statements above into define some Typescript types.
+Let's translate those statements above into Typescript types.
 
 ### Enter: Interfaces
 
@@ -206,13 +208,11 @@ It's time to make a `Resume` data object that implements the types defined above
 
 *Note: when I say "data object," I really just mean a plain ole' javascript object.*
 
-**Optional audience participation**: you can either use the <INSERT EXAMPLE LINK HERE> from the demo site, or... make your own! Either way, define this `Resume` data object in new file located at `data/src/resume.ts` in your project.
+You can define your own data object or use the dummy data from the demo site ([link](https://github.com/e-nichols/gatsby-typescript-resume/blob/master/src/data/resume.ts)). Either way, be sure to define this `Resume` data object in new file located at `data/src/resume.ts` in your project.
 
-## Create function components.
+## Create function components for each type
 
-- While it's helpful to think "top down" when breaking down types, I tend to do the opposite when it comes to actually creating the individual components. It's easy to go "bottom up" here, starting by defining the simplest functions and then composing them together until we reach out final `Resume` component.
-
-So the order of function definitions will be: `Entry`, `Section`, `Column`, `Resume`.
+It can be useful to define tops in a "top down" manner, but I tend to think the opposite when it comes to actually implementing individual components. So, this section reads "bottom up", defining components for the simplest types first and composing them together until we arrive at the final `Resume` component.
 
 ### Entry
 
@@ -284,43 +284,91 @@ const RenderSection: FC<Section> = ({ title, entries }) => {
 
 It maps over the supplied `entries`, rendering a keyed `RenderEntry` component for each one. Note the usage of the `section` html element to give our DOM some semantic meaning. Mozilla's rule of thumb for using section: "a section should logically appear in the outline of the document." This seems to apply here.
 
-### Column
-
-The column. If you're a skeptical reader, you may be questioning the need for such a type. *Why do we need the idea of a column for a web-based resume? Why not just render all the sections without the extra "wrapper type"?*
-
-These are valid questions. The type doesn't add much meaning. But what it lacks in semantic purpose... it makes up for in **style**.
-
-That is a corny way of saying this type is used to achieve a [responsive layout](https://developers.google.com/web/fundamentals/design-and-ux/responsive/).
+### Responsive column layout via CSS
 
 Consider the two main cases for laying out the sections of our resume: desktop view (large screen) and mobile view (small screen). It makes sense to use all available real estate on each screen:
 
-![Responsive layout illustration](responsive.png)
+![Responsive column illustration](responsive.png)
 
-To achieve this, we can write a CSS media query based on a device width value: in other words, we choose a "breakpoint" width, for screens wider than that value, we render to columns, and for screens below that value, render a single column
+How can we do this? `column-count` and `column-width` to the stage.
 
-The following CSS rules implement this responsive layout.
+Column count breaks an element's content into the specified number of columns, and column-width sets "the ideal column width in a multi-column layout." When used together, we can achieve a responsive layout: 2 columns on large screens, one column on narrow screens.
 
-```css
-@media (max-width: 512px){
-  .resume {
-    flex-direction: column;
-  }
-}
+TODO(etnichols): Finish this section. Where does the style below get applied?
 
-.resume {
-  display: flex;
-}
-
-.column {
-  flex-basis: 0;
-  flex-grow: 1;
-  margin: $SPACING_SMALL;
+```
+.resume-body {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  -webkit-column-width: 256px;
+  -moz-column-width: 256px;
+  column-width: 256px;
+  -webkit-column-rule: 1px dotted $SMOKE;
+  -moz-column-rule: 1px dotted $SMOKE;
+  column-rule: 1px dotted $SMOKE;
 }
 ```
 
-When max-width is below 512px, we give our resume a `flex-direction` of `column` (i.e. establishing the main axis of our layout as up-down as opposed to left-right) so the sections stack on top of one another instead of using the default value of `row`.
+### (Optional) Title Component
 
-*Note: discussing the ins and outs of responsive layouts and CSS flex box is outside the scope of this tutorial, if you want to learn more check the links at the end of the post.*
+```jsx
+const ResumeTitle: FC<> = () => {
+  return (
+    <StaticQuery
+      query={graphql`
+        query {
+          site {
+            siteMetadata {
+              author
+              location
+              description
+              email
+              linkedin
+              github
+              medium
+            }
+          }
+        }
+      `}
+      render={data => {
+        const {
+          author,
+          location,
+          email,
+          github,
+          linkedin,
+          medium,
+          description,
+        } = data.site.siteMetadata
+
+        const iconsWithLinks = [
+          ['email', `mailto:${email}`],
+          ['github', github],
+          ['linkedin', linkedin],
+          ['medium', medium],
+        ]
+
+        return (
+          <div className="resume-title">
+          <h1 className="resume-name">{author}</h1>
+          <h5 className="title-section-description">
+            {location}
+          </h5>
+            <div className="icon-section">
+              {iconsWithLinks.map(([icon, href], i) => (
+                <a key={`link-${i}`} className="link-icon" href={href}>
+                  <Icon key={`link-${i}`} name={icon} />
+                </a>
+              ))}
+            </div>
+          </div>
+        )
+      }}
+    />
+  )
+}
+```
 
 ### Resume
 
@@ -330,30 +378,26 @@ Now let's put things together in a final form. Here's the `RenderResume` functio
 const RenderResume: FC<Resume> = ({ sections }) => {
   return (
     <>
-      <h1>resume.</h1>
-      <div className="resume">
-        <RenderColumn sections={sections.slice(0, 1)} />
-        <RenderColumn sections={sections.slice(1)} />
+      <ResumeTitle />
+      <div className="resume-body">
+        {sections.map(section => (
+          <RenderSection key={`section-${section.title}`} {...section} />
+        ))}
       </div>
     </>
   )
 }
 ```
 
-This component feels a little "manual" in nature since it is "data aware"... it's choosing where to slice the data into sections.
+### Page
 
-You may want to experiment with where to cut the sections into columns, especially if you defined your own `Resume` data object that doesn't use the starter data. Add more columns, less columns, change the flex-basis of the columns -- do whatever you want, the world is your flexbox.
+The components folder is for common components - things that should be shared across pages, like the site header and nav bar. The boilerplate site generated by gatsby new site command includes a few: layout, header and seo.
 
-### Optional: Some styling steps
+TODO(etnichols): Update the layout.
 
-TODO(etnichols): Add a section and picture here with the final product.hb
+### Final Product
 
-- Using Typography.js
-- Using SCSS
-
-## See the final product
-
-TODO(etnichols): Add a section and picture here with the final product.
+TODO(etnichols): add final product
 
 ## Wrap up
 
@@ -361,5 +405,4 @@ This tutorial is an exploration of Typescript and React function components in t
 
 - Typescript makes it easier to break down the "shape" of the data in your projects. It informs decisions on how to best break down a view into individual components.
 - React function components provide are more succinct than class based components and are easy to compose together to build more complex layouts. There are also some performance reasons to prefer these.
-
 - TODO(etnichols): Maybe a little more final discussion here.
