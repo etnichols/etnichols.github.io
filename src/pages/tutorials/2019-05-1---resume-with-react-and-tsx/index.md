@@ -32,7 +32,7 @@ $ gatsby new typescript-resume
 
 ## Enable Typescript
 
-After the install script finishes, cd into the project directory and run `gatsby-develop` to run the site locally. After it finishes building, navigate to `localhost:8000` in your browser to see the boilerplate starter site.
+After the install script finishes, `cd` into the project directory and run `gatsby-develop` to run the site locally. After it finishes building, navigate to `localhost:8000` in your browser to see the boilerplate starter site.
 
 Gatsby provides drop-in support for Typescript via [gatsby-plugin-typescript](https://www.gatsbyjs.org/packages/gatsby-plugin-typescript/). Let's add this to the site. From the project directory, run:
 
@@ -214,9 +214,16 @@ You can define your own data object or use the dummy data from the demo site ([l
 
 It can be useful to define tops in a "top down" manner, but I tend to think the opposite when it comes to actually implementing individual components. So, this section reads "bottom up", defining components for the simplest types first and composing them together until we arrive at the final `Resume` component.
 
+### A note on CSS
+
+The main point of this tutorial is learning Gatsby, Typescript and React -- not so much learning CSS. For that reason, I'm not going in depth on the rules used in the code snippets below. Choose one of the following options to add CSS to your project:
+
+1. Define your own styles in a `resume.css` file (in the same directory as the `resume.tsx` file) and define your own styles for each component as you go along.
+2. Use the `resume.scss` and base styles from the demo site. To do this, [enable scss on the site](https://www.gatsbyjs.org/packages/gatsby-plugin-sass/) (read: just install the plugin) and then copy the relevant files from the demo site into your project ([here](https://github.com/e-nichols/gatsby-typescript-resume/blob/master/src/pages/resume.scss) and [here](https://github.com/e-nichols/gatsby-typescript-resume/tree/master/src/styles)).
+
 ### Entry
 
-Take a look at the following code for the `Entry` component, marked up with some inline comments.
+Let's define the `Entry` component -- a single entry in a section. Add the following component to `resume.tsx`.
 
 ```jsx{numberLines: true}
 /** A single entry, either a job entry or a list of skills. */
@@ -264,7 +271,7 @@ The second section creates the entry body. It similarly using type of the `descr
 
 ### Section
 
-The `Section` function much simpler to render. It is simply a list of entries with a title.
+The `Section` function much simpler to render. It is simply a list of entries with a title. Add the following to `resume.tsx`:
 
 ```tsx
 
@@ -282,19 +289,7 @@ const RenderSection: FC<Section> = ({ title, entries }) => {
 
 ```
 
-It maps over the supplied `entries`, rendering a keyed `RenderEntry` component for each one. Note the usage of the `section` html element to give our DOM some semantic meaning. Mozilla's rule of thumb for using section: "a section should logically appear in the outline of the document." This seems to apply here.
-
-### Responsive column layout via CSS
-
-Consider the two main cases for laying out the sections of our resume: desktop view (large screen) and mobile view (small screen). It makes sense to use all available real estate on each screen:
-
-![Responsive column illustration](responsive.png)
-
-How can we do this? `column-count` and `column-width` to the stage.
-
-Column count breaks an element's content into the specified number of columns, and column-width sets "the ideal column width in a multi-column layout." When used together, we can achieve a responsive layout: 2 columns on large screens, one column on narrow screens.
-
-TODO(etnichols): Finish this section. Where does the style below get applied?
+It maps over the supplied `entries`, rendering a keyed `RenderEntry` component for each one. Note the usage of the `section` html element to give our DOM some semantic meaning. Mozilla's rule of thumb for using section: "a section should logically appear in the outline of the document."
 
 ```
 .resume-body {
@@ -304,13 +299,42 @@ TODO(etnichols): Finish this section. Where does the style below get applied?
   -webkit-column-width: 256px;
   -moz-column-width: 256px;
   column-width: 256px;
-  -webkit-column-rule: 1px dotted $SMOKE;
-  -moz-column-rule: 1px dotted $SMOKE;
-  column-rule: 1px dotted $SMOKE;
+  -webkit-column-rule: 1px dotted $fff;
+  -moz-column-rule: 1px dotted $fff;
+  column-rule: 1px dotted $fff;
 }
 ```
 
 ### (Optional) Title Component
+
+As a brief introduction to the `StaticQuery` in Gatsby, here's an optional `ResumeTitle` component you can add to your site. It looks like this:
+
+![Resume title illustration!](resume-title.png)
+
+If you want to add this component, you'll need to add some data to your site that can be queried via `StaticQuery`. To do this, update the `gatsby-config.js` file at the root of your site. Update the `siteMetadata` to include the following:
+
+```js
+module.exports = {
+  siteMetadata: {
+    title: `Gatsby Typescript Resume`,
+    description: `A simple, responsive resume using Gatsby and Typescript.`,
+    author: `John Doe`,
+    email: `johndoe123@gmail.com`,
+    github: `https://github.com/gatsbyjs`,
+    linkedin: `https://www.linkedin.com/company/gatsbyjs/`,
+    location: `New York, NY`,
+    medium: `https://medium.com/search?q=gatsby%20js`,
+  },
+  ...
+}
+```
+
+Additionally, add the following
+
+TODO: Add icons and icons.scss to components
+import them into resume.tsx
+
+define the following component.
 
 ```jsx
 const ResumeTitle: FC<> = () => {
@@ -370,6 +394,8 @@ const ResumeTitle: FC<> = () => {
 }
 ```
 
+TODO: explain this code snippet.
+
 ### Resume
 
 Now let's put things together in a final form. Here's the `RenderResume` function:
@@ -388,6 +414,36 @@ const RenderResume: FC<Resume> = ({ sections }) => {
   )
 }
 ```
+
+### Responsive column layout via CSS
+
+I lied -- we will talk about one CSS rule in particular that enables a responsive layout for the resume. Consider the two main cases for laying out the sections of our resume: desktop view (large screen) and mobile view (small screen). It makes sense to use all available real estate on each screen:
+
+![Responsive column illustration](responsive.png)
+
+How can we do this? `column-count` and `column-width` to the stage.
+
+`column-count` breaks an element's content into the specified number of columns, and column-width sets "the ideal column width in a multi-column layout." Used together, they create a responsive layout: 2 columns on large screens, one column on narrow screens.
+
+Add the following to to your resume.css (or resume.scss) file:
+
+```
+.resume-body {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  -webkit-column-width: 256px;
+  -moz-column-width: 256px;
+  column-width: 256px;
+  -webkit-column-rule: 1px dotted $fff;
+  -moz-column-rule: 1px dotted $fff;
+  column-rule: 1px dotted $fff;
+}
+```
+
+Now, refresh the page and check out resume. It should look like this:
+
+![Animation illustrating the responsive layout](responsive_resume.gif)
 
 ### Page
 
