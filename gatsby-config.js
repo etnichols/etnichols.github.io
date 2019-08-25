@@ -10,7 +10,7 @@ module.exports = {
     linkedin: `https://www.linkedin.com/in/etnichols/`,
     github: `https://www.github.com/e-nichols`,
     medium: `https://medium.com/@etnichols`,
-    location: `New York, NY`
+    location: `New York, NY`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -19,7 +19,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: 'UA-69960811-1',
-      }
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -47,27 +47,27 @@ module.exports = {
       options: {
         path: `${__dirname}/src/pages/posts`,
         name: `markdown-posts`,
-      }
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/pages/projects`,
         name: `markdown-projects`,
-      }
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/pages/tutorials`,
         name: `markdown-tutorials`,
-      }
+      },
     },
     {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `${__dirname}/src/utils/typography.js`,
-      }
+      },
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -77,7 +77,7 @@ module.exports = {
             resolve: `gatsby-remark-autolink-headers`,
             options: {
               removeAccents: true,
-            }
+            },
           },
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-katex`,
@@ -91,22 +91,21 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 590,
-            }
+            },
           },
           `gatsby-remark-prismjs`,
-        ]
-      }
+        ],
+      },
     },
     {
       resolve: `gatsby-remark-prismjs`,
       showLineNumbers: false,
     },
     `gatsby-plugin-catch-links`,
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-offline`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-tslint`,
     `gatsby-plugin-sass`,
+    `gatsby-plugin-mdx`,
   ],
 }

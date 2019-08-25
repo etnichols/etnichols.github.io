@@ -19,7 +19,7 @@ const Nav = props => {
     {({location}) => {
         let active = location.pathname.split(`/`)[1]
         return Object.entries(ROUTES).map(([key, value]) => (<>
-        <Link className="link-style" to={value}>{`${isActiveRoute(key, active) ? '•' : ''} ${key}`}</Link>
+        <Link className="link-style" to={value}>{`${isActiveRoute(key, active) ? '>' : ''} ${key}`}</Link>
         <br/>
         </>))
       }}

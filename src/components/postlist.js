@@ -12,7 +12,7 @@ const PostList = ({ posts }) => (
       return (
         <li key={fields.slug}>
           <span
-            style={{color: styles.colors.light}}
+            style={{color: styles.colors.text}}
             className="post-date">
             {formatDate(frontmatter.date)}
           </span>
