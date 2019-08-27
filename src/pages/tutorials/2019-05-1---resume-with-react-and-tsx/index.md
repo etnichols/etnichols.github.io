@@ -216,7 +216,7 @@ It can be useful to define tops in a "top down" manner, but I tend to think the 
 
 ### A note on CSS
 
-The main point of this tutorial is learning Gatsby, Typescript and React -- not so much learning CSS. For that reason, I'm not going in depth on the rules used in the code snippets below. Choose one of the following options to add CSS to your project:
+The main point of this tutorial is learning Gatsby, Typescript and React -- not so much learning CSS. We will talk about one CSS rule in particular later in the tutorial, but other than that, I won't show any of the CSS for the code snippets below. Choose one of the following options to add CSS to your project:
 
 1. Define your own styles in a `resume.css` file (in the same directory as the `resume.tsx` file) and define your own styles for each component as you go along.
 2. Use the `resume.scss` and base styles from the demo site. To do this, [enable scss on the site](https://www.gatsbyjs.org/packages/gatsby-plugin-sass/) (read: just install the plugin) and then copy the relevant files from the demo site into your project ([here](https://github.com/e-nichols/gatsby-typescript-resume/blob/master/src/pages/resume.scss) and [here](https://github.com/e-nichols/gatsby-typescript-resume/tree/master/src/styles)).
@@ -225,7 +225,7 @@ The main point of this tutorial is learning Gatsby, Typescript and React -- not 
 
 Let's define the `Entry` component -- a single entry in a section. Add the following component to `resume.tsx`.
 
-```jsx{numberLines: true}
+```tsx{numberLines: true}
 /** A single entry, either a job entry or a list of skills. */
 const RenderEntry: FC<Entry> = ({
   title,
@@ -291,7 +291,7 @@ const RenderSection: FC<Section> = ({ title, entries }) => {
 
 It maps over the supplied `entries`, rendering a keyed `RenderEntry` component for each one. Note the usage of the `section` html element to give our DOM some semantic meaning. Mozilla's rule of thumb for using section: "a section should logically appear in the outline of the document."
 
-```
+```css
 .resume-body {
   -webkit-column-count: 2;
   -moz-column-count: 2;
@@ -305,13 +305,18 @@ It maps over the supplied `entries`, rendering a keyed `RenderEntry` component f
 }
 ```
 
-### (Optional) Title Component
+TODO: Pulse check! Let's make sure the thing renders.
 
-As a brief introduction to the `StaticQuery` in Gatsby, here's an optional `ResumeTitle` component you can add to your site. It looks like this:
+### Title Component
+
+Almost done! Let's add the final component, the resume title, which makes use of some icons and the Gatsby `StaticQuery`.
+
 
 ![Resume title illustration!](resume-title.png)
 
-If you want to add this component, you'll need to add some data to your site that can be queried via `StaticQuery`. To do this, update the `gatsby-config.js` file at the root of your site. Update the `siteMetadata` to include the following:
+TODO: What is a `StaticQuery`
+
+Add some data to your site that can be queried via `StaticQuery`. Update `siteMetadata` object in the `gatsby-config.js` at the root of the project with the following:
 
 ```js
 module.exports = {
@@ -321,15 +326,15 @@ module.exports = {
     author: `John Doe`,
     email: `johndoe123@gmail.com`,
     github: `https://github.com/gatsbyjs`,
-    linkedin: `https://www.linkedin.com/company/gatsbyjs/`,
     location: `New York, NY`,
+    linkedin: `https://www.linkedin.com/company/gatsbyjs/`,
     medium: `https://medium.com/search?q=gatsby%20js`,
   },
   ...
 }
 ```
 
-Additionally, add the following
+Additionally, add the following `icon.tsx` and `icon.scss` to the `components` folder of your site.
 
 TODO: Add icons and icons.scss to components
 import them into resume.tsx
