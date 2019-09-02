@@ -6,7 +6,7 @@ tags:
 - tutorial
 - React
 - Typescript
-draft: true
+draft: false
 type: 'tutorial'
 ---
 
@@ -77,9 +77,9 @@ Let's see it in action. Run `gatsby develop` again from project directory and na
 
 ![Hello, Resume!](hello-resume.png)
 
-## Actually use Typescript
+## Typescript Primer
 
-You probably noticed the code above isn' actually Typescript 🤔 Why did it still compile? It's because *Typescript is a typed superset of Javascript.* Which is a fancy way of saying, "All Javascript is valid Typescript, but not all Typescript is valid Javascript." Typescript simply optional static typing to the language.
+You probably noticed the code above isn' actually using Typescript 🤔 Why did it still compile? It's because *Typescript is a typed superset of Javascript.* Which is a fancy way of saying, "All Javascript is valid Typescript, but not all Typescript is valid Javascript." Typescript simply optional static typing to the language.
 
 This is a cool thing because it enables incremental integration of Typescript into an existing project. One could change all existing `.js` files to `.ts|.tsx` and incrementally add typings to them, or, leave all legacy `.js` files unchanged and use `.ts|.tsx` for any new files.
 
@@ -110,7 +110,7 @@ console.log(add(x,y));
 console.log(add(x,z));
 ```
 
-If you put all the statements in the example above into a file and tried to compiled it with `tsc` (The Typescript compiler), you'd see the following error:
+If you put all the statements in the example above into a file and tried to compile it with `tsc`, the Typescript compiler, you'd see the following error:
 
 ```
 $ tsc test.ts
@@ -129,6 +129,8 @@ Side note: If you wrote the code above in plain JS, it would compile with no pro
 
 Javascript is fun like that.
 
+## Actually use Typescript
+
 With that ultra-brief primer on types, let's add types to the `Resume` function component in `resume.tsx`.
 
 To do this, we'll need to import the `FunctionComponent` type declaration from the React library. Update the import section of `resume.tsx` to be:
@@ -139,7 +141,7 @@ import React, { FunctionComponent } from 'react'
 
 And now update the `Resume` function to use this type definition.
 
-```js
+```tsx
 /** Responsive resume page. */
 const Resume: FunctionComponent = () => (<h1>Hello, Resume!</h1>)
 ```
@@ -219,11 +221,30 @@ It can be useful to define tops in a "top down" manner, but I tend to think the 
 The main point of this tutorial is learning Gatsby, Typescript and React -- not so much learning CSS. We will talk about one CSS rule in particular later in the tutorial, but other than that, I won't show any of the CSS for the code snippets below. Choose one of the following options to add CSS to your project:
 
 1. Define your own styles in a `resume.css` file (in the same directory as the `resume.tsx` file) and define your own styles for each component as you go along.
-2. Use the `resume.scss` and base styles from the demo site. To do this, [enable scss on the site](https://www.gatsbyjs.org/packages/gatsby-plugin-sass/) (read: just install the plugin) and then copy the relevant files from the demo site into your project ([here](https://github.com/e-nichols/gatsby-typescript-resume/blob/master/src/pages/resume.scss) and [here](https://github.com/e-nichols/gatsby-typescript-resume/tree/master/src/styles)).
+2. Use the `resume.scss` and base styles from the demo site. To do this, [enable scss on the site](https://www.gatsbyjs.org/packages/gatsby-plugin-sass/) and then copy the relevant files from the demo site into your project ([here](https://github.com/e-nichols/gatsby-typescript-resume/blob/master/src/pages/resume.scss) and [here](https://github.com/e-nichols/gatsby-typescript-resume/tree/master/src/styles)).
+
+### Import all dependencies into `resume.tsx`
+
+In preparation for the components we'll define below, update `resume.tsx` to include the following imports:
+
+```tsx
+import { graphql, StaticQuery } from 'gatsby'
+import React, { FunctionComponent } from 'react'
+import Layout from '../components/layout'
+
+import { Duration, Entry, Resume, Section } from '../@types/resume.d.ts'
+import data from '../data/resume'
+import './resume.scss'
+
+/** Responsive resume page. */
+const Resume: FunctionComponent = () => (<h1>Hello, Resume!</h1>)
+```
+
+Don't worry if you don't recognize some of these components or imports. We'll talk about them later.
 
 ### Entry
 
-Let's define the `Entry` component -- a single entry in a section. Add the following component to `resume.tsx`.
+Let's define the `RenderEntry` component -- a single entry in a section. Add the following function component to `resume.tsx`.
 
 ```tsx{numberLines: true}
 /** A single entry, either a job entry or a list of skills. */
@@ -265,16 +286,15 @@ const RenderEntry: FC<Entry> = ({
 }
 ```
 
-The first section creates a React [fragment](https://reactjs.org/docs/fragments.html) for the entry header. It includes an "maybe linked" title by using the ternary operator, and two [conditionally rendered](https://reactjs.org/docs/conditional-rendering.html#inline-if-with-logical--operator) sections -- company and duration -- using the logical && operator.
+The first section creates a React [fragment](https://reactjs.org/docs/fragments.html) for the entry header. It includes an "maybe linked" title by using the ternary operator, and two [conditionally rendered](https://reactjs.org/docs/conditional-rendering.html#inline-if-with-logical--operator) sections -- company and duration -- using the logical `&&` operator.
 
 The second section creates the entry body. It similarly using type of the `description` prop to decide whether to render the description as a list, or just a regular paragraph.
 
 ### Section
 
-The `Section` function much simpler to render. It is simply a list of entries with a title. Add the following to `resume.tsx`:
+The `RenderSection` function much simpler to render. It is simply a list of entries with a title. Add the following to `resume.tsx`:
 
 ```tsx
-
 const RenderSection: FC<Section> = ({ title, entries }) => {
   return (
     <section>
@@ -286,37 +306,158 @@ const RenderSection: FC<Section> = ({ title, entries }) => {
     </section>
   )
 }
-
 ```
 
-It maps over the supplied `entries`, rendering a keyed `RenderEntry` component for each one. Note the usage of the `section` html element to give our DOM some semantic meaning. Mozilla's rule of thumb for using section: "a section should logically appear in the outline of the document."
+It maps over the supplied `entries`, rendering a keyed `RenderEntry` component for each one. Note the usage of the `section` html element to give our DOM some semantic meaning.
 
-```css
-.resume-body {
-  -webkit-column-count: 2;
-  -moz-column-count: 2;
-  column-count: 2;
-  -webkit-column-width: 256px;
-  -moz-column-width: 256px;
-  column-width: 256px;
-  -webkit-column-rule: 1px dotted $fff;
-  -moz-column-rule: 1px dotted $fff;
-  column-rule: 1px dotted $fff;
+### Resume
+
+Update the placeholder `Resume` component we defined at the beginning of the tutorial with the following:
+
+```tsx
+const RenderResume: FC<Resume> = ({ sections }) => {
+  return (
+    <>
+      <div className="resume-body">
+        {sections.map(section => (
+          <RenderSection key={`section-${section.title}`} {...section} />
+        ))}
+      </div>
+    </>
+  )
 }
 ```
 
-TODO: Pulse check! Let's make sure the thing renders.
+### Pulse Check
+
+We've defined the main components -- `Entry`, `Section` and `Resume`. Let's render them with some real data and make sure it's working as expected. We'll do this by wrapping the resume in a `Layout` component.
+
+Wait, what's a layout component? Where did this come from?
+
+In Gatsby, layouts represent sections of your site that you'd like to share across multiple pages, like headers and footers. You can "wrap" your content in this shared layout to avoid having to redefine the same header and footer on each new page you add to your site.
+
+The boilerplate code generated by `gatsby new my-project-name` includes a simple layout component; we'll use that instead of defining our own. You should already have the `Layout` component imported.
+
+Update `resume.tsx` to match what is shown below:
+
+```tsx{numberLines: true}
+import { graphql, StaticQuery } from 'gatsby'
+import React, { FunctionComponent } from 'react'
+import Icon from '../components/icon'
+import Layout from '../components/layout'
+
+import { Duration, Entry, Resume, Section } from '../@types/resume.d.ts'
+import data from '../data/resume'
+import './resume.scss'
+
+const Page: FunctionComponent = () => {
+  return (
+    <Layout>
+      <RenderResume {...data} />
+    </Layout>
+  )
+}
+
+const RenderResume: FunctionComponent<Resume> = ({ sections }) => {
+  return (
+    <>
+      <div className="resume-body">
+        {sections.map(section => (
+          <RenderSection key={`section-${section.title}`} {...section} />
+        ))}
+      </div>
+    </>
+  )
+}
+
+/** Renders a section, a titled list of entries. */
+const RenderSection: FunctionComponent<Section> = ({ title, entries }) => {
+  ...
+}
+
+/** A single entry, either a job entry or a list of skills. */
+const RenderEntry: FunctionComponent<Entry> = ({
+  title,
+  link,
+  company,
+  duration,
+  description,
+}) => {
+  ...
+}
+
+export default Page
+
+```
+
+Notice the addition of new top-level `Page` component, which wraps `RenderResume` in the `Layout`. Also notice that we're actually passing the `data` object via the JSX [spread](https://reactjs.org/docs/jsx-in-depth.html#spread-attributes) operator.
+
+Navigate to `localhost:8001/resume` to check it out. It should look similar to this:
+
+TODO: This gif looks like it was compressed by a potato, update it.
+![Resume progress demo video](progress-demo.gif)
 
 ### Title Component
 
-Almost done! Let's add the final component, the resume title, which makes use of some icons and the Gatsby `StaticQuery`.
-
+Let's add the final component, the `ResumeTitle`, which makes use of some icons and the Gatsby `StaticQuery` component. It will look like this:
 
 ![Resume title illustration!](resume-title.png)
 
-TODO: What is a `StaticQuery`
+A Gatsby [StaticQuery](https://www.gatsbyjs.org/docs/static-query/) allows components to retrieve data via GraphQL query.
 
-Add some data to your site that can be queried via `StaticQuery`. Update `siteMetadata` object in the `gatsby-config.js` at the root of the project with the following:
+Surprise: you're already using `StaticQuery` and you didn't even realize it. Look at `src/components/layout.js`:
+
+```js
+import React from 'react'
+import PropTypes from 'prop-types'
+import { StaticQuery, graphql } from 'gatsby'
+import Link from 'gatsby-link'
+
+import './layout.scss'
+
+const Layout = ({ children }) => (
+  <StaticQuery
+    query={graphql`
+      query SiteTitleQuery {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+      }
+    `}
+    render={data => {
+      const { title } = data.site.siteMetadata
+      return (
+        <>
+          <div className="container">
+            <main>
+              <Link to="/" css={{ display: `inline-block` }}>
+                <h1 className="site-title">{title}</h1>
+              </Link>
+              <hr />
+              {children}
+            </main>
+            <footer>
+              <div>
+                {`© ${new Date().getFullYear()} ${title}`}
+              </div>
+            </footer>
+          </div>
+        </>
+      )
+    }}
+  />
+)
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+}
+
+export default Layout
+```
+
+It's using a `StaticQuery` to fetch the site title from the site's metadata object. Where is this metadata? In the `gatsby-config.js` at the root of the project. Conveniently, we'll an almost identical query in the `ResumeTitle` component. Update your site metadata to include links any relevant social sites you'd like to include.
 
 ```js
 module.exports = {
@@ -334,12 +475,17 @@ module.exports = {
 }
 ```
 
-Additionally, add the following `icon.tsx` and `icon.scss` to the `components` folder of your site.
+Copy the `icon.tsx` and `icon.scss` files from the demo site to the `components` folder of your site. They are available [here](https://github.com/e-nichols/gatsby-typescript-resume/blob/master/src/components/icon.tsx) and [here](https://github.com/e-nichols/gatsby-typescript-resume/blob/master/src/components/icon.scss).
 
-TODO: Add icons and icons.scss to components
-import them into resume.tsx
+Next, update the `resume.tsx` to import this:
 
-define the following component.
+TODO(line highlighting?)
+
+```
+import Icon from '../components/icon'
+```
+
+And lastly, define the following component in `resume.tsx`:
 
 ```jsx
 const ResumeTitle: FC<> = () => {
@@ -401,28 +547,11 @@ const ResumeTitle: FC<> = () => {
 
 TODO: explain this code snippet.
 
-### Resume
-
-Now let's put things together in a final form. Here's the `RenderResume` function:
-
-```
-const RenderResume: FC<Resume> = ({ sections }) => {
-  return (
-    <>
-      <ResumeTitle />
-      <div className="resume-body">
-        {sections.map(section => (
-          <RenderSection key={`section-${section.title}`} {...section} />
-        ))}
-      </div>
-    </>
-  )
-}
-```
-
 ### Responsive column layout via CSS
 
-I lied -- we will talk about one CSS rule in particular that enables a responsive layout for the resume. Consider the two main cases for laying out the sections of our resume: desktop view (large screen) and mobile view (small screen). It makes sense to use all available real estate on each screen:
+As a final step, let's make the resume layout responsive.
+
+Consider the two main cases for laying out the sections of our resume: desktop view (large screen) and mobile view (small screen). It makes sense to use all available real estate on each screen:
 
 ![Responsive column illustration](responsive.png)
 
@@ -432,7 +561,7 @@ How can we do this? `column-count` and `column-width` to the stage.
 
 Add the following to to your resume.css (or resume.scss) file:
 
-```
+```css
 .resume-body {
   -webkit-column-count: 2;
   -moz-column-count: 2;
@@ -446,23 +575,15 @@ Add the following to to your resume.css (or resume.scss) file:
 }
 ```
 
-Now, refresh the page and check out resume. It should look like this:
+Refresh the page and check out resume. It should look like this:
 
 ![Animation illustrating the responsive layout](responsive_resume.gif)
 
-### Page
-
-The components folder is for common components - things that should be shared across pages, like the site header and nav bar. The boilerplate site generated by gatsby new site command includes a few: layout, header and seo.
-
-TODO(etnichols): Update the layout.
-
-### Final Product
-
-TODO(etnichols): add final product
+If there's enough room on screen to accommodate two columns with a minimum width of `256px`, it does so. Once that that's not possible, it switches back to a single column.
 
 ## Wrap up
 
-This tutorial is an exploration of Typescript and React function components in the context of a Gatsby-powered website. Some closing thoughts:
+That's it! You've successfully made a sleek looking resume page for your personal website leveraging Gatsby, Typescript and React. Some closing thoughts:
 
 - Typescript makes it easier to break down the "shape" of the data in your projects. It informs decisions on how to best break down a view into individual components.
 - React function components provide are more succinct than class based components and are easy to compose together to build more complex layouts. There are also some performance reasons to prefer these.
