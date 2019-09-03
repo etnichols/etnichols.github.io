@@ -479,15 +479,23 @@ Copy the `icon.tsx` and `icon.scss` files from the demo site to the `components`
 
 Next, update the `resume.tsx` to import this:
 
-TODO(line highlighting?)
+```tsx
+import { graphql, StaticQuery } from 'gatsby'
+import React, { FunctionComponent } from 'react'
+import Icon from '../components/icon' // highlight-line
+import Layout from '../components/layout'
 
-```
-import Icon from '../components/icon'
+import { Duration, Entry, Resume, Section } from '../@types/resume.d.ts'
+import data from '../data/resume'
+import './resume.scss'
+
+/** Responsive resume page. */
+const Resume: FunctionComponent = () => (<h1>Hello, Resume!</h1>)
 ```
 
 And lastly, define the following component in `resume.tsx`:
 
-```jsx
+```jsx{numberLines: true}
 const ResumeTitle: FC<> = () => {
   return (
     <StaticQuery
