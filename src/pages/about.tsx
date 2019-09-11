@@ -52,7 +52,7 @@ const ResumeTitle: FC<> = () => {
           medium,
           description,
         } = data.site.siteMetadata
-        
+
         const iconsWithLinks = [
           ['email', `mailto:${email}`],
           ['github', github],
@@ -63,9 +63,7 @@ const ResumeTitle: FC<> = () => {
         return (
           <div>
             <h1>about me</h1>
-            <p className="title-section-description">
-              {description}
-            </p>
+            <p className="title-section-description">{description}</p>
             <div className="icon-section">
               {iconsWithLinks.map(([icon, href], i) => (
                 <a key={`link-${i}`} className="link-icon" href={href}>
