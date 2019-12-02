@@ -7,7 +7,7 @@ const RenderPage = ({data}) => {
   const allTags = data.allMarkdownRemark.group
   return (
     <div>
-      <h1>tags</h1>
+      <h2>tags</h2>
       <ul>
         {allTags.map(tag => (
           <li key={tag.fieldValue}>

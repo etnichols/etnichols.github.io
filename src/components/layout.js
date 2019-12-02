@@ -34,7 +34,13 @@ const Layout = ({ children }) => (
               {children}
             </main>
             <footer>
-              <div style={{ color: styles.colors.text, textAlign: `center` }}>
+              <div
+                style={{
+                  fontSize: '18px',
+                  color: styles.colors.text,
+                  textAlign: `center`,
+                }}
+              >
                 {`© ${new Date().getFullYear()} ${title}`}
               </div>
             </footer>

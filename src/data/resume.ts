@@ -108,7 +108,7 @@ const data: Resume = {
             end: 'February 2019',
           },
           description:
-            "A poor man's GoodReads clone using React Native, Prisma and Node.js.",
+            'A bare-bones GoodReads clone using React Native, Prisma and Node.js.',
         },
       ],
     },

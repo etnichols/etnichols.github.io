@@ -15,7 +15,7 @@ const RenderPage =({data}) => {
   const posts = data.allMarkdownRemark.edges
   return (
     <div>
-      <h1>peruse a project</h1>
+      <h2>peruse a project</h2>
       <PostList posts={posts} />
     </div>
   )

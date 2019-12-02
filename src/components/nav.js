@@ -2,6 +2,8 @@ import React from 'react'
 import Link from "gatsby-link"
 import { Location } from '@reach/router'
 
+import './nav.css'
+
 const ROUTES = {
   'posts': '/',
   'projects': '/projects',
