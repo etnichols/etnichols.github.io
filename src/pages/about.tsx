@@ -62,7 +62,7 @@ const ResumeTitle: FC<> = () => {
 
         return (
           <div>
-            <h1>about me</h1>
+            <h2>about me</h2>
             <p className="title-section-description">{description}</p>
             <div className="icon-section">
               {iconsWithLinks.map(([icon, href], i) => (
