@@ -10,20 +10,50 @@ author: Evan Nichols
 type: 'project'
 ---
 
-Howdy folks. It's been a hot minute since I posted last. That's because I've worked on a big website redesign for the past few months.
+Lead to Read is an awesome non-profit based out of Kansas City that facilitates reading based mentorship in the Kansas City metro area. They connect adult volunteers with 1st-3rd grade students for one hour each week to read together. As their motto goes, "Together we are creating a community of readers, one lunch hour at a time."
 
-The Lead to Read website is a Wordpress site is SEO optimized, but quite slow and in need of a UI refresh.
+It's an awesome organization. But their old website is... less awesome. It's a 10+ year old Wordpress site with less-than-glamorous Lighthouse audit scores:
 
-Lighthouse scores.
+![Old Lead to Read website Lighthouse Scores](ltr_lighthouse.png)
 
-Not mobile optimized.
+The performance and accessibility categories are especially concerning: the page takes over 17 seconds to become interactive, and isn't very accessible, or mobile-friendly for that matter.
 
-I reached out to the president of Lead to Read (a family friend) and offered to redo the website. A refresh for them, a learning experience and chance to do some fulfilling volunteer work for me. Win win right?
+Ever vigilant for an interesting project, I saw an opportunity here:
 
-I worked with Martha and Pauly to give the site a total makeover, with responsive design in mind.
+- The president of Lead to Read is a close family friend
+- I am a shameless Gatsby-fanboy and have read a lot about how it can be an "alternative frontend" to traditional WP sites.
 
-Mobile first styling.
+Putting these two things together, I reached out to Pauly Hart and offered to work on a full redesign of the site -- keep the Wordpress as the CMS, but use Gatsby for the frontend.
 
-Consistent spacing system.
+She agreed, and so the adventure began.
 
-Simplicity, readability.
+Disclaimer: this post is long and you might find some parts of it boring. I encourage you to skip around to the sections that you find most interesting.
+
+## Motivations for the redesign
+
+- Performance (improve those lighthouse scores!)
+- Accessible
+- Mobile-friendly
+- Simple and easy to understand
+
+## How I approached the design
+
+- Broke out the existing landing page into more coherent sections.
+- Worked closely with Martha Conradt to iterate on these sections and the copy.
+
+## Project structure
+
+- Mobile first styling
+- One defs to rule them all
+
+## Working with Wordpress - `gatsby-plugin-wordpress`
+- normalizer
+- routes to include
+
+## Firebase w/ a custom domain
+- Really easy.
+- But sounds like cloud functions could use some more love. Not efficient. Link to Medium post.
+- Is it... worth it?
+
+## Some React tidbits
+- OnLoad callback for imgs
