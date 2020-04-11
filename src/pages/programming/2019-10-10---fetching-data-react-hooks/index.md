@@ -4,7 +4,7 @@ title: "Fetching data with React hooks"
 date: "2019-10-10T00:12:03.000Z"
 tags:
 - tutorial
-- React hooks
+- React
 draft: false
 type: 'tutorial'
 ---

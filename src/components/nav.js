@@ -5,16 +5,14 @@ import { Location } from '@reach/router'
 import './nav.css'
 
 const ROUTES = {
-  'posts': '/',
-  'projects': '/projects',
-  'tutorials': '/tutorials',
-  'about': '/about',
+  'about': '/',
+  'programming': '/programming',
+  'random': '/random',
 }
 
 const isActiveRoute = (route, active) =>
-  route === active || (active === '' && route === 'posts')
+  route === active || (active === '' && route === 'about')
 
-// TODO(etnichols): render a bullet next to active route.
 const Nav = props => {
   return (
     <Location>

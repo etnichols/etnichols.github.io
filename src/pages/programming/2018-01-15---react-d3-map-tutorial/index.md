@@ -5,8 +5,6 @@ date: "2018-01-15T00:12:03.000Z"
 tags:
 - tutorial
 - React
-- d3
-- Python
 draft: true
 type: 'tutorial'
 ---

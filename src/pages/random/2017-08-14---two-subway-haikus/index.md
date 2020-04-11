@@ -2,7 +2,6 @@
 title: Two Subway Haikus
 date: "2017-08-14T00:12:03.000Z"
 tags:
-- haiku
 - poetry
 draft: false
 author: Evan Nichols

@@ -2,12 +2,11 @@
 title: "KU ACM React Workshop"
 date: "2017-02-08T00:12:03.000Z"
 tags:
-- KU ACM
 - React
 - workshop
 draft: false
 author: Evan Nichols
-type: 'post'
+type: 'project'
 ---
 
 ![](logo.svg)

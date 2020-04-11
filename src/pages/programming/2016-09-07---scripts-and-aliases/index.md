@@ -2,12 +2,10 @@
 title: Timesavers with Scripting and Aliases
 date: "2016-09-07T00:12:03.000Z"
 tags:
-- Zsh
 - scripting
-- aliases
 draft: false
 author: Evan Nichols
-type: 'post'
+type: 'tutorial'
 ---
 
 I had written earlier about using [this tutorial][1] regarding subtree pushing in git to make updating my website easier. Well, that ended up breaking everything and causing some really nasty errors which took me a long time to sort out. I reverted back to my usual build and update process, which looks something like this:

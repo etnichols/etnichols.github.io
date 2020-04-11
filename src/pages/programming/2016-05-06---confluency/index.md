@@ -2,8 +2,7 @@
 title: "Confluency - Cerner Hackfest 2016"
 date: "2016-05-06T00:12:03.000Z"
 tags:
-- speech
-- mobile application
+- project
 draft: false
 author: Evan Nichols
 type: 'project'

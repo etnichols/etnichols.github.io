@@ -1,5 +1,5 @@
 ---
-title: "Using Python to Convert Illustrator SVGs to React components"
+title: "Convert Illustrator SVGs to React components with Python"
 date: "2016-09-26T00:12:03.000Z"
 tags:
 - React

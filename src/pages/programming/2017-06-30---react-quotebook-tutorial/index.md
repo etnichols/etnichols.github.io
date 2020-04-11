@@ -3,7 +3,6 @@ title: "React Animated Quotebook Tutorial"
 date: "2017-06-30T00:12:03.000Z"
 tags:
 - React
-- create-react-app
 - tutorial
 draft: false
 author: Evan Nichols

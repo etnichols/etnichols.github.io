@@ -3,7 +3,6 @@ title: RedTire Application Forms
 date: "2016-08-06T00:12:03.000Z"
 tags:
 - HTML/CSS
-- Bootstrap
 - project
 draft: false
 author: Evan Nichols

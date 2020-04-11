@@ -3,8 +3,7 @@ author: Evan Nichols
 title: "Political Computer Science"
 date: "2019-1-13T00:12:03.000Z"
 tags:
-- politics
-- software
+- opinion
 draft: true
 type: 'post'
 ---

@@ -6,7 +6,7 @@ tags:
 - javascript
 draft: false
 author: Evan Nichols
-type: 'post'
+type: 'tutorial'
 ---
 
 This is a short post reviewing [Interview Cake's](https://www.interviewcake.com) programming question: "Given an integer array, find the highest product of three integers."

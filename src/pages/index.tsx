@@ -1,12 +1,12 @@
-import { graphql, StaticQuery } from 'gatsby'
-import React, { FC } from 'react'
 import Icon from '../components/icon'
-import Layout from '../components/layout'
 import Img from 'gatsby-image'
+import Layout from '../components/layout'
+import React, { FC } from 'react'
+import { graphql, StaticQuery } from 'gatsby'
 
 import { Duration, Entry, Resume, Section } from '../@types/resume.d.ts'
 import data from '../data/resume'
-import './about.scss'
+import './index.scss'
 
 const Page: FC<> = () => {
   return (

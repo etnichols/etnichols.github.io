@@ -1,23 +1,21 @@
-import React from 'react'
+import React from "react"
 import { StaticQuery, graphql } from 'gatsby'
 
-import Layout from '../components/layout'
+import Layout from "../components/layout"
 import PostList from '../components/postlist'
 
-import './index.css'
-
-/** Renders list of all posts. */
-const Index = () => (
+const Projects = () => (
   <StaticQuery
   query={PageQuery}
   render={data => (<Layout><RenderPage data={data}/></Layout>)}
-  />)
+  />
+)
 
-const RenderPage = ({data}) => {
+const RenderPage =({data}) => {
   const posts = data.allMarkdownRemark.edges
-  return(
+  return (
     <div>
-      <h2>read a post</h2>
+      <h2>programming</h2>
       <PostList posts={posts} />
     </div>
   )
@@ -31,9 +29,9 @@ const PageQuery = graphql`
       filter: {
         frontmatter: {
           draft: { ne: true }
-          type: { eq: "post" }
-       }
-     }
+          type: { in: ["project", "tutorial"] }
+        }
+      }
     ) {
       edges {
         node {
@@ -51,4 +49,4 @@ const PageQuery = graphql`
   }
 `
 
-export default Index
+export default Projects

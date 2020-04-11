@@ -5,7 +5,7 @@ date: "2018-12-03T00:12:03.000Z"
 tags:
 - programming
 draft: false
-type: 'post'
+type: 'tutorial'
 ---
 
 ## Goal

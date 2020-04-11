@@ -3,7 +3,6 @@ title: "LED Soundsystem"
 date: "2015-04-28T00:12:03.000Z"
 tags:
 - iOS
-- Spotify API
 - project
 draft: false
 author: Evan Nichols
