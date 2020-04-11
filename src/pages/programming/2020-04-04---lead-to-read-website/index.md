@@ -5,7 +5,7 @@ tags:
   - Gatsby
   - React
   - Firebase
-draft: false
+draft: true
 author: Evan Nichols
 type: 'project'
 ---
