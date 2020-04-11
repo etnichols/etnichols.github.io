@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-tags-template-js","path":"/tags/haiku/","result":{"data":{"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"fields":{"slug":"/posts/two-subway-haikus"},"frontmatter":{"title":"Two Subway Haikus"}}}]}},"pageContext":{"tag":"haiku"}}}
+{"componentChunkName":"component---src-templates-tags-template-js","path":"/tags/haiku/","result":{"data":{"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"fields":{"slug":"/random/two-subway-haikus"},"frontmatter":{"title":"Two Subway Haikus"}}}]}},"pageContext":{"tag":"haiku"}}}

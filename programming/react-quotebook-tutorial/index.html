@@ -1,0 +1,823 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:100%/1.5625 'Alegreya Sans',sans-serif;box-sizing:border-box;overflow-y:scroll;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:hsla(0,0%,0%,0.8);font-family:'Alegreya Sans',sans-serif;font-weight:400;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;}h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;color:hsla(0,0%,0%,1);font-family:'Alegreya',serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:2rem;line-height:1.1;}h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;color:hsla(0,0%,0%,1);font-family:'Alegreya',serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.51572rem;line-height:1.1;}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;color:hsla(0,0%,0%,1);font-family:'Alegreya',serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.31951rem;line-height:1.1;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;color:hsla(0,0%,0%,1);font-family:'Alegreya',serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.1;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;color:hsla(0,0%,0%,1);font-family:'Alegreya',serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:0.87055rem;line-height:1.1;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;color:hsla(0,0%,0%,1);font-family:'Alegreya',serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:0.81225rem;line-height:1.1;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;}ul{margin-left:1.5625rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;list-style-position:outside;list-style-image:none;}ol{margin-left:1.5625rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;font-size:0.85rem;line-height:1.5625rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;font-size:1rem;line-height:1.5625rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;}blockquote{margin-left:0;margin-right:1.5625rem;margin-top:0;padding-bottom:0;padding-left:1.75781rem;padding-right:0;padding-top:0;margin-bottom:1.5625rem;font-size:1.1487rem;line-height:1.5625rem;color:hsla(0,0%,0%,0.59);border-left:0.58594rem solid;border-color:#fcea0e;}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.5625rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;}b{font-weight:700;}strong{font-weight:700;}dt{font-weight:700;}th{font-weight:700;}li{margin-bottom:calc(1.5625rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.5625rem;margin-bottom:calc(1.5625rem / 2);margin-top:calc(1.5625rem / 2);}li > ul{margin-left:1.5625rem;margin-bottom:calc(1.5625rem / 2);margin-top:calc(1.5625rem / 2);}blockquote *:last-child{margin-bottom:0;}li *:last-child{margin-bottom:0;}p *:last-child{margin-bottom:0;}li > p{margin-bottom:calc(1.5625rem / 2);}code{font-size:0.85rem;line-height:1.5625rem;}kbd{font-size:0.85rem;line-height:1.5625rem;}samp{font-size:0.85rem;line-height:1.5625rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding-left:1.04167rem;padding-right:1.04167rem;padding-top:0.78125rem;padding-bottom:calc(0.78125rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}a{color:#fb251b;text-decoration:none;}a:hover,a:active{color:hsla(0,0%,0%,0.8);}h1,h2,h3,h4,h5,h6{margin-top:3.125rem;}blockquote > :last-child{margin-bottom:0;}blockquote cite{font-size:1rem;line-height:1.5625rem;color:hsla(0,0%,0%,0.8);font-weight:400;}blockquote cite:before{content:"— ";}@media only screen and (max-width:480px){blockquote{margin-left:-1.17188rem;margin-right:0;border-left:0.29297rem solid;border-color:#fcea0e;padding-left:0.87891rem;}}</style><style data-href="/styles.e08d09245cb078adf947.css">code[class*=language-],pre[class*=language-]{color:#000;background:none;text-shadow:0 1px #fff;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-]::selection,code[class*=language-] ::selection,pre[class*=language-]::selection,pre[class*=language-] ::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.token.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{color:#9a6e3a;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}pre[class*=language-].line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}pre[class*=language-].line-numbers>code{position:relative;white-space:inherit}.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:0;font-size:100%;left:-3.8em;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-ms-user-select:none;user-select:none}.line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}svg{cursor:pointer}.icon{margin:8px;fill:rgba(46,46,46,.95)}.icon:hover{cursor:pointer;fill:rgba(46,46,46,.4)}.link-style{font-size:18px}.container{padding:16px}@media (min-width:1024px){.container{padding:24px;max-width:45rem;margin:0 auto}}.site-title{line-height:1;margin:0;padding:8px 0}ul{list-style:none}footer{padding-top:10px;color:#d0272a;position:absolute;left:0;bottom:1em;right:0;width:100%;text-align:center}html{height:100%;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;box-sizing:border-box}body{position:relative;min-height:100%;margin:0;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}main{padding-bottom:3em}img{border:1px solid #000}.gatsby-highlight-code-line{background-color:#feb;display:block;margin-right:-1em;margin-left:-1em;padding-right:1em;padding-left:.75em;border-left:.25em solid #00ff3e}.gatsby-highlight{background-color:#fdf6e3;border-radius:.3em;margin:.5em 0;padding:1em;overflow:auto}.gatsby-highlight pre[class*=language-]{background-color:transparent;margin:0;padding:0;overflow:initial;float:left;min-width:100%}.gatsby-highlight pre[class*=language-].line-numbers{padding-left:2.8em}ul{list-style:circle;margin-left:1em;margin-bottom:0}.resume-body{-webkit-column-count:2;-webkit-column-width:256px;columns:256px 2;-webkit-column-rule:1px dotted rgba(46,46,46,.2);column-rule:1px dotted rgba(46,46,46,.2)}.section,.section-title-container{display:inline-block;width:100%}.section-title{margin:8px 4px}.section-bar{background-color:#fb251b;height:4px;margin:4px}.entry{color:rgba(46,46,46,.4);display:flex;flex-direction:column;margin:8px}.entry-title{margin:8px 0;line-height:1.25}.entry-company{color:rgba(46,46,46,.95);margin:4px 0;line-height:1.25}.entry-duration{color:#2e2e2e;margin-bottom:16px;font-size:14px;font-style:italic}.entry-description{color:rgba(46,46,46,.95);font-size:14px;line-height:1.7em;margin-bottom:8px}.title-section-description{margin:16px 0;max-width:380px;text-align:center}.icon-section{display:flex;justify-content:center;margin-bottom:24px}.link-icon{margin-right:16px}.profile-image{border:none;margin:16px auto}.centered{display:flex;flex-direction:column;align-items:center}.list-item,.post-date{font-size:18px}.post-date{display:block}@media (min-width:750px){.post-date{float:right}}</style><meta name="generator" content="Gatsby 2.20.12"/><title data-react-helmet="true"></title><link rel="preconnect dns-prefetch" href="https://www.google-analytics.com"/><link rel="icon" href="/icons/icon-48x48.png?v=e5cf2d7f177cdb6ce5d6a938eae4828f"/><link rel="manifest" href="/manifest.webmanifest"/><meta name="theme-color" content="##fb251b"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=e5cf2d7f177cdb6ce5d6a938eae4828f"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=e5cf2d7f177cdb6ce5d6a938eae4828f"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=e5cf2d7f177cdb6ce5d6a938eae4828f"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=e5cf2d7f177cdb6ce5d6a938eae4828f"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=e5cf2d7f177cdb6ce5d6a938eae4828f"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=e5cf2d7f177cdb6ce5d6a938eae4828f"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=e5cf2d7f177cdb6ce5d6a938eae4828f"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=e5cf2d7f177cdb6ce5d6a938eae4828f"/><link href="//fonts.googleapis.com/css?family=Alegreya:400,700|Alegreya+Sans:400,700" rel="stylesheet" type="text/css"/><style type="text/css">
+    .anchor.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .anchor.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .anchor svg,
+    h2 .anchor svg,
+    h3 .anchor svg,
+    h4 .anchor svg,
+    h5 .anchor svg,
+    h6 .anchor svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor svg,
+    h2:hover .anchor svg,
+    h3:hover .anchor svg,
+    h4:hover .anchor svg,
+    h5:hover .anchor svg,
+    h6:hover .anchor svg,
+    h1 .anchor:focus svg,
+    h2 .anchor:focus svg,
+    h3 .anchor:focus svg,
+    h4 .anchor:focus svg,
+    h5 .anchor:focus svg,
+    h6 .anchor:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><link as="script" rel="preload" href="/webpack-runtime-dfee653c24a84ea7ec52.js"/><link as="script" rel="preload" href="/framework-52a3ea48de1a5dd03b5a.js"/><link as="script" rel="preload" href="/app-8676dc5fee877e903cab.js"/><link as="script" rel="preload" href="/styles-36681512479a843831b0.js"/><link as="script" rel="preload" href="/10fbf7618c237245af2b62bf60c6ddf21a0eb93e-c5d749479b2bedc29fa5.js"/><link as="script" rel="preload" href="/component---src-templates-post-template-js-59085498048657da2c12.js"/><link as="fetch" rel="preload" href="/page-data/programming/react-quotebook-tutorial/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="container"><main><a css="[object Object]" href="/"><h1 class="site-title">etnichols</h1></a><hr/><a class="link-style" href="/"> about</a><br/><a class="link-style" href="/programming">&gt; programming</a><br/><a class="link-style" href="/random"> random</a><br/><header><h1 style="margin-bottom:0.78125rem">React Animated Quotebook Tutorial</h1><hr style="margin-bottom:0.78125rem"/><p style="margin-top:0;padding-top:0;display:block;color:hsla(291, 0%, 18%,0.4)">20 min read • <span style="font-style:normal;text-align:left">tagged <span><a href="/tags/react/">React</a><span>, </span></span><span><a href="/tags/tutorial/">tutorial</a></span></span></p></header><div class="toc"><ul>
+<li>
+<p><a href="/programming/react-quotebook-tutorial/#road-map">Road Map</a></p>
+<ul>
+<li><a href="/programming/react-quotebook-tutorial/#getting-started-with-create-react-app">Getting Started with create-react-app</a></li>
+<li><a href="/programming/react-quotebook-tutorial/#add-bootstrap-and-google-fonts">Add Bootstrap and Google Fonts</a></li>
+<li><a href="/programming/react-quotebook-tutorial/#component-level-design">Component Level Design</a></li>
+<li><a href="/programming/react-quotebook-tutorial/#create-the-quotemodal-component">Create the QuoteModal Component</a></li>
+<li><a href="/programming/react-quotebook-tutorial/#create-the-control-component">Create the Control Component</a></li>
+<li><a href="/programming/react-quotebook-tutorial/#use-the-components-within-appjs">Use the Components within App.js</a></li>
+<li><a href="/programming/react-quotebook-tutorial/#add-real-quotes">Add Real Quotes</a></li>
+<li><a href="/programming/react-quotebook-tutorial/#create-onclick-functions-for-back-and-next-controls">Create onClick functions for Back and Next Controls</a></li>
+<li><a href="/programming/react-quotebook-tutorial/#the-shuffle-function">The Shuffle Function</a></li>
+<li><a href="/programming/react-quotebook-tutorial/#selecting-random-background-color">Selecting Random Background Color</a></li>
+<li><a href="/programming/react-quotebook-tutorial/#adding-animations">Adding Animations</a></li>
+<li><a href="/programming/react-quotebook-tutorial/#reviewing-appjs">Reviewing App.js</a></li>
+<li><a href="/programming/react-quotebook-tutorial/#prepare-to-deploy">Prepare to Deploy</a></li>
+<li><a href="/programming/react-quotebook-tutorial/#deploy-using-surge">Deploy using Surge</a></li>
+</ul>
+</li>
+</ul></div><div class="post"><p>In this tutorial we’ll learn how to create an animated quotebook. Check out a live demo of the application here: <a href="http://www.randomquotebook.surge.sh">randomquotebook.surge.sh</a>.</p>
+<h2 id="road-map" style="position:relative;"><a href="#road-map" aria-label="road map permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Road Map</h2>
+<ol>
+<li>Understand and use <a href="https://github.com/facebookincubator/create-react-app">create-react-app</a> as a boilerplate.</li>
+<li>Create a function to shuffle the array of available quotes each time the application refreshes.</li>
+<li>Create “Next” and “Back” buttons to allow users to navigate through the quotes.</li>
+<li>Add transition animations using <a href="http://marnusw.github.io/react-css-transition-replace/">react-css-transition-replace</a>.</li>
+<li>Build and deploy the app using <a href="http://surge.sh/">surge.sh</a>.</li>
+</ol>
+<h3 id="getting-started-with-create-react-app" style="position:relative;"><a href="#getting-started-with-create-react-app" aria-label="getting started with create react app permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Getting Started with create-react-app</h3>
+<p>This tutorial assumes a working knowledge of <a href="https://nodejs.org/en/">Node.js</a> and <a href="https://www.npmjs.com/">npm</a>. Check out Alexandru Vladutu’s <a href="https://www.airpair.com/javascript/node-js-tutorial">Step-by-Step Node.js tutorial</a> if you are unfamiliar.</p>
+<p>Once you have Node and npm installed, we’re ready to get started.</p>
+<p>Facebook’s <a href="https://github.com/facebookincubator/create-react-app">create-react-app</a> boilerplate project is a convenient way to start new React SPA projects. It takes care of a lot of the grunt work that comes with setting up a React app. Read more about it <a href="https://facebook.github.io/react/blog/2016/07/22/create-apps-with-no-configuration.html">here</a> if you are interested.</p>
+<p>Now from the command line, install the create-react-app npm package globally:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> -g create-react-app</code></pre></div>
+<p>Now, in a directory of your choosing, create a new app:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">create-react-app quotebook</code></pre></div>
+<p>This might take a minute or two to complete. After it completes, cd into the new project and save <a href="https://www.npmjs.com/package/immutable">immutable</a> and <a href="https://www.npmjs.com/package/react-css-transition-replace">react-css-transition-replace</a>, two npm packages we’ll use later:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">cd</span> quotebook-tutorial
+<span class="token function">npm</span> i --save immutable react-css-transition-replace</code></pre></div>
+<p>After those finish installing, you can start up the app by running:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> start</code></pre></div>
+<p>This will start a development server at localhost:3000. Open up your browser and check it out. It should look like this.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/6e4d9ef5c773a6226aee337c2797c596/31198/create-react-app-start-screen.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 72.2972972972973%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsSAAALEgHS3X78AAABN0lEQVQ4y62SzWrCQBSF5xUkIEgCbf6gcVOC1rpooZWChWoeortuuuxTJGJiVvElI2LE/J1mbk2JYwulOvBxZu695zATwjRNg4iqqqS6rkO7vID9+o7e28e+djgjwn4L4yrLMuROB8bdCMb9iPaKohzMHAWapgkRwzBwZVlwHAeTyQueHh+IyXSK5/EY3a5FMz95WavVQhNJkoh2u41ev4/hcEh6bdsYDG4rbqhXz4l+tlwuEUURag3DEIvFAr7vw/M8Yj6f03k2m8F1XeoHQUCztS+qlO8ZhLXb7RDHMVarFZLNpjqnyLIMaZpWZNhUtWS7xXq9RpIkoh2MDzcpioIo98rJ85x6XItGnSP6WVmWOCf05PrQ3P+ZL9O3/+gbnrpY82b/Xc2M8weeGiaGMv5/neuGPOsTnrx0Y8KtH0AAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="React boilerplate"
+        title="React boilerplate"
+        src="/static/6e4d9ef5c773a6226aee337c2797c596/fcda8/create-react-app-start-screen.png"
+        srcset="/static/6e4d9ef5c773a6226aee337c2797c596/12f09/create-react-app-start-screen.png 148w,
+/static/6e4d9ef5c773a6226aee337c2797c596/e4a3f/create-react-app-start-screen.png 295w,
+/static/6e4d9ef5c773a6226aee337c2797c596/fcda8/create-react-app-start-screen.png 590w,
+/static/6e4d9ef5c773a6226aee337c2797c596/31198/create-react-app-start-screen.png 694w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<br>
+<p>Explore the create-react-app project structure a little bit. The most important files to note are:</p>
+<ul>
+<li><strong>src/App.js</strong>: what you actually make edits to.</li>
+<li><strong>src/index.js</strong>: handles the call to ReactDOM to render the entire <App /> in the “root” div.</li>
+<li><strong>public/index.html</strong>: the html page onto which the app is rendered.</li>
+</ul>
+<h3 id="add-bootstrap-and-google-fonts" style="position:relative;"><a href="#add-bootstrap-and-google-fonts" aria-label="add bootstrap and google fonts permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Add Bootstrap and Google Fonts</h3>
+<p>In the head of <code class="language-text">public/index.html</code> add the following lines:</p>
+<div class="gatsby-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css<span class="token punctuation">"</span></span> <span class="token attr-name">integrity</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u<span class="token punctuation">"</span></span> <span class="token attr-name">crossorigin</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>anonymous<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://fonts.googleapis.com/css?family=Arvo:400,700|Open+Sans<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></code></pre></div>
+<p>These additions allow use of Bootstrap CSS styles and Google Font’s <a href="https://fonts.google.com/specimen/Arvo">Arvo</a> and <a href="https://fonts.google.com/specimen/Open+Sans">Open Sans</a>.</p>
+<h3 id="component-level-design" style="position:relative;"><a href="#component-level-design" aria-label="component level design permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Component Level Design</h3>
+<p>No matter how simple the project, it’s always helpful to look at a component-level design of the application.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 521px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/64ede832cf7fb5641fb30097504d8aff/bb9c5/component-level-design.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 77.02702702702703%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAAsSAAALEgHS3X78AAABpUlEQVQ4y6WTaU/CQBCG+f//xg/6XWO8Eo3gUTlEMQKFQtvtRbvX6+z2gKIxQTd5stN3dt7MwmzH8zxkWYYkSWhPv7GhHGMh4jiy8bczaYp0h44xq1cuNHK+ZcMVuATcpQ8/TGxstN28UGitjunMLCEVBvMC/bnYg2O0UBi60sa1PiCcmcA84FStoXVJx7RplrSGpkBiYIqtQRXX5rXulrozk2QoKkP8ZigqZKtb09XA3eYPNCzNhnTd0RKWWqtNDzIsCxUeJylunAWxhDMtdkz/YkjdPUwSXD8vLP8ybF3Zg+UPVy62P35FOSq8GZkm5+6Pzb6h0nRI48UFjQXwMi/3FotSr3MO7bNA/WyolEQUTMD8Me3vSKMP2t8Qrujbf7MEq1ckbIKUMDm2fkWWeLa+Gez6pSgloMMrILoA907h9o/ApmcIl30gPAdfXyD0hvDGJ1iNjwF2SfoZdDqk/nYMm7esFVT8BB33IFkX+foWRdBF5juV1rNx7t+hIHT8AB3dQ20+22+ZMUZ/iATnnCgapOAQooDgeaOZWFi9fZZzUdVzfAE1VnlvLyfP4wAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Component Level Block Diagram"
+        title="Component Level Block Diagram"
+        src="/static/64ede832cf7fb5641fb30097504d8aff/bb9c5/component-level-design.png"
+        srcset="/static/64ede832cf7fb5641fb30097504d8aff/12f09/component-level-design.png 148w,
+/static/64ede832cf7fb5641fb30097504d8aff/e4a3f/component-level-design.png 295w,
+/static/64ede832cf7fb5641fb30097504d8aff/bb9c5/component-level-design.png 521w"
+        sizes="(max-width: 521px) 100vw, 521px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Nothing too surprising here. Aside from the App-level component, we’ll only need two additional components: QuoteModal and Control.</p>
+<h3 id="create-the-quotemodal-component" style="position:relative;"><a href="#create-the-quotemodal-component" aria-label="create the quotemodal component permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create the QuoteModal Component</h3>
+<p>The QuoteModal component will handle display each quote and author with proper styling.</p>
+<p>Within the <code class="language-text">src</code> folder of the project, create a new directory called <code class="language-text">components</code>, and within that directory, create two new files, <code class="language-text">QuoteModal.js</code> and <code class="language-text">styles.css</code>. Now within the <code class="language-text">QuoteModal.js</code> file add the following code:</p>
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span>
+<span class="token keyword">import</span> <span class="token string">'./styles.css'</span>
+
+<span class="token keyword">class</span> <span class="token class-name">QuoteModal</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span><span class="token punctuation">(</span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text-center quote-modal<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>quote-text<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">"{this.props.quote}"</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>hr</span><span class="token punctuation">/></span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><span class="token plain-text">- </span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>author<span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> QuoteModal</code></pre></div>
+<p>And within the <code class="language-text">styles.css</code> file add the following code:</p>
+<div class="gatsby-highlight" data-language="css"><pre class="language-css"><code class="language-css"><span class="token selector">.quote-modal</span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">'Open Sans'</span><span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 16px<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 3px<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 95%<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+  <span class="token property">box-shadow</span><span class="token punctuation">:</span>2px 2px 5px #9E9E9E<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.quote-text</span> <span class="token punctuation">{</span>
+  <span class="token property">line-height</span><span class="token punctuation">:</span> 1.5<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token atrule"><span class="token rule">@media</span> only screen and <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 768px<span class="token punctuation">)</span></span><span class="token punctuation">{</span>
+  <span class="token selector">.quote-modal</span> <span class="token punctuation">{</span>
+      <span class="token property">width</span><span class="token punctuation">:</span> 500px<span class="token punctuation">;</span>
+      <span class="token property">font-size</span><span class="token punctuation">:</span> 18px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Let’s understand what’s going on in the code above. First, in the <code class="language-text">QuoteModal.js</code> file:</p>
+<ul>
+<li>Importing the default export from <code class="language-text">&#39;react&#39;</code> under the name <code class="language-text">React</code>, and we’re importing the <strong>named</strong> export <code class="language-text">Component</code> under the same name. See <a href="https://stackoverflow.com/questions/31096597/using-brackets-with-javascript-import-syntax">this StackOverflow post</a> for more on import syntax.</li>
+<li>Importing our newly created stylesheet <code class="language-text">styles.css</code>.</li>
+<li>Declare the QuoteModal component using an <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes">ES6 class</a>, and define it’s <code class="language-text">render()</code> method, the only method required to implement a valid React component. Within the render method, the <code class="language-text">quote</code> and <code class="language-text">author</code> props are styled appropriately in paragraph tags, and the entire thing is wrapped in a div.</li>
+<li>Export the QuoteModal class so it can be used within the <code class="language-text">App.js</code> file later.</li>
+</ul>
+<p>Now within the <code class="language-text">styles.css</code> file:</p>
+<ul>
+<li>Define the QuoteModal CSS class, which is mobile-optimized. The media query handles checking if the user is on a desktop or tablet, in which case we provide a static width of 500px for the modal and increase the font size.</li>
+</ul>
+<h3 id="create-the-control-component" style="position:relative;"><a href="#create-the-control-component" aria-label="create the control component permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create the Control Component</h3>
+<p>The Control component will allow us to create our “Back” and “Next” controls. <a href="https://dmfrancisco.github.io/react-icons/">This article</a> provides a simple, straightforward way to implement icons using inline SVGs; the code below is a simplified version of their example Icon component. Bonus: the article also provides a ton of icons for free use! We’ll be using the “arrow-back” and “arrow-forward” SVGs.</p>
+<p>Within the <code class="language-text">components</code> folder, create a file called <code class="language-text">Control.js</code> and add the following code:</p>
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Control</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+
+  <span class="token function">renderGraphic</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">switch</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>icon<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">case</span> <span class="token string">'arrow-back'</span><span class="token operator">:</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>g</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>path</span> <span class="token attr-name">d</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>M20 11h-12.17l5.59-5.59-1.42-1.41-8 8 8 8 1.41-1.41-5.58-5.59h12.17v-2z<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>path</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>g</span><span class="token punctuation">></span></span>
+        <span class="token punctuation">)</span>
+      <span class="token keyword">case</span> <span class="token string">'arrow-forward'</span><span class="token operator">:</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>g</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>path</span> <span class="token attr-name">d</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>M12 4l-1.41 1.41 5.58 5.59h-12.17v2h12.17l-5.58 5.59 1.41 1.41 8-8z<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>path</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>g</span><span class="token punctuation">></span></span>
+        <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+    <span class="token keyword">const</span> sx <span class="token operator">=</span> <span class="token punctuation">{</span>
+      fill<span class="token operator">:</span> <span class="token string">'#FFF'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span><span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>svg</span>
+      <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>onClickFunction<span class="token punctuation">}</span></span>
+      <span class="token attr-name">style</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>sx<span class="token punctuation">}</span></span>
+      <span class="token attr-name">width</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>width<span class="token punctuation">}</span></span>
+      <span class="token attr-name">height</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>height<span class="token punctuation">}</span></span>
+      <span class="token attr-name">viewBox</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0 0 24 24<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">renderGraphic</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>svg</span><span class="token punctuation">></span></span>
+    <span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> Control</code></pre></div>
+<p>Again, let’s make sure we understand what’s going on above:</p>
+<p>The<code class="language-text">renderGraphic()</code>method decides which SVG to dispay, based on the “icon” prop passed in to the component. Since our application only has two potential icons, “arrow-back” and “arrow-forward”, we only define cases for those.</p>
+<p>The <code class="language-text">render()</code> method returns an styled svg element. The width, height and onClick function are passed to the component as props and are used here. Note: you could add additional styles to the <code class="language-text">sx</code> object if you so choose.</p>
+<h3 id="use-the-components-within-appjs" style="position:relative;"><a href="#use-the-components-within-appjs" aria-label="use the components within appjs permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Use the Components within App.js</h3>
+<p>Time to strip the boilerplate code out of <code class="language-text">App.js</code> and add in the newly created QuoteModal and Control components.</p>
+<p>Within <code class="language-text">App.js</code> add the following code:</p>
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span>
+
+<span class="token keyword">import</span> QuoteModal <span class="token keyword">from</span> <span class="token string">'./components/QuoteModal'</span>
+<span class="token keyword">import</span> Control <span class="token keyword">from</span> <span class="token string">'./components/Control'</span>
+
+<span class="token keyword">import</span> <span class="token string">'./App.css'</span>
+
+<span class="token keyword">class</span> <span class="token class-name">App</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>App<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>App-header<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span><span class="token plain-text">Quotebook</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">QuoteModal</span></span>
+          <span class="token attr-name">key</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">}</span></span>
+          <span class="token attr-name">quote</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token string">"Test Quote"</span><span class="token punctuation">}</span></span>
+          <span class="token attr-name">author</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token string">"Test Author"</span><span class="token punctuation">}</span></span>
+        <span class="token punctuation">/></span></span><span class="token plain-text">
+
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>control-section<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>control-container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+            </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Control</span></span>
+              <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>inline-control<span class="token punctuation">"</span></span>
+              <span class="token attr-name">width</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token string">"40"</span><span class="token punctuation">}</span></span>
+              <span class="token attr-name">height</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token string">"40"</span><span class="token punctuation">}</span></span>
+              <span class="token attr-name">icon</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token string">"arrow-back"</span><span class="token punctuation">}</span></span>
+              <span class="token attr-name">onClickFunction</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"back button clicked"</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">}</span></span>
+              <span class="token punctuation">/></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>control-container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+            </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Control</span></span>
+              <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>inline-control<span class="token punctuation">"</span></span>
+              <span class="token attr-name">width</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token string">"40"</span><span class="token punctuation">}</span></span>
+              <span class="token attr-name">height</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token string">"40"</span><span class="token punctuation">}</span></span>
+              <span class="token attr-name">icon</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token string">"arrow-forward"</span><span class="token punctuation">}</span></span>
+              <span class="token attr-name">onClickFunction</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"next button clicked"</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">}</span></span>
+              <span class="token punctuation">/></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> App<span class="token punctuation">;</span></code></pre></div>
+<p>And within <code class="language-text">App.css</code> add the following classes:</p>
+<div class="gatsby-highlight" data-language="css"><pre class="language-css"><code class="language-css"><span class="token selector">body</span> <span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #124563<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.App</span> <span class="token punctuation">{</span>
+  <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100vh<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.App-header</span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">'Arvo'</span><span class="token punctuation">,</span> serif<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.control-section</span> <span class="token punctuation">{</span>
+  <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.control-container</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 58%<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0px 30px 0px 30px<span class="token punctuation">;</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> background-color 0.5s ease-in<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.control-container:active</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Save both files, and check out the app on localhost. It should look similar to this:</p>
+<p><img src="/04af6bbfd2c5d16983927e88f121b132/milestone.gif"></p>
+<br>
+<p>Understanding the additions to <code class="language-text">App.js</code>:</p>
+<p>Import our QuoteModal and Control components. Definition of the <code class="language-text">constructor()</code> function, which we’ll use later. Definition of the <code class="language-text">render()</code> method. The QuoteModal component takes two example strings in as props. Below that, the controls section. Two Control components are defined here, the first for the Back button and the second for the Next button (as specified by their <code class="language-text">icon</code> props). Each Control has a dummy function passed in for the <code class="language-text">onClickFunction</code> prop, which just logs the click to the console.</p>
+<h3 id="add-real-quotes" style="position:relative;"><a href="#add-real-quotes" aria-label="add real quotes permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Add Real Quotes</h3>
+<p>With the components working correctly, it’s time to introduce real quotes. Two options here.</p>
+<ol>
+<li>Use the quotes file I’ve created, available on the <a href="https://github.com/e-nichols/quotebook/blob/master/src/quotes.js">Github repo for this project</a>.</li>
+<li>Create your own quotes.js file, making sure to match the format shown in the linked file above.</li>
+</ol>
+<p>Whichever you choose, save the resulting <code class="language-text">quotes.js</code> file in the <code class="language-text">src</code> directory. And add the following lines to the top of <code class="language-text">App.js</code>:</p>
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token keyword">import</span> <span class="token punctuation">{</span> List <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'immutable'</span>
+<span class="token keyword">import</span> quotes <span class="token keyword">from</span> <span class="token string">'./quotes'</span></code></pre></div>
+<p>And now we’ll update the <code class="language-text">constructor</code> function with the following code:</p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js">  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+    <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span>
+
+    <span class="token keyword">const</span> the_quotes <span class="token operator">=</span> <span class="token function">List</span><span class="token punctuation">(</span>quotes<span class="token punctuation">)</span>
+    <span class="token keyword">const</span> init <span class="token operator">=</span> the_quotes<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span>
+      quote<span class="token operator">:</span> init<span class="token punctuation">.</span>quote<span class="token punctuation">,</span>
+      author<span class="token operator">:</span> init<span class="token punctuation">.</span>author<span class="token punctuation">,</span>
+      available_quotes<span class="token operator">:</span> the_quotes<span class="token punctuation">,</span>
+      index<span class="token operator">:</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span></code></pre></div>
+<p>I’ve opted to use <a href="https://facebook.github.io/immutable-js/">Immutable.js</a> here to create a <a href="https://facebook.github.io/immutable-js/docs/#/List">List</a> from the array of quotes. Is it <em>really</em> necessary to use immutable data structures here? Not really. But the List structure is easy and convenient to use and I’ve wanted to check out this project for a while. Check out <a href="https://www.youtube.com/watch?v=I7IdS-PbEgI">this talk</a> if you want to learn more about immutable data.</p>
+<p>Beyond that, we are defining state variables for the App-level component. The first quote from the List is used to populate the <code class="language-text">quote</code> and <code class="language-text">author</code> variables. The <code class="language-text">the_quotes</code> variable is assigned to <code class="language-text">available_quotes</code> and we initialize the <code class="language-text">index</code> variable to 0, which will be used within the onClickFunctions for the controls.</p>
+<p>Update the code for the QuoteModal within the <code class="language-text">render()</code> function to make use of the newly defined <code class="language-text">quote</code> and <code class="language-text">author</code> variables:</p>
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token operator">...</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">QuoteModal</span></span> <span class="token attr-name">key</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">}</span></span> <span class="token attr-name">quote</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>quote<span class="token punctuation">}</span></span> <span class="token attr-name">author</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>author<span class="token punctuation">}</span></span> <span class="token punctuation">/></span></span>
+<span class="token operator">...</span></code></pre></div>
+<p>Save the changes to <code class="language-text">App.js</code> and check out the browser, it should be displaying this quote:</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/6baec9c01acc51d4b7d3c1b05beddbc6/d9b5d/firstq.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 65.54054054054055%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAABn0lEQVQ4y5VS2U4CQRDkl1FuVg5FgwblEkxQEVD/wRg/wAP1E2APeFhcLpM17ALl9OCsgHhNUunq7kpNd2Zckc0QNuJBUIxuhRcQS0hOFFjWEOY9XIKEIj74w+sISAQPvEE39rN7KJbyyBXTyBczyB9lIMUC8IXXuMb/oRUeFF1ESJTJp1A5P0W5eoyz2gmP1YsyapdnPAqIntCdVkrY3IlAigdmE9LIvpAb9cd7WJaNl04HhmGg1+s5vN/voz8YoNvtQtd1nlO/w/qmafINghsevr5j+FC/A503JtBUDa1WC5rWQrvd5rksy1AUxemZ5htGoxEbwkK2cMAMvfOGa7h/uOWG4/EYtm07oFzAsi2nPplMMJ1OeT17uGToZRM+Pdex6tCahtHlqw+Hrys1uUJ60ZBe9/rmCnpHZ2vJUDWVQ1FlNJoNtm4TTbmBJuOip2psfa5RsJ/Z479k4dvQS4ejfgckoMvoBYmTLpGMLWgEvnwbUZjHzCCO3dQ2vyy6JSGVTn7Rzev5hN8ZijqZfXL/3wx/EvzEV+Hfhr+ZvgPDmOwIUjfScwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="firstq"
+        title="firstq"
+        src="/static/6baec9c01acc51d4b7d3c1b05beddbc6/fcda8/firstq.png"
+        srcset="/static/6baec9c01acc51d4b7d3c1b05beddbc6/12f09/firstq.png 148w,
+/static/6baec9c01acc51d4b7d3c1b05beddbc6/e4a3f/firstq.png 295w,
+/static/6baec9c01acc51d4b7d3c1b05beddbc6/fcda8/firstq.png 590w,
+/static/6baec9c01acc51d4b7d3c1b05beddbc6/efc66/firstq.png 885w,
+/static/6baec9c01acc51d4b7d3c1b05beddbc6/c83ae/firstq.png 1180w,
+/static/6baec9c01acc51d4b7d3c1b05beddbc6/d9b5d/firstq.png 1224w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<br>
+<h3 id="create-onclick-functions-for-back-and-next-controls" style="position:relative;"><a href="#create-onclick-functions-for-back-and-next-controls" aria-label="create onclick functions for back and next controls permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create onClick functions for Back and Next Controls</h3>
+<p>Users should be able to use the Back and Next controls to navigate through the collection of quotes. To accomplish this, the <code class="language-text">index</code> variable defined earlier comes into play.</p>
+<p>Let’s think about how we would use <code class="language-text">index</code> to implement the next and back buttons. A naive implementation to start, which includes a helper function <code class="language-text">performUpdate()</code>:</p>
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx">  <span class="token function">performUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">const</span> nq <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>available_quotes<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>index<span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      quote<span class="token operator">:</span> nq<span class="token punctuation">.</span>quote<span class="token punctuation">,</span>
+      author<span class="token operator">:</span> nq<span class="token punctuation">.</span>author<span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">handleBackButton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        index<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>index <span class="token operator">-</span> <span class="token number">1</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>performUpdate<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">handleNextButton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        index<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>index <span class="token operator">+</span> <span class="token number">1</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>performUpdate<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span></code></pre></div>
+<p>What’s going on here? We’ve defined two handler functions, <code class="language-text">handleBackButton</code> and <code class="language-text">handleNextButton</code> which makes a call to React component method <code class="language-text">setState</code>, decrementing and incrementing the index variable, respectively. And then we provide the <code class="language-text">performUpdate</code> method as a callback to be executed <em>after</em> this update to the <code class="language-text">index</code> variable goes through.</p>
+<p>The reasoning for this is laid out in the <a href="https://facebook.github.io/react/docs/react-component.html#setstate">React Docs</a>:</p>
+<blockquote>
+<p>“Think of <code class="language-text">setState()</code> as a request rather than an immediate command to update the component. For better perceived performance, React may delay it, and then update several components in a single pass. React does not guarantee that the state changes are applied immediately.</p>
+</blockquote>
+<blockquote>
+<p><code class="language-text">setState()</code> does not always immediately update the component. It may batch or defer the update until later. This makes reading <code class="language-text">this.state</code> right after calling <code class="language-text">setState()</code> a potential pitfall. Instead, use <code class="language-text">componentDidUpdate</code> or a <code class="language-text">setState</code> callback (<code class="language-text">setState(updater, callback)</code>), either of which are guaranteed to fire after the update has been applied. If you need to set the state based on the previous state, read about the updater argument below.”</p>
+</blockquote>
+<p>Using the callback parameter works well here because <code class="language-text">performUpdate</code> is dependent on the index either incrementing or decrementing in order to load a new quote and author.</p>
+<p>What if a user immediately hits the back button after launching the page? Won’t that decrement the counter to -1? *Yes it will. That’s OK though, because <a href="https://facebook.github.io/immutable-js/docs/#/List/get">Immutable.js List indices may be negative</a>. Therefore we can support this interaction by default.</p>
+<p>That makes sense… but there’s still a problem. Say you only had 5 quotes total. And a user immediately starts hitting the back button, -1, -2, -3, -4, -5… -6? Shit! Trying to <code class="language-text">get(-6)</code> on a list of size 5 will break the app. We need to guard against this, and reset the counter upon reaching the absolute value of the size of the quotes array being used. Make a few small additions to the <code class="language-text">increment</code> and <code class="language-text">decrement</code> functions:</p>
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx">  <span class="token function">handleBackButton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>index <span class="token operator">===</span> <span class="token operator">-</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>available_quotes<span class="token punctuation">.</span>size <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          index<span class="token operator">:</span> <span class="token number">0</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>performUpdate<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          index<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>index <span class="token operator">-</span> <span class="token number">1</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>performUpdate<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">handleNextButton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>index <span class="token operator">===</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>available_quotes<span class="token punctuation">.</span>size <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          index<span class="token operator">:</span> <span class="token number">0</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>performUpdate<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          index<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>index <span class="token operator">+</span> <span class="token number">1</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>performUpdate<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span></code></pre></div>
+<p>Nice. The if statements turn our List into a circular list, and we’ll never have to worry about an invalid indice being generated by the user.</p>
+<h3 id="the-shuffle-function" style="position:relative;"><a href="#the-shuffle-function" aria-label="the shuffle function permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The Shuffle Function</h3>
+<p>It’s boring to see the same order of quotes each time. Let’s fix this by adding an in-place shuffle function to the constructor. A <a href="https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array">quick search on StackOverflow</a> tells us that the Fisher-Yates shuffle is a good candidate for this. Check out this <a href="https://bost.ocks.org/mike/shuffle/">awesome post and visualization of the algorithm</a> if you want to learn more. Within <code class="language-text">App.js</code>, add the following function:</p>
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx">  <span class="token function">shuffleQuotes</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">let</span> curIndex <span class="token operator">=</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">,</span> tempVal<span class="token punctuation">,</span> randIndex
+
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">0</span> <span class="token operator">!==</span> curIndex<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token comment">//pick remaining element</span>
+      randIndex <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> curIndex<span class="token punctuation">)</span>
+      curIndex <span class="token operator">-=</span> <span class="token number">1</span>
+
+      <span class="token comment">//swap with current</span>
+      tempVal <span class="token operator">=</span> arr<span class="token punctuation">[</span>curIndex<span class="token punctuation">]</span>
+      arr<span class="token punctuation">[</span>curIndex<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>randIndex<span class="token punctuation">]</span>
+      arr<span class="token punctuation">[</span>randIndex<span class="token punctuation">]</span> <span class="token operator">=</span> tempVal
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> arr
+  <span class="token punctuation">}</span></code></pre></div>
+<p>And now, modify the <code class="language-text">constructor</code> to make use of the new shuffle function:</p>
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx">  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span>
+
+    <span class="token comment">//randomize order of quotes at start of session</span>
+    <span class="token keyword">const</span> shuffled <span class="token operator">=</span> <span class="token function">List</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">shuffleQuotes</span><span class="token punctuation">(</span>quotes<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> init <span class="token operator">=</span> shuffled<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span>
+      quote<span class="token operator">:</span> init<span class="token punctuation">.</span>quote<span class="token punctuation">,</span>
+      author<span class="token operator">:</span> init<span class="token punctuation">.</span>author<span class="token punctuation">,</span>
+      available_quotes<span class="token operator">:</span> shuffled<span class="token punctuation">,</span>
+      index<span class="token operator">:</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span></code></pre></div>
+<p>Great! Refresh the app and click around to test it out. The quotes will shuffle each time the user refreshes the app.</p>
+<h3 id="selecting-random-background-color" style="position:relative;"><a href="#selecting-random-background-color" aria-label="selecting random background color permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Selecting Random Background Color</h3>
+<p>Let’s make things a little more visually appealing by having the background color change each time a new quote loads.</p>
+<p>Within the <code class="language-text">src</code> folder create a new file <code class="language-text">colors.js</code> and within it add the following code:</p>
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token string">'#703030'</span><span class="token punctuation">,</span> <span class="token string">'#2F343B'</span><span class="token punctuation">,</span> <span class="token string">'#7E827A'</span><span class="token punctuation">,</span> <span class="token string">'#E3CDA4'</span><span class="token punctuation">,</span> <span class="token string">'#C77966'</span> <span class="token punctuation">]</span></code></pre></div>
+<p>The colors above are from the <a href="https://color.adobe.com/Vintage-Ralph-Lauren-color-theme-2216979/?showPublished=true">Vintage Ralph Lauren Color Theme</a> on Adobe Kuler. You can find another theme there if you want, or just choose random colors. Add as many as you like. Alternative method: create a function that generates a random hex color string and use that within the render method of the App. Note that you’ll probably have to guard against generating white/off-white colors because the Back and Next buttons won’t be visible.</p>
+<p>Within <code class="language-text">App.js</code>, import the new <code class="language-text">colors.js</code> file:</p>
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token keyword">import</span> colors <span class="token keyword">from</span> <span class="token string">'./colors'</span></code></pre></div>
+<p>Modify the constructor function one more time:</p>
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx">  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span>
+
+    <span class="token keyword">const</span> shuffled <span class="token operator">=</span> <span class="token function">List</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">shuffleQuotes</span><span class="token punctuation">(</span>quotes<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> init <span class="token operator">=</span> shuffled<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">const</span> bgcolors <span class="token operator">=</span> <span class="token function">List</span><span class="token punctuation">(</span>colors<span class="token punctuation">)</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span>
+      quote<span class="token operator">:</span> init<span class="token punctuation">.</span>quote<span class="token punctuation">,</span>
+      author<span class="token operator">:</span> init<span class="token punctuation">.</span>author<span class="token punctuation">,</span>
+      available_quotes<span class="token operator">:</span> shuffled<span class="token punctuation">,</span>
+      colors<span class="token operator">:</span> bgcolors<span class="token punctuation">,</span>
+      index<span class="token operator">:</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span></code></pre></div>
+<p>Add a helper function to select a random color from the array:</p>
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx">  <span class="token function">getRandomColor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">let</span> ind <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>colors<span class="token punctuation">.</span>size<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>colors<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>ind<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span></code></pre></div>
+<p>And last, make use of this new function in the <code class="language-text">render</code> method:</p>
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">const</span> bgcolor <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getRandomColor</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> container_style  <span class="token operator">=</span> <span class="token punctuation">{</span>
+      backgroundColor<span class="token operator">:</span> bgcolor<span class="token punctuation">,</span>
+      transition<span class="token operator">:</span> <span class="token string">'background-color 1s ease'</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>App<span class="token punctuation">"</span></span> <span class="token attr-name">style</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>container_style<span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>App-header<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>animated fadeIn<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">Quotebook</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+        ...</span></code></pre></div>
+<p>Refresh the app and click around to see the new background colors in action. The transition CSS attribute comes in handy here, allowing for smoother transitions between background colors.</p>
+<h3 id="adding-animations" style="position:relative;"><a href="#adding-animations" aria-label="adding animations permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Adding Animations</h3>
+<p>Let’s animate the transition between quotes in a similar way to how the background color transitions. If only there was an open source component that animates replacing one element with another… like <a href="https://github.com/marnusw/react-css-transition-replace">react-css-transition-replace</a>!. As its README notes, there are some nice advantages to using this component:</p>
+<ul>
+<li>It automatically handles the positioning of the animated components, and</li>
+<li>allows changes in the height of container to be handled and animated with ease when various content heights differ, even when absolute positioning is used.</li>
+</ul>
+<p>That really comes in handy here because of the variable length of each quote. Let’s add it in. We already took care of installing the react-css-transition-replace npm package at the start of the project; import into <code class="language-text">App.js</code> now:</p>
+<p>We’ll use the cross-fade transition as shown in the first example on the README. Add the following styles to <code class="language-text">App.css</code>:</p>
+<div class="gatsby-highlight" data-language="css"><pre class="language-css"><code class="language-css"><span class="token selector">.cross-fade-leave</span> <span class="token punctuation">{</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.cross-fade-leave.cross-fade-leave-active</span> <span class="token punctuation">{</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> opacity 1s ease-in<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.cross-fade-enter</span> <span class="token punctuation">{</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.cross-fade-enter.cross-fade-enter-active</span> <span class="token punctuation">{</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> opacity 1s ease-in<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.cross-fade-height</span> <span class="token punctuation">{</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> height 1s ease-in-out<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>And now let’s use the component within App.js. Import it:</p>
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token keyword">import</span> ReactCSSTransitionReplace <span class="token keyword">from</span> <span class="token string">'react-css-transition-replace'</span></code></pre></div>
+<p>And modify the <code class="language-text">render</code> method to use it:</p>
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx">  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">const</span> bgcolor <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getRandomColor</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> container_style  <span class="token operator">=</span> <span class="token punctuation">{</span>
+      backgroundColor<span class="token operator">:</span> bgcolor<span class="token punctuation">,</span>
+      transition<span class="token operator">:</span> <span class="token string">'background-color 1s ease'</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>App<span class="token punctuation">"</span></span> <span class="token attr-name">style</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>container_style<span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>App-header<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>animated fadeIn<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">Quotebook</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">ReactCSSTransitionReplace</span></span> <span class="token attr-name">transitionName</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>cross-fade<span class="token punctuation">"</span></span> <span class="token attr-name">transitionEnterTimeout</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token number">1500</span><span class="token punctuation">}</span></span> <span class="token attr-name">transitionLeaveTimeout</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token number">1500</span><span class="token punctuation">}</span></span> <span class="token punctuation">></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">QuoteModal</span></span> <span class="token attr-name">key</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>quote<span class="token punctuation">}</span></span> <span class="token attr-name">quote</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>quote<span class="token punctuation">}</span></span> <span class="token attr-name">author</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>author<span class="token punctuation">}</span></span> <span class="token punctuation">/></span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">ReactCSSTransitionReplace</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>control-section<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>control-container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+            </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Control</span></span> <span class="token attr-name">width</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token string">"40"</span><span class="token punctuation">}</span></span> <span class="token attr-name">height</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token string">"40"</span><span class="token punctuation">}</span></span> <span class="token attr-name">icon</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token string">"arrow-back"</span><span class="token punctuation">}</span></span> <span class="token attr-name">onClickFunction</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">handleBackButton</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>inline-control<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>control-container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+            </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Control</span></span> <span class="token attr-name">width</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token string">"40"</span><span class="token punctuation">}</span></span> <span class="token attr-name">height</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token string">"40"</span><span class="token punctuation">}</span></span> <span class="token attr-name">icon</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token string">"arrow-forward"</span><span class="token punctuation">}</span></span> <span class="token attr-name">onClickFunction</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">handleNextButton</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>inline-control<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span></code></pre></div>
+<p>Refresh the app and try out the new animation.</p>
+<h3 id="reviewing-appjs" style="position:relative;"><a href="#reviewing-appjs" aria-label="reviewing appjs permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reviewing App.js</h3>
+<p>Boom! You’re done. Here is the <code class="language-text">App.js</code> file in its final form:</p>
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span>
+<span class="token keyword">import</span> ReactCSSTransitionReplace <span class="token keyword">from</span> <span class="token string">'react-css-transition-replace'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> List <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'immutable'</span>
+
+<span class="token keyword">import</span> QuoteModal <span class="token keyword">from</span> <span class="token string">'./components/QuoteModal'</span>
+<span class="token keyword">import</span> Control <span class="token keyword">from</span> <span class="token string">'./components/Control'</span>
+
+<span class="token keyword">import</span> <span class="token string">'./App.css'</span>
+
+<span class="token keyword">import</span> quotes <span class="token keyword">from</span> <span class="token string">'./quotes'</span>
+<span class="token keyword">import</span> colors <span class="token keyword">from</span> <span class="token string">'./colors'</span>
+
+<span class="token keyword">class</span> <span class="token class-name">App</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span>
+
+    <span class="token keyword">const</span> shuffled <span class="token operator">=</span> <span class="token function">List</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">shuffleQuotes</span><span class="token punctuation">(</span>quotes<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> init <span class="token operator">=</span> shuffled<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">const</span> bgcolors <span class="token operator">=</span> <span class="token function">List</span><span class="token punctuation">(</span>colors<span class="token punctuation">)</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span>
+      quote<span class="token operator">:</span> init<span class="token punctuation">.</span>quote<span class="token punctuation">,</span>
+      author<span class="token operator">:</span> init<span class="token punctuation">.</span>author<span class="token punctuation">,</span>
+      available_quotes<span class="token operator">:</span> shuffled<span class="token punctuation">,</span>
+      colors<span class="token operator">:</span> bgcolors<span class="token punctuation">,</span>
+      index<span class="token operator">:</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array</span>
+  <span class="token function">shuffleQuotes</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">let</span> curIndex <span class="token operator">=</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">,</span> tempVal<span class="token punctuation">,</span> randIndex
+
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">0</span> <span class="token operator">!==</span> curIndex<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token comment">//pick remaining element</span>
+      randIndex <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> curIndex<span class="token punctuation">)</span>
+      curIndex <span class="token operator">-=</span> <span class="token number">1</span>
+
+      <span class="token comment">//swap with current</span>
+      tempVal <span class="token operator">=</span> arr<span class="token punctuation">[</span>curIndex<span class="token punctuation">]</span>
+      arr<span class="token punctuation">[</span>curIndex<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>randIndex<span class="token punctuation">]</span>
+      arr<span class="token punctuation">[</span>randIndex<span class="token punctuation">]</span> <span class="token operator">=</span> tempVal
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> arr
+  <span class="token punctuation">}</span>
+
+  <span class="token function">getRandomColor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">let</span> ind <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>colors<span class="token punctuation">.</span>size<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>colors<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>ind<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">performUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">const</span> nq <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>available_quotes<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>index<span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      quote<span class="token operator">:</span> nq<span class="token punctuation">.</span>quote<span class="token punctuation">,</span>
+      author<span class="token operator">:</span> nq<span class="token punctuation">.</span>author<span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">handleBackButton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// guard against users who start scrolling backwards immediately</span>
+    <span class="token comment">// and miraculously make it all the way through to the end of the array</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>index <span class="token operator">===</span> <span class="token operator">-</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>available_quotes<span class="token punctuation">.</span>size <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          index<span class="token operator">:</span> <span class="token number">0</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>performUpdate<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          index<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>index <span class="token operator">-</span> <span class="token number">1</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>performUpdate<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">handleNextButton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// guard against reaching end of quotes array and having to "wrap back around"</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>index <span class="token operator">===</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>available_quotes<span class="token punctuation">.</span>size <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          index<span class="token operator">:</span> <span class="token number">0</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>performUpdate<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          index<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>index <span class="token operator">+</span> <span class="token number">1</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>performUpdate<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">const</span> bgcolor <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getRandomColor</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> container_style  <span class="token operator">=</span> <span class="token punctuation">{</span>
+      backgroundColor<span class="token operator">:</span> bgcolor<span class="token punctuation">,</span>
+      transition<span class="token operator">:</span> <span class="token string">'background-color 1s ease'</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>App<span class="token punctuation">"</span></span> <span class="token attr-name">style</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>container_style<span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>App-header<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>animated fadeIn<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">Quotebook</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">ReactCSSTransitionReplace</span></span> <span class="token attr-name">transitionName</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>cross-fade<span class="token punctuation">"</span></span> <span class="token attr-name">transitionEnterTimeout</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token number">1500</span><span class="token punctuation">}</span></span> <span class="token attr-name">transitionLeaveTimeout</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token number">1500</span><span class="token punctuation">}</span></span> <span class="token punctuation">></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">QuoteModal</span></span> <span class="token attr-name">key</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>quote<span class="token punctuation">}</span></span> <span class="token attr-name">quote</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>quote<span class="token punctuation">}</span></span> <span class="token attr-name">author</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>author<span class="token punctuation">}</span></span> <span class="token punctuation">/></span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">ReactCSSTransitionReplace</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>control-section<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>control-container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+            </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Control</span></span> <span class="token attr-name">width</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token string">"40"</span><span class="token punctuation">}</span></span> <span class="token attr-name">height</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token string">"40"</span><span class="token punctuation">}</span></span> <span class="token attr-name">icon</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token string">"arrow-back"</span><span class="token punctuation">}</span></span> <span class="token attr-name">onClickFunction</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">handleBackButton</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>inline-control<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>control-container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+            </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Control</span></span> <span class="token attr-name">width</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token string">"40"</span><span class="token punctuation">}</span></span> <span class="token attr-name">height</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token string">"40"</span><span class="token punctuation">}</span></span> <span class="token attr-name">icon</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token string">"arrow-forward"</span><span class="token punctuation">}</span></span> <span class="token attr-name">onClickFunction</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">handleNextButton</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>inline-control<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> App<span class="token punctuation">;</span></code></pre></div>
+<h3 id="prepare-to-deploy" style="position:relative;"><a href="#prepare-to-deploy" aria-label="prepare to deploy permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prepare to Deploy</h3>
+<p>Let’s build the app for production. This is super easy. From the command line, in the base directory of the project, run:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> run build</code></pre></div>
+<p>Simple as that. After the build completes you should see a message like this in your terminal:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">evannichols:_Dev/quotebook ‹master*›$ <span class="token function">npm</span> run build
+
+<span class="token operator">></span> quotebook@0.1.0 build /Users/evannichols/_Dev/quotebook
+<span class="token operator">></span> react-scripts build
+
+Creating an optimized production build<span class="token punctuation">..</span>.
+Compiled with warnings.
+
+./src/components/Control.js
+  Line <span class="token number">6</span>:  Expected a default <span class="token keyword">case</span>  default-case
+
+Search <span class="token keyword">for</span> the keywords to learn <span class="token function">more</span> about each warning.
+To ignore, <span class="token function">add</span> // eslint-disable-next-line to the line before.
+
+File sizes after gzip:
+
+  <span class="token number">75.73</span> KB  build/static/js/main.e46c105f.js
+  <span class="token number">524</span> B     build/static/css/main.37e0d7c2.css
+
+The project was built assuming it is hosted at ./.
+You can control this with the homepage field <span class="token keyword">in</span> your package.json.
+
+The build folder is ready to be deployed.</code></pre></div>
+<h3 id="deploy-using-surge" style="position:relative;"><a href="#deploy-using-surge" aria-label="deploy using surge permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deploy using Surge</h3>
+<p>It’s time to share your quotebook with the world! If you want. <a href="http://surge.sh/">Surge</a> is a ruthlessly simple way to deploy static apps/websites. First, install the surge npm package globally:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> -g surge</code></pre></div>
+<p>If you would like to use a custom domain name (like mycoolquotebook.surge.sh or supercoolquotes.surge.sh) you’ll need to add a CNAME into your <code class="language-text">build</code> folder. Note that the domain must end in <code class="language-text">.surge.sh</code>. If you don’t care about the domain name you can skip this step; surge will automatically generate a random name for you. From the command line, cd into the <code class="language-text">build</code> folder and run:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token operator">&lt;</span>YourCustomDomainName<span class="token operator">></span>.surge.sh <span class="token operator">></span> CNAME</code></pre></div>
+<p>Now, in the base directory of your project run:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">surge</code></pre></div>
+<p>This will then prompt you to specify your project path. Since we want to deploy the <code class="language-text">build</code> folder, make sure to add that to the project path. Finally, hit enter, and let surge do the rest! It should look something like this:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">evannichols:_Dev/quotebook ‹master*›$ surge
+
+    Surge - surge.sh
+
+              email: evantnichols@gmail.com
+              token: *****************
+       project path: /Users/evannichols/_Dev/quotebook/build
+               size: <span class="token number">10</span> files, <span class="token number">2.4</span> MB
+             domain: randomquotebook.surge.sh
+             upload: <span class="token punctuation">[</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token punctuation">]</span> <span class="token number">100</span>%, eta: <span class="token number">0</span>.0s
+   propagate on CDN: <span class="token punctuation">[</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token punctuation">]</span> <span class="token number">100</span>%
+               plan: Free
+              users: evantnichols@gmail.com
+         IP Address: <span class="token number">45.55</span>.110.124
+
+    Success<span class="token operator">!</span> Project is published and running at <span class="token operator">&lt;</span>YourCustomDomainName<span class="token operator">></span>.surge.sh</code></pre></div>
+<p>Go check out your quotebook live!</p>
+<p><strong>Update (7/11/17)</strong>: It is possible to automate the deployment process by editing the <code class="language-text">deploy</code> script in the project’s <code class="language-text">package.json</code> file:</p>
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx">    <span class="token string">"deploy"</span><span class="token operator">:</span> <span class="token string">"echo &lt;YourCustomDomainName>.surge.sh > build/CNAME &amp;&amp; surge build"</span></code></pre></div>
+<br/>
+<p>I hope you enjoyed creating your very own quotebook. Questions, comments, issues with the tutorial? Shoot me an email at evantnichols@gmail.com.</p></div></main><footer><div style="font-size:18px;color:hsla(291, 0%, 18%,0.95);text-align:center">© 2020 etnichols</div></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script>
+  
+  
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', 'UA-69960811-1', 'auto', {});
+      
+      
+      
+      
+      
+      }</script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/programming/react-quotebook-tutorial";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-8676dc5fee877e903cab.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-af9e0f2c9acfb4fb259c.js"],"component---src-templates-post-template-js":["/component---src-templates-post-template-js-59085498048657da2c12.js"],"component---src-templates-tags-template-js":["/component---src-templates-tags-template-js-63e7be2239224306a959.js"],"component---src-pages-404-js":["/component---src-pages-404-js-86a95309ca89d3313d4c.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-216d7eb803e1f8875a85.js"],"component---src-pages-programming-js":["/component---src-pages-programming-js-82dcf57aa203900290be.js"],"component---src-pages-random-js":["/component---src-pages-random-js-5d01195678b61e867350.js"],"component---src-pages-tags-js":["/component---src-pages-tags-js-a2ec9c583e46da8d9f45.js"],"component---src-pages-tutorials-js":["/component---src-pages-tutorials-js-3d0cfd43f3f16a97b95e.js"]};/*]]>*/</script><script src="/component---src-templates-post-template-js-59085498048657da2c12.js" async=""></script><script src="/10fbf7618c237245af2b62bf60c6ddf21a0eb93e-c5d749479b2bedc29fa5.js" async=""></script><script src="/styles-36681512479a843831b0.js" async=""></script><script src="/app-8676dc5fee877e903cab.js" async=""></script><script src="/framework-52a3ea48de1a5dd03b5a.js" async=""></script><script src="/webpack-runtime-dfee653c24a84ea7ec52.js" async=""></script></body></html>
