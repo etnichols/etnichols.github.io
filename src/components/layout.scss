@@ -1,11 +1,15 @@
-@import '../styles/colors';
-@import '../styles/space';
+@import '../styles/defs';
 
 .container {
-  margin-top: $SPACING_LARGE;
-  padding: $SPACING_LARGE;
-  max-width: 45rem;
-  margin: 0 auto;
+  // margin-top: $SPACING_SMALL;
+  padding: $SPACING_MEDIUM;
+
+  @include breakpoint(large){
+    margin-top: $SPACING_LARGE;
+    padding: $SPACING_LARGE;
+    max-width: 45rem;
+    margin: 0 auto;
+  }
 }
 
 .site-title {

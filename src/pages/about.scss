@@ -1,5 +1,4 @@
-@import '../styles/colors';
-@import '../styles/space';
+@import '../styles/defs';
 
 ul {
   list-style: circle;
@@ -72,7 +71,9 @@ ul {
 }
 
 .title-section-description {
-  margin-bottom: $SPACING_MEDIUM;
+  margin: $SPACING_MEDIUM 0;
+  max-width: 380px;
+  text-align: center;
 }
 
 .icon-section {
@@ -83,4 +84,15 @@ ul {
 
 .link-icon {
   margin-right: $SPACING_MEDIUM;
+}
+
+.profile-image {
+  border: none;
+  margin: $SPACING_MEDIUM auto;
+}
+
+.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

@@ -2,6 +2,7 @@ import { graphql, StaticQuery } from 'gatsby'
 import React, { FC } from 'react'
 import Icon from '../components/icon'
 import Layout from '../components/layout'
+import Img from 'gatsby-image'
 
 import { Duration, Entry, Resume, Section } from '../@types/resume.d.ts'
 import data from '../data/resume'
@@ -33,7 +34,7 @@ const ResumeTitle: FC<> = () => {
     <StaticQuery
       query={graphql`
         query {
-          site {
+          metadata: site {
             siteMetadata {
               description
               email
@@ -42,16 +43,23 @@ const ResumeTitle: FC<> = () => {
               medium
             }
           }
+          profile_picture: file(relativePath: { eq: "about-pic.jpg" }) {
+            childImageSharp {
+              fixed(width: 120, quality: 90) {
+                ...GatsbyImageSharpFixed_withWebp
+              }
+            }
+          }
         }
       `}
-      render={data => {
+      render={({ metadata, profile_picture }) => {
         const {
           email,
           github,
           linkedin,
           medium,
           description,
-        } = data.site.siteMetadata
+        } = metadata.siteMetadata
 
         const iconsWithLinks = [
           ['email', `mailto:${email}`],
@@ -63,13 +71,23 @@ const ResumeTitle: FC<> = () => {
         return (
           <div>
             <h2>about me</h2>
-            <p className="title-section-description">{description}</p>
-            <div className="icon-section">
-              {iconsWithLinks.map(([icon, href], i) => (
-                <a key={`link-${i}`} className="link-icon" href={href}>
-                  <Icon key={`link-${i}`} name={icon} />
-                </a>
-              ))}
+            <div class="centered">
+              <Img
+                fixed={profile_picture.childImageSharp.fixed}
+                className="profile-picture"
+                imgStyle={{
+                  border: 'none',
+                  borderRadius: '50%',
+                }}
+              />
+              <p className="title-section-description">{description}</p>
+              <div className="icon-section">
+                {iconsWithLinks.map(([icon, href], i) => (
+                  <a key={`link-${i}`} className="link-icon" href={href}>
+                    <Icon key={`link-${i}`} name={icon} />
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         )
@@ -110,9 +128,7 @@ const RenderEntry: FC<Entry> = ({
       )}
       {company && <h5 className="entry-company">{company}</h5>}
       {duration && (
-        <div className="entry-duration">{`${duration.start} - ${
-          duration.end
-        }`}</div>
+        <div className="entry-duration">{`${duration.start} - ${duration.end}`}</div>
       )}
     </>
   )
