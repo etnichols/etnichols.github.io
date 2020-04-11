@@ -45,22 +45,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/pages/posts`,
-        name: `markdown-posts`,
+        path: `${__dirname}/src/pages/random`,
+        name: `markdown-random`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/pages/projects`,
-        name: `markdown-projects`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/pages/tutorials`,
-        name: `markdown-tutorials`,
+        path: `${__dirname}/src/pages/programming`,
+        name: `markdown-programming`,
       },
     },
     {

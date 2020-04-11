@@ -7,7 +7,6 @@ import Nav from '../components/nav'
 
 import './layout.scss'
 import styles from '../styles'
-import { rhythm } from '../utils/typography'
 
 const Layout = ({ children }) => (
   <StaticQuery

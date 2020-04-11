@@ -10,12 +10,10 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     const postSlug = filePath.dir.split('---')[1]
     let category
 
-    if (filePath.dir.includes('project')) {
-      category = `projects`
-    } else if (filePath.dir.includes('tutorials')) {
-      category = `tutorials`
-    } else {
-      category = `posts`
+    if (filePath.dir.includes('random')) {
+      category = `random`
+    } else if (filePath.dir.includes('programming')) {
+      category = `programming`
     }
 
     createNodeField({
@@ -27,12 +25,12 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     node.internal.type === 'MarkdownRemark' &&
     typeof node.slug === 'undefined'
   ) {
-    const fileNode = getNode(node.parent)
-    // It's a Markdown node, apply slug from the parent.
+    const parentNode = getNode(node.parent)
+    // Markdown node; apply slug from the parent.
     createNodeField({
       node,
       name: 'slug',
-      value: fileNode.fields.slug,
+      value: parentNode.fields.slug,
     })
 
     // And add tagSlugs if they exist.
@@ -82,7 +80,7 @@ exports.createPages = ({ actions, graphql }) => {
 
     // Create post pages.
     allMarkdownRemark.edges.forEach(({ node }) => {
-      let slug = node.fields.slug
+      const slug = node.fields.slug
       createPage({
         path: slug,
         component: postTemplate,

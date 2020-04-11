@@ -9,7 +9,7 @@ const PostList = ({ posts }) => (
   <ul style={{ marginLeft: 0, listStyle: `none` }}>
     {posts.map(post => {
       const { node } = post
-      const { excerpt, fields, frontmatter } = node
+      const { fields, frontmatter } = node
       return (
         <li key={fields.slug}>
           <span style={{ color: styles.colors.text }} className="post-date">

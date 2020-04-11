@@ -128,7 +128,7 @@ const RenderEntry: FC<Entry> = ({
       )}
       {company && <h5 className="entry-company">{company}</h5>}
       {duration && (
-        <div className="entry-duration">{`${duration.start} - ${duration.end}`}</div>
+        <div className="entry-duration">{`${duration.start} -  ${duration.end}`}</div>
       )}
     </>
   )
