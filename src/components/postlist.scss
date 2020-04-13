@@ -1,0 +1,40 @@
+@import '../styles/defs';
+
+.title-container {
+  display: flex;
+}
+
+.list-item {
+  font-size: 18px;
+}
+
+.post-date {
+  display: block;
+  font-size: 18px;
+  margin-left: $SPACING_SMALL;
+}
+
+.post-type-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.post-type {
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  margin-right: $SPACING_SMALL;
+  font-variant: small-caps;
+  min-width: 50px;
+  height: 18px;
+  background-color: $RED;
+  color: $WHITE;
+  border-radius: 2px;
+}
+
+// @media (min-width: 750px) {
+//   .post-date {
+//     float: right;
+//   }
+// }

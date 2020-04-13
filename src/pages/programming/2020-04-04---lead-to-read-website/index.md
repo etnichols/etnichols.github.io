@@ -10,7 +10,7 @@ author: Evan Nichols
 type: 'project'
 ---
 
-Lead to Read is an awesome non-profit based out of Kansas City that facilitates reading based mentorship in the Kansas City metro area. They connect adult volunteers with 1st-3rd grade students for one hour each week to read together. As their motto goes, "Together we are creating a community of readers, one lunch hour at a time."
+Lead to Read is a non-profit based out of Kansas City that facilitates reading based mentorship in the Kansas City metro area. They connect adult volunteers with 1st-3rd grade students for one hour each week to read together. As their motto goes, "Together we are creating a community of readers, one lunch hour at a time."
 
 I worked with Pauly Hart and Martha Conradt to give refresh the UI using Gatsby, while keeping Wordpress as the CMS.
 
@@ -56,7 +56,7 @@ gatsby-plugin-typography // enable Typography.js
 gatsby-source-wordpress // the workhorse! Source content from WP.
 ```
 
-Beyond that, I decided to use mobile-first styling for all CSS, and defined a central defs.scss to be the single source of colors, spacing and mixins for the project. DRY!
+I used mobile-first styling for all CSS, and defined a central defs.scss to be the single source of colors, spacing and mixins for the project.
 
 <script src="https://gist.github.com/e-nichols/f979c6c285643f6935581a320afc73ba.js"></script>
 
@@ -72,6 +72,8 @@ Beyond that, I decided to use mobile-first styling for all CSS, and defined a ce
 - Really easy.
 - But sounds like cloud functions could use some more love. Not efficient. Link to Medium post.
 - Is it... worth it?
+
+## Github actions
 
 ## Some React tidbits
 

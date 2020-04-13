@@ -16,7 +16,7 @@ const RenderPage =({data}) => {
   return (
     <div>
       <h2>programming</h2>
-      <PostList posts={posts} />
+      <PostList posts={posts} withType={true} />
     </div>
   )
 }
@@ -42,6 +42,7 @@ const PageQuery = graphql`
           frontmatter {
             title
             date
+            type
           }
         }
       }

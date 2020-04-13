@@ -3,21 +3,26 @@ import { Link } from 'gatsby'
 
 import { formatDate } from '../utils/format'
 import styles from '../styles'
-import './postlist.css'
+import './postlist.scss'
 
-const PostList = ({ posts }) => (
+const PostList = ({ posts, withType }) => (
   <ul style={{ marginLeft: 0, listStyle: `none` }}>
     {posts.map(post => {
       const { node } = post
       const { fields, frontmatter } = node
       return (
         <li key={fields.slug}>
-          <span style={{ color: styles.colors.text }} className="post-date">
-            {formatDate(frontmatter.date)}
-          </span>
-          <Link className="list-item" to={fields.slug}>
-            {frontmatter.title}
-          </Link>
+          <div className="title-container">
+          {withType && (
+            <div className="post-type-container">
+            <div className="post-type">{frontmatter.type}</div>
+            </div>
+          )}
+            <Link className="list-item" to={fields.slug}>
+              {frontmatter.title}
+            </Link>
+            <div className="post-date">({formatDate(frontmatter.date)})</div>
+          </div>
         </li>
       )
     })}
