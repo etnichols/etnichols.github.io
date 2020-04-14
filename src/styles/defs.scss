@@ -9,6 +9,9 @@ $WHITE: #fff;
 $LINK: #3264a8;
 $LINK_HOVER: #ff5252;
 $RED: #fb251b;
+$BLUE: #4C6873;
+$GREEN: #6E8C01;
+$DARK_GRAY: #595955;
 
 // Space
 $SPACING_XSMALL: 4px;
@@ -35,4 +38,145 @@ $SPACING_XLARGE: 32px;
       @content;
     }
   }
+}
+
+// Common classes
+.bold {
+  font-weight: 600;
+}
+
+.extra-bold {
+  font-weight: 700;
+}
+
+.margin-small {
+  margin: $SPACING_SMALL;
+}
+
+.margin-medium {
+  margin: $SPACING_MEDIUM;
+}
+
+.margin-large {
+  margin: $SPACING_LARGE;
+}
+
+.margin-left-small {
+  margin-left: $SPACING_SMALL;
+}
+
+.margin-left-medium {
+  margin-left: $SPACING_MEDIUM;
+}
+
+.margin-left-large {
+  margin-left: $SPACING_LARGE;
+}
+
+.margin-right-small {
+  margin-right: $SPACING_SMALL;
+}
+
+.margin-right-medium {
+  margin-right: $SPACING_MEDIUM;
+}
+
+.margin-right-large {
+  margin-right: $SPACING_LARGE;
+}
+
+.margin-bottom-xsmall {
+  margin-bottom: $SPACING_XSMALL;
+}
+
+.margin-bottom-small {
+  margin-bottom: $SPACING_SMALL;
+}
+
+.margin-bottom-medium {
+  margin-bottom: $SPACING_MEDIUM;
+}
+
+.margin-bottom-large {
+  margin-bottom: $SPACING_LARGE;
+}
+
+.margin-bottom-xlarge {
+  margin-bottom: $SPACING_XLARGE;
+}
+
+.margin-top-xsmall {
+  margin-top: $SPACING_XSMALL;
+}
+
+.margin-top-small {
+  margin-top: $SPACING_SMALL;
+}
+
+.margin-top-medium {
+  margin-top: $SPACING_MEDIUM;
+}
+
+.margin-top-large {
+  margin-top: $SPACING_LARGE;
+}
+
+.padding-left-small {
+  padding-left: $SPACING_SMALL;
+}
+
+.padding-left-medium {
+  padding-left: $SPACING_MEDIUM;
+}
+
+.padding-left-large {
+  padding-left: $SPACING_LARGE;
+}
+
+.padding-right-small {
+  padding-right: $SPACING_SMALL;
+}
+
+.padding-right-medium {
+  padding-right: $SPACING_MEDIUM;
+}
+
+.padding-right-large {
+  padding-right: $SPACING_LARGE;
+}
+
+.padding-bottom-small {
+  padding-bottom: $SPACING_SMALL;
+}
+
+.padding-bottom-medium {
+  padding-bottom: $SPACING_MEDIUM;
+}
+
+.padding-bottom-large {
+  padding-bottom: $SPACING_LARGE;
+}
+
+.padding-small {
+  padding: $SPACING_SMALL;
+}
+
+.padding-medium {
+  padding: $SPACING_MEDIUM;
+}
+
+.margin-large {
+  padding: $SPACING_LARGE;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
+.border-radius-small {
+  border-radius: 4px;
 }
