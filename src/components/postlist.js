@@ -22,7 +22,7 @@ const PostList = ({ posts, withType }) => (
       const { node } = post
       const { fields, frontmatter } = node
       return (
-        <li className="post margin-bottom-medium" key={fields.slug}>
+        <li className="post-list-item margin-bottom-medium" key={fields.slug}>
           <div className="post-date">({formatDate(frontmatter.date)})</div>
           <div className="title-container">
             <Link className="list-item" to={fields.slug}>
