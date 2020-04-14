@@ -8,7 +8,7 @@ module.exports = {
     homepage: `https://etnichols.com`,
     email: `e3t5n6@gmail.com`,
     linkedin: `https://www.linkedin.com/in/etnichols/`,
-    github: `https://www.github.com/e-nichols`,
+    github: `https://www.github.com/etnichols`,
     medium: `https://medium.com/@etnichols`,
     location: `New York, NY`,
   },
