@@ -1,8 +1,9 @@
 import Icon from '../components/icon'
-import Img from 'gatsby-image'
 import Layout from '../components/layout'
-import React, { FC } from 'react'
 import { graphql, StaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
+import React, { FC } from 'react'
+import ReactMarkdown from 'react-markdown'
 
 import { Duration, Entry, Resume, Section } from '../@types/resume.d.ts'
 import data from '../data/resume'
@@ -136,11 +137,11 @@ const RenderEntry: FC<Entry> = ({
   const body = Array.isArray(description) ? (
     <ul className="languages">
       {description.map((item, i) => (
-        <li key={`languages-${item}-${i}`}>{item}</li>
+        <li key={`languages-${item}-${i}`}><ReactMarkdown source={item} /></li>
       ))}
     </ul>
   ) : (
-    description
+    <ReactMarkdown source={description} />
   )
 
   return (
