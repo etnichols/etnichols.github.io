@@ -1,0 +1,1 @@
+{"componentChunkName":"component---src-templates-tags-template-js","path":"/tags/gatsby/","result":{"data":{"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"fields":{"slug":"/programming/blog-redesign-with-gatsby"},"frontmatter":{"title":"Static site generation with Gatsby 1.0"}}}]}},"pageContext":{"tag":"Gatsby"}}}

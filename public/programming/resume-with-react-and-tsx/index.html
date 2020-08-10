@@ -1,0 +1,688 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:100%/1.5625 'Alegreya Sans',sans-serif;box-sizing:border-box;overflow-y:scroll;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:hsla(0,0%,0%,0.8);font-family:'Alegreya Sans',sans-serif;font-weight:400;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;}h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;color:hsla(0,0%,0%,1);font-family:'Alegreya',serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:2rem;line-height:1.1;}h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;color:hsla(0,0%,0%,1);font-family:'Alegreya',serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.51572rem;line-height:1.1;}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;color:hsla(0,0%,0%,1);font-family:'Alegreya',serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.31951rem;line-height:1.1;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;color:hsla(0,0%,0%,1);font-family:'Alegreya',serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.1;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;color:hsla(0,0%,0%,1);font-family:'Alegreya',serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:0.87055rem;line-height:1.1;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;color:hsla(0,0%,0%,1);font-family:'Alegreya',serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:0.81225rem;line-height:1.1;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;}ul{margin-left:1.5625rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;list-style-position:outside;list-style-image:none;}ol{margin-left:1.5625rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;font-size:0.85rem;line-height:1.5625rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;font-size:1rem;line-height:1.5625rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;}blockquote{margin-left:0;margin-right:1.5625rem;margin-top:0;padding-bottom:0;padding-left:1.75781rem;padding-right:0;padding-top:0;margin-bottom:1.5625rem;font-size:1.1487rem;line-height:1.5625rem;color:hsla(0,0%,0%,0.59);border-left:0.58594rem solid;border-color:#fcea0e;}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.5625rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5625rem;}b{font-weight:700;}strong{font-weight:700;}dt{font-weight:700;}th{font-weight:700;}li{margin-bottom:calc(1.5625rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.5625rem;margin-bottom:calc(1.5625rem / 2);margin-top:calc(1.5625rem / 2);}li > ul{margin-left:1.5625rem;margin-bottom:calc(1.5625rem / 2);margin-top:calc(1.5625rem / 2);}blockquote *:last-child{margin-bottom:0;}li *:last-child{margin-bottom:0;}p *:last-child{margin-bottom:0;}li > p{margin-bottom:calc(1.5625rem / 2);}code{font-size:0.85rem;line-height:1.5625rem;}kbd{font-size:0.85rem;line-height:1.5625rem;}samp{font-size:0.85rem;line-height:1.5625rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding-left:1.04167rem;padding-right:1.04167rem;padding-top:0.78125rem;padding-bottom:calc(0.78125rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}a{color:#fb251b;text-decoration:none;}a:hover,a:active{color:hsla(0,0%,0%,0.8);}h1,h2,h3,h4,h5,h6{margin-top:3.125rem;}blockquote > :last-child{margin-bottom:0;}blockquote cite{font-size:1rem;line-height:1.5625rem;color:hsla(0,0%,0%,0.8);font-weight:400;}blockquote cite:before{content:"— ";}@media only screen and (max-width:480px){blockquote{margin-left:-1.17188rem;margin-right:0;border-left:0.29297rem solid;border-color:#fcea0e;padding-left:0.87891rem;}}</style><style data-href="/styles.d5535f422ce021f2fbf4.css">code[class*=language-],pre[class*=language-]{color:#000;background:none;text-shadow:0 1px #fff;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-]::selection,code[class*=language-] ::selection,pre[class*=language-]::selection,pre[class*=language-] ::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.token.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{color:#9a6e3a;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}pre[class*=language-].line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}pre[class*=language-].line-numbers>code{position:relative;white-space:inherit}.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:0;font-size:100%;left:-3.8em;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-ms-user-select:none;user-select:none}.line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}svg{cursor:pointer}.icon{margin:8px;fill:rgba(46,46,46,.95)}.icon:hover{cursor:pointer;fill:rgba(46,46,46,.4)}.link-style{font-size:18px}.container{padding:16px}@media (min-width:1024px){.container{padding:24px;max-width:45rem;margin:0 auto}}.site-title{line-height:1;margin:0;padding:8px 0}ul{list-style:none}footer{padding-top:10px;color:#d0272a;position:absolute;left:0;bottom:1em;right:0;width:100%;text-align:center}html{height:100%;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;box-sizing:border-box}body{position:relative;min-height:100%;margin:0;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}main{padding-bottom:3em}img{border:1px solid #000}.gatsby-highlight-code-line{background-color:#feb;display:block;margin-right:-1em;margin-left:-1em;padding-right:1em;padding-left:.75em;border-left:.25em solid #00ff3e}.gatsby-highlight{background-color:#fdf6e3;border-radius:.3em;margin:.5em 0;padding:1em;overflow:auto}.gatsby-highlight pre[class*=language-]{background-color:transparent;margin:0;padding:0;overflow:initial;float:left;min-width:100%}.gatsby-highlight pre[class*=language-].line-numbers{padding-left:2.8em}ul{list-style:circle;margin-left:1em;margin-bottom:0}.resume-body{-webkit-column-count:2;-webkit-column-width:256px;columns:256px 2;-webkit-column-rule:1px dotted rgba(46,46,46,.2);column-rule:1px dotted rgba(46,46,46,.2)}.section,.section-title-container{display:inline-block;width:100%}.section-title{margin:8px 4px}.section-bar{background-color:#fb251b;height:4px;margin:4px}.entry{color:rgba(46,46,46,.4);display:flex;flex-direction:column;margin:8px}.entry-title{margin:8px 0;line-height:1.25}.entry-company{color:rgba(46,46,46,.95);margin:4px 0;line-height:1.25}.entry-duration{color:#2e2e2e;margin-bottom:16px;font-size:14px;font-style:italic}.entry-description{color:rgba(46,46,46,.95);font-size:14px;line-height:1.7em;margin-bottom:8px}.title-section-description{margin:16px 0;max-width:380px;text-align:center}.icon-section{display:flex;justify-content:center;margin-bottom:24px}.link-icon{margin-right:16px}.profile-image{border:none;margin:16px auto}.centered{display:flex;flex-direction:column;align-items:center}.bold{font-weight:600}.extra-bold{font-weight:700}.margin-small{margin:8px}.margin-medium{margin:16px}.margin-large{margin:24px}.margin-left-small{margin-left:8px}.margin-left-medium{margin-left:16px}.margin-left-large{margin-left:24px}.margin-right-small{margin-right:8px}.margin-right-medium{margin-right:16px}.margin-right-large{margin-right:24px}.margin-bottom-xsmall{margin-bottom:4px}.margin-bottom-small{margin-bottom:8px}.margin-bottom-medium{margin-bottom:16px}.margin-bottom-large{margin-bottom:24px}.margin-bottom-xlarge{margin-bottom:32px}.margin-top-xsmall{margin-top:4px}.margin-top-small{margin-top:8px}.margin-top-medium{margin-top:16px}.margin-top-large{margin-top:24px}.padding-left-small{padding-left:8px}.padding-left-medium{padding-left:16px}.padding-left-large{padding-left:24px}.padding-right-small{padding-right:8px}.padding-right-medium{padding-right:16px}.padding-right-large{padding-right:24px}.padding-bottom-small{padding-bottom:8px}.padding-bottom-medium{padding-bottom:16px}.padding-bottom-large{padding-bottom:24px}.padding-small{padding:8px}.padding-medium{padding:16px}.margin-large{padding:24px}.no-margin{margin:0}.no-underline{text-decoration:none}.border-radius-small{border-radius:4px}.post-list-item{border-left:2px solid rgba(46,46,46,.2);padding-left:8px;padding-bottom:8px}.title-container{display:flex;flex-direction:column}@media (min-width:768px){.title-container{flex-direction:row}}.list-item,.post-date{font-size:18px}.post-date{display:block;color:#595955}.blue{background-color:#4c6873}.green{background-color:#6e8c01}.post-type-container{display:flex;justify-content:flex-start}@media (min-width:768px){.post-type-container{align-items:center;justify-content:center}}.post-type{font-size:12px;display:flex;justify-content:center;font-variant:small-caps;margin-top:8px;min-width:50px;height:18px;color:#fff;border-radius:2px}@media (min-width:768px){.post-type{margin:0 0 0 8px}}</style><meta name="generator" content="Gatsby 2.20.12"/><title data-react-helmet="true"></title><link rel="preconnect dns-prefetch" href="https://www.google-analytics.com"/><link rel="icon" href="/icons/icon-48x48.png?v=e5cf2d7f177cdb6ce5d6a938eae4828f"/><link rel="manifest" href="/manifest.webmanifest"/><meta name="theme-color" content="##fb251b"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=e5cf2d7f177cdb6ce5d6a938eae4828f"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=e5cf2d7f177cdb6ce5d6a938eae4828f"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=e5cf2d7f177cdb6ce5d6a938eae4828f"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=e5cf2d7f177cdb6ce5d6a938eae4828f"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=e5cf2d7f177cdb6ce5d6a938eae4828f"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=e5cf2d7f177cdb6ce5d6a938eae4828f"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=e5cf2d7f177cdb6ce5d6a938eae4828f"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=e5cf2d7f177cdb6ce5d6a938eae4828f"/><link href="//fonts.googleapis.com/css?family=Alegreya:400,700|Alegreya+Sans:400,700" rel="stylesheet" type="text/css"/><style type="text/css">
+    .anchor.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .anchor.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .anchor svg,
+    h2 .anchor svg,
+    h3 .anchor svg,
+    h4 .anchor svg,
+    h5 .anchor svg,
+    h6 .anchor svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor svg,
+    h2:hover .anchor svg,
+    h3:hover .anchor svg,
+    h4:hover .anchor svg,
+    h5:hover .anchor svg,
+    h6:hover .anchor svg,
+    h1 .anchor:focus svg,
+    h2 .anchor:focus svg,
+    h3 .anchor:focus svg,
+    h4 .anchor:focus svg,
+    h5 .anchor:focus svg,
+    h6 .anchor:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><link as="script" rel="preload" href="/webpack-runtime-4f6c8d868286ef322797.js"/><link as="script" rel="preload" href="/framework-52a3ea48de1a5dd03b5a.js"/><link as="script" rel="preload" href="/app-8676dc5fee877e903cab.js"/><link as="script" rel="preload" href="/styles-36681512479a843831b0.js"/><link as="script" rel="preload" href="/10fbf7618c237245af2b62bf60c6ddf21a0eb93e-c5d749479b2bedc29fa5.js"/><link as="script" rel="preload" href="/component---src-templates-post-template-js-59085498048657da2c12.js"/><link as="fetch" rel="preload" href="/page-data/programming/resume-with-react-and-tsx/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="container"><main><a css="[object Object]" href="/"><h1 class="site-title">etnichols</h1></a><hr/><a class="link-style" href="/"> about</a><br/><a class="link-style" href="/programming">&gt; programming</a><br/><a class="link-style" href="/random"> random</a><br/><header><h1 style="margin-bottom:0.78125rem">Resume with React and Typescript</h1><hr style="margin-bottom:0.78125rem"/><p style="margin-top:0;padding-top:0;display:block;color:hsla(291, 0%, 18%,0.4)">16 min read • <span style="font-style:normal;text-align:left">tagged <span><a href="/tags/tutorial/">tutorial</a><span>, </span></span><span><a href="/tags/react/">React</a><span>, </span></span><span><a href="/tags/typescript/">Typescript</a></span></span></p></header><div class="toc"><ul>
+<li><a href="/programming/resume-with-react-and-tsx/#overview">Overview</a></li>
+<li><a href="/programming/resume-with-react-and-tsx/#demo">Demo</a></li>
+<li><a href="/programming/resume-with-react-and-tsx/#set-up-boilerplate-gatsby-site">Set up boilerplate Gatsby site</a></li>
+<li><a href="/programming/resume-with-react-and-tsx/#enable-typescript">Enable Typescript</a></li>
+<li><a href="/programming/resume-with-react-and-tsx/#create-resume-route-for-your-site">Create /resume route for your site</a></li>
+<li><a href="/programming/resume-with-react-and-tsx/#typescript-primer">Typescript Primer</a></li>
+<li><a href="/programming/resume-with-react-and-tsx/#actually-use-typescript">Actually use Typescript</a></li>
+<li>
+<p><a href="/programming/resume-with-react-and-tsx/#define-types-for-resume-data">Define types for Resume data</a></p>
+<ul>
+<li><a href="/programming/resume-with-react-and-tsx/#enter-interfaces">Enter: Interfaces</a></li>
+<li><a href="/programming/resume-with-react-and-tsx/#define-a-typed-data-object">Define a typed data object</a></li>
+</ul>
+</li>
+<li>
+<p><a href="/programming/resume-with-react-and-tsx/#create-function-components-for-each-type">Create function components for each type</a></p>
+<ul>
+<li><a href="/programming/resume-with-react-and-tsx/#a-note-on-css">A note on CSS</a></li>
+<li><a href="/programming/resume-with-react-and-tsx/#import-all-dependencies-into-resumetsx">Import all dependencies into <code class="language-text">resume.tsx</code></a></li>
+<li><a href="/programming/resume-with-react-and-tsx/#entry">Entry</a></li>
+<li><a href="/programming/resume-with-react-and-tsx/#section">Section</a></li>
+<li><a href="/programming/resume-with-react-and-tsx/#resume">Resume</a></li>
+<li><a href="/programming/resume-with-react-and-tsx/#pulse-check">Pulse Check</a></li>
+<li><a href="/programming/resume-with-react-and-tsx/#title-component">Title Component</a></li>
+<li><a href="/programming/resume-with-react-and-tsx/#responsive-column-layout-via-css">Responsive column layout via CSS</a></li>
+</ul>
+</li>
+<li><a href="/programming/resume-with-react-and-tsx/#wrap-up">Wrap up</a></li>
+</ul></div><div class="post"><h2 id="overview" style="position:relative;"><a href="#overview" aria-label="overview permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Overview</h2>
+<p>This tutorial illustrates how to create a simple, responsive resume page for your personal website using Gatsby, Typescript and React function components. It assumes a basic knowledge of these three technologies. If that’s not the case, check out these references before getting started:</p>
+<ul>
+<li><a href="https://www.gatsbyjs.org/tutorial/part-zero/">Set up your Gatsby development environment</a>.</li>
+<li><a href="https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html">Typescript in 5 minutes</a></li>
+<li><a href="https://reactjs.org/docs/components-and-props.html#function-and-class-components">React Docs - Function and Class Components</a></li>
+</ul>
+<h2 id="demo" style="position:relative;"><a href="#demo" aria-label="demo permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Demo</h2>
+<p><a href="http://gatsby-typescript-resume.surge.sh/resume/">gatsby-typescript-resume.surge.sh</a></p>
+<p>Source code available <a href="https://github.com/e-nichols/gatsby-typescript-resume">here</a>.</p>
+<h2 id="set-up-boilerplate-gatsby-site" style="position:relative;"><a href="#set-up-boilerplate-gatsby-site" aria-label="set up boilerplate gatsby site permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Set up boilerplate Gatsby site</h2>
+<p>Kick things off by creating a new Gatsby site using the <code class="language-text">gatsby-cli</code> tool.</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ gatsby new typescript-resume</code></pre></div>
+<h2 id="enable-typescript" style="position:relative;"><a href="#enable-typescript" aria-label="enable typescript permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Enable Typescript</h2>
+<p>After the install script finishes, <code class="language-text">cd</code> into the project directory and run <code class="language-text">gatsby-develop</code> to run the site locally. After it finishes building, navigate to <code class="language-text">localhost:8000</code> in your browser to see the boilerplate starter site.</p>
+<p>Gatsby provides drop-in support for Typescript via <a href="https://www.gatsbyjs.org/packages/gatsby-plugin-typescript/">gatsby-plugin-typescript</a>. Let’s add this to the site. From the project directory, run:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ <span class="token function">npm</span> i gatsby-plugin-typescript</code></pre></div>
+<p>And modify your <code class="language-text">gatsby-config.js</code> to include the plugin:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">module.exports = {
+  // ...,
+  plugins: [...`gatsby-plugin-typescript`],
+}</code></pre></div>
+<p>That’s it! Now you can use files with a <code class="language-text">.tsx</code> extension in your project.</p>
+<h2 id="create-resume-route-for-your-site" style="position:relative;"><a href="#create-resume-route-for-your-site" aria-label="create resume route for your site permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create /resume route for your site</h2>
+<p>As the Gatsby docs state:</p>
+<blockquote>
+<p>Any React component defined in <code class="language-text">src/pages/*.js</code> will automatically become a page.</p>
+</blockquote>
+<p>With Typescript enabled on the project, this statement can be updated to:</p>
+<blockquote>
+<p>Any React component defined in <code class="language-text">src/pages/*.[js|tsx]</code> will automatically become a page.”</p>
+</blockquote>
+<p><em>(Note: the <code class="language-text">.tsx</code> extension as opposed to just <code class="language-text">.ts</code>. This is because the resume page we create will use JSX, thus we want the <code class="language-text">.tsx</code> extension.)</em></p>
+<p>Create a new page at <code class="language-text">src/pages/resume.tsx</code> and add the following code to it:</p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span>
+
+<span class="token comment">/** Responsive resume page. */</span>
+<span class="token keyword">const</span> <span class="token function-variable function">Resume</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span><span class="token operator">&lt;</span>h1<span class="token operator">></span>Hello<span class="token punctuation">,</span> Resume<span class="token operator">!</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span><span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> Resume</code></pre></div>
+<p>Let’s see it in action. Run <code class="language-text">gatsby develop</code> again from project directory and navigate your browser to <code class="language-text">localhost:8000/resume</code>. You should see:</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/94a533166853518b32b62191b3e0bf05/c2d13/hello-resume.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 39.189189189189186%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAzElEQVQoz82M20rDUBBFz580ph6TJib1ArV9qCSg31IKUmporlYQKfixTSAfcE6WSaQPQh+EvLhhzew9MFsE83vCZcBT+EzwGPIwW+B7t7iOj+NMcSc+cmxhGhLb9pCWhzW5wRi7jEwXQ3qYV1MuLq+R9h1itV7zso143aVsoh1RnJIVe+I0J86KniR/I21JOt+Tt7n4xcf+na/DJ6IsS+q6pqoqyuMRrRRDJM4dVVuqtP7Zf0QrjW5/RDeapunDyQ9BdKPTaQ/V/y/8BkREKvzjHZk2AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Hello, Resume!"
+        title="Hello, Resume!"
+        src="/static/94a533166853518b32b62191b3e0bf05/fcda8/hello-resume.png"
+        srcset="/static/94a533166853518b32b62191b3e0bf05/12f09/hello-resume.png 148w,
+/static/94a533166853518b32b62191b3e0bf05/e4a3f/hello-resume.png 295w,
+/static/94a533166853518b32b62191b3e0bf05/fcda8/hello-resume.png 590w,
+/static/94a533166853518b32b62191b3e0bf05/efc66/hello-resume.png 885w,
+/static/94a533166853518b32b62191b3e0bf05/c83ae/hello-resume.png 1180w,
+/static/94a533166853518b32b62191b3e0bf05/c2d13/hello-resume.png 2560w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<h2 id="typescript-primer" style="position:relative;"><a href="#typescript-primer" aria-label="typescript primer permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Typescript Primer</h2>
+<p>You probably noticed the code above isn’ actually using Typescript 🤔 Why did it still compile? It’s because <em>Typescript is a typed superset of Javascript.</em> Which is a fancy way of saying, “All Javascript is valid Typescript, but not all Typescript is valid Javascript.” Typescript simply optional static typing to the language.</p>
+<p>This is a cool thing because it enables incremental integration of Typescript into an existing project. One could change all existing <code class="language-text">.js</code> files to <code class="language-text">.ts|.tsx</code> and incrementally add typings to them, or, leave all legacy <code class="language-text">.js</code> files unchanged and use <code class="language-text">.ts|.tsx</code> for any new files.</p>
+<p>I digress. Back to the matter at hand: let’s add some typings to Resume function component.</p>
+<p>The syntax for adding Typescript typings is simple: <code class="language-text">identifier : type</code>. A quick concrete example:</p>
+<p>Consider three variables: <code class="language-text">x</code>, <code class="language-text">y</code> and <code class="language-text">z</code>.</p>
+<p><code class="language-text">x</code> and <code class="language-text">y</code> are numbers, <code class="language-text">z</code> is a string. Using the syntax above, the variables can be declared like this:</p>
+<div class="gatsby-highlight" data-language="tsx"><pre class="language-tsx"><code class="language-tsx"><span class="token keyword">const</span> x<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> y<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> z<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token operator">=</span> <span class="token string">'Howdy!'</span><span class="token punctuation">;</span></code></pre></div>
+<p>Now, let’s say we have a function, <code class="language-text">add</code>, that accepts two arguments which are both numbers. The typed function definition would look like this:</p>
+<div class="gatsby-highlight" data-language="tsx"><pre class="language-tsx"><code class="language-tsx"><span class="token keyword">const</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">left<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> right<span class="token operator">:</span> <span class="token builtin">number</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> left <span class="token operator">+</span> right<span class="token punctuation">;</span></code></pre></div>
+<p>Finally, consider if we tried to use the <code class="language-text">add</code> function with the following two combinations of the variables declared above:</p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">add</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">add</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>z<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>If you put all the statements in the example above into a file and tried to compile it with <code class="language-text">tsc</code>, the Typescript compiler, you’d see the following error:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">$ tsc test.ts
+$ test.ts:8:7 - error TS2345: Argument of type &#39;string&#39; is not assignable to parameter of type &#39;number&#39;.
+
+8 add(x,z)</code></pre></div>
+<p>Using the type declarations, <code class="language-text">tsc</code> is smart enough to catch the invalid function call.</p>
+<p>Side note: If you wrote the code above in plain JS, it would compile with no problem and it would output:</p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token number">5</span>
+<span class="token string">'2Howdy'</span></code></pre></div>
+<p>Javascript is fun like that.</p>
+<h2 id="actually-use-typescript" style="position:relative;"><a href="#actually-use-typescript" aria-label="actually use typescript permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Actually use Typescript</h2>
+<p>With that ultra-brief primer on types, let’s add types to the <code class="language-text">Resume</code> function component in <code class="language-text">resume.tsx</code>.</p>
+<p>To do this, we’ll need to import the <code class="language-text">FunctionComponent</code> type declaration from the React library. Update the import section of <code class="language-text">resume.tsx</code> to be:</p>
+<div class="gatsby-highlight" data-language="tsx"><pre class="language-tsx"><code class="language-tsx"><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> FunctionComponent <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span></code></pre></div>
+<p>And now update the <code class="language-text">Resume</code> function to use this type definition.</p>
+<div class="gatsby-highlight" data-language="tsx"><pre class="language-tsx"><code class="language-tsx"><span class="token comment">/** Responsive resume page. */</span>
+<span class="token keyword">const</span> Resume<span class="token operator">:</span> <span class="token function-variable function">FunctionComponent</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span><span class="token plain-text">Hello, Resume!</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span><span class="token punctuation">)</span></code></pre></div>
+<p>Save and refresh the page on your browser. Ta-da! You’ve successfully used Typescript.</p>
+<h2 id="define-types-for-resume-data" style="position:relative;"><a href="#define-types-for-resume-data" aria-label="define types for resume data permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Define types for Resume data</h2>
+<p>Consider the “shape” or a resume. It might look something like this:</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/55af400fb64827ea89bcc1f752a4a9a8/669cd/resume-sketch.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 93.91891891891892%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAIAAAAf7rriAAAACXBIWXMAAAsSAAALEgHS3X78AAADZElEQVQ4yzWT6W7bVhCF+eD91aRWLNniJi6XOy/v5b4vEinJkiw58ZrUqVO3j9OhjAIDgiDwzZk5Z8i4MucqHFbYwBATW6mIUVOzDaw+xpuU7Ar/WMV3TXy/zB5XxctQ/rxpf26bt5v2/XbJeCrvyiyWWSAzRy2wVtGR70KnT/Amo/siOFbhXR3fd9lzX7ysqx/b+u2wfL9dMR4SXZWnmphjjSIeWpTEAOUhJduC7svwWIZfmwRkn/oSsO/bGvi/j8M/x4Gh2gJ4goQMI4KgixCZUkn0IcHbnO6K4FAEd3X0uMqeh/L7pn7dNc99+evQn2FdcpFAkJg6auqi3NNAdhW7Qwww+R+On/oMSFB+3bXQ5e3Qv58GxtdljASKFhnWHGluS9eZi7rQhhpSb1cGHTFbrK8jZxM5D8v0A/5rv/z3tAFYchQhNJTYVrHCeSqX2HKO1cY31jk5VOE6wh0197n/tYnuuxTEAf4T3D6PvbBkDsjAkEDZleewc+aqfeJuMrIvg22KN4l3k9FTHZ3q8GVdgmFQvw5ntx2ZAzKyJKzMCeJSVwW4i85j53SfUVBe+ub4ntOzc8XzunzbrxhY2JbmYDIcCVE5U5hCl0Bf5BhBziC4Cuxt4kHUxyoA8qnPR36EOwZCthbXY0i64ClwLfPQgMxR4aE2MDcJLiEFQwLxBmvg2bc2eVhlj33+etMwjsJZiyuq8d5Z1oF3xBdEr6nWUH2InBqjlhhL31r51gARhPapCkD/x7ZiXIUFZQB8jXcWM6KwZNSHL2yJETAFnK0lVa4KtQmtPrBuS/9hmb0MBePI15Y4oyof6oIrX5n8F3cxg4JGiSU1RM9tOdHFGquFLYNtEBjsf6rCp2XGwMyWMKWIoyrrI56A4eo80oXUXmTOKFg4cmnLLdEaT+soXMvo3z4jH/DMEqcws3r9B/v5N3n2u3L1SZtfUG2e2GJuyZWrdB7qiNaH5iZ2dpn38XzoEsYUpwDDzFSZm9yFwV04i0tPvvJVFsRhZpCtXbnF6srXRyzF22R8fqtDxhAmOj/BypUrXlrCxBJg56knTX11HiAuhJ9U5zNTLB0J+CXVV+fapc5tQRiDn9jiF539bAsTb7TqErq4sAhiY13ITKlyVHCrcuQGzo6o29heR2bnSq3F/Qc9xuek3MnEFQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Resume illustration!"
+        title="Resume illustration!"
+        src="/static/55af400fb64827ea89bcc1f752a4a9a8/fcda8/resume-sketch.png"
+        srcset="/static/55af400fb64827ea89bcc1f752a4a9a8/12f09/resume-sketch.png 148w,
+/static/55af400fb64827ea89bcc1f752a4a9a8/e4a3f/resume-sketch.png 295w,
+/static/55af400fb64827ea89bcc1f752a4a9a8/fcda8/resume-sketch.png 590w,
+/static/55af400fb64827ea89bcc1f752a4a9a8/efc66/resume-sketch.png 885w,
+/static/55af400fb64827ea89bcc1f752a4a9a8/c83ae/resume-sketch.png 1180w,
+/static/55af400fb64827ea89bcc1f752a4a9a8/669cd/resume-sketch.png 3024w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>It consists of multiple <strong>sections</strong> like “work”, “leadership”, “education”, etc. Each of those sections consists of one or more <strong>entries</strong> related to that section. Finally, entry consists of details like name of the position, company/organization, duration, description of responsibilities, etc.</p>
+<p>Pretty simple, but one special case to note. Look at the “leadership” section above. It illustrates a case of a <strong>section</strong> with a single <strong>entry</strong> which is itself a list of items. Another use case for a section like this: adding a “Programming languages” to the resume, where one simply lists the langauges/frameworks with which they have experience.</p>
+<p>Generalizing the example above into a generic <code class="language-text">section</code>, we get something like:</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/e3a41011f229d0e9246f5d260a9c74da/f3abf/section.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 156.75675675675674%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAfCAIAAABoLHqZAAAACXBIWXMAAAsSAAALEgHS3X78AAAEQ0lEQVQ4yz2V6W7bSBCE9f7vkj/GAs4ijm7xJofkDO9D1C3Z2XfYr0dygMaAsllT1dUHZ3XitqmXB+si2o4m7DOfGHXA876ID0VyKJNjmfR5OOrwXKlLnZ6rhLjUaga41368nS/e33Swzr1lGW3qeFdJOGXk9Kl/LOMuCyw4OZXqVMY8XJt0ViVOm7rKWTgf7/78Z+bOC1SEm9xf6WBVRttGOVMRdTocTXQWJJzptU5vTTYThmhngk3mLj/efux+/ZPsfmfwx9t4+2GCdRnvWuW2mU8WEB6L5ITmF7NVCDh3l0W4Tp156iy0v+pyH34ecISoEm8qSVXd2txGdoUZYQR4YMHyXzhhM8Eq91aZuzD+uk4cLKyVe6xFs3GXTbybdAj+xUxA4i1+uvN3wFVMqu5UxgesSj38q1Pv3GZN7Kjt78xZVOHm3uUz3GoSh+tFuWXjIpBd5p8adWkzUuXnKKfXK+9rX/7Zl49eC3OXebUFIx5yTpIXn6Idpb71OeRVuM28Fdd9jeW90yBtGAFTDKKOndRd1rHbpdIklHcq4luvET9/+2HQOZjPoSAeffECY4YoVy4Fg42e4bpRR1W0HfLwPpqpSNrE3RfJtdcWab5Dz/rc520pRrRLd0v0W5+SA83UpNcO2Ql1Hkx4FcHm8Ze/E3DQCblvSMxda3/DT/gJnOtT71QpARfxtRcY4IdVTvIzOtbiAzoJTupx6XJShROryfNQqr2OcBvmT2hHwd97LaXCUnJmaBDMM2rp4QOvtjkvnZuMkaKT9yaWnMfia5BsoRXw3iTMRq8DaJHQSks4UtLMH/KAWwAwSaOJrdtPZC5uW9lRrZy9iWyTilunWh0rhU/nmmzJWQa4px978zUW30X+lg1YztjZF9G5STGZtJENz7FURzsPo4BtztZtbBfwoMUqzkrOEM5jnV7s0Nw6PZnoZOeBF65W7TfeiGwArAu5IhIwspke+J9XDJmPyXYNBZj3V7C9hZyLl88wc4JBNgUT8QIOqAqGUQ7AV4rX5bZOtj1JprSwyi5ASiVzy5ajSJXqAcNcyA7junubP2nFucG6jckIZoaZBzyzjSnKKQF/YW/IDkN2mzGG916MBPw0DBh9zyRIzk/mI8obtTchOfP2QUf07FmYsxfts1TWZ/dQycQjAWMQP8lgINVj3VyQYJsHMMyfeGZb5TUYtUxcNJURJ0gai+0xyN4PQF4aNemAIb+I7PzR5Z/frSYjidsIBlmEWzaWHVJZtEdSqKTP9nbysPBu8U+krCF6uJJ5Elq7aGUSZapFS0x7sJ8R3yC7Tsnz1r3Ad1bvmAdFsCnhJEPWAFZLqRQ76CRfJsXbk0yed30mzGDiGfgqnZEheFZp4a/50JTBpgp23FXLV8rDbf7b0kU6pGG/nu3Z6T+9uZho1rMlUnGVkDqTvA2Qvd21XeJOzKbdSo+n7C7/byhOufc/lQwKDnt4WtoAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Resume illustration!"
+        title="Resume illustration!"
+        src="/static/e3a41011f229d0e9246f5d260a9c74da/fcda8/section.png"
+        srcset="/static/e3a41011f229d0e9246f5d260a9c74da/12f09/section.png 148w,
+/static/e3a41011f229d0e9246f5d260a9c74da/e4a3f/section.png 295w,
+/static/e3a41011f229d0e9246f5d260a9c74da/fcda8/section.png 590w,
+/static/e3a41011f229d0e9246f5d260a9c74da/efc66/section.png 885w,
+/static/e3a41011f229d0e9246f5d260a9c74da/c83ae/section.png 1180w,
+/static/e3a41011f229d0e9246f5d260a9c74da/f3abf/section.png 1474w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Let’s translate those statements above into Typescript types.</p>
+<h3 id="enter-interfaces" style="position:relative;"><a href="#enter-interfaces" aria-label="enter interfaces permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Enter: Interfaces</h3>
+<p>In Typescript, the <code class="language-text">interface</code> keyword is used to declare types. The Typescript <a href="https://www.typescriptlang.org/docs/handbook/interfaces.html">docs</a> provide a nice explanation of the motivation for using interfaces:</p>
+<blockquote>
+<p>“One of TypeScript’s core principles is that type checking focuses on the shape that values have. This is sometimes called “duck typing” or “structural subtyping”. In TypeScript, interfaces fill the role of naming these types, and are a powerful way of defining contracts within your code as well as contracts with code outside of your project.”</p>
+</blockquote>
+<p>Let’s define the types “top-down.” We start with saying what a <code class="language-text">Resume</code> is and breaking it down into sub types until we get to types that consist of all primitives.</p>
+<p>Within the <code class="language-text">src</code> directory of your Gatsby project, create a new file <code class="language-text">resume.d.ts</code>. The <code class="language-text">.d.ts</code> denotes a file that contains type declarations. Add the following type declarations:</p>
+<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">Resume</span> <span class="token punctuation">{</span>
+  sections<span class="token operator">:</span> <span class="token punctuation">[</span>Section<span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">Section</span> <span class="token punctuation">{</span>
+  title<span class="token operator">:</span> <span class="token builtin">string</span>
+  entries<span class="token operator">:</span> <span class="token punctuation">[</span>Entry<span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">Entry</span> <span class="token punctuation">{</span>
+  title<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">string</span>
+  company<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">string</span>
+  duration<span class="token operator">?</span><span class="token operator">:</span> Duration
+  description<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token operator">|</span> <span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">Duration</span> <span class="token punctuation">{</span>
+  start<span class="token operator">:</span> <span class="token builtin">string</span>
+  end<span class="token operator">:</span> <span class="token builtin">string</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p> What does this say? Exactly what we said above:</p>
+<ul>
+<li>A <code class="language-text">Resume</code> is an array of <code class="language-text">Sections</code>.</li>
+<li>A <code class="language-text">Section</code> is a <code class="language-text">title</code> string and an array of <code class="language-text">Entry</code> objects.</li>
+<li>An <code class="language-text">entry</code> can have a <code class="language-text">title</code>, <code class="language-text">company</code>, <code class="language-text">Duration</code>, – but all these fields are <strong>optional</strong>, hence the usage of the <code class="language-text">?</code>. The <code class="language-text">description</code> field is required, and it can be either a string OR an array of strings (hence the <code class="language-text">|</code>).</li>
+<li>A duration is <code class="language-text">start</code> and an <code class="language-text">end</code>, both strings.</li>
+</ul>
+<h3 id="define-a-typed-data-object" style="position:relative;"><a href="#define-a-typed-data-object" aria-label="define a typed data object permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Define a typed data object</h3>
+<p>It’s time to make a <code class="language-text">Resume</code> data object that implements the types defined above.</p>
+<p><em>Note: when I say “data object,” I really just mean a plain ole’ javascript object.</em></p>
+<p>You can define your own data object or use the dummy data from the demo site (<a href="https://github.com/e-nichols/gatsby-typescript-resume/blob/master/src/data/resume.ts">link</a>). Either way, be sure to define this <code class="language-text">Resume</code> data object in new file located at <code class="language-text">data/src/resume.ts</code> in your project.</p>
+<h2 id="create-function-components-for-each-type" style="position:relative;"><a href="#create-function-components-for-each-type" aria-label="create function components for each type permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create function components for each type</h2>
+<p>It can be useful to define tops in a “top down” manner, but I tend to think the opposite when it comes to actually implementing individual components. So, this section reads “bottom up”, defining components for the simplest types first and composing them together until we arrive at the final <code class="language-text">Resume</code> component.</p>
+<h3 id="a-note-on-css" style="position:relative;"><a href="#a-note-on-css" aria-label="a note on css permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>A note on CSS</h3>
+<p>The main point of this tutorial is learning Gatsby, Typescript and React – not so much learning CSS. We will talk about one CSS rule in particular later in the tutorial, but other than that, I won’t show any of the CSS for the code snippets below. Choose one of the following options to add CSS to your project:</p>
+<ol>
+<li>Define your own styles in a <code class="language-text">resume.css</code> file (in the same directory as the <code class="language-text">resume.tsx</code> file) and define your own styles for each component as you go along.</li>
+<li>Use the <code class="language-text">resume.scss</code> and base styles from the demo site. To do this, <a href="https://www.gatsbyjs.org/packages/gatsby-plugin-sass/">enable scss on the site</a> and then copy the relevant files from the demo site into your project (<a href="https://github.com/e-nichols/gatsby-typescript-resume/blob/master/src/pages/resume.scss">here</a> and <a href="https://github.com/e-nichols/gatsby-typescript-resume/tree/master/src/styles">here</a>).</li>
+</ol>
+<h3 id="import-all-dependencies-into-resumetsx" style="position:relative;"><a href="#import-all-dependencies-into-resumetsx" aria-label="import all dependencies into resumetsx permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Import all dependencies into <code class="language-text">resume.tsx</code></h3>
+<p>In preparation for the components we’ll define below, update <code class="language-text">resume.tsx</code> to include the following imports:</p>
+<div class="gatsby-highlight" data-language="tsx"><pre class="language-tsx"><code class="language-tsx"><span class="token keyword">import</span> <span class="token punctuation">{</span> graphql<span class="token punctuation">,</span> StaticQuery <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'gatsby'</span>
+<span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> FunctionComponent <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span>
+<span class="token keyword">import</span> Layout <span class="token keyword">from</span> <span class="token string">'../components/layout'</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Duration<span class="token punctuation">,</span> Entry<span class="token punctuation">,</span> Resume<span class="token punctuation">,</span> Section <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'../@types/resume.d.ts'</span>
+<span class="token keyword">import</span> data <span class="token keyword">from</span> <span class="token string">'../data/resume'</span>
+<span class="token keyword">import</span> <span class="token string">'./resume.scss'</span>
+
+<span class="token comment">/** Responsive resume page. */</span>
+<span class="token keyword">const</span> Resume<span class="token operator">:</span> <span class="token function-variable function">FunctionComponent</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span><span class="token plain-text">Hello, Resume!</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span><span class="token punctuation">)</span></code></pre></div>
+<p>Don’t worry if you don’t recognize some of these components or imports. We’ll talk about them later.</p>
+<h3 id="entry" style="position:relative;"><a href="#entry" aria-label="entry permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Entry</h3>
+<p>Let’s define the <code class="language-text">RenderEntry</code> component – a single entry in a section. Add the following function component to <code class="language-text">resume.tsx</code>.</p>
+<div class="gatsby-highlight" data-language="tsx"><pre style="counter-reset: linenumber 0" class="language-tsx line-numbers"><code class="language-tsx"><span class="token comment">/** A single entry, either a job entry or a list of skills. */</span>
+<span class="token keyword">const</span> RenderEntry<span class="token operator">:</span> <span class="token constant">FC</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Entry</span></span><span class="token punctuation">></span></span><span class="token plain-text"> = ({
+  title,
+  link,
+  company,
+  duration,
+  description,
+}) => </span><span class="token punctuation">{</span>
+  <span class="token keyword">const</span> header <span class="token operator">=</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>job-title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token punctuation">{</span>link <span class="token operator">?</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>link<span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token punctuation">{</span>title<span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span> <span class="token operator">:</span> title<span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h4</span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token punctuation">{</span>company <span class="token operator">&amp;&amp;</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>job-title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token punctuation">{</span>company<span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h4</span><span class="token punctuation">></span></span><span class="token punctuation">}</span><span class="token plain-text">
+      </span><span class="token punctuation">{</span>duration <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>duration<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span><span class="token punctuation">></span></span><span class="token punctuation">{</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>duration<span class="token punctuation">.</span>start<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> - </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>duration<span class="token punctuation">.</span>end<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+      <span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span></span><span class="token punctuation">></span></span>
+  <span class="token punctuation">)</span>
+
+  <span class="token keyword">const</span> body <span class="token operator">=</span> <span class="token builtin">Array</span><span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span>description<span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>languages<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token punctuation">{</span>description<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">item<span class="token punctuation">,</span> i</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">key</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">languages-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>item<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>i<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token punctuation">{</span>item<span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+      <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+  <span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token punctuation">(</span>
+    description
+  <span class="token punctuation">)</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>job<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token punctuation">{</span>header<span class="token punctuation">}</span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>description<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token punctuation">{</span>body<span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<p>The first section creates a React <a href="https://reactjs.org/docs/fragments.html">fragment</a> for the entry header. It includes an “maybe linked” title by using the ternary operator, and two <a href="https://reactjs.org/docs/conditional-rendering.html#inline-if-with-logical--operator">conditionally rendered</a> sections – company and duration – using the logical <code class="language-text">&amp;&amp;</code> operator.</p>
+<p>The second section creates the entry body. It similarly using type of the <code class="language-text">description</code> prop to decide whether to render the description as a list, or just a regular paragraph.</p>
+<h3 id="section" style="position:relative;"><a href="#section" aria-label="section permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Section</h3>
+<p>The <code class="language-text">RenderSection</code> function much simpler to render. It is simply a list of entries with a title. Add the following to <code class="language-text">resume.tsx</code>:</p>
+<div class="gatsby-highlight" data-language="tsx"><pre class="language-tsx"><code class="language-tsx"><span class="token keyword">const</span> RenderSection<span class="token operator">:</span> <span class="token constant">FC</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Section</span></span><span class="token punctuation">></span></span><span class="token plain-text"> = ({ title, entries }) => </span><span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>section-title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token punctuation">{</span>title<span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>section-bar<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token plain-text">
+      </span><span class="token punctuation">{</span>entries<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">entry<span class="token punctuation">,</span> i</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">RenderEntry</span></span> <span class="token attr-name">key</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>title<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">-entry-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>i<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">}</span></span> <span class="token spread"><span class="token punctuation">{</span><span class="token punctuation">...</span><span class="token attr-value">entry</span><span class="token punctuation">}</span></span> <span class="token punctuation">/></span></span>
+      <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>It maps over the supplied <code class="language-text">entries</code>, rendering a keyed <code class="language-text">RenderEntry</code> component for each one. Note the usage of the <code class="language-text">section</code> html element to give our DOM some semantic meaning.</p>
+<h3 id="resume" style="position:relative;"><a href="#resume" aria-label="resume permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Resume</h3>
+<p>Update the placeholder <code class="language-text">Resume</code> component we defined at the beginning of the tutorial with the following:</p>
+<div class="gatsby-highlight" data-language="tsx"><pre class="language-tsx"><code class="language-tsx"><span class="token keyword">const</span> RenderResume<span class="token operator">:</span> <span class="token constant">FC</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Resume</span></span><span class="token punctuation">></span></span><span class="token plain-text"> = ({ sections }) => </span><span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>resume-body<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+        </span><span class="token punctuation">{</span>sections<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">section</span> <span class="token operator">=></span> <span class="token punctuation">(</span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">RenderSection</span></span> <span class="token attr-name">key</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">section-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>section<span class="token punctuation">.</span>title<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">}</span></span> <span class="token spread"><span class="token punctuation">{</span><span class="token punctuation">...</span><span class="token attr-value">section</span><span class="token punctuation">}</span></span> <span class="token punctuation">/></span></span>
+        <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span></span><span class="token punctuation">></span></span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h3 id="pulse-check" style="position:relative;"><a href="#pulse-check" aria-label="pulse check permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pulse Check</h3>
+<p>We’ve defined the main components – <code class="language-text">Entry</code>, <code class="language-text">Section</code> and <code class="language-text">Resume</code>. Let’s render them with some real data and make sure it’s working as expected. We’ll do this by wrapping the resume in a <code class="language-text">Layout</code> component.</p>
+<p>Wait, what’s a <code class="language-text">Layout</code> component? Where did this come from?</p>
+<p>In Gatsby, layouts represent sections of your site that you’d like to share across multiple pages, like headers and footers. You can “wrap” pages in these layouts to avoid redefining the same header and footer on each new page you add to your site.</p>
+<p>The boilerplate code generated by <code class="language-text">gatsby new my-project-name</code> includes a simple layout component; we’ll use that instead of defining our own. You should already have the <code class="language-text">Layout</code> component imported.</p>
+<p>Update <code class="language-text">resume.tsx</code> to match what is shown below:</p>
+<div class="gatsby-highlight" data-language="tsx"><pre style="counter-reset: linenumber 0" class="language-tsx line-numbers"><code class="language-tsx"><span class="token keyword">import</span> <span class="token punctuation">{</span> graphql<span class="token punctuation">,</span> StaticQuery <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'gatsby'</span>
+<span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> FunctionComponent <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span>
+<span class="token keyword">import</span> Icon <span class="token keyword">from</span> <span class="token string">'../components/icon'</span>
+<span class="token keyword">import</span> Layout <span class="token keyword">from</span> <span class="token string">'../components/layout'</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Duration<span class="token punctuation">,</span> Entry<span class="token punctuation">,</span> Resume<span class="token punctuation">,</span> Section <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'../@types/resume.d.ts'</span>
+<span class="token keyword">import</span> data <span class="token keyword">from</span> <span class="token string">'../data/resume'</span>
+<span class="token keyword">import</span> <span class="token string">'./resume.scss'</span>
+
+<span class="token keyword">const</span> Page<span class="token operator">:</span> <span class="token function-variable function">FunctionComponent</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Layout</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">RenderResume</span></span> <span class="token spread"><span class="token punctuation">{</span><span class="token punctuation">...</span><span class="token attr-value">data</span><span class="token punctuation">}</span></span> <span class="token punctuation">/></span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Layout</span></span><span class="token punctuation">></span></span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> RenderResume<span class="token operator">:</span> FunctionComponent<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Resume</span></span><span class="token punctuation">></span></span><span class="token plain-text"> = ({ sections }) => </span><span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>resume-body<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+        </span><span class="token punctuation">{</span>sections<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">section</span> <span class="token operator">=></span> <span class="token punctuation">(</span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">RenderSection</span></span> <span class="token attr-name">key</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">section-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>section<span class="token punctuation">.</span>title<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">}</span></span> <span class="token spread"><span class="token punctuation">{</span><span class="token punctuation">...</span><span class="token attr-value">section</span><span class="token punctuation">}</span></span> <span class="token punctuation">/></span></span>
+        <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span></span><span class="token punctuation">></span></span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token plain-text">
+
+/** Renders a section, a titled list of entries. */
+const RenderSection: FunctionComponent</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Section</span></span><span class="token punctuation">></span></span><span class="token plain-text"> = ({ title, entries }) => </span><span class="token punctuation">{</span>
+  <span class="token operator">...</span>
+<span class="token punctuation">}</span><span class="token plain-text">
+
+/** A single entry, either a job entry or a list of skills. */
+const RenderEntry: FunctionComponent</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Entry</span></span><span class="token punctuation">></span></span><span class="token plain-text"> = ({
+  title,
+  link,
+  company,
+  duration,
+  description,
+}) => </span><span class="token punctuation">{</span>
+  <span class="token operator">...</span>
+<span class="token punctuation">}</span><span class="token plain-text">
+
+export default Page</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<p>Notice the addition of new top-level <code class="language-text">Page</code> component, which wraps <code class="language-text">RenderResume</code> in the <code class="language-text">Layout</code>. Also notice that we’re actually passing the <code class="language-text">data</code> object via the JSX <a href="https://reactjs.org/docs/jsx-in-depth.html#spread-attributes">spread</a> operator.</p>
+<p>Navigate to <code class="language-text">localhost:8000/resume</code> to check it out. It should look similar to this:</p>
+<p>TODO: This gif looks like it was compressed by a potato, update it.
+<img src="/df4b3cb5c608eece642d186a3cc90100/progress-demo.gif" alt="Resume progress demo video"></p>
+<h3 id="title-component" style="position:relative;"><a href="#title-component" aria-label="title component permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Title Component</h3>
+<p>Let’s add the final component, the <code class="language-text">ResumeTitle</code>, which makes use of some icons and the Gatsby <code class="language-text">StaticQuery</code> component. It will look like this:</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/60b002850bfe247141a190e69cf10de1/9f82e/resume-title.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 21.62162162162162%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsSAAALEgHS3X78AAAAbUlEQVQY042O0QoAERBF/f//8SIPPFBK8YAk7kbZWru1bk1NM6fTJdjSe58zknOGUgrOORhjEGN8MXvI13HBKSVQSiGlBOccIYTH/0i44Nba3Id0NPTeo9Z6tztuuMBSCqy1U6S1hhACjLFf4QW3kznVLVN4twAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Resume title illustration!"
+        title="Resume title illustration!"
+        src="/static/60b002850bfe247141a190e69cf10de1/fcda8/resume-title.png"
+        srcset="/static/60b002850bfe247141a190e69cf10de1/12f09/resume-title.png 148w,
+/static/60b002850bfe247141a190e69cf10de1/e4a3f/resume-title.png 295w,
+/static/60b002850bfe247141a190e69cf10de1/fcda8/resume-title.png 590w,
+/static/60b002850bfe247141a190e69cf10de1/9f82e/resume-title.png 820w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>A Gatsby <a href="https://www.gatsbyjs.org/docs/static-query/">StaticQuery</a> allows components to retrieve data via GraphQL query.</p>
+<p>Surprise: you’re already using <code class="language-text">StaticQuery</code> and you didn’t even realize it. Let’s take a look at <code class="language-text">src/components/layout.js</code>:</p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span>
+<span class="token keyword">import</span> PropTypes <span class="token keyword">from</span> <span class="token string">'prop-types'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> StaticQuery<span class="token punctuation">,</span> graphql <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'gatsby'</span>
+<span class="token keyword">import</span> Link <span class="token keyword">from</span> <span class="token string">'gatsby-link'</span>
+
+<span class="token keyword">import</span> <span class="token string">'./layout.scss'</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">Layout</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> children <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span>StaticQuery
+    query<span class="token operator">=</span><span class="token punctuation">{</span>graphql<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+      query SiteTitleQuery {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+      }
+    </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">}</span>
+    render<span class="token operator">=</span><span class="token punctuation">{</span><span class="token parameter">data</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> <span class="token punctuation">{</span> title <span class="token punctuation">}</span> <span class="token operator">=</span> data<span class="token punctuation">.</span>site<span class="token punctuation">.</span>siteMetadata
+      <span class="token keyword">return</span> <span class="token punctuation">(</span>
+        <span class="token operator">&lt;</span><span class="token operator">></span>
+          <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">"container"</span><span class="token operator">></span>
+            <span class="token operator">&lt;</span>main<span class="token operator">></span>
+              <span class="token operator">&lt;</span>Link to<span class="token operator">=</span><span class="token string">"/"</span> css<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> display<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">inline-block</span><span class="token template-punctuation string">`</span></span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">></span>
+                <span class="token operator">&lt;</span>h1 className<span class="token operator">=</span><span class="token string">"site-title"</span><span class="token operator">></span><span class="token punctuation">{</span>title<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span>
+              <span class="token operator">&lt;</span><span class="token operator">/</span>Link<span class="token operator">></span>
+              <span class="token operator">&lt;</span>hr <span class="token operator">/</span><span class="token operator">></span>
+              <span class="token punctuation">{</span>children<span class="token punctuation">}</span>
+            <span class="token operator">&lt;</span><span class="token operator">/</span>main<span class="token operator">></span>
+            <span class="token operator">&lt;</span>footer<span class="token operator">></span>
+              <span class="token operator">&lt;</span>div<span class="token operator">></span>
+                <span class="token punctuation">{</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">© </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getFullYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>title<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">}</span>
+              <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+            <span class="token operator">&lt;</span><span class="token operator">/</span>footer<span class="token operator">></span>
+          <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token operator">></span>
+      <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">}</span>
+  <span class="token operator">/</span><span class="token operator">></span>
+<span class="token punctuation">)</span>
+
+Layout<span class="token punctuation">.</span>propTypes <span class="token operator">=</span> <span class="token punctuation">{</span>
+  children<span class="token operator">:</span> PropTypes<span class="token punctuation">.</span>node<span class="token punctuation">.</span>isRequired<span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> Layout</code></pre></div>
+<p>The component uses a <code class="language-text">StaticQuery</code> to fetch the site title from the site’s metadata object. Where is this metadata? In the <code class="language-text">gatsby-config.js</code> at the root of the project. Conveniently, we’ll use a nearly identical query in the <code class="language-text">ResumeTitle</code> component. Update the <code class="language-text">siteMetadata</code> to include relevant links/contact methods which you’re comfortable sharing.</p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  siteMetadata<span class="token operator">:</span> <span class="token punctuation">{</span>
+    title<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Gatsby Typescript Resume</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+    description<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">A simple, responsive resume using Gatsby and Typescript.</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+    author<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">John Doe</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+    location<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">New York, NY</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+    email<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">johndoe123@gmail.com</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+    github<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">https://github.com/gatsbyjs</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+    linkedin<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">https://www.linkedin.com/company/gatsbyjs/</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+    medium<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">https://medium.com/search?q=gatsby%20js</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token operator">...</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Copy the <code class="language-text">icon.tsx</code> and <code class="language-text">icon.scss</code> files from the demo site to the <code class="language-text">components</code> folder of your site. They are available <a href="https://github.com/e-nichols/gatsby-typescript-resume/blob/master/src/components/icon.tsx">here</a> and <a href="https://github.com/e-nichols/gatsby-typescript-resume/blob/master/src/components/icon.scss">here</a>.</p>
+<p><em>Note: the <code class="language-text">Icon</code> component only supports email, github, linkedin and medium right now. Feel free to extend it to include other logos!</em></p>
+<p>Next, update <code class="language-text">resume.tsx</code> to import the <code class="language-text">Icon</code> component:</p>
+<div class="gatsby-highlight" data-language="tsx"><pre class="language-tsx"><code class="language-tsx"><span class="token keyword">import</span> <span class="token punctuation">{</span> graphql<span class="token punctuation">,</span> StaticQuery <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'gatsby'</span>
+<span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> FunctionComponent <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span>
+<span class="gatsby-highlight-code-line"><span class="token keyword">import</span> Icon <span class="token keyword">from</span> <span class="token string">'../components/icon'</span></span><span class="token keyword">import</span> Layout <span class="token keyword">from</span> <span class="token string">'../components/layout'</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Duration<span class="token punctuation">,</span> Entry<span class="token punctuation">,</span> Resume<span class="token punctuation">,</span> Section <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'../@types/resume.d.ts'</span>
+<span class="token keyword">import</span> data <span class="token keyword">from</span> <span class="token string">'../data/resume'</span>
+<span class="token keyword">import</span> <span class="token string">'./resume.scss'</span></code></pre></div>
+<p>And lastly, add the following component in <code class="language-text">resume.tsx</code>:</p>
+<div class="gatsby-highlight" data-language="jsx"><pre style="counter-reset: linenumber 0" class="language-jsx line-numbers"><code class="language-jsx"><span class="token keyword">const</span> ResumeTitle<span class="token operator">:</span> <span class="token constant">FC</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span></span><span class="token punctuation">></span></span><span class="token plain-text"> = () => </span><span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>StaticQuery
+      query<span class="token operator">=</span><span class="token punctuation">{</span>graphql<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+        query {
+          site {
+            siteMetadata {
+              author
+              location
+              description
+              email
+              linkedin
+              github
+              medium
+            }
+          }
+        }
+      </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">}</span>
+      render<span class="token operator">=</span><span class="token punctuation">{</span><span class="token parameter">data</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> <span class="token punctuation">{</span>
+          author<span class="token punctuation">,</span>
+          location<span class="token punctuation">,</span>
+          email<span class="token punctuation">,</span>
+          github<span class="token punctuation">,</span>
+          linkedin<span class="token punctuation">,</span>
+          medium<span class="token punctuation">,</span>
+          description<span class="token punctuation">,</span>
+        <span class="token punctuation">}</span> <span class="token operator">=</span> data<span class="token punctuation">.</span>site<span class="token punctuation">.</span>siteMetadata
+
+        <span class="token keyword">const</span> iconsWithLinks <span class="token operator">=</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">[</span><span class="token string">'email'</span><span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">mailto:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>email<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token punctuation">[</span><span class="token string">'github'</span><span class="token punctuation">,</span> github<span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token punctuation">[</span><span class="token string">'linkedin'</span><span class="token punctuation">,</span> linkedin<span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token punctuation">[</span><span class="token string">'medium'</span><span class="token punctuation">,</span> medium<span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span>
+
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>resume-title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>resume-name<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token punctuation">{</span>author<span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>title-section-description<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+            </span><span class="token punctuation">{</span>location<span class="token punctuation">}</span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+            </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>icon-section<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+              </span><span class="token punctuation">{</span>iconsWithLinks<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">[</span>icon<span class="token punctuation">,</span> href<span class="token punctuation">]</span><span class="token punctuation">,</span> i</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">key</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">link-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>i<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">}</span></span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>link-icon<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>href<span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+                  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Icon</span></span> <span class="token attr-name">key</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">link-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>i<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">}</span></span> <span class="token attr-name">name</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>icon<span class="token punctuation">}</span></span> <span class="token punctuation">/></span></span><span class="token plain-text">
+                </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+              <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text">
+            </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+        <span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">}</span>
+    <span class="token operator">/</span><span class="token operator">></span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<p>The StaticQuery component accepts two props: <code class="language-text">query</code> (what data you want to fetch) and <code class="language-text">render</code> (how to render the data). Here, we grab all relevant fields from the site metadata and use those to render the title section.</p>
+<p>Update <code class="language-text">RenderResume</code> component to use <code class="language-text">SiteTitle</code>:</p>
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token keyword">const</span> RenderResume<span class="token operator">:</span> FunctionComponent<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Resume</span></span><span class="token punctuation">></span></span><span class="token plain-text"> = ({ sections }) => </span><span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span></span><span class="token punctuation">></span></span><span class="token plain-text"></span>
+<span class="gatsby-highlight-code-line"><span class="token plain-text">      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">ResumeTitle</span></span> <span class="token punctuation">/></span></span><span class="token plain-text"></span></span><span class="token plain-text">      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>resume-body<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text"></span>
+<span class="token plain-text">        </span><span class="token punctuation">{</span>sections<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">section</span> <span class="token operator">=></span> <span class="token punctuation">(</span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">RenderSection</span></span> <span class="token attr-name">key</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">section-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>section<span class="token punctuation">.</span>title<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">}</span></span> <span class="token spread"><span class="token punctuation">{</span><span class="token punctuation">...</span><span class="token attr-value">section</span><span class="token punctuation">}</span></span> <span class="token punctuation">/></span></span>
+        <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text"></span>
+<span class="token plain-text">      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text"></span>
+<span class="token plain-text">    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span></span><span class="token punctuation">></span></span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h3 id="responsive-column-layout-via-css" style="position:relative;"><a href="#responsive-column-layout-via-css" aria-label="responsive column layout via css permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Responsive column layout via CSS</h3>
+<p>As a final step, let’s make the resume layout responsive.</p>
+<p>Consider the two main cases for laying out the sections of our resume: desktop view (large screen) and mobile view (small screen). It makes sense to use all available real estate on each screen:</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/319159a719c3a5e0ac639cd030ff446f/6aa56/responsive.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 50%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsSAAALEgHS3X78AAAB1klEQVQozx1Qi3KbMBDk/7/CdZPULQlg8wYZBOIlCYR528aPpM70O3p4ZufmTrO7tzrp1qefYwEVcO2Sa0ug3ofsifzvkT/O1eNUfZ8F4NnUgMdR/Lu20tzEwL4N2SRwR72OeUMVNLkD75c+uw3p11R8HVlboCr1eh5eezq3+STI91xL50PUFt4hderMzcMtj/WmWCwa6rLYmtslxdykFJtFaJTEKRP3PrD7QD9HvmyuEgtWnWoM6Kg/cHTpyKkOe75fPtIlRxFTbBBPAX2Kdpc2eyKXzi3pGZqqfVM4DG9b6nbMPx3wKIJR4PMBQz/VUUlsSDSUYYK0joWTiCcRSZcuAfZQ+j33eLwDC9CPVdBxv2XoWAdjiSBCHu6WgIUXux8VsSFgR9ESG3hjBYNDsVoRQ6Rmz7xD7ojU7sGicEVixc67q7242ltg/aFgRCwem08x85vCFqmeeL+z/UcRqiXR81Bl0bZODZEYNNSQDsq1rawNeRXZcr5XM6RIc0sgWJ3oZaTF7iZFckm0ksDZFzCsFoGa75XAeLWVlfWxMt9XgfELm5vA2EhwzJH7TWY02Y5HwJM5VlikUqzkgZwhOfFlMMX2W2C+7PVXtPvpb9eeunaUH/8Bf0fO+AJ0h1MAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Responsive column illustration"
+        title="Responsive column illustration"
+        src="/static/319159a719c3a5e0ac639cd030ff446f/fcda8/responsive.png"
+        srcset="/static/319159a719c3a5e0ac639cd030ff446f/12f09/responsive.png 148w,
+/static/319159a719c3a5e0ac639cd030ff446f/e4a3f/responsive.png 295w,
+/static/319159a719c3a5e0ac639cd030ff446f/fcda8/responsive.png 590w,
+/static/319159a719c3a5e0ac639cd030ff446f/efc66/responsive.png 885w,
+/static/319159a719c3a5e0ac639cd030ff446f/c83ae/responsive.png 1180w,
+/static/319159a719c3a5e0ac639cd030ff446f/6aa56/responsive.png 2629w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>How can we do this? <code class="language-text">column-count</code> and <code class="language-text">column-width</code> to the stage.</p>
+<p><code class="language-text">column-count</code> breaks an element’s content into the specified number of columns, and <code class="language-text">column-width</code> sets “the ideal column width in a multi-column layout.” Used together, they create a responsive layout: 2 columns on large screens, one column on narrow screens.</p>
+<p>Add the following to to <code class="language-text">resume.css</code> (or <code class="language-text">resume.scss</code>) file:</p>
+<div class="gatsby-highlight" data-language="css"><pre class="language-css"><code class="language-css"><span class="token selector">.resume-body</span> <span class="token punctuation">{</span>
+  <span class="token property">-webkit-column-count</span><span class="token punctuation">:</span> 2<span class="token punctuation">;</span>
+  <span class="token property">-moz-column-count</span><span class="token punctuation">:</span> 2<span class="token punctuation">;</span>
+  <span class="token property">column-count</span><span class="token punctuation">:</span> 2<span class="token punctuation">;</span>
+  <span class="token property">-webkit-column-width</span><span class="token punctuation">:</span> 256px<span class="token punctuation">;</span>
+  <span class="token property">-moz-column-width</span><span class="token punctuation">:</span> 256px<span class="token punctuation">;</span>
+  <span class="token property">column-width</span><span class="token punctuation">:</span> 256px<span class="token punctuation">;</span>
+  <span class="token property">-webkit-column-rule</span><span class="token punctuation">:</span> 1px dotted $fff<span class="token punctuation">;</span>
+  <span class="token property">-moz-column-rule</span><span class="token punctuation">:</span> 1px dotted $fff<span class="token punctuation">;</span>
+  <span class="token property">column-rule</span><span class="token punctuation">:</span> 1px dotted $fff<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Refresh the page and check out resume. It should look like this:</p>
+<p><img src="/af1593832b3c881aa896573d4189bc43/responsive_resume.gif" alt="Animation illustrating the responsive layout"></p>
+<p>If there’s enough room on screen to accommodate two columns with a minimum width of <code class="language-text">256px</code>, it does so. Once that that’s not possible, it switches back to a single column.</p>
+<h2 id="wrap-up" style="position:relative;"><a href="#wrap-up" aria-label="wrap up permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Wrap up</h2>
+<p>That’s it! You’ve successfully made a sleek looking resume page for your personal website by leveraging Gatsby, Typescript and React. Some closing thoughts:</p>
+<ul>
+<li>Typescript makes it easier to break down the “shape” of the data in your projects. It informs decisions on how to best break down a view into individual components.</li>
+<li>React function components are a succinct alternative to class-based components, and, with the introduction of <code class="language-text">useState</code> hook in React 16.8, can be stateful! Additionally, the React team briefly <a href="https://reactjs.org/blog/2015/10/07/react-v0.14.html#stateless-function-components">mentioned</a> that they may be able to make performance optimizations on function components in the future.</li>
+<li>Gatsby makes it easy to spin up websites quickly because of its “plug n play” nature: there are over <a href="https://www.gatsbyjs.org/plugins/">1200 plugins available</a>!</li>
+</ul>
+<p>Have a question or comment on the tutorial? Shoot me an email. Thanks!</p></div></main><footer><div style="font-size:18px;color:hsla(291, 0%, 18%,0.95);text-align:center">© 2020 etnichols</div></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script>
+  
+  
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', 'UA-69960811-1', 'auto', {});
+      
+      
+      
+      
+      
+      }</script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/programming/resume-with-react-and-tsx";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-8676dc5fee877e903cab.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-af9e0f2c9acfb4fb259c.js"],"component---src-templates-post-template-js":["/component---src-templates-post-template-js-59085498048657da2c12.js"],"component---src-templates-tags-template-js":["/component---src-templates-tags-template-js-63e7be2239224306a959.js"],"component---src-pages-404-js":["/component---src-pages-404-js-86a95309ca89d3313d4c.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-82abada6baaaeb2d64ad.js"],"component---src-pages-programming-js":["/component---src-pages-programming-js-8cbfb9821c15e8f1c243.js"],"component---src-pages-random-js":["/component---src-pages-random-js-bc60da9562676f77c94e.js"],"component---src-pages-tags-js":["/component---src-pages-tags-js-f56ea13014436dd5b3ab.js"],"component---src-pages-tutorials-js":["/component---src-pages-tutorials-js-59eb7310f875caaa9543.js"]};/*]]>*/</script><script src="/component---src-templates-post-template-js-59085498048657da2c12.js" async=""></script><script src="/10fbf7618c237245af2b62bf60c6ddf21a0eb93e-c5d749479b2bedc29fa5.js" async=""></script><script src="/styles-36681512479a843831b0.js" async=""></script><script src="/app-8676dc5fee877e903cab.js" async=""></script><script src="/framework-52a3ea48de1a5dd03b5a.js" async=""></script><script src="/webpack-runtime-4f6c8d868286ef322797.js" async=""></script></body></html>
