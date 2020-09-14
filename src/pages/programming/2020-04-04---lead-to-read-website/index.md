@@ -1,6 +1,6 @@
 ---
 title: 'Lead to Read website redesign with Gatsby and Firebase'
-date: '2020-04-04T00:12:03.000Z'
+date: '2020-09-12T00:12:03.000Z'
 tags:
   - Gatsby
   - React
@@ -10,71 +10,127 @@ author: Evan Nichols
 type: 'project'
 ---
 
-Lead to Read is a non-profit based out of Kansas City that facilitates reading based mentorship in the Kansas City metro area. They connect adult volunteers with 1st-3rd grade students for one hour each week to read together. As their motto goes, "Together we are creating a community of readers, one lunch hour at a time."
+Lead to Read KC is a non-profit which facilitates reading-based mentorship in the Kansas City metro area. They connect adult volunteers with 1st-3rd grade students for one hour each week to read together. As their motto goes, "Together we are creating a community of readers, one lunch hour at a time."
 
-I worked with Pauly Hart and Martha Conradt to give refresh the UI using Gatsby, while keeping Wordpress as the CMS.
-
-## Motivations for the redesign
-
-Lead to Read is an awesome organization, but their previous website was... less than awesome. It's a 10+ year old Wordpress site with less-than-glamorous Lighthouse audit scores:
+Lead to Read's previous website was a 10+ year old Wordpress site with lackluster [Lighthouse](https://developers.google.com/web/tools/lighthouse) audit scores:
 
 ![Old Lead to Read website Lighthouse Scores](ltr_lighthouse.png)
 
 The performance and accessibility categories are especially concerning: the site isn't accessible or mobile friendly, and takes over 17 seconds to become interactive.
 
+I approached Pauly Hart, executive director of Lead to Read and a longtime family friend, last year to propose a website redesign using [Gatsby](https://www.gatsbyjs.com/). Gatsby is a fantastic React/GraphQL-powered static site generator that I've [written about before](https://etnichols.com/programming/blog-redesign-with-gatsby). She gave the redesign the green light and off we went!
+
+This post discusses my experience using Gatsby for the redesign while continuing to use Wordpress as the underlying content management system (CMS).
+
+## Getting Started
+
 I kept some "north star" goals in mind during the redesign:
 
-- Performance - improve those lighthouse scores.
-- Accessible - make sure the site works for _everyone_.
-- Responsive - a layout that works on any screen size.
-- Approachable - clear messaging and easy-to-discover content.
+- Performance: improve the Lighthouse audit scores.
+- Accessibility: make sure the site works for _everyone_.
+- Responsiveness: a layout that works on any screen size.
+- Digestable: clear messaging and easy-to-discover content.
 
-## How I approached the design
-
-Before starting, I combed the existing site and tried to group the existing content into more logically sections.
-
-After some sketching on paper, I used Sketch to bring mock out the proposed redesign:
+To get started, I combed the existing site and tried to group the existing content into more logically-grouped sections, and then used Sketch to bring the pen-and-paper sketches a little more color:
 
 ![New site design mocks](lead_to_read_sketch.jpg)
 
-After a couple iterations and resolving feedback from Martha and Pauly, we settled on the landing page layout and navigation menu.
+After a couple iterations with Martha and Pauly, we settled on the landing page layout and the content of the navigation menu.
 
-Time for some coding!
+## Building out the new site
 
-## Project structure
+- The Good
+- templates for the blog posts and content pages
+- plugins for mailchimp forms
+- awesome developer experience with new experimental wordpress plugin
+- Firebase deploy integration
+- typescript support
 
-I created a new Gatsby site with the following plugins:
+- The Bad
+- hardcoding front page data
+
+- The Ugly
+- Critical integration broken during migration (fast support response though)
+
+### Hardcoded vs Dynamic pages
+
+The contents of the site can be split into two buckets of React components:
+- Hardcoded components (e.g. image carousel, "Our Reach" infographic)
+- Dynamically generated components (e.g. blog posts, "What's New" section)
+
+Why hardcode data at all? Let's look at a specific example: the "How it Works" section is a simple three-step graphic with some custom icons. Here's the code:
 
 ```js
-gatsby-plugin-sass // enable SASS
-gatsby-transformer-sharp // image processing
-gatsby-plugin-sharp // image processing
-gatsby-plugin-typescript // enable TS
-gatsby-plugin-offline, // enable offline mode
-gatsby-source-filesystem // make Gatsby aware of image assets
-gatsby-plugin-typography // enable Typography.js
-gatsby-source-wordpress // the workhorse! Source content from WP.
+import React from 'react'
+
+import Icon from './icon'
+
+import './howitworks.scss'
+
+// Icon name, CSS class, description tuples
+const PAGE_DATA = [
+  [
+    'school',
+    'purple-background',
+    `Identify schools and students in need of reading support and mentoring.`,
+  ],
+  [
+    'recruit',
+    'orange-background',
+    `Recruit, train and pair Reading Mentors with students in grades K-3.`,
+  ],
+  [
+    'book',
+    'bright-blue-background',
+    `Provide students with 30 minutes of one-to-one reading support and mentoring one lunch hour each week.`,
+  ],
+]
+
+const HowItWorks = () => (
+  <section>
+    <div className="content">
+      <h1 className="headline">How It Works</h1>
+      <ol className="how-it-works-list">
+        {PAGE_DATA.map(([iconName, className, description], i) => (
+          <li key={`hiw-${i}`}>
+            <div className={`circular-icon margin-medium ${className}`}>
+              <Icon name={iconName} />
+            </div>
+            <div className="margin-top-small">
+              <span className="bold">{i + 1}. </span>
+              {description}
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+)
+
+export default HowItWorks
 ```
 
-I used mobile-first styling for all CSS, and defined a central defs.scss to be the single source of colors, spacing and mixins for the project.
+It's pretty straightforward, using a array of data to keep things DRY. The alternative option here would be to store the data in Wordpress as a single page (or three separate pages?), query them all, and then place the raw HTML content into the data array.
 
-<script src="https://gist.github.com/e-nichols/f979c6c285643f6935581a320afc73ba.js"></script>
+That might look like:
 
-## Image Carousel
+```
+TODO(etnichols): fill me in
+```
 
-## Working with Wordpress
+That approach seemed brittle and overly complicated (what if the HTML from Wordpress is malformed, accidentally multi-paragraph? What if someone accidentally deletes or renames one of those pages?). It's always a trade-off: given this copy is relatively stable, I chose to simply hardcode.
 
-- normalizer
-- routes to include
+That same logic applies to the image carousel and the "Our Reach" infographic: hardcoded data to accommodate non-standard layouts.
 
-## Firebase w/ a custom domain
+- Custom React components with hard-coded copy
+  - The image carousel and the "Our reach" are hardcoded (not ideal, requires manual update)
+  - Could've gotten more creative on how to source this data dynamically (a hidden post, Advanced Custom Fields, etc) but given the low-frequency updates required, did not pursue this.
+- Dynamically-sourced content via `gatsby-source-wordpress-experimental`
+  - experimental plugin allows for live updates
+  - used in tandem with WPGraphQL, WPGatsby (https://github.com/gatsbyjs/gatsby-source-wordpress-experimental/blob/master/docs/getting-started.md)
+- Some helpful plugins
 
-- Really easy.
-- But sounds like cloud functions could use some more love. Not efficient. Link to Medium post.
-- Is it... worth it?
+## Discussion
 
-## Github actions
-
-## Some React tidbits
-
-- OnLoad callback for imgs
+- Gatsby sites feel like a snowflake -- a core GatsbyJS bundle where actual functionality falls onto a large ecosystem of plugins. Beneficial that they all follow a common configuration style (gatsby-config.js) but... the more complicated the site, the more plugins you have to wrangle. It can be overwhelming.
+- What about Next.js? https://jaredpalmer.com/gatsby-vs-nextjs
