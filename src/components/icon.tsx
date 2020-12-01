@@ -6,6 +6,7 @@ const Icon: FC<{ name: string }> = ({ name, viewboxWidth, viewboxHeight }) => {
   switch (name) {
     case 'github':
       return makeIcon(
+        name,
         24,
         24,
         <>
@@ -15,6 +16,7 @@ const Icon: FC<{ name: string }> = ({ name, viewboxWidth, viewboxHeight }) => {
       )
     case 'linkedin':
       return makeIcon(
+        name,
         24,
         24,
         <>
@@ -24,12 +26,17 @@ const Icon: FC<{ name: string }> = ({ name, viewboxWidth, viewboxHeight }) => {
       )
     case 'email':
       return makeIcon(
+        name,
         24,
         24,
-        <path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z" />
+        <>
+          <title>Mail icon</title>
+          <path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z" />
+        </>
       )
     case 'medium':
       return makeIcon(
+        name,
         24,
         24,
         <>
@@ -37,8 +44,27 @@ const Icon: FC<{ name: string }> = ({ name, viewboxWidth, viewboxHeight }) => {
           <path d="M0 0v24h24V0H0zm19.938 5.686L18.651 6.92a.376.376 0 0 0-.143.362v9.067a.376.376 0 0 0 .143.361l1.257 1.234v.271h-6.322v-.27l1.302-1.265c.128-.128.128-.165.128-.36V8.99l-3.62 9.195h-.49L6.69 8.99v6.163a.85.85 0 0 0 .233.707l1.694 2.054v.271H3.815v-.27L5.51 15.86a.82.82 0 0 0 .218-.707V8.027a.624.624 0 0 0-.203-.527L4.019 5.686v-.27h4.674l3.613 7.923 3.176-7.924h4.456v.271z" />
         </>
       )
+    case 'resume':
+      return makeIcon(
+        name,
+        42,
+        54,
+        <>
+          <g id="resume">
+            <circle cx="13" cy="15" r="3" />
+            <path
+              d="M41.7,11.3l-11-11C30.5,0.1,30.3,0,30,0H4C1.8,0,0,1.8,0,4v46c0,2.2,1.8,4,4,4h34c2.2,0,4-1.8,4-4V12
+		C42,11.7,41.9,11.5,41.7,11.3z M8,15c0-2.8,2.2-5,5-5s5,2.2,5,5c0,1.5-0.7,2.9-1.8,3.8C18.5,20,20,22.3,20,25c0,0.6-0.4,1-1,1
+		s-1-0.4-1-1c0-2.8-2.2-5-5-5s-5,2.2-5,5c0,0.6-0.4,1-1,1s-1-0.4-1-1c0-2.7,1.5-5,3.8-6.2C8.7,17.9,8,16.5,8,15z M29,44H7
+		c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S29.6,44,29,44z M35,38H7c-0.6,0-1-0.4-1-1s0.4-1,1-1h28c0.6,0,1,0.4,1,1
+		S35.6,38,35,38z M35,32H7c-0.6,0-1-0.4-1-1s0.4-1,1-1h28c0.6,0,1,0.4,1,1S35.6,32,35,32z M32,12c-1.1,0-2-0.9-2-2V2.4l9.6,9.6H32z"
+            />
+          </g>
+        </>
+      )
     default:
       return makeIcon(
+        name,
         512,
         512,
         <>
@@ -50,6 +76,7 @@ const Icon: FC<{ name: string }> = ({ name, viewboxWidth, viewboxHeight }) => {
 }
 
 const makeIcon = (
+  name: string,
   viewboxWidth: string,
   viewboxHeight: string,
   content: React.Fragment
@@ -61,6 +88,7 @@ const makeIcon = (
       width="24"
       height="24"
       viewBox={`0 0 ${viewboxWidth} ${viewboxHeight}`}
+      aria-label={name}
     >
       {content}
     </svg>

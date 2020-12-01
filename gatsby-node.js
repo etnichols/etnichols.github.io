@@ -10,8 +10,8 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     const postSlug = filePath.dir.split('---')[1]
     let category
 
-    if (filePath.dir.includes('random')) {
-      category = `random`
+    if (filePath.dir.includes('blog')) {
+      category = `blog`
     } else if (filePath.dir.includes('programming')) {
       category = `programming`
     }

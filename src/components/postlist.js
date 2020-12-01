@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import { formatDate } from '../utils/format'
-import styles from '../styles'
 import './postlist.scss'
 
 const resolveColor = type => {

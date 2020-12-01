@@ -6,8 +6,8 @@ import './nav.css'
 
 const ROUTES = {
   'about': '/',
+  'blog': '/blog',
   'programming': '/programming',
-  'random': '/random',
 }
 
 const isActiveRoute = (route, active) =>

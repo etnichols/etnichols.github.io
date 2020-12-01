@@ -2,6 +2,7 @@ import Icon from '../components/icon'
 import Layout from '../components/layout'
 import { graphql, StaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
+import Link from 'gatsby-link'
 import React, { FC } from 'react'
 import ReactMarkdown from 'react-markdown'
 
@@ -18,19 +19,6 @@ const Page: FC<> = () => {
 }
 
 const RenderResume: FC<Resume> = ({ sections }) => {
-  return (
-    <>
-      <ResumeTitle />
-      <div className="resume-body">
-        {sections.map(section => (
-          <RenderSection key={`section-${section.title}`} {...section} />
-        ))}
-      </div>
-    </>
-  )
-}
-
-const ResumeTitle: FC<> = () => {
   return (
     <StaticQuery
       query={graphql`
@@ -71,7 +59,7 @@ const ResumeTitle: FC<> = () => {
 
         return (
           <div>
-            <h2>about me</h2>
+            <h2>welcome</h2>
             <div class="centered">
               <Img
                 fixed={profile_picture.childImageSharp.fixed}
@@ -83,72 +71,22 @@ const ResumeTitle: FC<> = () => {
               />
               <p className="title-section-description">{description}</p>
               <div className="icon-section">
-                {iconsWithLinks.map(([icon, href], i) => (
-                  <a key={`link-${i}`} className="link-icon" href={href}>
-                    <Icon key={`link-${i}`} name={icon} />
-                  </a>
-                ))}
+                <>
+                  {iconsWithLinks.map(([icon, href], i) => (
+                    <a key={`link-${i}`} className="link-icon" href={href}>
+                      <Icon key={`link-${i}`} name={icon} />
+                    </a>
+                  ))}
+                  <Link to="/resume">
+                    <Icon key={`link-resume`} name="resume" />
+                  </Link>
+                </>
               </div>
             </div>
           </div>
         )
       }}
     />
-  )
-}
-
-/** Renders a section, a titled list of entries. */
-const RenderSection: FC<Section> = ({ title, entries }) => {
-  return (
-    <section className="section">
-      <div className="section-title-container">
-        <h2 className="section-title">{title}</h2>
-        <div className="section-bar" />
-      </div>
-      {entries.map((entry, i) => (
-        <RenderEntry key={`${title}-entry-${i}`} {...entry} />
-      ))}
-    </section>
-  )
-}
-
-/** A single entry, either a job entry or a list of skills. */
-const RenderEntry: FC<Entry> = ({
-  title,
-  link,
-  company,
-  duration,
-  description,
-}) => {
-  const header = (
-    <>
-      {title && (
-        <h4 className="entry-title">
-          {link ? <a href={link}>{title}</a> : title}
-        </h4>
-      )}
-      {company && <h5 className="entry-company">{company}</h5>}
-      {duration && (
-        <div className="entry-duration">{`${duration.start} -  ${duration.end}`}</div>
-      )}
-    </>
-  )
-
-  const body = Array.isArray(description) ? (
-    <ul className="languages">
-      {description.map((item, i) => (
-        <li key={`languages-${item}-${i}`}><ReactMarkdown source={item} /></li>
-      ))}
-    </ul>
-  ) : (
-    <ReactMarkdown source={description} />
-  )
-
-  return (
-    <div className="entry">
-      {header}
-      <div className="entry-description">{body}</div>
-    </div>
   )
 }
 

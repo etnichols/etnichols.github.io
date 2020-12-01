@@ -9,8 +9,18 @@ const data: Resume = {
           title: 'Software Engineer',
           company: 'Google',
           duration: {
-            start: 'September 2017',
+            start: 'October 2020',
             end: 'Present',
+          },
+          description:
+            'Fullstack development work on [Google Forms](https://docs.google.com/forms)',
+        },
+        {
+          title: 'Software Engineer',
+          company: 'Google',
+          duration: {
+            start: 'September 2017',
+            end: 'October 2020',
           },
           description:
             'Fullstack development work on [Google Assignments](https://edu.google.com/assignments), a set of free coursework management tools that integrate with learning management systems (LMS) to help university professors create, collect and review coursework using Google Apps.',
@@ -87,7 +97,7 @@ const data: Resume = {
             end: 'August 2020',
           },
           description:
-            'Redesign of the Lead to Read KC website using Gatsby JS, using the existing Wordpress database as a headless CMS. Deployed using Firebase and Gatsby Cloud.',
+            'Redesign of the Lead to Read KC website using Gatsby JS, using the existing Wordpress database as a headless CMS. Deployed using Firebase and Gatsby Cloud. Read more about it [here](programming/lead-to-read-website).',
         },
         {
           title: 'overturemusical.com',
@@ -107,7 +117,7 @@ const data: Resume = {
             end: 'February 2019',
           },
           description:
-            'React Native app for tracking books you have read or want to read, powered by the Google Books API.'
+            'React Native app for tracking books you have read or want to read, powered by the Google Books API.',
         },
       ],
     },

@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-tags-template-js","path":"/tags/firebase/","result":{"data":{"allMarkdownRemark":{"totalCount":0,"edges":[]}},"pageContext":{"tag":"Firebase"}}}
+{"componentChunkName":"component---src-templates-tags-template-js","path":"/tags/firebase/","result":{"data":{"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"fields":{"slug":"/programming/lead-to-read-website"},"frontmatter":{"title":"Lead to Read website redesign with Gatsby and Firebase"}}}]}},"pageContext":{"tag":"Firebase"}}}

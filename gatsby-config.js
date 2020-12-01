@@ -4,7 +4,7 @@ module.exports = {
     site: `etnichols.com`,
     title: `etnichols`,
     author: `Evan Nichols`,
-    description: `Software Engineer in NYC by way of Kansas City. Reader, runner, writer, slackliner and web development enthusiast.`,
+    description: `Hi, I'm Evan, a software Engineer living in NYC by way of Kansas City. Web development enthusiast, amateur slackliner, occasional blogger/tutorial writer.`,
     homepage: `https://etnichols.com`,
     email: `e3t5n6@gmail.com`,
     linkedin: `https://www.linkedin.com/in/etnichols/`,
@@ -45,8 +45,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/pages/random`,
-        name: `markdown-random`,
+        path: `${__dirname}/src/pages/blog`,
+        name: `markdown-blog`,
       },
     },
     {
