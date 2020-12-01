@@ -98,7 +98,7 @@ Given the plugin's official endorsement from Gatsby, I decided to hop on the ear
 - GraphQL type mismatch: [link](https://github.com/gatsbyjs/gatsby-source-wordpress-experimental/issues/37)
 - authentication issues: [link](https://github.com/gatsbyjs/gatsby-source-wordpress-experimental/issues/139)
 
-And one yet-to-be-diagnosed bug:
+And one open bug (with a workaround, actively being addressed by the plugin maintainers):
 
 - Wordpress URL accidentally stripped of subdomain: [link](https://github.com/gatsbyjs/gatsby-source-wordpress-experimental/issues/327) (still open)
 
