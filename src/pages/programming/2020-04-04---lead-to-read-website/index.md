@@ -1,5 +1,5 @@
 ---
-title: 'Lead to Read website redesign with Gatsby and Firebase'
+title: 'Lead to Read KC website redesign with Gatsby and Firebase'
 date: '2020-11-30T00:12:03.000Z'
 tags:
   - Gatsby
@@ -12,17 +12,17 @@ type: 'project'
 
 ## Introduction
 
-Lead to Read KC is a non-profit which facilitates reading-based mentorship in the Kansas City metro area. They connect adult volunteers with 1st-3rd grade students for one hour each week to read together. As their motto goes, "Together we are creating a community of readers, one lunch hour at a time."
+Lead to Read KC is a non-profit that facilitates reading-based mentorship in the Kansas City metro area. They connect adult volunteers with 1st-3rd grade students for one lunch hour each week to read together. As their tagline indicates, "Together we are creating a community of readers, one lunch hour at a time."
 
 Lead to Read's previous website was a 10+ year old Wordpress site with lackluster [Lighthouse](https://developers.google.com/web/tools/lighthouse) audit scores:
 
 ![Old Lead to Read website Lighthouse Scores](ltr_lighthouse_old.png)
 
-The performance and accessibility categories are especially concerning: the site isn't accessible or mobile friendly, and takes over 17 seconds to become interactive.
+The performance and accessibility categories are especially concerning: The site isn't accessible or mobile friendly, and it takes more than 17 seconds to become interactive.
 
 Last year, I approached the executive director of Lead to Read to propose a website redesign using [Gatsby](https://www.gatsbyjs.com/). Gatsby is a fantastic React/GraphQL-powered static site generator that I've [written about before](https://etnichols.com/programming/blog-redesign-with-gatsby) and use for this blog. She gave the redesign the green light and off we went!
 
-## Getting Started
+## Getting started
 
 I had four main goals in mind as I approached the redesign:
 
@@ -31,7 +31,7 @@ I had four main goals in mind as I approached the redesign:
 - "Digestability": clear messaging, easy-to-discover content.
 - Accessibility: make sure the site works for _everyone_.
 
-To get started, I combed the existing site and tried to group the existing content into more logically-grouped sections, and then used Sketch to bring the pen-and-paper sketches a little more color:
+To get started, I combed the existing site and grouped the existing content into more coherent sections, using [Sketch](https://www.sketch.com/) to bring the pen-and-paper wireframes to life:
 
 ![New site design mocks](lead_to_read_sketch.jpg)
 
@@ -43,7 +43,7 @@ This section dives into the pros and cons of the Gatsby developer experience and
 
 ### (Good) Shared page templates and layout components
 
-One of Gatsby's core features is allowing developers to programmatically create HTML pages from templates ([docs](https://www.gatsbyjs.com/docs/recipes/pages-layouts/#creating-pages-programmatically-with-createpage). The templates themselves can use a GraphQL query in order to fetch the data needed to properly render the page.
+One of Gatsby's core features is allowing developers to programmatically create HTML pages from templates ([docs](https://www.gatsbyjs.com/docs/recipes/pages-layouts/#creating-pages-programmatically-with-createpage)). The templates themselves can use a GraphQL query in order to fetch the data needed to properly render the page.
 
 I leveraged the page templates to programmatically create pages for each blog post ([example](https://www.leadtoreadkc.org/give-success-direct-your-united-way-donation-to-lead-to-read-kc-2)) and the blog post list pages ([example](https://www.leadtoreadkc.org/blog/)).
 
@@ -84,29 +84,29 @@ export const postQuery = graphql`
 
 ### (Good and bad) A new Gatsby Wordpress plugin
 
-The Lead to Read team wanted to continue using Wordpress as the underlying [content management system](https://en.wikipedia.org/wiki/Content_management_system) (CMS) for the site. Their team is comfortable with the WP interface for creating new pages and posts, and hosted WP instances are wildly inexpensive, with many hosting providers offering managed WP instances for $100-$200/year.
+The Lead to Read team wanted to continue using Wordpress as the underlying [content management system](https://en.wikipedia.org/wiki/Content_management_system) (CMS) for the site. Their team is comfortable with the WP interface for creating new pages and posts, and hosted WP instances are wildly inexpensive, with many hosting providers offering managed WP instances for \$100-\$200/year.
 
-Sourcing data from _any_ CMS is one of Gatsby's core selling points, and they offer many plugins allowing developers to do just that. This includes [gatsby-source-wordpress-experimental](https://github.com/gatsbyjs/gatsby-source-wordpress-experimental): the new (and recommended) way to use a Wordpress database as a Gatsby data source. As the name implies, it's still under active development, but offers a superior development experience compared to the current [gatsby-source-wordpress](https://www.gatsbyjs.com/plugins/gatsby-source-wordpress/). The new plugin offers:
+Sourcing data from _any_ CMS is one of Gatsby's core selling points, and they offer many plugins allowing developers to do just that. This includes [gatsby-source-wordpress-experimental](https://github.com/gatsbyjs/gatsby-source-wordpress-experimental): the new (and recommended) way to use a Wordpress database as a Gatsby data source. As the nameimplies, it's still under active development, but it offers a superior development experience compared to the current [gatsby-source-wordpress](https://www.gatsbyjs.com/plugins/gatsby-source-wordpress/). The new plugin includes:
 
 - Hot reloads when data in the Wordpress database updates
-- Posts which contain inline images are automatically converted into performant [`gatsby-image`](https://www.gatsbyjs.com/plugins/gatsby-image/)s
-- Rich set of [plugin options](https://github.com/gatsbyjs/gatsby-source-wordpress-experimental/blob/master/docs/plugin-options.md#plugin-options) to control exactly what data to pull from WP
+- Posts that contain inline images are automatically converted into performant [`gatsby-image`](https://www.gatsbyjs.com/plugins/gatsby-image/)s
+- A rich set of [plugin options](https://github.com/gatsbyjs/gatsby-source-wordpress-experimental/blob/master/docs/plugin-options.md#plugin-options) to control exactly what data to pull from WP
 - And [lots of other stuff](https://github.com/gatsbyjs/gatsby-source-wordpress-experimental/blob/master/docs/features/index.md#features)
 
 Given the plugin's official endorsement from Gatsby, I decided to hop on the early adopter train and use it for this project. The plugin was great _once I finally got it set up_ - hot reloads made checking the formatting of blog posts a breeze. But the plugin setup took some time, and I hit multiple bugs with the upstream [WPGraphQL](https://www.wpgraphql.com/) plugin (used heavily by `gatsby-source-wordpress-experimental`) along the way:
 
-- GraphQL type mismatch: [link](https://github.com/gatsbyjs/gatsby-source-wordpress-experimental/issues/37)
-- authentication issues: [link](https://github.com/gatsbyjs/gatsby-source-wordpress-experimental/issues/139)
+- [GraphQL type mismatch](https://github.com/gatsbyjs/gatsby-source-wordpress-experimental/issues/37)
+- [Authentication issues](https://github.com/gatsbyjs/gatsby-source-wordpress-experimental/issues/139)
 
 And one open bug (with a workaround, actively being addressed by the plugin maintainers):
 
-- Wordpress URL accidentally stripped of subdomain: [link](https://github.com/gatsbyjs/gatsby-source-wordpress-experimental/issues/327) (still open)
+- [Wordpress URL accidentally stripped of subdomain](https://github.com/gatsbyjs/gatsby-source-wordpress-experimental/issues/327)
 
 More generally:
 
 - The plugin documentation is still very much a [WIP](https://github.com/gatsbyjs/gatsby-source-wordpress-experimental/blob/master/docs/tutorials/index.md)
 - Using the Gatsby plugin requires installing two additional plugins into the Wordpress instance (so many plugins!) - and keeping those plugins up-to-date. For developers who don't have admin access to the Wordpress instance they're sourcing data from, this could be a headache.
-- The experimental plugin was intentionally published as a separate package from the stable `gatsby-source-wordpress` in order to allow for an incremental migration... but migrations are still a pain. Read: lots of GraphQL query rewrites.
+- The experimental plugin was intentionally published as a separate package from the stable `gatsby-source-wordpress` to allow for an incremental migration... but migrations are still a pain. Read: lots of GraphQL query rewrites.
 
 ### (Good) Rich plugin ecosystem
 
@@ -134,10 +134,10 @@ But... that firebase hosting integration [was broken](https://streamable.com/xiu
 
 The contents of the site can be split into two buckets of React components:
 
-- Dynamically generated components, data sourced from Wordpress (e.g. blog posts, site pages, "What's New" section). I.e. what Gatsby was meant to do.
-- Hardcoded components (e.g. image carousel, "Our Reach" infographic) - page content is hardcoded into the components, does not leverage WP data sourcing. I.e. plain React components.
+- Dynamically generated components, data sourced from Wordpress (e.g. blog posts, site pages, "What's New" section). i.e., what Gatsby was meant to do.
+- Hardcoded components (e.g., image carousel, "Our Reach" infographic) - page content is hardcoded into the components, does not leverage WP data sourcing. i.e., plain React components.
 
-The choice to hardcode data into some components is best explained with an example: let's look at the "How it Works" section of the website ([screenshot](https://imgur.com/a/indvb0u)) is a simple three-step graphic with some custom icons. Here's the code:
+The choice to hardcode data into some components is best explained with an example. Let's look at the "How it Works" section of the website ([screenshot](https://imgur.com/a/indvb0u)): a simple three-step graphic with some custom icons. Here's the code:
 
 ```js
 import React from 'react'
@@ -189,21 +189,21 @@ const HowItWorks = () => (
 export default HowItWorks
 ```
 
-It's three sentence of actual content, which is unlikely to change often. It seems overkill to store each sentence in it's own WP page, fetch them, sanitize the HTML and then use it in this graphic. What if the HTML from Wordpress is malformed, accidentally multi-paragraph? What if someone accidentally deletes or renames one of those pages? It's always a tradeoff; given this is three sentences of "stable" content, I chose to hardcode.
+It's three sentence of actual content, which is unlikely to change often. It seems overkill to store each sentence in its own WP page, fetch them, sanitize the HTML and then use it in this graphic. What if the HTML from Wordpress is malformed, accidentally multi-paragraph? What if someone accidentally deletes or renames one of those pages? It's always a tradeoff; given this is three sentences of "stable" content, I chose to hardcode.
 
 Other Cloud CMS providers may provide more flexibility for storing simple key-value pairs (a brief skim of [Contentful's docs](https://www.contentful.com/developers/docs/concepts/data-model/#array-fields) indicates that [Array fields](https://www.contentful.com/developers/docs/concepts/data-model/#array-fields) might very well solve this problem), but Wordpress doesn't appear to offer a simple solution for this.
 
-That same logic applies to the image carousel and the "Our Reach" infographic: hardcoded data to accommodate non-standard layouts. That means I, or future site maintainers, are on the hook for manually updating the content and rebuilding the site if things do change in the future. But given the relatively low frequency of this, it seems like a fair tradeoff.
+That same logic applies to the image carousel and the "Our Reach" infographic: hardcoded data to accommodate non-standard layouts. That means I, or future site maintainers, are on the hook for manually updating the content and rebuilding the site when things change in the future. But given the low frequency of changes, it seems like a fair tradeoff.
 
 ### (Good) Site performance
 
-The new site performance was a big step in the right direction.
+The new site performance is a big step in the right direction.
 
 ![Old Lead to Read website Lighthouse Scores](ltr_lighthouse_new.png)
 
 - The time to interactive for the home page dropped by almost 50% (~17 secs -> ~8 secs)
 - Accessibility score nearly doubled (47 -> 83)
-- Perfect score for best practices
+- Best practices score is now perfect (~35% increase)
 - SEO parity (82 -> 81)
 - Qualifies as a [Progressive Web App](https://web.dev/what-are-pwas/)
 
@@ -211,14 +211,14 @@ But, there are quite a few optimizations remaining -- reducing image sizes, impr
 
 ## Discussion
 
-The new site officially launched this past August at https://leadtoreadkc.org. Despite hiccups with plugin and hosting hiccups along the way, I really enjoyed using Gatsby for the project. Gatsby has expanded from open source framework to an actual [company](https://www.gatsbyjs.com/blog/2018-05-24-launching-new-gatsby-company/), and feels more mature in terms of its core documentation, core library stability, and customer support.
+The new site officially launched this past August at https://leadtoreadkc.org. Despite hiccups with plugin and hosting along the way, I really enjoyed using Gatsby for the project. Gatsby has expanded from an open source framework to an actual [company](https://www.gatsbyjs.com/blog/2018-05-24-launching-new-gatsby-company/), and it feels more mature in terms of its core documentation, core library stability, and customer support.
 
-But the framework has its own drawbacks, too. I enjoyed Jared Palmer's [Gatsby vs NextJS](https://jaredpalmer.com/gatsby-vs-nextjs) post, in which he points out some of Gatsby's shortcomings: the learning curve of GraphQL, the "snowflake" nature of Gatsby sites, the sometimes challenging debugging experience. It's fair to say that Gatsby might be too heavyweight for someone just wanting to make a simple blog that only uses Markdown files as the data source.
+But the framework has drawbacks, too. I enjoyed Jared Palmer's [Gatsby vs NextJS](https://jaredpalmer.com/gatsby-vs-nextjs) post, in which he points out some of Gatsby's shortcomings: the learning curve of GraphQL, the "snowflake" nature of Gatsby sites, the sometimes challenging debugging experience. It's fair to say that Gatsby might be too heavyweight for someone just wanting to make a simple blog that only uses Markdown files as the data source.
 
 And static sites have logical limitations. Would it make sense for NYTimes to use Gatsby to produce a static version of each one of its millions of articles? What about the comments on those articles? The static model doesn't scale for sites with massive content bases or inherently dynamic data. And to Gatsby's credit, they're aware of the those limitations and encourage developers to use the static HTML where it makes sense and then leverage [React hydration](https://www.gatsbyjs.com/docs/react-hydration/) to enable more "app-like" features.
 
-Shifting briefly to the business side of things, I'm curious to see Gatsby's long term monetization strategy, and what they build out next. Their core revenue generator right now is via Gatsby Cloud - cloud build and hosting on different tiers. Will they double down on building out this part of the business? Will we see a "Gatsby CMS" -- a competitor to Wordpress, Contentful and other cloud CMS providers? First, you integrate with them, then, you compete with them... we'll see.
+Shifting briefly to the business side of things, I'm curious to see Gatsby's long-term monetization strategy, and what they build out next. Their core revenue generator right now is via Gatsby Cloud - cloud build and hosting on different tiers. Will they double down on building out this part of the business? Will we see a "Gatsby CMS" -- a competitor to Wordpress, Contentful and other cloud CMS providers? First, you integrate with them, then, you compete with them... we'll see.
 
 Have thoughts about Gatsby? Want to talk more about the website redesign? Shoot me a line at e3t5n6@gmail.com to chat. Thanks for reading!
 
-_A huge thanks for Martha Conradt, Pauly Hart, Jonathan Gaikwad and Hayley Rees for helping make this project a reality._
+_A huge thanks to Martha Conradt, Pauly Hart, Jonathan Gaikwad and Hayley Rees for helping make this project a reality._
