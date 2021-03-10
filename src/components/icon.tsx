@@ -91,7 +91,7 @@ const makeIcon = (
       aria-label={name}
     >
       {content}
-    </svg>
+        </svg>
   )
 }
 

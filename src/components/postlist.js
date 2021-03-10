@@ -25,7 +25,7 @@ const PostList = ({ posts, withType }) => (
           <div className="post-date">({formatDate(frontmatter.date)})</div>
           <div className="title-container">
             <Link className="list-item" to={fields.slug}>
-              {frontmatter.title}
+              <b>{frontmatter.title}</b>
             </Link>
             {withType && (
               <div className="post-type-container">

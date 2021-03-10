@@ -5,6 +5,7 @@ import Img from 'gatsby-image'
 import Link from 'gatsby-link'
 import React, { FC } from 'react'
 import ReactMarkdown from 'react-markdown'
+import Tooltip from "@material-ui/core/Tooltip";
 
 import { Duration, Entry, Resume, Section } from '../@types/resume.d.ts'
 import data from '../data/resume'
@@ -73,13 +74,17 @@ const RenderResume: FC<Resume> = ({ sections }) => {
               <div className="icon-section">
                 <>
                   {iconsWithLinks.map(([icon, href], i) => (
-                    <a key={`link-${i}`} className="link-icon" href={href}>
-                      <Icon key={`link-${i}`} name={icon} />
-                    </a>
+                    <Tooltip title={icon} placement="bottom">
+                      <a key={`link-${i}`} className="link-icon" href={href}>
+                        <Icon key={`link-${i}`} name={icon} />
+                      </a>
+                    </Tooltip>
                   ))}
-                  <Link to="/resume">
-                    <Icon key={`link-resume`} name="resume" />
-                  </Link>
+                  <Tooltip title="resume" placement="bottom">
+                    <Link to="/resume">
+                      <Icon key={`link-resume`} name="resume" />
+                    </Link>
+                  </Tooltip>
                 </>
               </div>
             </div>
