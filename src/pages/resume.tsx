@@ -1,12 +1,7 @@
-import Icon from '../components/icon'
-import Layout from '../components/layout'
-import Link from 'gatsby-link'
-import { graphql, StaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
 import React, { FC } from 'react'
 import ReactMarkdown from 'react-markdown'
-
-import { Duration, Entry, Resume, Section } from '../@types/resume.d.ts'
+import { Entry, Resume, Section } from '../@types/resume.d.ts'
+import Layout from '../components/layout'
 import data from '../data/resume'
 import './index.scss'
 

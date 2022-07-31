@@ -12,7 +12,7 @@ I lay in bed until 10
 
 coughing up a lung
 
-it is not a beautiful song
+it is not a beautiful song<br/><br/>
 
 the day crawls by
 
@@ -30,7 +30,7 @@ the body denies the request
 
 I fall asleep on the couch
 
-many times
+many times<br/><br/>
 
 craving fresh air and movement
 
@@ -46,7 +46,7 @@ sharing libation-inspired conversation
 
 passing cigarettes back and forth
 
-their tips glowing a pronounced, sharp orange
+their tips glowing a sharp orange in the dark<br/><br/>
 
 I walk to the park
 
@@ -60,7 +60,7 @@ bundled in jackets
 
 seeking a destination warmer than
 
-their current one
+their current one<br/><br/>
 
 It is cold and quiet
 

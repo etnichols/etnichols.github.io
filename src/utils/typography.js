@@ -1,5 +1,5 @@
-import Typography from 'typography'
 import { MOBILE_MEDIA_QUERY } from "typography-breakpoint-constants"
+import Typography from 'typography'
 import gray from "gray-percentage"
 
 // Fork of https://github.com/KyleAMathews/typography.js/tree/master/packages/typography-theme-st-annes
@@ -12,15 +12,15 @@ const typography = new Typography({
   bodyWeight: 400,
   boldWeight: 700,
   headerFontFamily: ['Alegreya', "serif"],
-  bodyFontFamily: ['Alegreya Sans', "sans-serif"],
+  bodyFontFamily: ['Source Sans Pro', "sans-serif"],
   googleFonts: [
     {
       name: 'Alegreya',
       styles: ['400','700',],
     },
     {
-      name: 'Alegreya Sans',
-      styles: ['400', '700',],
+      name: 'Source Sans Pro',
+      styles: ['400', '600', '700',],
     },
   ],
   overrideStyles: ({ adjustFontSizeTo, scale, rhythm }, options) => ({

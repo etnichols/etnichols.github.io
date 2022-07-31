@@ -1,8 +1,8 @@
-import React from 'react'
-import { Link } from 'gatsby'
-
-import { formatDate } from '../utils/format'
 import './postlist.scss'
+
+import { Link } from 'gatsby'
+import React from 'react'
+import { formatDate } from '../utils/format'
 
 const resolveColor = type => {
   switch (type) {
@@ -21,19 +21,12 @@ const PostList = ({ posts, withType }) => (
       const { node } = post
       const { fields, frontmatter } = node
       return (
-        <li className="post-list-item margin-bottom-medium" key={fields.slug}>
-          <div className="post-date">({formatDate(frontmatter.date)})</div>
+        <li className="post-list-item margin-bottom-large" key={fields.slug}>
           <div className="title-container">
             <Link className="list-item" to={fields.slug}>
-              <b>{frontmatter.title}</b>
+              {frontmatter.title}
             </Link>
-            {withType && (
-              <div className="post-type-container">
-                <div className={`post-type ${resolveColor(frontmatter.type)}`}>
-                  {frontmatter.type}
-                </div>
-              </div>
-            )}
+            <div className="post-date">({formatDate(frontmatter.date)})</div>
           </div>
         </li>
       )

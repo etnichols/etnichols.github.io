@@ -12,8 +12,11 @@ const data: Resume = {
             start: 'October 2020',
             end: 'Present',
           },
-          description:
-            'Fullstack development work on [Google Forms](https://docs.google.com/forms)',
+          description: [
+            `Fullstack development work (Java, Javascript) on [Google Forms](https://docs.google.com/forms).`,
+            `Implemented "warning" and "hard block" UI of Forms' [Data Loss Prevention](https://support.google.com/a/answer/9646351?hl=en) integration for file upload responses.`,
+            `Ensured Forms compatability with [Google Drive Resource Keys](https://support.google.com/a/answer/10685032?hl=en).`,
+          ],
         },
         {
           title: 'Software Engineer',
@@ -23,11 +26,10 @@ const data: Resume = {
             end: 'October 2020',
           },
           description:
-            'Fullstack development work on [Google Assignments](https://edu.google.com/assignments), a set of free coursework management tools that integrate with learning management systems (LMS) to help university professors create, collect and review coursework using Google Apps.',
+            'Fullstack development work (Java, Javascript) on [Google Assignments](https://edu.google.com/assignments), a set of free coursework management tools that integrate with learning management systems (LMS) to help university professors create, collect and review coursework using Google Apps.',
         },
         {
-          title: 'Engineering Residency Program',
-          link: 'https://www.google.com/about/careers/students/engres.html',
+          title: 'Engineering Resident',
           company: 'Google',
           duration: {
             start: 'July 2018',
@@ -42,18 +44,22 @@ const data: Resume = {
             start: 'October 2016',
             end: 'May 2017',
           },
-          description:
-            'Proof-of-concept iOS application to improve the precision of skin biopsy labeling. In initial studies, the app led to a 69% improvement in the precision of anatomic site labeling. Accompanying research paper was published in the Health Informatics Journal in March 2020. Read the full research paper [here](https://journals.sagepub.com/doi/full/10.1177/1460458220910341).',
+          description: [
+            'Developed a proof-of-concept iOS application to improve the precision of skin biopsy labeling for a team of dermatologists from the University of Kansas Medical Center (KUMC), using [React Native](https://reactnative.dev/).',
+            'Automated conversion of SVG assets created via Adobe Illustrator via a Python script: read more about that [here](https://etnichols.com/programming/illustrator-to-react).',
+            'Application led to a 69% improvement in the precision of anatomic site labeling in a pilot study of 100 smartphone-assisted skin biopsy labelings.',
+            'Accompanying research paper was published in the Health Informatics Journal in March 2020. Read the full research paper [here](https://journals.sagepub.com/doi/full/10.1177/1460458220910341).',
+          ],
         },
         {
-          title: 'Well Query Dashboard',
-          company: 'Astra Analytics',
+          title: 'Freelance software developer',
+          company: 'Astra Innovations',
           duration: {
             start: 'September 2016',
             end: 'February 2017',
           },
           description:
-            'Created a map-based web application for searching well records by location and 30 different drilling metrics using React, Redux, Node.js/Express and MySQL.',
+            'Created a Google-maps-based web application for [Astra Innovations](https://www.linkedin.com/company/astra-ai/) searching oil well drilling records by location and 30 different drilling metrics using React, Redux, Node.js/Express and MySQL.',
         },
       ],
     },
@@ -87,37 +93,38 @@ const data: Resume = {
       ],
     },
     {
-      title: 'projects',
+      title: 'web development',
       entries: [
         {
-          title: 'Lead to Read website redesign',
-          link: 'http://leadtoread.dev/',
+          title: 'Lead to Read KC',
+          link: 'https://leadtoreadkc.org',
           duration: {
             start: 'November 2019',
             end: 'August 2020',
           },
-          description:
-            'Redesign of the Lead to Read KC website using Gatsby JS, using the existing Wordpress database as a headless CMS. Deployed using Firebase and Gatsby Cloud. Read more about it [here](programming/lead-to-read-website).',
+          description: [
+            'Overhauled the Lead to Read KC website using Gatsby JS, using the existing Wordpress database as a headless CMS, deployed using Firebase and Gatsby Cloud.',
+            'Read more about the redesign process [here](programming/lead-to-read-website).',
+          ],
         },
         {
-          title: 'overturemusical.com',
-          link: 'http://overturemusical.com',
+          title: 'quotebook.xyz',
+          link: 'http://quotebook.xyz',
           duration: {
             start: 'March 2019',
             end: 'Present',
           },
-          description:
-            'Marketing website for Overture - an original symphony about the Kansas City Philharmonic Orchestra during the 1953-1954 season.',
+          description: [
+            `An ongoing project showcasing a variety of my favorite quotes I've collected through the years.`,
+            `Want to make your own? Check out the tutorial [here](https://etnichols.com/programming/react-quotebook-tutorial).`,
+          ],
         },
         {
-          title: 'Digital Bookshelf',
-          link: 'https://github.com/e-nichols/digital-bookshelf',
-          duration: {
-            start: 'August 2018',
-            end: 'February 2019',
-          },
-          description:
-            'React Native app for tracking books you have read or want to read, powered by the Google Books API.',
+          title: 'Intro to React - Hackathon Workshop',
+          description: [
+            'Created and presented an introduction to React workshop at various NYC-based hackathons, including the 2019 CUNY Hackathon and 2020 Brooklyn College virtual hackathon.',
+            'Slides and source code available on [Github](https://github.com/etnichols/intro-to-react-workshop).',
+          ],
         },
       ],
     },

@@ -1,15 +1,15 @@
-import Icon from '../components/icon'
-import Layout from '../components/layout'
+import Tooltip from "@material-ui/core/Tooltip"
 import { graphql, StaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 import Link from 'gatsby-link'
 import React, { FC } from 'react'
-import ReactMarkdown from 'react-markdown'
-import Tooltip from "@material-ui/core/Tooltip";
-
-import { Duration, Entry, Resume, Section } from '../@types/resume.d.ts'
+import ReactMarkdown from "react-markdown"
+import { Resume } from '../@types/resume.d.ts'
+import Icon from '../components/icon'
+import Layout from '../components/layout'
 import data from '../data/resume'
 import './index.scss'
+
 
 const Page: FC<> = () => {
   return (
@@ -61,7 +61,7 @@ const RenderResume: FC<Resume> = ({ sections }) => {
         return (
           <div>
             <h2>welcome</h2>
-            <div class="centered">
+            <div className="centered">
               <Img
                 fixed={profile_picture.childImageSharp.fixed}
                 className="profile-picture"
@@ -70,7 +70,7 @@ const RenderResume: FC<Resume> = ({ sections }) => {
                   borderRadius: '50%',
                 }}
               />
-              <p className="title-section-description">{description}</p>
+              <ReactMarkdown className="title-section-description" source={description} />
               <div className="icon-section">
                 <>
                   {iconsWithLinks.map(([icon, href], i) => (
