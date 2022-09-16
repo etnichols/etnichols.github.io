@@ -1,37 +1,37 @@
-import { MOBILE_MEDIA_QUERY } from "typography-breakpoint-constants"
+import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants'
 import Typography from 'typography'
-import gray from "gray-percentage"
+import gray from 'gray-percentage'
 
 // Fork of https://github.com/KyleAMathews/typography.js/tree/master/packages/typography-theme-st-annes
 const typography = new Typography({
-  title: "St. Evs",
-  baseFontSize: "14px",
-  headerColor: "hsla(0,0%,0%,1)",
-  bodyColor: "hsla(0,0%,0%,0.8)",
+  title: 'St. Evs',
+  baseFontSize: '14px',
+  headerColor: 'hsla(0,0%,0%,1)',
+  bodyColor: 'hsla(0,0%,0%,0.8)',
   baseLineHeight: 1.5625,
   bodyWeight: 400,
   boldWeight: 700,
-  headerFontFamily: ['Alegreya', "serif"],
-  bodyFontFamily: ['Atkinson Hyperlegible', "sans-serif"],
+  headerFontFamily: ['Alegreya', 'serif'],
+  bodyFontFamily: ['Atkinson Hyperlegible', 'sans-serif'],
   googleFonts: [
     {
       name: 'Alegreya',
-      styles: ['400','700',],
+      styles: ['400', '700'],
     },
     {
-      name: 'Noto Serif',
-      styles: ['400', '700',],
+      name: 'Atkinson Hyperlegible',
+      styles: ['400'],
     },
   ],
   overrideStyles: ({ adjustFontSizeTo, scale, rhythm }, options) => ({
     a: {
-      color: "#fb251b",
-      textDecoration: "none",
+      color: '#fb251b',
+      textDecoration: 'none',
     },
-    "a:hover,a:active": {
+    'a:hover,a:active': {
       color: options.bodyColor,
     },
-    "h1,h2,h3,h4,h5,h6": {
+    'h1,h2,h3,h4,h5,h6': {
       marginTop: rhythm(2),
     },
     blockquote: {
@@ -40,17 +40,17 @@ const typography = new Typography({
       paddingLeft: rhythm(18 / 16),
       marginLeft: 0,
       borderLeft: `${rhythm(6 / 16)} solid`,
-      borderColor: "#fcea0e",
+      borderColor: '#fcea0e',
     },
-    "blockquote > :last-child": {
+    'blockquote > :last-child': {
       marginBottom: 0,
     },
-    "blockquote cite": {
+    'blockquote cite': {
       ...adjustFontSizeTo(options.baseFontSize),
       color: options.bodyColor,
       fontWeight: options.bodyWeight,
     },
-    "blockquote cite:before": {
+    'blockquote cite:before': {
       content: '"— "',
     },
     [MOBILE_MEDIA_QUERY]: {
@@ -58,7 +58,7 @@ const typography = new Typography({
         marginLeft: rhythm(-3 / 4),
         marginRight: 0,
         borderLeft: `${rhythm(3 / 16)} solid`,
-        borderColor: "#fcea0e",
+        borderColor: '#fcea0e',
         paddingLeft: rhythm(9 / 16),
       },
     },

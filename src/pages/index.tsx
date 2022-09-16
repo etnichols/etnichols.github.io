@@ -1,24 +1,24 @@
-import Tooltip from '@material-ui/core/Tooltip'
-import { graphql, StaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
-import Link from 'gatsby-link'
-import React, { FC } from 'react'
-import Icon from '../components/icon'
-import Layout from '../components/layout'
-
-import { Resume } from '../@types/resume.d.ts'
-import data from '../data/resume'
 import './index.scss'
 
-const Page: FC<> = () => {
+import React, { FC } from 'react'
+import { StaticQuery, graphql } from 'gatsby'
+
+import Icon from '../components/icon'
+import Img from 'gatsby-image'
+import Layout from '../components/layout'
+import Link from 'gatsby-link'
+import ReactMarkdown from 'react-markdown'
+import Tooltip from '@material-ui/core/Tooltip'
+
+const Page: FC = () => {
   return (
     <Layout>
-      <RenderResume {...data} />
+      <RenderPage />
     </Layout>
   )
 }
 
-const RenderResume: FC<Resume> = ({ sections }) => {
+const RenderPage: FC = () => {
   return (
     <StaticQuery
       query={graphql`
@@ -69,7 +69,10 @@ const RenderResume: FC<Resume> = ({ sections }) => {
                   borderRadius: '50%',
                 }}
               />
-              <p className="title-section-description">{description}</p>
+              <ReactMarkdown
+                className="title-section-description"
+                source={description}
+              />
               <div className="icon-section">
                 <>
                   {iconsWithLinks.map(([icon, href], i) => (

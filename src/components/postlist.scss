@@ -2,27 +2,25 @@
 
 .post-list-item {
   border-left: 2px solid $SMOKE;
-  padding-left: $SPACING_SMALL;
-  padding-bottom: $SPACING_SMALL;
+  padding: $SPACING_SMALL;
 }
 
 .title-container {
   display: flex;
   flex-direction: column;
-
-  @include breakpoint(medium) {
-    flex-direction: row;
-  }
 }
 
 .list-item {
   font-size: 18px;
+  margin-right: $SPACING_SMALL;
+  font-weight: 600;
 }
 
 .post-date {
   display: block;
   font-size: 18px;
   color: $DARK_GRAY;
+  font-style: italic;
 }
 
 .blue {
@@ -36,6 +34,7 @@
 .post-type-container {
   display: flex;
   justify-content: flex-start;
+  margin-right: $SPACING_SMALL;
 
   @include breakpoint(medium) {
     align-items: center;
@@ -47,7 +46,6 @@
   font-size: 14px;
   display: flex;
   justify-content: center;
-  // font-variant: small-caps;
   margin-top: $SPACING_SMALL;
   min-width: 50px;
   height: 22px;

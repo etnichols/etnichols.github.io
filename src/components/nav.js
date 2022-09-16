@@ -1,8 +1,8 @@
-import React from 'react'
+import './nav.scss'
+
 import Link from "gatsby-link"
 import { Location } from '@reach/router'
-
-import './nav.css'
+import React from 'react'
 
 const ROUTES = {
   'about': '/',
