@@ -1,25 +1,25 @@
-import Typography from 'typography'
 import { MOBILE_MEDIA_QUERY } from "typography-breakpoint-constants"
+import Typography from 'typography'
 import gray from "gray-percentage"
 
 // Fork of https://github.com/KyleAMathews/typography.js/tree/master/packages/typography-theme-st-annes
 const typography = new Typography({
   title: "St. Evs",
-  baseFontSize: "16px",
+  baseFontSize: "14px",
   headerColor: "hsla(0,0%,0%,1)",
   bodyColor: "hsla(0,0%,0%,0.8)",
   baseLineHeight: 1.5625,
   bodyWeight: 400,
   boldWeight: 700,
   headerFontFamily: ['Alegreya', "serif"],
-  bodyFontFamily: ['Alegreya Sans', "sans-serif"],
+  bodyFontFamily: ['Atkinson Hyperlegible', "sans-serif"],
   googleFonts: [
     {
       name: 'Alegreya',
       styles: ['400','700',],
     },
     {
-      name: 'Alegreya Sans',
+      name: 'Noto Serif',
       styles: ['400', '700',],
     },
   ],

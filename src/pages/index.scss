@@ -76,10 +76,17 @@ ul {
   text-align: center;
 }
 
+.disclaimer {
+  margin: $SPACING_MEDIUM 0;
+  max-width: 380px;
+  text-align: center;
+  font-style: italic;
+}
+
+
 .icon-section {
   display: flex;
   justify-content: center;
-  margin-bottom: $SPACING_LARGE;
 }
 
 .link-icon {

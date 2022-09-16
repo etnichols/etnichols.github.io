@@ -1,4 +1,4 @@
-import { Resume } from '../@types/resume.d.ts'
+import { Resume } from '../@types/resume'
 
 const data: Resume = {
   sections: [

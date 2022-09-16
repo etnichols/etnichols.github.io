@@ -1,13 +1,12 @@
-import Icon from '../components/icon'
-import Layout from '../components/layout'
+import Tooltip from '@material-ui/core/Tooltip'
 import { graphql, StaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 import Link from 'gatsby-link'
 import React, { FC } from 'react'
-import ReactMarkdown from 'react-markdown'
-import Tooltip from "@material-ui/core/Tooltip";
+import Icon from '../components/icon'
+import Layout from '../components/layout'
 
-import { Duration, Entry, Resume, Section } from '../@types/resume.d.ts'
+import { Resume } from '../@types/resume.d.ts'
 import data from '../data/resume'
 import './index.scss'
 
@@ -61,7 +60,7 @@ const RenderResume: FC<Resume> = ({ sections }) => {
         return (
           <div>
             <h2>welcome</h2>
-            <div class="centered">
+            <div className="centered">
               <Img
                 fixed={profile_picture.childImageSharp.fixed}
                 className="profile-picture"
@@ -87,6 +86,10 @@ const RenderResume: FC<Resume> = ({ sections }) => {
                   </Tooltip>
                 </>
               </div>
+              <p className="disclaimer">
+                This is a personal blog. All views and opinions expressed here
+                belong soley to me, unless explicitly stated otherwise.
+              </p>
             </div>
           </div>
         )
