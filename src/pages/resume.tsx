@@ -18,9 +18,7 @@ const RenderResume: FC<Resume> = ({ sections }) => {
     <>
       <h2>resume</h2>
       <div className="resume-body">
-        {sections.map((section: any) => (
-          <RenderSection key={`section-${section.title}`} {...section} />
-        ))}
+        view a copy <a target="_blank" href="https://drive.google.com/file/d/1mna08xjos0fK1SQMh9jJ_68PCqZ-sSLR/view">here</a>.
       </div>
     </>
   )
