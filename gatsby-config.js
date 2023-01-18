@@ -4,7 +4,7 @@ module.exports = {
     site: `etnichols.com`,
     title: `etnichols`,
     author: `Evan Nichols`,
-    description: `Hi! I'm Evan. I'm an NYC-based software engineer by way of Kansas City. I like web development, running, KU basketball, a good book paired with a strong cup of coffee, and reading and learning about the world.\n\nTake a look around and drop me a line if you want to say hi.`,
+    description: `Hi! I'm Evan. I'm an NYC-based software engineer by way of Kansas City.\n\nTake a look around and drop me a line if you want to say hi.`,
     homepage: `https://etnichols.com`,
     email: `e3t5n6@gmail.com`,
     linkedin: `https://www.linkedin.com/in/etnichols/`,
