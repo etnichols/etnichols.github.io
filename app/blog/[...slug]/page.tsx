@@ -1,16 +1,17 @@
 import 'css/prism.css'
 import 'katex/dist/katex.css'
 
-import PageTitle from '@/components/PageTitle'
-import { components } from '@/components/MDXComponents'
-import { MDXLayoutRenderer } from 'pliny/mdx-components'
-import { sortPosts, coreContent, allCoreContent } from 'pliny/utils/contentlayer'
-import { allBlogs, allAuthors } from 'contentlayer/generated'
 import type { Authors, Blog } from 'contentlayer/generated'
-import PostSimple from '@/layouts/PostSimple'
-import PostLayout from '@/layouts/PostLayout'
-import PostBanner from '@/layouts/PostBanner'
+import { allAuthors, allBlogs } from 'contentlayer/generated'
+import { allCoreContent, coreContent, sortPosts } from 'pliny/utils/contentlayer'
+
+import { MDXLayoutRenderer } from 'pliny/mdx-components'
 import { Metadata } from 'next'
+import PageTitle from '@/components/PageTitle'
+import PostBanner from '@/layouts/PostBanner'
+import PostLayout from '@/layouts/PostLayout'
+import PostSimple from '@/layouts/PostSimple'
+import { components } from '@/components/MDXComponents'
 import siteMetadata from '@/data/siteMetadata'
 
 const defaultLayout = 'PostLayout'
@@ -39,11 +40,11 @@ export async function generateMetadata({
   const publishedAt = new Date(post.date).toISOString()
   const modifiedAt = new Date(post.lastmod || post.date).toISOString()
   const authors = authorDetails.map((author) => author.name)
-  let imageList = [siteMetadata.socialBanner]
+  let imageList = []
   if (post.images) {
     imageList = typeof post.images === 'string' ? [post.images] : post.images
   }
-  const ogImages = imageList.map((img) => {
+  const ogImages = imageList.map((img: string) => {
     return {
       url: img.includes('http') ? img : siteMetadata.siteUrl + img,
     }
