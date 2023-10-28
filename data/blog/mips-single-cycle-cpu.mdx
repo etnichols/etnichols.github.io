@@ -1,8 +1,9 @@
 ---
 title: MIPS Single Cycle CPU
-date: "2014-06-01"
+date: '2014-06-01'
 tags: ['programming']
-summary: A simple implementation of a MIPS Single Cycle CPU
+summary: A simple implementation of a MIPS Single Cycle CPU.
+type: Blog
 ---
 
 I designed and implemented a MIPS Single Cycle CPU as the final project for my Computer Architecture class at KU, EECS 645. The CPU is comprised of 17 separate components, which we developed individually throughout the semester. The CPU takes in 32-bit instructions, and can be tested using a workbench in Vivado.
@@ -29,6 +30,7 @@ Using MARS, a MIPS Assembler and Runtime simulator, I converted the following as
     addi	$sp, $sp, -8
     j	start
 ```
+
 I confirmed the CPU was working correctly by comparing its final register values to that of the MARS simulator after running the assembly program.
 
 The CPU does not support recurisve functions because I did not implement the Jump And Link (JAL) MIPS instructions,

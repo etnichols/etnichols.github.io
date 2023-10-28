@@ -1,16 +1,17 @@
 ---
 author: Evan Nichols
-title: "Resume with React and Typescript"
-date: "2019-05-01T00:12:03.000Z"
+title: 'Resume with React and Typescript'
+date: '2019-05-01'
 tags:
-- tutorial
-- React
-- Typescript
+  - tutorial
+  - React
+  - Typescript
 draft: false
 type: 'tutorial'
 ---
 
 ## Overview
+
 This tutorial illustrates how to create a simple, responsive resume page for your personal website using Gatsby, Typescript and React function components. It assumes a basic knowledge of these three technologies. If that's not the case, check out these references before getting started:
 
 - [Set up your Gatsby development environment](https://www.gatsbyjs.org/tutorial/part-zero/).
@@ -18,6 +19,7 @@ This tutorial illustrates how to create a simple, responsive resume page for you
 - [React Docs - Function and Class Components](https://reactjs.org/docs/components-and-props.html#function-and-class-components)
 
 ## Demo
+
 [gatsby-typescript-resume.surge.sh](http://gatsby-typescript-resume.surge.sh/resume/)
 
 Source code available [here](https://github.com/e-nichols/gatsby-typescript-resume).
@@ -54,13 +56,14 @@ That's it! Now you can use files with a `.tsx` extension in your project.
 ## Create /resume route for your site
 
 As the Gatsby docs state:
+
 > Any React component defined in `src/pages/*.js` will automatically become a page.
 
 With Typescript enabled on the project, this statement can be updated to:
 
 > Any React component defined in `src/pages/*.[js|tsx]` will automatically become a page."
 
-*(Note: the `.tsx` extension as opposed to just `.ts`. This is because the resume page we create will use JSX, thus we want the `.tsx` extension.)*
+_(Note: the `.tsx` extension as opposed to just `.ts`. This is because the resume page we create will use JSX, thus we want the `.tsx` extension.)_
 
 Create a new page at `src/pages/resume.tsx` and add the following code to it:
 
@@ -68,7 +71,7 @@ Create a new page at `src/pages/resume.tsx` and add the following code to it:
 import React from 'react'
 
 /** Responsive resume page. */
-const Resume = () => (<h1>Hello, Resume!</h1>)
+const Resume = () => <h1>Hello, Resume!</h1>
 
 export default Resume
 ```
@@ -79,7 +82,7 @@ Let's see it in action. Run `gatsby develop` again from project directory and na
 
 ## Typescript Primer
 
-You probably noticed the code above isn' actually using Typescript 🤔 Why did it still compile? It's because *Typescript is a typed superset of Javascript.* Which is a fancy way of saying, "All Javascript is valid Typescript, but not all Typescript is valid Javascript." Typescript simply optional static typing to the language.
+You probably noticed the code above isn' actually using Typescript 🤔 Why did it still compile? It's because _Typescript is a typed superset of Javascript._ Which is a fancy way of saying, "All Javascript is valid Typescript, but not all Typescript is valid Javascript." Typescript simply optional static typing to the language.
 
 This is a cool thing because it enables incremental integration of Typescript into an existing project. One could change all existing `.js` files to `.ts|.tsx` and incrementally add typings to them, or, leave all legacy `.js` files unchanged and use `.ts|.tsx` for any new files.
 
@@ -92,22 +95,22 @@ Consider three variables: `x`, `y` and `z`.
 `x` and `y` are numbers, `z` is a string. Using the syntax above, the variables can be declared like this:
 
 ```tsx
-const x: number = 2;
-const y: number = 3;
-const z: string = 'Howdy!';
+const x: number = 2
+const y: number = 3
+const z: string = 'Howdy!'
 ```
 
 Now, let's say we have a function, `add`, that accepts two arguments which are both numbers. The typed function definition would look like this:
 
 ```tsx
-const add = (left: number, right: number) => left + right;
+const add = (left: number, right: number) => left + right
 ```
 
 Finally, consider if we tried to use the `add` function with the following two combinations of the variables declared above:
 
 ```js
-console.log(add(x,y));
-console.log(add(x,z));
+console.log(add(x, y))
+console.log(add(x, z))
 ```
 
 If you put all the statements in the example above into a file and tried to compile it with `tsc`, the Typescript compiler, you'd see the following error:
@@ -118,13 +121,14 @@ $ test.ts:8:7 - error TS2345: Argument of type 'string' is not assignable to par
 
 8 add(x,z)
 ```
+
 Using the type declarations, `tsc` is smart enough to catch the invalid function call.
 
 Side note: If you wrote the code above in plain JS, it would compile with no problem and it would output:
 
 ```js
 5
-'2Howdy'
+;('2Howdy')
 ```
 
 Javascript is fun like that.
@@ -143,7 +147,7 @@ And now update the `Resume` function to use this type definition.
 
 ```tsx
 /** Responsive resume page. */
-const Resume: FunctionComponent = () => (<h1>Hello, Resume!</h1>)
+const Resume: FunctionComponent = () => <h1>Hello, Resume!</h1>
 ```
 
 Save and refresh the page on your browser. Ta-da! You've successfully used Typescript.
@@ -197,7 +201,7 @@ export interface Duration {
 }
 ```
 
- What does this say? Exactly what we said above:
+What does this say? Exactly what we said above:
 
 - A `Resume` is an array of `Sections`.
 - A `Section` is a `title` string and an array of `Entry` objects.
@@ -208,7 +212,7 @@ export interface Duration {
 
 It's time to make a `Resume` data object that implements the types defined above.
 
-*Note: when I say "data object," I really just mean a plain ole' javascript object.*
+_Note: when I say "data object," I really just mean a plain ole' javascript object._
 
 You can define your own data object or use the dummy data from the demo site ([link](https://github.com/e-nichols/gatsby-typescript-resume/blob/master/src/data/resume.ts)). Either way, be sure to define this `Resume` data object in new file located at `data/src/resume.ts` in your project.
 
@@ -237,7 +241,7 @@ import data from '../data/resume'
 import './resume.scss'
 
 /** Responsive resume page. */
-const Resume: FunctionComponent = () => (<h1>Hello, Resume!</h1>)
+const Resume: FunctionComponent = () => <h1>Hello, Resume!</h1>
 ```
 
 Don't worry if you don't recognize some of these components or imports. We'll talk about them later.
@@ -319,7 +323,7 @@ const RenderResume: FC<Resume> = ({ sections }) => {
   return (
     <>
       <div className="resume-body">
-        {sections.map(section => (
+        {sections.map((section) => (
           <RenderSection key={`section-${section.title}`} {...section} />
         ))}
       </div>
@@ -426,7 +430,7 @@ const Layout = ({ children }) => (
         }
       }
     `}
-    render={data => {
+    render={(data) => {
       const { title } = data.site.siteMetadata
       return (
         <>
@@ -439,9 +443,7 @@ const Layout = ({ children }) => (
               {children}
             </main>
             <footer>
-              <div>
-                {`© ${new Date().getFullYear()} ${title}`}
-              </div>
+              <div>{`© ${new Date().getFullYear()} ${title}`}</div>
             </footer>
           </div>
         </>
@@ -477,7 +479,7 @@ module.exports = {
 
 Copy the `icon.tsx` and `icon.scss` files from the demo site to the `components` folder of your site. They are available [here](https://github.com/e-nichols/gatsby-typescript-resume/blob/master/src/components/icon.tsx) and [here](https://github.com/e-nichols/gatsby-typescript-resume/blob/master/src/components/icon.scss).
 
-*Note: the `Icon` component only supports email, github, linkedin and medium right now. Feel free to extend it to include other logos!*
+_Note: the `Icon` component only supports email, github, linkedin and medium right now. Feel free to extend it to include other logos!_
 
 Next, update `resume.tsx` to import the `Icon` component:
 
@@ -560,10 +562,10 @@ Update `RenderResume` component to use `SiteTitle`:
 const RenderResume: FunctionComponent<Resume> = ({ sections }) => {
   return (
     <>
-    // highlight-next-line
+      // highlight-next-line
       <ResumeTitle />
       <div className="resume-body">
-        {sections.map(section => (
+        {sections.map((section) => (
           <RenderSection key={`section-${section.title}`} {...section} />
         ))}
       </div>

@@ -1,9 +1,9 @@
 ---
 author: Evan Nichols
-title: "Political Computer Science"
-date: "2019-1-13T00:12:03.000Z"
+title: 'Political Computer Science'
+date: '2019-1-13'
 tags:
-- opinion
+  - opinion
 draft: true
 type: 'post'
 ---
@@ -30,7 +30,7 @@ Democrats as software engineers. Again, let's first answer the question: what's 
 
 Software engineers work on developing applications that run at some "level" on the hardware devices mentioned above... what does "level" mean? Think about the email application running on your phone right now. It allows you to send and recieve email. But how does that actually work? It works via the interaction of a bunch of different "levels" of software running simultaneously. The phone "app" has code developed by a team to make the different screens you can touch and interact with. The app communicates with the phone's firmware (read: low-level software systems that orchestrate allow your phone to connect to interact, capture touch gestures from a user, etc.)
 
-Software engineers also like efficiency. But efficiency is not always the top priority. Software engineers may be more willing to make an application that uses a lot of memory or is incredibly CPU intensive, if it means *being able to solve a critical user problem.* Take Google Chrome for an example: It's a great internet browser that unapologetically eats up a shitload of RAM on your computer while running. "With the right funding and infrastructure, this program could be incredible" might be a phrase you'd hear from a passionate Democratic member at that same Congressional budget hearing, or from a software engineer at a company pitch to a VC firm in Silicon Valley. (Alright, I'm kind of conflating "funding" with processing power here but you get the idea). I think the world of software is first and foremost focused on solving user problems, even if those solutions are sometimes expensive.
+Software engineers also like efficiency. But efficiency is not always the top priority. Software engineers may be more willing to make an application that uses a lot of memory or is incredibly CPU intensive, if it means _being able to solve a critical user problem._ Take Google Chrome for an example: It's a great internet browser that unapologetically eats up a shitload of RAM on your computer while running. "With the right funding and infrastructure, this program could be incredible" might be a phrase you'd hear from a passionate Democratic member at that same Congressional budget hearing, or from a software engineer at a company pitch to a VC firm in Silicon Valley. (Alright, I'm kind of conflating "funding" with processing power here but you get the idea). I think the world of software is first and foremost focused on solving user problems, even if those solutions are sometimes expensive.
 
 Now let's bring them together.
 
@@ -44,7 +44,7 @@ Good hardware with good software -- functional, efficient, great user experience
 
 What's the point here?
 
-*We can only make cool things together if hardware and software engineers learn to compromise with each other. Hardware engineers (Republicans) can see the merit in pushing for systems that use more memory or space than they'd prefer, and software engineers (Democrats) must see the merit in critically reviewing a product or service in order to make it as efficient as possible while still solving the user problem.*
+_We can only make cool things together if hardware and software engineers learn to compromise with each other. Hardware engineers (Republicans) can see the merit in pushing for systems that use more memory or space than they'd prefer, and software engineers (Democrats) must see the merit in critically reviewing a product or service in order to make it as efficient as possible while still solving the user problem._
 
 [1] This is a gross simplification of the idea of software abstraction.
 [2] Yet another gross simplification -- this is just one reason why Google Chrome may use more memory than other browsers.

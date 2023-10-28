@@ -1,8 +1,8 @@
 ---
 title: Timesavers with Scripting and Aliases
-date: "2016-09-07T00:12:03.000Z"
+date: '2016-09-07'
 tags:
-- scripting
+  - scripting
 draft: false
 author: Evan Nichols
 type: 'tutorial'

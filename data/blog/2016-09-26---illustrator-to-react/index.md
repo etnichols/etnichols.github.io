@@ -1,10 +1,10 @@
 ---
-title: "Convert Illustrator SVGs to React components with Python"
-date: "2016-09-26T00:12:03.000Z"
+title: 'Convert Illustrator SVGs to React components with Python'
+date: '2016-09-26'
 tags:
-- React
-- Illustrator
-- Python
+  - React
+  - Illustrator
+  - Python
 draft: false
 author: Evan Nichols
 type: 'tutorial'
@@ -76,30 +76,40 @@ if __name__ == "__main__":
 ```
 
 Looking at the program function by function:
-- **caps(str)**: remove Adobe Illustrator layer name suffixes and underscores (e.g. "Some_Layer_1_" become s"Some Layer"). Uppercase all SVG elements.
+
+- **caps(str)**: remove Adobe Illustrator layer name suffixes and underscores (e.g. "Some*Layer_1*" become s"Some Layer"). Uppercase all SVG elements.
 - **createTag(str)**: create the opening opening tag for the [react-native-svg](https://github.com/react-native-community/react-native-svg) component. The raw SVG export from Adobe contains a line like this:
+
 ```
 "x="0px" y="0px" width="180px" height="626px" viewBox="-0.5 -0.3 180 626"
 ```
+
 We care about the quoted values, which are used within the tag. [Python's regular expressions](https://docs.python.org/2/library/re.html) are very handy for this.
+
 - **addProps(str)**: Create the onPress function and "inject" style values into the individual SVG elements. This allows user to interact with the individual components of the SVGs. Another example line:
+
 ```
 <path id="Fifth_right_distal_plantar_toe_1_" fill-rule="evenodd" clip-rule="evenodd" fill="#2895B2" d="..."/>
 ```
+
 First, we convert the id variable into the OnPressIn function using a simple replace call. Next, create the "injection" string containing the style values, and insert this into the tag using the "XX" string that was inserted in the caps() function earlier.
+
 - **main()**: open the input SVG and write to the output SVG using the functions above. To run this script from the CLI:
+
 ```
 python clean.py <INPUT_SVG> <OUTPUT_SVG>
 ```
+
 The <INPUT_SVG> will be parsed, and the finished file will be written to <OUTPUT_SVG> in the same directory. If it does not already exist, the <OUTPUT_SVG> file will be created automatically (no need to make an empty SVG file to pass in).
 
 Main tosses out the top 8 lines of the input SVG. It is useless within the react-native-svg component. After creating the opening tag, the remainder of the file is processed. The addProps() function is called if an "<" opening tag is encountered; all other lines are written to the output without change.
 
-Performing the SVG conversions by hand isn't a *broken* process, but it is woefully *inefficient*. And inefficient processes are bad. But I always grapple.
+Performing the SVG conversions by hand isn't a _broken_ process, but it is woefully _inefficient_. And inefficient processes are bad. But I always grapple.
 
-*"Is it worth it to take a day and address this inefficiency? I have a lot of other shit to do."*
+_"Is it worth it to take a day and address this inefficiency? I have a lot of other shit to do."_
 
 Let this script serve to show: it most definitely IS worth it. Eliminate repetitive tasks by keeping a keen eye for automation opportunities in your workflows.
 
 ---
+
 P.S. See [this post](https://github.com/react-native-community/react-native-svg/issues/157) on why to use onPressIn() instead of OnPress() to ensure the user interactions will work correctly Apple phones with 3D touch.

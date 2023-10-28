@@ -1,9 +1,9 @@
 ---
 author: Evan Nichols
 title: "Linguistic analysis of Donald Trump's speech patterns"
-date: "2018-01-15T00:12:03.000Z"
+date: '2018-01-15'
 tags:
-- random
+  - random
 draft: false
 type: 'post'
 ---

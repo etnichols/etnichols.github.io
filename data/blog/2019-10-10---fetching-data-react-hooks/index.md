@@ -1,10 +1,10 @@
 ---
 author: Evan Nichols
-title: "Fetching data with React hooks"
-date: "2019-10-10T00:12:03.000Z"
+title: 'Fetching data with React hooks'
+date: '2019-10-10'
 tags:
-- tutorial
-- React
+  - tutorial
+  - React
 draft: false
 type: 'tutorial'
 ---
@@ -15,7 +15,7 @@ I'm teaching an intro to React workshop on the [CUNY hackathon](https://cunystar
 
 Hooks came out in React v16.8 last February. Hooks let you use state and other React features without writing a class. Check out the React blog's [Introducing Hooks](https://reactjs.org/docs/hooks-intro.html) post for more details.
 
-`useState` allows you to add stateful variables to a function component, and `useEffect` combines the class-based `componentDidMount` and `componentDidUpdate` lifecycles into one: it executes code after initial render *and* every update (only if variables in its dependency array update, but more on that later). `useEffect` also plays nice with async functions - yay for data fetching!
+`useState` allows you to add stateful variables to a function component, and `useEffect` combines the class-based `componentDidMount` and `componentDidUpdate` lifecycles into one: it executes code after initial render _and_ every update (only if variables in its dependency array update, but more on that later). `useEffect` also plays nice with async functions - yay for data fetching!
 
 Here's the demo code (only 50 lines!):
 

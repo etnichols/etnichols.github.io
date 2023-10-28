@@ -1,6 +1,6 @@
 ---
 title: 'Next.js with Prisma, Docker and Google Cloud Run'
-date: '2022-08-28T00:12:03.000Z'
+date: '2022-08-28'
 tags:
   - NextJS
   - Docker
@@ -10,7 +10,7 @@ author: Evan Nichols
 type: 'project'
 ---
 
-The first programming tutorial I ever wrote was for an interactive quotebook, after I had graduated from KU and was eager to share my rudimentary knowledge of React with the masses. 
+The first programming tutorial I ever wrote was for an interactive quotebook, after I had graduated from KU and was eager to share my rudimentary knowledge of React with the masses.
 
 A demo of the old app is here: http://randomquotebook.surge.sh/.
 
@@ -25,7 +25,5 @@ In its current form, the site is a Next.js app, deployed on Google Cloud Run as 
 I modified the out-of-the-box package.json scripts to include usage of dotenv, to be able to test local and prod instances.
 
 ### Dockerfile
-
-
 
 Nothing special here, aside from the usage of dotenv to ensure usage of a `.env.dev` config file.

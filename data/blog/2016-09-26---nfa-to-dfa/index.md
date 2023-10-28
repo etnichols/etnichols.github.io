@@ -1,15 +1,16 @@
 ---
-title: "NFA to DFA Conversion: C++ Implementation"
-date: "2016-09-26T00:12:03.000Z"
+title: 'NFA to DFA Conversion: C++ Implementation'
+date: '2016-09-26'
 tags:
-- C++
-- project
+  - C++
+  - project
 draft: false
 author: Evan Nichols
 type: 'project'
 ---
 
 ### Overview
+
 I completed this project as part of my coursework for EECS 665, a Compilers course taught by Prasad Kulkarni. The program takes in a text representation of a [Nondeterministic Finite Automaton (NFA)](https://en.wikipedia.org/wiki/Nondeterministic_finite_automaton) (read: a simple state machine) and converts it into a [Deterministic Finite Automaton (DFA)](https://en.wikipedia.org/wiki/Deterministic_finite_automaton).
 
 Quick Finite State machine recap: they're simple machines capable of representing regular expressions, and some more complicated things, too. They look like this:
@@ -24,7 +25,7 @@ Now for the distinction: compare the machines above with this one:
 
 ![](nfa.png)
 
-Notice the differences: there are some epsilon-transitions (or "ε-transitions"), and states can do multiple actions with the same symbol! This is the main distinction between DFAs and NFAs, as their name implies: *Deterministic* machines have at most one move defined for each alphabet symbol, and do not allow for ε-transitions. *Nondeterministic* machines on the other hand, can break both of those rules.
+Notice the differences: there are some epsilon-transitions (or "ε-transitions"), and states can do multiple actions with the same symbol! This is the main distinction between DFAs and NFAs, as their name implies: _Deterministic_ machines have at most one move defined for each alphabet symbol, and do not allow for ε-transitions. _Nondeterministic_ machines on the other hand, can break both of those rules.
 
 An interesting fact, and the basis for this project, is that for every NFA that exists, a corresponding DFA can be created using the [subset construction algorithm](https://en.wikipedia.org/wiki/Powerset_construction). Here it is in pseudocode:
 
@@ -124,6 +125,7 @@ typedef std::map<int, DFAState> DFATableType;
 ```
 
 ### Lessons Learned
+
 - Thinking about types is important.
 - The C++ map and vector are workhorses. They are the core of this program (and I am thankful they both have thorough documentation).
 - I did not take an efficient approach to my input file parsing function. It is monolithic; there are multiple areas that could be refactored or broken down into smaller functions.

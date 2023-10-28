@@ -1,9 +1,9 @@
 ---
 author: Evan Nichols
-title: "Nostalgia"
-date: "2018-03-08T00:12:03.000Z"
+title: 'Nostalgia'
+date: '2018-03-08'
 tags:
-- poetry
+  - poetry
 draft: false
 type: 'post'
 ---

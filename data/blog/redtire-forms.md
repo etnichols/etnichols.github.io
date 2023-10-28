@@ -1,12 +1,9 @@
 ---
-title: RedTire Application Forms
-date: "2016-08-06T00:12:03.000Z"
-tags:
-- HTML/CSS
-- project
-draft: false
-author: Evan Nichols
-type: 'project'
+title: 'RedTire Application Forms'
+date: '2016-08-06'
+tags: ['project']
+summary: 'Creating simple application forms using HTML, CSS + PHP.'
+type: Blog
 ---
 
 [KU RedTire][7] is a business owner successor program with the goal of matching retiring Kansas business owners University of Kansas graduates and alums who have the expertise and ambition to run those businesses. The company is run by Denton Zeeman and Wally Meyer, two KU Business School Professors. Heavily involved in the [KU Catalyst Program][1], Wally has served as an incredible mentor to me these past two years. Wally wanted simplify the application process for retiring and aspiring business owners. The Redtire website previously had only PDF versions of the two forms available to applicants, which they would have to download, fill out, scan and then resubmit via email. I set out to convert the PDFs into responsive online forms.
@@ -27,7 +24,7 @@ Mac OS X Yosemite and Mac OS X El Capitan both come with Apache 2.4 preinstalled
 
 Here's an example message produced by the scripts, for the Retiring Business Owner Initial Interest Form:
 
-![](retiringsub.png)
+![](/static/images/redtire/retiringsub.png)
 
 The messages are formatted to be copy and pasted directly into a spreadsheet. I really enjoyed working on this project -- it was one that I saw from idea to actual deployment live on the [KU Redtire site][7], with help from the Chris Welchhans, the KU Business School's Web Developer.
 

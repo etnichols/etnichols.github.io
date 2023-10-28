@@ -1,6 +1,6 @@
 ---
 title: 'Lead to Read KC website redesign with Gatsby and Firebase'
-date: '2020-11-30T00:12:03.000Z'
+date: '2020-11-30'
 tags:
   - Gatsby
   - React
@@ -67,7 +67,7 @@ const BlogPost = ({ data }) => {
 export default BlogPost
 
 export const postQuery = graphql`
-  query($id: String!) {
+  query ($id: String!) {
     wpPost(id: { eq: $id }) {
       title
       content

@@ -1,14 +1,15 @@
 ---
 author: Evan Nichols
-title: "Preparing for the programming interview"
-date: "2018-12-03T00:12:03.000Z"
+title: 'Preparing for the programming interview'
+date: '2018-12-03'
 tags:
-- programming
+  - programming
 draft: false
 type: 'tutorial'
 ---
 
 ## Goal
+
 Get a job as a software engineer.
 
 ## How to Prepare
@@ -37,7 +38,7 @@ Additionally, brainstorm some potential clarifying questions you could ask an in
 
 Stub out the function(s) you plan on implementing and then **vocalize your plan of action to the interviewer.** Yes, I mean like actually practice saying out loud how you plan on solving the problem.
 
-*"But... I don't have an interviewer around to practice with"*
+_"But... I don't have an interviewer around to practice with"_
 
 In that case, recruit a classmate or friend (imaginary or real), or the coffee mug sitting on your desk, it doesn't matter. In an interview situation, verbalizing your plan of action is a doubly useful activity because it:
 
@@ -67,6 +68,7 @@ You've finished coding your solution, but the interview isn't over! It's time to
 Similar to the "task" section, be prepared to talk through the answers to these questions out loud.
 
 ## An Example Interview
+
 A fictitious example interview to illustrate some of the points above, based on this [r/dailyprogrammer][3] question.
 
 ---
@@ -92,6 +94,7 @@ So, my question for you is: given three integers between 0 and 255, correspondin
 ```
 hexcolor(255, 99, 71) => "#FF6347"
 ```
+
 <br/>
 
 **Candidate:** OK. So, in order to convert the integers to hex, can I use Javascript's built-in conversion functions to do this, or do I need to perform the conversion manually?
@@ -101,9 +104,10 @@ hexcolor(255, 99, 71) => "#FF6347"
 **Candidate:** Sounds good. I'll go ahead and get started. So I'm going to find each integer's hex representation and then concatenate those together and return the string. To actually convert them, I think I can use the toString method on the numbers and specify the base as 16, since hex is base 16. So, if I did something like:
 
 ```javascript
-let k = 255;
-k.toString(16);
+let k = 255
+k.toString(16)
 ```
+
 <br/>
 
 That second line should output 'FF' since that's the hex string representation of 255.
@@ -113,13 +117,14 @@ That second line should output 'FF' since that's the hex string representation o
 **Candidate:** Ok here's my function.
 
 ```javascript
-const hexcolor = (r,g,b) => {
-  let rVal = r.toString(16);
-  let gVal = r.toString(16);
-  let bVal = r.toString(16);
-  return '#' + rVal + gVal + bVal;
+const hexcolor = (r, g, b) => {
+  let rVal = r.toString(16)
+  let gVal = r.toString(16)
+  let bVal = r.toString(16)
+  return '#' + rVal + gVal + bVal
 }
 ```
+
 <br/>
 
 **Interviewer:** Could you walk through a quick example?
@@ -139,22 +144,23 @@ const hexcolor = (r,g,b) => {
 **Candidate:** I'll update my function like this:
 
 ```javascript
-const hexcolor = (r,g,b) => {
-  let rVal = r.toString(16);
-  let gVal = r.toString(16);
-  let bVal = r.toString(16);
-  if(rVal.length === 1){
-    rVal = '0' + rVal;
+const hexcolor = (r, g, b) => {
+  let rVal = r.toString(16)
+  let gVal = r.toString(16)
+  let bVal = r.toString(16)
+  if (rVal.length === 1) {
+    rVal = '0' + rVal
   }
-  if(gVal.length === 1){
-    gVal = '0' + gVal;
+  if (gVal.length === 1) {
+    gVal = '0' + gVal
   }
-  if(bVal.length === 1){
-    bVal = '0' + bVal;
+  if (bVal.length === 1) {
+    bVal = '0' + bVal
   }
-  return '#' + rVal + gVal + bVal;
+  return '#' + rVal + gVal + bVal
 }
 ```
+
 <br/>
 
 So this checks if the converted strings are only a single character and pads it with a zero if so.
@@ -164,17 +170,18 @@ So this checks if the converted strings are only a single character and pads it 
 **Candidate:** You're right, I'm basically just calling the same functions and doing the same if check three times. Oh, I have an idea. I can put the arguments in an array and then map a function to it.
 
 ```javascript
-const hexcolor = (r,g,b) => {
-  let converted = [r,g,b].map(color => {
+const hexcolor = (r, g, b) => {
+  let converted = [r, g, b].map((color) => {
     let val = color.toString(16)
-    if(val.length === 1){
+    if (val.length === 1) {
       val = '0' + val
     }
     return val
-  });
-  return '#' + converted.join('');
+  })
+  return '#' + converted.join('')
 }
 ```
+
 <br/>
 
 **Interviewer:** Nice! That makes it a little more readable, too. Anything else you could do? What about a ternary operator maybe?
@@ -182,14 +189,15 @@ const hexcolor = (r,g,b) => {
 **Candidate:** Ah, I see. The if statement can be removed and a ternary operator can be used in the return statement instead, like this:
 
 ```javascript
-const hexcolor = (r,g,b) => {
-  let converted = [r,g,b].map(color => {
+const hexcolor = (r, g, b) => {
+  let converted = [r, g, b].map((color) => {
     let val = color.toString(16)
     return val.length === 1 ? '0' + val : val
-  });
-  return '#' + converted.join('');
+  })
+  return '#' + converted.join('')
 }
 ```
+
 <br/>
 
 **Interviewer:** Nice work. Now, let's talk about how you could implement that hex conversion from scratch instead of using toString...

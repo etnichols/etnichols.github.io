@@ -1,16 +1,16 @@
 ---
 author: Evan Nichols
-title: "Player Piano and the Circle"
-date: "2017-10-30T00:12:03.000Z"
+title: 'Player Piano and the Circle'
+date: '2017-10-30'
 tags:
-- books
+  - books
 draft: true
 type: 'post'
 ---
 
 What's the purpose of this post? Sharing some thoughts on Player Piano and The Circle, some things I liked about each, and some similarities I saw between the two works, and tips of the hat to the old dystopian novels.
 
-I read "Player Piano," Kurt Vonnegut's ___ novel, and immediately followed that up with "The Circle" by Dave Eggers. I wanted to share a few thoughts on each and some similarities I saw between the two works. I'm going to jump around a lot here, mainly commenting on sections I had highlighted from each work.
+I read "Player Piano," Kurt Vonnegut's \_\_\_ novel, and immediately followed that up with "The Circle" by Dave Eggers. I wanted to share a few thoughts on each and some similarities I saw between the two works. I'm going to jump around a lot here, mainly commenting on sections I had highlighted from each work.
 
 First, a quick overview of each.
 
@@ -25,7 +25,6 @@ In Player Piano, all citizens' employment is determined by how they score on apt
 I thought these were interesting parallels -- two distinct takes on a totally public approach to aptitude testing. They both sound good in theory, right? What better way to remove subjectivity from choosing who should work where, and who should get into certain schools? Eh. I don't know. It scares the shit out of me, really. The total transparency seems to go against the very foundation of our constitution -- our rights to life liberty and the pursuit of happiness. This seems to say, you have the right to life liberty and the pursuit of happiness only on the path we deem appropriate for you. Can you imagine being a kid in high school dealing with everything you've ever done on the public record? Going into a college interview and the recruiter says, "Evan, your junior year you were caught smoking your Juul in the bathroom multiple times during Art History, do you not value that subject? Why would you skip that class?" The idea of total accountability for students who are supposed to just be learning about the concepts of accountability seems utterly insane to me.
 
 Here's the big thing I took away from both "Player Piano" and "The Circle:" we have a relationship with technology, both on a personal level and a societal level. We get to choose when, and how much, we want to share, or participate in this social media circus. Both works seem to examine what happens when that relationship gets slanted out of our control. In Player Piano, Vonnegut looks at
-
 
 The Circle,
 
@@ -75,7 +74,7 @@ p. 315 The main business of humanity is to do a good job of being humans beings,
 
 p. 341 Forward march. This isn't the end you know, nothing is, nothing ever will be -- Not even Judgement Day.
 
-------------------------------
+---
 
 Wow. That was really powerful stuff.
 
@@ -158,7 +157,7 @@ group. Participation should never be mandatory. And this is a tough one
 because it really seems like Mae could benefit from some of these groups. But
 I hate the fact that it would be forced upon her.
 
-------------------------------
+---
 
 The issues we face about automation and the role of technology aren't new, but are amplified by the social-media drenched society we live in today. As with everything in life, it takes a balance. And it takes self-awareness, and mindfulness, and patience. To steal Vonnegut's metaphor. It's so easy to follow the engineers and managers blindly through the doors they open for us, just because it's into a room we've never seen before. But I think we need to be mindful in the way we do this, and remember the price we all pay for each door we choose to open. We pay in the form of our time, our happiness, our attention -- ultimately, our perception of the world. If we choose to view the world through the hyper-catered lense, I think we start to lose our touch with the rest of humanity. We're drawn to echo chambers like the sirens of titan.
 

@@ -1,8 +1,8 @@
 ---
-title: "Sick Day"
-date: "2019-01-17T00:12:03.000Z"   
+title: 'Sick Day'
+date: '2019-01-17'
 tags:
-- poetry
+  - poetry
 draft: false
 author: Evan Nichols
 type: 'post'
