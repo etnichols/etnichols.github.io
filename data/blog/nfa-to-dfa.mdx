@@ -1,12 +1,7 @@
 ---
 title: 'NFA to DFA Conversion: C++ Implementation'
 date: '2016-09-26'
-tags:
-  - C++
-  - project
-draft: false
-author: Evan Nichols
-type: 'project'
+tags: ['project']
 ---
 
 ### Overview
@@ -15,7 +10,7 @@ I completed this project as part of my coursework for EECS 665, a Compilers cour
 
 Quick Finite State machine recap: they're simple machines capable of representing regular expressions, and some more complicated things, too. They look like this:
 
-![](dfa-examples.png)
+](/static/images/nfa-to-dfa/dfa-examples.png)
 
 It's a series of states with different "transition moves" defined to travel in between them. States can also loop on themselves, like we see with the 'b' moves in the machines above.
 
@@ -23,13 +18,13 @@ Notice the states with double rings: these are called the "final states." They a
 
 Now for the distinction: compare the machines above with this one:
 
-![](nfa.png)
+](/static/images/nfa-to-dfa/nfa.png)
 
 Notice the differences: there are some epsilon-transitions (or "ε-transitions"), and states can do multiple actions with the same symbol! This is the main distinction between DFAs and NFAs, as their name implies: _Deterministic_ machines have at most one move defined for each alphabet symbol, and do not allow for ε-transitions. _Nondeterministic_ machines on the other hand, can break both of those rules.
 
 An interesting fact, and the basis for this project, is that for every NFA that exists, a corresponding DFA can be created using the [subset construction algorithm](https://en.wikipedia.org/wiki/Powerset_construction). Here it is in pseudocode:
 
-![](subsetconst.png)
+](/static/images/nfa-to-dfa/subsetconst.png)
 
 ### Input and Output
 

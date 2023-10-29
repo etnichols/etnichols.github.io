@@ -16,7 +16,7 @@ Lead to Read KC is a non-profit that facilitates reading-based mentorship in the
 
 Lead to Read's previous website was a 10+ year old Wordpress site with lackluster [Lighthouse](https://developers.google.com/web/tools/lighthouse) audit scores:
 
-![Old Lead to Read website Lighthouse Scores](ltr_lighthouse_old.png)
+![Old Lead to Read website Lighthouse Scores](/static/images/lead-to-read/ltr_lighthouse_old.png)
 
 The performance and accessibility categories are especially concerning: The site isn't accessible or mobile friendly, and it takes more than 17 seconds to become interactive.
 
@@ -33,7 +33,7 @@ I had four main goals in mind as I approached the redesign:
 
 To get started, I combed the existing site and grouped the existing content into more coherent sections, using [Sketch](https://www.sketch.com/) to bring the pen-and-paper wireframes to life:
 
-![New site design mocks](lead_to_read_sketch.jpg)
+![New site design mocks](/static/images/lead-to-read/lead_to_read_sketch.jpg)
 
 After a couple iterations with, we settled on the landing page layout, the navigation menu contents, and designs for the blog post and content pages.
 

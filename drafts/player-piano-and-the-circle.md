@@ -1,16 +1,12 @@
 ---
-author: Evan Nichols
-title: 'Player Piano and the Circle'
+title: "Comparing 'Player Piano' and 'The Circle'"
 date: '2017-10-30'
-tags:
-  - books
-draft: true
-type: 'post'
+tags: ['books']
 ---
 
 What's the purpose of this post? Sharing some thoughts on Player Piano and The Circle, some things I liked about each, and some similarities I saw between the two works, and tips of the hat to the old dystopian novels.
 
-I read "Player Piano," Kurt Vonnegut's \_\_\_ novel, and immediately followed that up with "The Circle" by Dave Eggers. I wanted to share a few thoughts on each and some similarities I saw between the two works. I'm going to jump around a lot here, mainly commenting on sections I had highlighted from each work.
+I read "Player Piano," Kurt Vonnegut's novel, and immediately followed that up with "The Circle" by Dave Eggers. I wanted to share a few thoughts on each and some similarities I saw between the two works. I'm going to jump around a lot here, mainly commenting on sections I had highlighted from each work.
 
 First, a quick overview of each.
 
@@ -52,7 +48,7 @@ p. 215 It hurts a man to be forgotten.
 
 p. 243 Dog Story of the month = Instagram
 
-p. 260 IQ = <IDK>
+p. 260 IQ = IDK
 
 The first industrial revolution devalued muscle
 The second industrial revolution devalued routine mental work

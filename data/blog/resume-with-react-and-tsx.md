@@ -14,15 +14,15 @@ type: 'tutorial'
 
 This tutorial illustrates how to create a simple, responsive resume page for your personal website using Gatsby, Typescript and React function components. It assumes a basic knowledge of these three technologies. If that's not the case, check out these references before getting started:
 
-- [Set up your Gatsby development environment](https://www.gatsbyjs.org/tutorial/part-zero/).
-- [Typescript in 5 minutes](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
-- [React Docs - Function and Class Components](https://reactjs.org/docs/components-and-props.html#function-and-class-components)
+- [Set up your Gatsby development environment](/static/images/resume-with-react-and-tsx/https://www.gatsbyjs.org/tutorial/part-zero/).
+- [Typescript in 5 minutes](/static/images/resume-with-react-and-tsx/https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
+- [React Docs - Function and Class Components](/static/images/resume-with-react-and-tsx/https://reactjs.org/docs/components-and-props.html#function-and-class-components)
 
 ## Demo
 
-[gatsby-typescript-resume.surge.sh](http://gatsby-typescript-resume.surge.sh/resume/)
+[gatsby-typescript-resume.surge.sh](/static/images/resume-with-react-and-tsx/http://gatsby-typescript-resume.surge.sh/resume/)
 
-Source code available [here](https://github.com/e-nichols/gatsby-typescript-resume).
+Source code available [here](/static/images/resume-with-react-and-tsx/https://github.com/e-nichols/gatsby-typescript-resume).
 
 ## Set up boilerplate Gatsby site
 
@@ -36,7 +36,7 @@ $ gatsby new typescript-resume
 
 After the install script finishes, `cd` into the project directory and run `gatsby-develop` to run the site locally. After it finishes building, navigate to `localhost:8000` in your browser to see the boilerplate starter site.
 
-Gatsby provides drop-in support for Typescript via [gatsby-plugin-typescript](https://www.gatsbyjs.org/packages/gatsby-plugin-typescript/). Let's add this to the site. From the project directory, run:
+Gatsby provides drop-in support for Typescript via [gatsby-plugin-typescript](/static/images/resume-with-react-and-tsx/https://www.gatsbyjs.org/packages/gatsby-plugin-typescript/). Let's add this to the site. From the project directory, run:
 
 ```bash
 $ npm i gatsby-plugin-typescript
@@ -78,7 +78,7 @@ export default Resume
 
 Let's see it in action. Run `gatsby develop` again from project directory and navigate your browser to `localhost:8000/resume`. You should see:
 
-![Hello, Resume!](hello-resume.png)
+![Hello, Resume!](/static/images/resume-with-react-and-tsx/hello-resume.png)
 
 ## Typescript Primer
 
@@ -156,7 +156,7 @@ Save and refresh the page on your browser. Ta-da! You've successfully used Types
 
 Consider the "shape" or a resume. It might look something like this:
 
-![Resume illustration!](resume-sketch.png)
+![Resume illustration!](/static/images/resume-with-react-and-tsx/resume-sketch.png)
 
 It consists of multiple **sections** like "work", "leadership", "education", etc. Each of those sections consists of one or more **entries** related to that section. Finally, entry consists of details like name of the position, company/organization, duration, description of responsibilities, etc.
 
@@ -164,13 +164,13 @@ Pretty simple, but one special case to note. Look at the "leadership" section ab
 
 Generalizing the example above into a generic `section`, we get something like:
 
-![Resume illustration!](section.png)
+![Resume illustration!](/static/images/resume-with-react-and-tsx/section.png)
 
 Let's translate those statements above into Typescript types.
 
 ### Enter: Interfaces
 
-In Typescript, the `interface` keyword is used to declare types. The Typescript [docs](https://www.typescriptlang.org/docs/handbook/interfaces.html) provide a nice explanation of the motivation for using interfaces:
+In Typescript, the `interface` keyword is used to declare types. The Typescript [docs](/static/images/resume-with-react-and-tsx/https://www.typescriptlang.org/docs/handbook/interfaces.html) provide a nice explanation of the motivation for using interfaces:
 
 > "One of TypeScript’s core principles is that type checking focuses on the shape that values have. This is sometimes called “duck typing” or “structural subtyping”. In TypeScript, interfaces fill the role of naming these types, and are a powerful way of defining contracts within your code as well as contracts with code outside of your project."
 
@@ -214,7 +214,7 @@ It's time to make a `Resume` data object that implements the types defined above
 
 _Note: when I say "data object," I really just mean a plain ole' javascript object._
 
-You can define your own data object or use the dummy data from the demo site ([link](https://github.com/e-nichols/gatsby-typescript-resume/blob/master/src/data/resume.ts)). Either way, be sure to define this `Resume` data object in new file located at `data/src/resume.ts` in your project.
+You can define your own data object or use the dummy data from the demo site ([link](/static/images/resume-with-react-and-tsx/https://github.com/e-nichols/gatsby-typescript-resume/blob/master/src/data/resume.ts)). Either way, be sure to define this `Resume` data object in new file located at `data/src/resume.ts` in your project.
 
 ## Create function components for each type
 
@@ -225,7 +225,7 @@ It can be useful to define tops in a "top down" manner, but I tend to think the 
 The main point of this tutorial is learning Gatsby, Typescript and React -- not so much learning CSS. We will talk about one CSS rule in particular later in the tutorial, but other than that, I won't show any of the CSS for the code snippets below. Choose one of the following options to add CSS to your project:
 
 1. Define your own styles in a `resume.css` file (in the same directory as the `resume.tsx` file) and define your own styles for each component as you go along.
-2. Use the `resume.scss` and base styles from the demo site. To do this, [enable scss on the site](https://www.gatsbyjs.org/packages/gatsby-plugin-sass/) and then copy the relevant files from the demo site into your project ([here](https://github.com/e-nichols/gatsby-typescript-resume/blob/master/src/pages/resume.scss) and [here](https://github.com/e-nichols/gatsby-typescript-resume/tree/master/src/styles)).
+2. Use the `resume.scss` and base styles from the demo site. To do this, [enable scss on the site](/static/images/resume-with-react-and-tsx/https://www.gatsbyjs.org/packages/gatsby-plugin-sass/) and then copy the relevant files from the demo site into your project ([here](/static/images/resume-with-react-and-tsx/https://github.com/e-nichols/gatsby-typescript-resume/blob/master/src/pages/resume.scss) and [here](/static/images/resume-with-react-and-tsx/https://github.com/e-nichols/gatsby-typescript-resume/tree/master/src/styles)).
 
 ### Import all dependencies into `resume.tsx`
 
@@ -290,7 +290,7 @@ const RenderEntry: FC<Entry> = ({
 }
 ```
 
-The first section creates a React [fragment](https://reactjs.org/docs/fragments.html) for the entry header. It includes an "maybe linked" title by using the ternary operator, and two [conditionally rendered](https://reactjs.org/docs/conditional-rendering.html#inline-if-with-logical--operator) sections -- company and duration -- using the logical `&&` operator.
+The first section creates a React [fragment](/static/images/resume-with-react-and-tsx/https://reactjs.org/docs/fragments.html) for the entry header. It includes an "maybe linked" title by using the ternary operator, and two [conditionally rendered](/static/images/resume-with-react-and-tsx/https://reactjs.org/docs/conditional-rendering.html#inline-if-with-logical--operator) sections -- company and duration -- using the logical `&&` operator.
 
 The second section creates the entry body. It similarly using type of the `description` prop to decide whether to render the description as a list, or just a regular paragraph.
 
@@ -394,20 +394,20 @@ export default Page
 
 ```
 
-Notice the addition of new top-level `Page` component, which wraps `RenderResume` in the `Layout`. Also notice that we're actually passing the `data` object via the JSX [spread](https://reactjs.org/docs/jsx-in-depth.html#spread-attributes) operator.
+Notice the addition of new top-level `Page` component, which wraps `RenderResume` in the `Layout`. Also notice that we're actually passing the `data` object via the JSX [spread](/static/images/resume-with-react-and-tsx/https://reactjs.org/docs/jsx-in-depth.html#spread-attributes) operator.
 
 Navigate to `localhost:8000/resume` to check it out. It should look similar to this:
 
 TODO: This gif looks like it was compressed by a potato, update it.
-![Resume progress demo video](progress-demo.gif)
+![Resume progress demo video](/static/images/resume-with-react-and-tsx/progress-demo.gif)
 
 ### Title Component
 
 Let's add the final component, the `ResumeTitle`, which makes use of some icons and the Gatsby `StaticQuery` component. It will look like this:
 
-![Resume title illustration!](resume-title.png)
+![Resume title illustration!](/static/images/resume-with-react-and-tsx/resume-title.png)
 
-A Gatsby [StaticQuery](https://www.gatsbyjs.org/docs/static-query/) allows components to retrieve data via GraphQL query.
+A Gatsby [StaticQuery](/static/images/resume-with-react-and-tsx/https://www.gatsbyjs.org/docs/static-query/) allows components to retrieve data via GraphQL query.
 
 Surprise: you're already using `StaticQuery` and you didn't even realize it. Let's take a look at `src/components/layout.js`:
 
@@ -477,7 +477,7 @@ module.exports = {
 }
 ```
 
-Copy the `icon.tsx` and `icon.scss` files from the demo site to the `components` folder of your site. They are available [here](https://github.com/e-nichols/gatsby-typescript-resume/blob/master/src/components/icon.tsx) and [here](https://github.com/e-nichols/gatsby-typescript-resume/blob/master/src/components/icon.scss).
+Copy the `icon.tsx` and `icon.scss` files from the demo site to the `components` folder of your site. They are available [here](/static/images/resume-with-react-and-tsx/https://github.com/e-nichols/gatsby-typescript-resume/blob/master/src/components/icon.tsx) and [here](/static/images/resume-with-react-and-tsx/https://github.com/e-nichols/gatsby-typescript-resume/blob/master/src/components/icon.scss).
 
 _Note: the `Icon` component only supports email, github, linkedin and medium right now. Feel free to extend it to include other logos!_
 
@@ -580,7 +580,7 @@ As a final step, let's make the resume layout responsive.
 
 Consider the two main cases for laying out the sections of our resume: desktop view (large screen) and mobile view (small screen). It makes sense to use all available real estate on each screen:
 
-![Responsive column illustration](responsive.png)
+![Responsive column illustration](/static/images/resume-with-react-and-tsx/responsive.png)
 
 How can we do this? `column-count` and `column-width` to the stage.
 
@@ -604,7 +604,7 @@ Add the following to to `resume.css` (or `resume.scss`) file:
 
 Refresh the page and check out resume. It should look like this:
 
-![Animation illustrating the responsive layout](responsive_resume.gif)
+![Animation illustrating the responsive layout](/static/images/resume-with-react-and-tsx/responsive_resume.gif)
 
 If there's enough room on screen to accommodate two columns with a minimum width of `256px`, it does so. Once that that's not possible, it switches back to a single column.
 
@@ -613,7 +613,7 @@ If there's enough room on screen to accommodate two columns with a minimum width
 That's it! You've successfully made a sleek looking resume page for your personal website by leveraging Gatsby, Typescript and React. Some closing thoughts:
 
 - Typescript makes it easier to break down the "shape" of the data in your projects. It informs decisions on how to best break down a view into individual components.
-- React function components are a succinct alternative to class-based components, and, with the introduction of `useState` hook in React 16.8, can be stateful! Additionally, the React team briefly [mentioned](https://reactjs.org/blog/2015/10/07/react-v0.14.html#stateless-function-components) that they may be able to make performance optimizations on function components in the future.
-- Gatsby makes it easy to spin up websites quickly because of its "plug n play" nature: there are over [1200 plugins available](https://www.gatsbyjs.org/plugins/)!
+- React function components are a succinct alternative to class-based components, and, with the introduction of `useState` hook in React 16.8, can be stateful! Additionally, the React team briefly [mentioned](/static/images/resume-with-react-and-tsx/https://reactjs.org/blog/2015/10/07/react-v0.14.html#stateless-function-components) that they may be able to make performance optimizations on function components in the future.
+- Gatsby makes it easy to spin up websites quickly because of its "plug n play" nature: there are over [1200 plugins available](/static/images/resume-with-react-and-tsx/https://www.gatsbyjs.org/plugins/)!
 
 Have a question or comment on the tutorial? Shoot me an email. Thanks!
