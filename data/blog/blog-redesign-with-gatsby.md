@@ -77,7 +77,7 @@ Regular line
 
 ## Adding Images (gatsby-remark-images)
 
-![](gatsby-remark-images.jpg)
+![](/static/images/blog-redesign-with-gatsby/gatsby-remark-images.jpg)
 
 [Gatsby-remark-images][6] allows you to directly include images within your Markdown posts. If you want even more control over images on your site, consider using the [gatsby-transformer-sharp][8], a nice wrapper around the Sharp image processing library.
 
@@ -85,7 +85,7 @@ Regular line
 
 _What if I use a lot of .gif or .pdf files within my posts?_ [Gatsby-remark-copy-linked-files][18] will make your dreams come true. I mean, it will make your GIFs and PDFs work when referenced in your posts. Like this one.
 
-![](dumblerage.gif)
+![](/static/images/blog-redesign-with-gatsby/dumblerage.gif)
 
 ## Google Analytics (gatsby-plugin-google-analytics)
 

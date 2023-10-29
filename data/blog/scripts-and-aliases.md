@@ -1,11 +1,8 @@
 ---
 title: Timesavers with Scripting and Aliases
 date: '2016-09-07'
-tags:
-  - scripting
-draft: false
-author: Evan Nichols
-type: 'tutorial'
+tags: ['programming']
+summary: 'Automating deployment of my Gatsy site with a bash script, and some handy git aliases.'
 ---
 
 I had written earlier about using [this tutorial][1] regarding subtree pushing in git to make updating my website easier. Well, that ended up breaking everything and causing some really nasty errors which took me a long time to sort out. I reverted back to my usual build and update process, which looks something like this:
@@ -60,7 +57,6 @@ I tested it with a dummy git repo and it ran smoothly. To enable calling it from
 Additionally, I took the time to create some git command aliases in my .zshrc file:
 
 ```bash
-# GIT ALIASES
 alias gc="git clone"
 alias co="git checkout"
 alias gs="git status"

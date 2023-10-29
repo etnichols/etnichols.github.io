@@ -1,9 +1,7 @@
 ---
 title: 'React Animated Quotebook Tutorial'
 date: '2017-06-30'
-tags:
-  - React
-  - tutorial
+tags: ['programming', 'react', 'tutorial']
 draft: false
 author: Evan Nichols
 type: 'tutorial'

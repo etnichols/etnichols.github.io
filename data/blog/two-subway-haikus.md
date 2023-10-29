@@ -1,14 +1,7 @@
 ---
 title: Two Subway Haikus
 date: '2017-08-14'
-tags:
-  - poetry
-draft: false
-author: Evan Nichols
-type: 'post'
 ---
-
-#
 
 Thousands of people
 
