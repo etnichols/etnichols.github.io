@@ -1,12 +1,7 @@
 ---
 title: 'Resume with React and Typescript'
 date: '2019-05-01'
-tags:
-  - tutorial
-  - React
-  - Typescript
-draft: false
-type: 'tutorial'
+tags: ['tutorial', 'react', 'programming']
 ---
 
 ## Overview
