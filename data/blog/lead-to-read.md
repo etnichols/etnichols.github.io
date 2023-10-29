@@ -1,13 +1,8 @@
 ---
 title: 'Lead to Read KC website redesign with Gatsby and Firebase'
 date: '2020-11-30'
-tags:
-  - Gatsby
-  - React
-  - Firebase
-draft: false
-author: Evan Nichols
-type: 'project'
+tags: ['programming', 'project', 'gatsby', 'react']
+type: Blog
 ---
 
 ## Introduction
@@ -128,7 +123,7 @@ And even better, when used with the new wordpress plugin described above, the si
 
 Note that developers can still manually build Gatsby sites from the CLI (`gatsby build`) and then use Firebase CLI (`firebase deploy`) to push it.
 
-But... that firebase hosting integration [was broken](https://streamable.com/xiuh1o) the week we performed the cutover to the new site, blocking our ability to get automatic site deployments after WP content changed (I had to manually build/push as described above). To the Gatsby support team's credit, they replied to my support ticket quickly and had the issue resolved <12 hours after my initial report.
+But... that firebase hosting integration [was broken](https://streamable.com/xiuh1o) the week we performed the cutover to the new site, blocking our ability to get automatic site deployments after WP content changed (I had to manually build/push as described above). To the Gatsby support team's credit, they replied to my support ticket quickly and had the issue resolved less than 12 hours after my initial report.
 
 ### (Ugly) Hardcoding home page data
 
@@ -199,7 +194,7 @@ That same logic applies to the image carousel and the "Our Reach" infographic: h
 
 The new site performance is a big step in the right direction.
 
-![Old Lead to Read website Lighthouse Scores](ltr_lighthouse_new.png)
+![Old Lead to Read website Lighthouse Scores](/static/images/lead-to-read/ltr_lighthouse_new.png)
 
 - The time to interactive for the home page dropped by almost 50% (~17 secs -> ~8 secs)
 - Accessibility score nearly doubled (47 -> 83)

@@ -1,5 +1,4 @@
 ---
-author: Evan Nichols
 title: 'Political Computer Science'
 date: '2019-1-13'
 tags:

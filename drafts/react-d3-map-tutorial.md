@@ -1,5 +1,4 @@
 ---
-author: Evan Nichols
 title: 'Create an interactive map using React, d3 and Python'
 date: '2018-01-15'
 tags: ['programming', 'react', 'tutorial']

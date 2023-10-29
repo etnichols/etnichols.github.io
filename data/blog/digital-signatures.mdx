@@ -1,11 +1,8 @@
 ---
 title: 'Digital signature mini-tutorial'
 date: '2021-04-25'
-tags:
-  - encryption
-draft: false
-author: Evan Nichols
-type: 'tutorial'
+tags: ['tutorial']
+summary: 'A short demonstration of creating and verifying a digital signature using the `openssl` CLI tool.'
 ---
 
 I've been doing a lot of reading into blockchain recently, and one of the foundational components of this technology is utilizing asymmetric encryption to produce a "digital signature". These signatures accompany a message sent across the wire, and can be used to verify the authenticity of the sender and the veracity of the message (i.e. ensuring it was not modified maliciously during transmission).
@@ -18,7 +15,7 @@ Below is a short demonstration of creating and verifying a digital signature usi
 $ openssl genpkey -algorithm RSA -out private_key.pem -pkeyopt rsa_keygen_bits:2048
 ```
 
-<br/>
+<br />
 
 2. Generate the corresponding public key, also called the `pk` for short.
 
@@ -26,7 +23,7 @@ $ openssl genpkey -algorithm RSA -out private_key.pem -pkeyopt rsa_keygen_bits:2
 $ openssl rsa -pubout -in private_key.pem -out public_key.pem
 ```
 
-<br/>
+<br />
 
 3. Create a secret message.
 
@@ -34,7 +31,7 @@ $ openssl rsa -pubout -in private_key.pem -out public_key.pem
 $ echo “Rock Chalk Jayhawk, go KU!” > secret_message.txt
 ```
 
-<br/>
+<br />
 
 4. Produce the digital signature for the secret message. This command is two separate operations: first, it produces a hash of `secret_message.txt` (commonly referred to as the message "digest") using the SHA256 hash function. Then, it encrypts that digest using the `pk`. The process of encrypting the digest is what actually produces the digital signature.
 
@@ -42,7 +39,7 @@ $ echo “Rock Chalk Jayhawk, go KU!” > secret_message.txt
 openssl dgst -sha256 -sign private_key.pem -out digital_signature secret_message.txt
 ```
 
-<br/>
+<br />
 
 5. (Optional) the produced `digital_signature` contains binary content by default. To get a human-readable version use the `enc` command.
 
@@ -50,7 +47,7 @@ openssl dgst -sha256 -sign private_key.pem -out digital_signature secret_message
 $ openssl enc -base64 -in digital_signature -out digital_signature.base64
 ```
 
-<br/>
+<br />
 
 The `digital_signature.base64` will look like:
 
@@ -64,7 +61,7 @@ yBF+Uk69upXE0MRjOk00LKnzwEymGsYfdFS7HVpJyLEWAMpDLKK9YtQna1I3Mf2X
 aTBkU05E9oj9XFhF8VtxoQ==
 ```
 
-<br/>
+<br />
 
 6. (Imagination required) Send the `secret_message.txt`, corresponding `digital_signature` and a copy of our `public_key.pem` off to a friend. The friend receives the message, and would like to verify its contents and that it actually came from us. To verify, they attempt to decrypt the digital signature using our `pk`:
 
@@ -73,7 +70,7 @@ $ openssl dgst -sha256 -verify public_key.pem -signature digital_signature secre
 $ Verified OK
 ```
 
-<br/>
+<br />
 
 7. Now imagine that our `secret_message.txt` was actually intercepted and tampered with by an attacker. You can simulate this by making any change to `secret_message.txt`, e.g. change the message string to "Rock Chalk Jayhawk, go KSU!" Running verification on this modified message will now fail:
 
@@ -83,7 +80,7 @@ $ openssl dgst -sha256 -verify public_key.pem -signature digital_signature secre
 $ Verification failure
 ```
 
-<br/>
+<br />
 
 That's it! Digital signatures provide a convenient way to validate the origin and authenticity of a message.
 

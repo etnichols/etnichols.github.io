@@ -6,7 +6,7 @@ tags:
   - Docker
   - Prisma
 draft: true
-author: Evan Nichols
+
 type: 'project'
 ---
 

@@ -1,12 +1,7 @@
 ---
-author: Evan Nichols
-title: 'Fetching data with React hooks'
+title: 'Fetching data with React Hooks'
 date: '2019-10-10'
-tags:
-  - tutorial
-  - React
-draft: false
-type: 'tutorial'
+tags: ['tutorial', 'react', 'programming']
 ---
 
 I'm teaching an intro to React workshop on the [CUNY hackathon](https://cunystartups.com/hackathon19/) on Friday 10/18, and I've been working on some [demo code](https://github.com/e-nichols/cuny-react-workshop), which includes a simple component showcasing data fetching with hooks.
@@ -19,7 +14,7 @@ Hooks came out in React v16.8 last February. Hooks let you use state and other R
 
 Here's the demo code (only 50 lines!):
 
-```js{numberLines:true}
+```js
 import React, { useState, useEffect, createRef } from 'react'
 import './Fetch.css'
 
@@ -30,16 +25,13 @@ const Fetch = () => {
   const [requestsTotal, setRequestsTotal] = useState(1)
   const [url, setUrl] = useState('')
 
-  useEffect(
-    () => {
-      const fetchPicture = () =>
-        fetch(`https://dog.ceo/api/breeds/image/random`)
-          .then(response => response.json())
-          .then(json => void setUrl(json.message))
-      fetchPicture()
-    },
-    [requestsTotal]
-  )
+  useEffect(() => {
+    const fetchPicture = () =>
+      fetch(`https://dog.ceo/api/breeds/image/random`)
+        .then((response) => response.json())
+        .then((json) => void setUrl(json.message))
+    fetchPicture()
+  }, [requestsTotal])
 
   return (
     <div className="Container">
