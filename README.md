@@ -1,3 +1,3 @@
 # etnichols personal blog
 
-made from the https://github.com/shadcn/next-contentlayer starter template
+fork of the [shadcn/next-contentlayer](https://github.com/shadcn/next-contentlayer) starter template

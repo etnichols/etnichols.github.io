@@ -1,11 +1,12 @@
-import { slug } from 'github-slugger'
 import { allCoreContent, sortPosts } from 'pliny/utils/contentlayer'
-import siteMetadata from '@/data/siteMetadata'
-import ListLayout from '@/layouts/ListLayoutWithTags'
-import { allBlogs } from 'contentlayer/generated'
-import tagData from 'app/tag-data.json'
-import { genPageMetadata } from 'app/seo'
+
+import ListLayoutWithTags from '@/layouts/list-layout-with-tags'
 import { Metadata } from 'next'
+import { allBlogs } from 'contentlayer/generated'
+import { genPageMetadata } from 'app/seo'
+import siteMetadata from '@/data/site-metadata'
+import { slug } from 'github-slugger'
+import tagData from 'app/tag-data.json'
 
 export async function generateMetadata({ params }: { params: { tag: string } }): Promise<Metadata> {
   const tag = decodeURI(params.tag)
@@ -37,5 +38,5 @@ export default function TagPage({ params }: { params: { tag: string } }) {
   const filteredPosts = allCoreContent(
     sortPosts(allBlogs.filter((post) => post.tags && post.tags.map((t) => slug(t)).includes(tag)))
   )
-  return <ListLayout posts={filteredPosts} title={title} />
+  return <ListLayoutWithTags posts={filteredPosts} title={title} />
 }

@@ -1,13 +1,13 @@
 'use client'
 
-import { useState } from 'react'
-import { usePathname } from 'next/navigation'
-import { formatDate } from 'pliny/utils/formatDate'
-import { CoreContent } from 'pliny/utils/contentlayer'
 import type { Blog } from 'contentlayer/generated'
-import Link from '@/components/Link'
-import Tag from '@/components/Tag'
-import siteMetadata from '@/data/siteMetadata'
+import { CoreContent } from 'pliny/utils/contentlayer'
+import Link from '@/components/link'
+import Tag from '@/components/tag'
+import { formatDate } from 'pliny/utils/formatDate'
+import siteMetadata from '@/data/site-metadata'
+import { usePathname } from 'next/navigation'
+import { useState } from 'react'
 
 interface PaginationProps {
   totalPages: number
@@ -131,7 +131,9 @@ export default function ListLayout({
                         </Link>
                       </h3>
                       <div className="flex flex-wrap">
-                        {tags?.map((tag) => <Tag key={tag} text={tag} />)}
+                        {tags?.map((tag) => (
+                          <Tag key={tag} text={tag} />
+                        ))}
                       </div>
                     </div>
                     <div className="prose max-w-none text-gray-500 dark:text-gray-400">

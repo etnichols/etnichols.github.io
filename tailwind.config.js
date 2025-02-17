@@ -22,7 +22,7 @@ module.exports = {
         14: '2.75rem',
       },
       fontFamily: {
-        sans: ['var(--font-space-grotesk)', ...fontFamily.sans],
+        sans: ['var(--font-atkinson-hyperlegible)', ...fontFamily.sans],
       },
       colors: {
         secondary: colors.emerald,

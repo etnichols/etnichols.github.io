@@ -3,10 +3,10 @@
 
 import type { Blog } from 'contentlayer/generated'
 import { CoreContent } from 'pliny/utils/contentlayer'
-import Link from '@/components/Link'
-import Tag from '@/components/Tag'
+import Link from '@/components/link'
+import Tag from '@/components/tag'
 import { formatDate } from 'pliny/utils/formatDate'
-import siteMetadata from '@/data/siteMetadata'
+import siteMetadata from '@/data/site-metadata'
 import { slug } from 'github-slugger'
 import tagData from 'app/tag-data.json'
 import { usePathname } from 'next/navigation'

@@ -7,12 +7,12 @@ import { allCoreContent, coreContent, sortPosts } from 'pliny/utils/contentlayer
 
 import { MDXLayoutRenderer } from 'pliny/mdx-components'
 import { Metadata } from 'next'
-import PageTitle from '@/components/PageTitle'
-import PostBanner from '@/layouts/PostBanner'
-import PostLayout from '@/layouts/PostLayout'
-import PostSimple from '@/layouts/PostSimple'
-import { components } from '@/components/MDXComponents'
-import siteMetadata from '@/data/siteMetadata'
+import PageTitle from '@/components/page-title'
+import PostBanner from '@/layouts/post-banner'
+import PostLayout from '@/layouts/post-layout'
+import PostSimple from '@/layouts/post-simple'
+import { components } from '@/components/mdx-components'
+import siteMetadata from '@/data/site-metadata'
 
 const defaultLayout = 'PostLayout'
 const layouts = {
