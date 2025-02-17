@@ -1,12 +1,11 @@
 import type { Authors, Blog } from 'contentlayer/generated'
 
 import { CoreContent } from 'pliny/utils/contentlayer'
-import Link from 'next/link'
 import PageTitle from '@/components/page-title'
 import { ReactNode } from 'react'
 import ScrollTopAndComment from '@/components/scroll-top-and-comment'
 import SectionContainer from '@/components/section-container'
-import Tag from '@/components/tag'
+import Tag from '@/components/common/tag'
 import siteMetadata from '@/data/site-metadata'
 
 const postDateTemplate: Intl.DateTimeFormatOptions = {
@@ -24,9 +23,8 @@ interface LayoutProps {
   children: ReactNode
 }
 
-export default function PostLayout({ content, next, prev, children }: LayoutProps) {
+export default function PostLayout({ content, children }: LayoutProps) {
   const { path, date, title, tags } = content
-  const basePath = path.split('/')[0]
 
   return (
     <SectionContainer>

@@ -1,7 +1,7 @@
 import type { Blog } from 'contentlayer/generated'
 import Comments from '@/components/comments'
 import { CoreContent } from 'pliny/utils/contentlayer'
-import Link from '@/components/link'
+import Link from '@/components/common/link'
 import PageTitle from '@/components/page-title'
 import { ReactNode } from 'react'
 import ScrollTopAndComment from '@/components/scroll-top-and-comment'
@@ -17,7 +17,7 @@ interface LayoutProps {
 }
 
 export default function PostLayout({ content, next, prev, children }: LayoutProps) {
-  const { path, slug, date, title } = content
+  const { slug, date, title } = content
 
   return (
     <SectionContainer>

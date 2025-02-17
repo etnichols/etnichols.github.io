@@ -1,4 +1,4 @@
-import Link from './link'
+import Link from './common/link'
 import MobileNav from './mobile-nav'
 import SearchButton from './search-button'
 import ThemeSwitch from './theme-switch'

@@ -1,6 +1,6 @@
 'use client'
 
-import Link from './link'
+import Link from './common/link'
 import headerNavLinks from '@/data/header-nav-links'
 import { useState } from 'react'
 
