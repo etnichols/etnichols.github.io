@@ -1,5 +1,5 @@
 import type { Authors } from 'contentlayer/generated'
-import Image from '@/components/common/image'
+import Image from '@/components/image'
 import { ReactNode } from 'react'
 
 interface Props {

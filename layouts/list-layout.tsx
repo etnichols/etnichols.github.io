@@ -2,8 +2,8 @@
 
 import type { Blog } from 'contentlayer/generated'
 import { CoreContent } from 'pliny/utils/contentlayer'
-import Link from '@/components/common/link'
-import Tag from '@/components/common/tag'
+import Link from '@/components/link'
+import Tag from '@/components/tag'
 import { formatDate } from 'pliny/utils/formatDate'
 import siteMetadata from '@/data/site-metadata'
 import { usePathname } from 'next/navigation'

@@ -5,7 +5,7 @@ import PageTitle from '@/components/page-title'
 import { ReactNode } from 'react'
 import ScrollTopAndComment from '@/components/scroll-top-and-comment'
 import SectionContainer from '@/components/section-container'
-import Tag from '@/components/common/tag'
+import Tag from '@/components/tag'
 import siteMetadata from '@/data/site-metadata'
 
 const postDateTemplate: Intl.DateTimeFormatOptions = {
