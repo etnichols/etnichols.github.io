@@ -1,5 +1,5 @@
 import type { Blog } from 'contentlayer/generated'
-import Comments from '@/componentscomments'
+import Comments from '@/components/comments'
 import { CoreContent } from 'pliny/utils/contentlayer'
 import Link from '@/components/link'
 import PageTitle from '@/components/page-title'
