@@ -6,7 +6,7 @@ import { SearchConfig, SearchProvider } from 'pliny/search'
 import { Analytics as AnalyticsVercel } from '@vercel/analytics/react'
 import { Atkinson_Hyperlegible } from 'next/font/google'
 import Footer from '@/components/footer'
-import { GoogleTagManager } from '@next/third-parties/google'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import Header from '@/components/header'
 import { Metadata } from 'next'
 import SectionContainer from '@/components/section-container'
@@ -79,7 +79,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="bg-white text-black antialiased dark:bg-gray-950 dark:text-white">
         <ThemeProviders>
           <AnalyticsVercel />
-          <GoogleTagManager gtmId={siteMetadata.googleAnalyticsId} />
+          <GoogleAnalytics gaId={siteMetadata.googleAnalyticsId} />
           <SectionContainer>
             <div className="flex h-screen flex-col justify-between font-sans">
               <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
