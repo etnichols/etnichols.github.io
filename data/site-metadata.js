@@ -13,9 +13,7 @@ const siteMetadata = {
   linkedin: 'https://www.linkedin.com/etnichols',
   locale: 'en-US',
   analytics: {
-    googleAnalytics: {
-      googleAnalyticsId: 'G-DQFY5V3V0V',
-    },
+    googleAnalyticsId: process.env.GOOGLE_ANALYTICS_ID,
   },
   search: {
     provider: 'kbar', // kbar or algolia
