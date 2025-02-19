@@ -4,6 +4,7 @@ import 'pliny/search/algolia.css'
 import { Analytics, AnalyticsConfig } from 'pliny/analytics'
 import { SearchConfig, SearchProvider } from 'pliny/search'
 
+import { Analytics as AnalyticsVercel } from '@vercel/analytics/react'
 import { Atkinson_Hyperlegible } from 'next/font/google'
 import Footer from '@/components/footer'
 import Header from '@/components/header'
@@ -78,6 +79,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="bg-white text-black antialiased dark:bg-gray-950 dark:text-white">
         <ThemeProviders>
           <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
+          <AnalyticsVercel />
           <SectionContainer>
             <div className="flex h-screen flex-col justify-between font-sans">
               <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>

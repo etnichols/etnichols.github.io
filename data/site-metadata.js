@@ -13,9 +13,9 @@ const siteMetadata = {
   linkedin: 'https://www.linkedin.com/etnichols',
   locale: 'en-US',
   analytics: {
-    // googleAnalytics: {
-    //   googleAnalyticsId: '', // e.g. G-XXXXXXX
-    // },
+    googleAnalytics: {
+      googleAnalyticsId: 'G-DQFY5V3V0V',
+    },
   },
   search: {
     provider: 'kbar', // kbar or algolia
