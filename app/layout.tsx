@@ -79,7 +79,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="bg-white text-black antialiased dark:bg-gray-950 dark:text-white">
         <ThemeProviders>
           <AnalyticsVercel />
-          <GoogleAnalytics gaId={siteMetadata.googleAnalyticsId} />
+          <GoogleAnalytics gaId="G-DQFY5V3V0V" />
           <SectionContainer>
             <div className="flex h-screen flex-col justify-between font-sans">
               <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
