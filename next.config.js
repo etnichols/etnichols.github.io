@@ -13,7 +13,7 @@ const ContentSecurityPolicy = `
   media-src *.s3.amazonaws.com;
   connect-src *;
   font-src 'self';
-  frame-src giscus.app quiz.tryinteract.dev;
+  frame-src giscus.app quiz.tryinteract.com quiz.tryinteract.dev i.tryinteract.com i.tryinteract.dev;
 `
 
 const securityHeaders = [
