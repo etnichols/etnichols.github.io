@@ -8,7 +8,7 @@ export default function IframeProdPage() {
       height="977"
       style={{ border: 'none', maxWidth: '100%', margin: 0 }}
       allowTransparency={true}
-      src={`https://quiz.tryinteract.dev/#/${PROD_APP_ID}?method=iframe&mobile=1`}
+      src={`https://quiz.tryinteract.com/#/${PROD_APP_ID}?method=iframe&mobile=1`}
     ></iframe>
   )
 }
