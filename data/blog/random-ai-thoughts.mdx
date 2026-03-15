@@ -1,0 +1,52 @@
+---
+title: 'Thoughts: AI development and the future of software engineering'
+date: '2026-03-15'
+tags: ['opinion', 'AI']
+summary: 'Scattered thoughts on AI development and the future of software engineering'
+---
+
+Inspired by Cremieux's [timed posts](https://www.cremieux.xyz/p/why-do-olympic-hosts-win-more-medals), I spent one hour writing this down and published it in its raw form after that. It's not perfect -- it's not meant to be!
+
+Along with the rest of the software engineering world, I've seen the AI developments over the past two years first hand and have been trying to keep up with the rapid changes.
+
+Below are collected thoughts from a few years of working with them, along with broader commentary about AI's impact on software engineering and broader knowledge work as a whole. Thoughts below start a bit more tactically and then gets broader.
+
+# More Tactical
+
+- I don't "write code" in the traditional sense anymore. For at least the last four months, my workflow has primarily shifted to "prompt + refine."
+
+- What that looks like? For small features, 2-3 sentences max with tagged files and context. For larger features, my team and I will collaborate on a longer form [Cursor Plan](https://cursor.com/docs/agent/plan-mode) document. These are a blend of PRD and Technical Design. We'll have desing discussions / collaboration discussions where we discuss foundational details and debate, or live write some prompts together to generate different design options. When it comes to implementation, we essentially "bite off" a portion of the Plan document and prompt agents to implement.
+
+- As a first pass before requesting teammate review, I will often have three or four different models perform a code review locally and apply edits, tagging the branch.
+
+- Live AI-powered collaboration with teammates is really fun. We're a totally remote company, and doing AI-powered pair programming is powerful. One person drives, the other observes and provides suggestions on how to write the prompts, you read through the output together and iterate.
+
+- Write tests for everything. It's never been easier to add tests. Just do it. Add it to your [Cursor shared rules](https://cursor.com/docs/rules).
+
+- There are still strategic times to push back against produced output, but that is more of an exception at this point.
+
+- It's truly astounding the amount of work we produce as a team now. We're three months into the year and nearing completion on a new feature that was slated for easily 6-8 months dev time. We've fixed countless bugs automatically via a Agentic "Sleuth" system that a teammate one-shotted with Cursor (it takes a focus area and scans the codebase for potential bugs, automatically creating Linear tickets for each with a severity + impact score).
+
+- In terms of personal projects, I was able to perform some massive updates to my NBA basketball quiz website (https://from-game.com/) over two weekends (introduced a "Random mode", validated the entire player database to account for this years trades and incoming rookies). I built a prototype of a new marketing website for the community theatre my mom helps run (https://thebarnplayers.vercel.app/) with about ~10 total hours of work. For comparison, I had worked on a similarly structured website for another KC Non Profit (https://leadtoreadkc.org) in 2020. This took weeks of work and honestly was lower quality than what I produced for the Barn Players.
+
+- _It is more efficient to just prototype an idea immediately rather than having multiple discussions as to whether something is worth doing._ Perhaps this has always been more of the norm at smaller companies, but it becomes a much more realistic proposition for medium/large cap companies now, too. Why waste thousands of dollars on hours of meetings when a single dev can produce an MVP in an afternoon?
+
+- Day to day can be a bit exhausting. Context switching has always been a problem in engineering; "agentic workflows" (I still don't like typing that) makes it that much more tiring. You're switching between three different tasks at all times. Have a spare minute? Go ahead and fire off another prompt that can run in the background before you join that next meeting. It's never been more important to develop TODOs and a schedule for the day to avoid burnout (maybe that's more of a me problem, TBD).
+
+# More Broad
+
+- _Some_ competitive moats are seeing _some_ evaporation. That is to be expected as low-complexity software can be mimicked and released faster than ever -- plenty of "shallow moat" software is coming under attack by AI native startups. To pick on one company -- Appcues, a "user walkthrough/user tutorial overlay" solution. Why would a startup pay thousands for a system like this when they can one-shot their own version with a few prompts? But...
+
+- SaaS is not dead, and plenty of competitive moats still exist. For an existing established company, AI can be a moat deepener when used well. Adding even more long tail features to an existing complex product. And to the people tweeting "It's so over, I just remade [insert highly complex enterprise grade product] in a weekend" -- please shut the fuck up, no you did not, you made a single Core User Journey of a wildly complex application. It has never been easier to produce MVPs, but truly complex products take years to develop as you discover bugs, edge case, niche settings and customizations that cannot be captured in a single one-shot prompt.
+
+- When AI automates away vast portions of your previous day to day tasks, what is left? Taste, discrimination, human interaction to discover real user needs, and targeted prototyping.
+
+- How do we keep up with the deluge of code we can now produce? I've seen different schools of thought. Some proclaim ["We have to give up on reading all the code"](https://www.latent.space/p/reviews-dead), others insist it's never been more important to have a human in the loop (see [Amazon holding a mandatory meeting about AI breaking its systems](https://x.com/lukolejnik/status/2031257644724342957?s=46&t=NozGih4ckW1elHwB_zH9XA)). I like the "Swiss Cheese model" here -- stacking layers of validation and verification that increase confidence in a change.
+
+- Token economics is fascinating and I wonder what company is going to take away the punch bowl first. Internal analysis by Cursor indicates a $200-per-month Claude Code could use up to [$2K to $5K in compute costs](https://x.com/lukolejnik/status/2031257644724342957?s=46&t=NozGih4ckW1elHwB_zH9XA). Is that sustainable? Will we see continued efficiency gains across models and at the chip level? If Jevins Paradox tells us anything... these further efficiency gains will only serve to increase demand, not tamp it. With the move to credit-based systems on all the AI platforms we are already seeing the shift into revenue-focused service offerings.
+
+- I like the Andreessen take on "there's a Mexican Standoff between Engineers, Product Managers and Designers right now" ([link](https://www.linkedin.com/posts/a16z_theres-a-mexican-standoff-happening-between-activity-7422762698519728128--y1e)). And I think it applies to industries beyond just Software -- where we're going to see a collapse of highly compartmentalized job responsibilites and more "diffuse" responsibilities, aided by AI-powered tools. Of course, the Mexican standoff implies some level of conflict or tension -- when in reality I think I think everyone could just put the guns down and use it as an opportunity to learn and better appreciate the specialities people have developed over the years. Our toolboxes are growing.
+
+My hour is up! Reach out if you have questions, comments or counters to any points above.
+
+- E
