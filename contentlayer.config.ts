@@ -1,4 +1,4 @@
-import { ComputedFields, defineDocumentType, makeSource } from 'contentlayer/source-files'
+import { ComputedFields, defineDocumentType, makeSource } from 'contentlayer2/source-files'
 import { allCoreContent, sortPosts } from 'pliny/utils/contentlayer.js'
 import {
   extractTocHeadings,

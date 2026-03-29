@@ -1,4 +1,4 @@
-import type { Authors, Blog } from 'contentlayer/generated'
+import type { Authors, Blog } from 'contentlayer2/generated'
 
 import { CoreContent } from 'pliny/utils/contentlayer'
 import PageTitle from '@/components/page-title'

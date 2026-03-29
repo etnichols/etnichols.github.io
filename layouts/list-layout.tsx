@@ -1,6 +1,6 @@
 'use client'
 
-import type { Blog } from 'contentlayer/generated'
+import type { Blog } from 'contentlayer2/generated'
 import { CoreContent } from 'pliny/utils/contentlayer'
 import Link from '@/components/link'
 import Tag from '@/components/tag'

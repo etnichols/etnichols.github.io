@@ -1,6 +1,7 @@
 // @ts-check
 const { fontFamily } = require('tailwindcss/defaultTheme')
 const colors = require('tailwindcss/colors')
+const { activeTheme } = require('./theme-colors')
 
 /** @type {import("tailwindcss/types").Config } */
 module.exports = {
@@ -22,11 +23,13 @@ module.exports = {
         14: '2.75rem',
       },
       fontFamily: {
-        sans: ['var(--font-atkinson-hyperlegible)', ...fontFamily.sans],
+        // Updated to Space Grotesk — modern geometric sans-serif
+        sans: ['var(--font-space-grotesk)', ...fontFamily.sans],
       },
       colors: {
-        secondary: colors.emerald,
-        primary: colors.sky,
+        // Color palette driven by theme-colors.js — change ACTIVE_THEME there to switch
+        primary: activeTheme.primary,
+        secondary: activeTheme.secondary,
         gray: colors.gray,
       },
       typography: ({ theme }) => ({
@@ -47,16 +50,16 @@ module.exports = {
               fontWeight: '600',
             },
             code: {
-              color: theme('colors.indigo.500'),
+              color: theme('colors.secondary.500'),
             },
           },
         },
         invert: {
           css: {
             a: {
-              color: theme('colors.primary.500'),
+              color: theme('colors.primary.400'),
               '&:hover': {
-                color: `${theme('colors.primary.400')}`,
+                color: `${theme('colors.primary.300')}`,
               },
               code: { color: theme('colors.primary.400') },
             },

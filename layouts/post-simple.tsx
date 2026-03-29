@@ -1,4 +1,4 @@
-import type { Blog } from 'contentlayer/generated'
+import type { Blog } from 'contentlayer2/generated'
 import Comments from '@/components/comments'
 import { CoreContent } from 'pliny/utils/contentlayer'
 import Link from '@/components/link'

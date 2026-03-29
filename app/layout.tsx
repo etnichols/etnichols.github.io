@@ -4,7 +4,7 @@ import 'pliny/search/algolia.css'
 import { SearchConfig, SearchProvider } from 'pliny/search'
 
 import { Analytics as AnalyticsVercel } from '@vercel/analytics/react'
-import { Atkinson_Hyperlegible } from 'next/font/google'
+import { Space_Grotesk } from 'next/font/google'
 import Footer from '@/components/footer'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import Header from '@/components/header'
@@ -13,11 +13,11 @@ import SectionContainer from '@/components/section-container'
 import { ThemeProviders } from './theme-providers'
 import siteMetadata from '@/data/site-metadata'
 
-const atkinson_hyperlegible = Atkinson_Hyperlegible({
+const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-atkinson-hyperlegible',
-  weight: ['400', '700'],
+  variable: '--font-space-grotesk',
+  weight: ['300', '400', '500', '600', '700'],
 })
 
 export const metadata: Metadata = {
@@ -64,7 +64,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang={siteMetadata.language}
-      className={`${atkinson_hyperlegible.variable} scroll-smooth`}
+      className={`${spaceGrotesk.variable} scroll-smooth`}
       suppressHydrationWarning
     >
       <link rel="apple-touch-icon" sizes="76x76" href="/static/favicons/apple-touch-icon.png" />

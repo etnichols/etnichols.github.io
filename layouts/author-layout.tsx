@@ -1,4 +1,4 @@
-import type { Authors } from 'contentlayer/generated'
+import type { Authors } from 'contentlayer2/generated'
 import Image from '@/components/image'
 import { ReactNode } from 'react'
 
