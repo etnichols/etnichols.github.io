@@ -28,7 +28,7 @@ export default function MainContent({ posts }) {
                           <h2 className="text-2xl font-bold leading-6 tracking-tight">
                             <Link
                               href={`/blog/${slug}`}
-                              className="text-gray-900 dark:text-gray-100"
+                              className="text-gray-900 hover:text-primary-500 dark:text-gray-100 dark:hover:text-primary-400"
                             >
                               {title}
                             </Link>

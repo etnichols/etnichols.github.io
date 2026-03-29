@@ -7,11 +7,13 @@ import siteMetadata from '@/data/site-metadata'
 
 const Header = () => {
   return (
-    <header className="flex items-center justify-between py-10">
+    <header className="flex items-center justify-between border-b-2 border-primary-500 py-10 dark:border-primary-400">
       <div>
         <Link href="/" aria-label={siteMetadata.headerTitle}>
           <div className="flex items-center justify-between">
-            <div className="h-6 text-2xl font-semibold sm:block">{siteMetadata.headerTitle}</div>
+            <div className="h-6 text-2xl font-semibold text-primary-500 dark:text-primary-400 sm:block">
+              {siteMetadata.headerTitle}
+            </div>
           </div>
         </Link>
       </div>
@@ -22,7 +24,7 @@ const Header = () => {
             <Link
               key={link.title}
               href={link.href}
-              className="hidden font-medium lowercase text-gray-900 dark:text-gray-100 sm:block"
+              className="hidden font-medium lowercase text-gray-700 hover:text-primary-500 dark:text-gray-300 dark:hover:text-primary-400 sm:block"
             >
               {link.title}
             </Link>
