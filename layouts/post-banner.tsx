@@ -1,7 +1,6 @@
 import Bleed from 'pliny/ui/Bleed'
-import type { Blog } from 'contentlayer2/generated'
+import type { BlogDoc, CoreContent } from '@/lib/content/types'
 import Comments from '@/components/comments'
-import { CoreContent } from 'pliny/utils/contentlayer'
 import Image from '@/components/image'
 import Link from '@/components/link'
 import PageTitle from '@/components/page-title'
@@ -11,7 +10,7 @@ import SectionContainer from '@/components/section-container'
 import siteMetadata from '@/data/site-metadata'
 
 interface LayoutProps {
-  content: CoreContent<Blog>
+  content: CoreContent<BlogDoc>
   children: ReactNode
   next?: { path: string; title: string }
   prev?: { path: string; title: string }

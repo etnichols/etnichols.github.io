@@ -1,6 +1,4 @@
-import type { Authors, Blog } from 'contentlayer2/generated'
-
-import { CoreContent } from 'pliny/utils/contentlayer'
+import type { AuthorDoc, BlogDoc, CoreContent } from '@/lib/content/types';
 import PageTitle from '@/components/page-title'
 import { ReactNode } from 'react'
 import ScrollTopAndComment from '@/components/scroll-top-and-comment'
@@ -16,8 +14,8 @@ const postDateTemplate: Intl.DateTimeFormatOptions = {
 }
 
 interface LayoutProps {
-  content: CoreContent<Blog>
-  authorDetails: CoreContent<Authors>[]
+  content: CoreContent<BlogDoc>
+  authorDetails: CoreContent<AuthorDoc>[]
   next?: { path: string; title: string }
   prev?: { path: string; title: string }
   children: ReactNode

@@ -7,7 +7,7 @@ import siteMetadata from '@/data/site-metadata'
 
 const Header = () => {
   return (
-    <header className="flex items-center justify-between border-b-2 border-primary-500 py-10 dark:border-primary-400">
+    <header className="mb-6 flex items-center justify-between border-b-2 border-primary-500 py-6 dark:border-primary-400 md:py-10">
       <div>
         <Link href="/" aria-label={siteMetadata.headerTitle}>
           <div className="flex items-center justify-between">

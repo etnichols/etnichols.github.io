@@ -1,14 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 'use client'
 
-import type { Blog } from 'contentlayer2/generated'
-import { CoreContent } from 'pliny/utils/contentlayer'
+import type { BlogDoc, CoreContent } from '@/lib/content/types'
+
 import Link from '@/components/link'
 import Tag from '@/components/tag'
 import { formatDate } from 'pliny/utils/formatDate'
 import siteMetadata from '@/data/site-metadata'
 import { slug } from 'github-slugger'
-import tagData from 'app/tag-data.json'
 import { usePathname } from 'next/navigation'
 
 interface PaginationProps {
@@ -16,10 +15,11 @@ interface PaginationProps {
   currentPage: number
 }
 interface ListLayoutProps {
-  posts: CoreContent<Blog>[]
+  posts: CoreContent<BlogDoc>[]
   title: string
-  initialDisplayPosts?: CoreContent<Blog>[]
+  initialDisplayPosts?: CoreContent<BlogDoc>[]
   pagination?: PaginationProps
+  tagCounts: Record<string, number>
 }
 
 function Pagination({ totalPages, currentPage }: PaginationProps) {
@@ -67,9 +67,9 @@ export default function ListLayoutWithTags({
   title,
   initialDisplayPosts = [],
   pagination,
+  tagCounts,
 }: ListLayoutProps) {
   const pathname = usePathname()
-  const tagCounts = tagData as Record<string, number>
   const tagKeys = Object.keys(tagCounts)
   const sortedTags = tagKeys.sort((a, b) => tagCounts[b] - tagCounts[a])
 
@@ -78,7 +78,7 @@ export default function ListLayoutWithTags({
   return (
     <>
       <div>
-        <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:hidden sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+        <h1 className="text-2xl font-bold font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:hidden sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
           {title}
         </h1>
         <div className="flex sm:space-x-24">

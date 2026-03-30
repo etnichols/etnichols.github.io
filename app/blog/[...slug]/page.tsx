@@ -1,17 +1,16 @@
 import 'css/prism.css'
 import 'katex/dist/katex.css'
 
-import type { Authors, Blog } from 'contentlayer2/generated'
-import { allAuthors, allBlogs } from 'contentlayer2/generated'
-import { allCoreContent, coreContent, sortPosts } from 'pliny/utils/contentlayer'
-
-import { MDXLayoutRenderer } from 'pliny/mdx-components'
+import { getAllAuthors } from '@/lib/content/authors'
+import { getAllBlogs } from '@/lib/content/blog'
+import { compileBlogPostMdx } from '@/lib/content/compile-blog-mdx'
+import type { AuthorDoc, BlogDoc } from '@/lib/content/types'
+import { allCoreContent, coreContent, sortPosts } from '@/lib/content/utils'
 import { Metadata } from 'next'
 import PageTitle from '@/components/page-title'
 import PostBanner from '@/layouts/post-banner'
 import PostLayout from '@/layouts/post-layout'
 import PostSimple from '@/layouts/post-simple'
-import { components } from '@/components/mdx-components'
 import siteMetadata from '@/data/site-metadata'
 
 const defaultLayout = 'PostLayout'
@@ -28,20 +27,21 @@ export async function generateMetadata({
 }): Promise<Metadata | undefined> {
   const { slug: slugParts } = await params
   const slug = decodeURI(slugParts.join('/'))
+  const [allBlogs, allAuthors] = await Promise.all([getAllBlogs(), getAllAuthors()])
   const post = allBlogs.find((p) => p.slug === slug)
-  const authorList = post?.authors || ['default']
-  const authorDetails = authorList.map((author) => {
-    const authorResults = allAuthors.find((p) => p.slug === author)
-    return coreContent(authorResults as Authors)
-  })
   if (!post) {
     return
   }
+  const authorList = post.authors || ['default']
+  const authorDetails = authorList.map((authorSlug) => {
+    const authorResults = allAuthors.find((p) => p.slug === authorSlug) as AuthorDoc
+    return coreContent(authorResults)
+  })
 
   const publishedAt = new Date(post.date).toISOString()
   const modifiedAt = new Date(post.lastmod || post.date).toISOString()
   const authors = authorDetails.map((author) => author.name)
-  let imageList = []
+  let imageList: string[] = []
   if (post.images) {
     imageList = typeof post.images === 'string' ? [post.images] : post.images
   }
@@ -76,15 +76,16 @@ export async function generateMetadata({
 }
 
 export const generateStaticParams = async () => {
-  const paths = allBlogs.map((p) => ({ slug: p.slug.split('/') }))
-
-  return paths
+  const allBlogs = await getAllBlogs()
+  const isProduction = process.env.NODE_ENV === 'production'
+  const visible = isProduction ? allBlogs.filter((p) => !p.draft) : allBlogs
+  return visible.map((p) => ({ slug: p.slug.split('/') }))
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string[] }> }) {
   const { slug: slugParts } = await params
   const slug = decodeURI(slugParts.join('/'))
-  // Filter out drafts in production
+  const [allBlogs, allAuthors] = await Promise.all([getAllBlogs(), getAllAuthors()])
   const sortedCoreContents = allCoreContent(sortPosts(allBlogs))
   const postIndex = sortedCoreContents.findIndex((p) => p.slug === slug)
   if (postIndex === -1) {
@@ -102,20 +103,21 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
 
   const prev = sortedCoreContents[postIndex + 1]
   const next = sortedCoreContents[postIndex - 1]
-  const post = allBlogs.find((p) => p.slug === slug) as Blog
+  const post = allBlogs.find((p) => p.slug === slug) as BlogDoc
   const authorList = post?.authors || ['default']
-  const authorDetails = authorList.map((author) => {
-    const authorResults = allAuthors.find((p) => p.slug === author)
-    return coreContent(authorResults as Authors)
+  const authorDetails = authorList.map((authorSlug) => {
+    const authorResults = allAuthors.find((p) => p.slug === authorSlug) as AuthorDoc
+    return coreContent(authorResults)
   })
   const mainContent = coreContent(post)
-  const jsonLd = post.structuredData
-  jsonLd['author'] = authorDetails.map((author) => {
-    return {
+  const { content: mdxBody } = await compileBlogPostMdx(post.mdxSource, post.toc)
+  const jsonLd = {
+    ...post.structuredData,
+    author: authorDetails.map((author) => ({
       '@type': 'Person',
       name: author.name,
-    }
-  })
+    })),
+  }
 
   const Layout = layouts[post.layout || defaultLayout]
 
@@ -126,7 +128,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Layout content={mainContent} authorDetails={authorDetails} next={next} prev={prev}>
-        <MDXLayoutRenderer code={post.body.code} components={components} toc={post.toc} />
+        {mdxBody}
       </Layout>
     </>
   )

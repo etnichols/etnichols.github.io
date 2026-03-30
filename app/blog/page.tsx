@@ -1,14 +1,15 @@
-import { allCoreContent, sortPosts } from 'pliny/utils/contentlayer'
-
+import { buildTagCounts, getAllBlogs } from '@/lib/content/blog'
+import { allCoreContent, sortPosts } from '@/lib/content/utils'
 import ListLayoutWithTags from '@/layouts/list-layout-with-tags'
-import { allBlogs } from 'contentlayer2/generated'
 import { genPageMetadata } from 'app/seo'
 
 const POSTS_PER_PAGE = 5
 
 export const metadata = genPageMetadata({ title: 'Blog' })
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  const allBlogs = await getAllBlogs()
+  const tagCounts = buildTagCounts(allBlogs)
   const posts = allCoreContent(sortPosts(allBlogs))
   const pageNumber = 1
   const initialDisplayPosts = posts.slice(
@@ -26,6 +27,7 @@ export default function BlogPage() {
       initialDisplayPosts={initialDisplayPosts}
       pagination={pagination}
       title="All Posts"
+      tagCounts={tagCounts}
     />
   )
 }
